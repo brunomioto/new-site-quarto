@@ -17,10 +17,10 @@ We can use this historical data to do analysis and graphing. The Affluence (m³/
 You can install it running:
 
 ```{r, eval=FALSE}
-#if(!requireNamespace("remotes", quietly = TRUE)){
-#    install.packages("remotes")
-#  }
-#remotes::install_github("brunomioto/reservatoriosBR")
+if(!requireNamespace("remotes", quietly = TRUE)){
+    install.packages("remotes")
+  }
+remotes::install_github("brunomioto/reservatoriosBR")
 ```
 
 ## ggimprensa
@@ -36,10 +36,10 @@ The goal of this package is to help users to create more beautiful graphics in a
 You can install it running:
 
 ```{r, eval=FALSE, }
-#if(!requireNamespace("remotes", quietly = TRUE)){
-#    install.packages("remotes")
-#  }
-#remotes::install_github("brunomioto/ggimprensa")
+if(!requireNamespace("remotes", quietly = TRUE)){
+    install.packages("remotes")
+  }
+remotes::install_github("brunomioto/ggimprensa")
 ```
 
 ::: {layout-ncol="3"}
