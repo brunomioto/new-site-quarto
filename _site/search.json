@@ -1,31 +1,24 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bruno Mioto",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
+    "objectID": "about-en.html",
+    "href": "about-en.html",
     "title": "About me",
     "section": "",
     "text": "English  Português\nHi, my name is Bruno Mioto, I’m a biologist, currently doing my PhD in Ecology of Inland Water Ecosystems (PEA-UEM) and I study fish phylogeography!\nI have experience with data analysis and chart creation, I love to create new R packages and work as a data visualization freelancer!\nSee my freelance profile here: Upwork\nAnd my portfolio here: Behance\nI always seek to bring the right information in a simpler way to society."
   },
   {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
+    "objectID": "about-en.html#education",
+    "href": "about-en.html#education",
     "title": "About me",
     "section": "Education",
-    "text": "Education\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PR PhD | 2021 - Present\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PR Master’s Program | 2019 - 2021\nState University of Maringá (UEM) | Maringá - PR Undergraduate | 2015 - 2019"
+    "text": "Education\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PRPhD | 2021 - Present\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PRMaster’s Program | 2019 - 2021\nState University of Maringá (UEM) | Maringá - PRUndergraduate | 2015 - 2019"
   },
   {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
+    "objectID": "about-en.html#experience",
+    "href": "about-en.html#experience",
     "title": "About me",
     "section": "Experience",
-    "text": "Experience\nGalápagos - Charts and Maps Director of Graphics | 2022 - Present\nUpwork Top Rated Freelancer | 2022 - Present\nRenovação Preparatory School Volunteer Teacher - Biology | 2019 - Present"
+    "text": "Experience\nNupgen (DBC/Nupélia UEM) - Molecular Genetics LabPhD student | 2018 - Present\nGalápagos - Charts and MapsDirector of Graphics | 2022 - Present\nUpworkTop Rated Freelancer | 2022 - Present\nRenovação Preparatory SchoolVolunteer Teacher - Biology | 2019 - Present"
   },
   {
     "objectID": "about-pt.html",
@@ -46,7 +39,35 @@
     "href": "about-pt.html#experiência",
     "title": "Sobre mim",
     "section": "Experiência",
-    "text": "Experiência\nGalápagos - Gráficos e Mapas Diretor de Gráficos | 2022 - Presente\nUpwork Freelancer | 2022 - Presente\nCursinho Voluntário Renovação Professor Voluntário - Biologia | 2019 - Presente"
+    "text": "Experiência\nNupgen (DBC/Nupélia UEM) - Laboratório de Genética MolecularAluno de doutorado | 2018 - Present\nGalápagos - Gráficos e Mapas Diretor de Gráficos | 2022 - Presente\nUpwork Freelancer | 2022 - Presente\nCursinho Voluntário Renovação Professor Voluntário - Biologia | 2019 - Presente"
+  },
+  {
+    "objectID": "charts.html",
+    "href": "charts.html",
+    "title": "Charts",
+    "section": "",
+    "text": "I make original charts on demand for presentations/scientific articles/publications\nAccess my complete portfolio: Behance\nI work as a freelancer here: Upwork (Top Rated Freelancer)\nMy contact email address is bhmstabile@gmail.com"
+  },
+  {
+    "objectID": "charts.html#collaborations",
+    "href": "charts.html#collaborations",
+    "title": "Charts",
+    "section": "Collaborations",
+    "text": "Collaborations\nI wrote a text for basedosdados with a tutorial on how I made this chart of the vaccinated population using R! #vacinasim\nCheck it out here!\n\n\n\n\n\nI also published a chart together with Nexo Jornal about inflation and unemployment in Brazil, updating a very interesting chart!\nCheck it out here!"
+  },
+  {
+    "objectID": "charts.html#original-charts",
+    "href": "charts.html#original-charts",
+    "title": "Charts",
+    "section": "Original charts",
+    "text": "Original charts\nYou can click on each plot to see each detail."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bruno Mioto",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "r-packages.html",
@@ -68,19 +89,5 @@
     "title": "R packages",
     "section": "More packages soon…",
     "text": "More packages soon…"
-  },
-  {
-    "objectID": "charts.html",
-    "href": "charts.html",
-    "title": "Charts",
-    "section": "",
-    "text": "I make original charts on demand for presentations/scientific articles/publications\nAccess my complete portfolio: Behance\nI work as a freelancer here: Upwork (Top Rated Freelancer)\nMy contact email address is bhmstabile@gmail.com\nI wrote a text for basedosdados with a tutorial on how I made this chart of the vaccinated population using R! #vacinasim\nCheck it out here!\nI also published a chart together with Nexo Jornal about inflation and unemployment in Brazil, updating a very interesting chart!\nCheck it out here!"
-  },
-  {
-    "objectID": "charts.html#original-charts",
-    "href": "charts.html#original-charts",
-    "title": "Charts",
-    "section": "Original charts",
-    "text": "Original charts\n\n\n\n\n\nSurus\n\n\n\n\n\nHanno\n\n\n\n\n\n\n\n\nAbdul Abbas\n\n\n\n\n\n\n\nLin Wang"
   }
 ]

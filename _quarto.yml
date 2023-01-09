@@ -1,5 +1,8 @@
 project:
   type: website
+  
+execute:
+  freeze: auto
 
 website:
   title: "Bruno Mioto"
@@ -13,7 +16,7 @@ website:
         text: Home
       - charts.qmd
       - r-packages.qmd
-      - about.qmd
+      - about-en.qmd
   page-footer: 
     left: "Website made with [Quarto](https://quarto.org/) by Bruno Mioto, 2022" 
     right: 
