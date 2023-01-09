@@ -2,7 +2,7 @@
 title: "Sobre mim"
 about:
   template: solana
-  image: /figures/bruno.png
+  image: figures/bruno.png
   links:
     - icon: envelope
       text: e-mail
