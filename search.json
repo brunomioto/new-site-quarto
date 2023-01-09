@@ -67,14 +67,14 @@
     "href": "r-packages.html",
     "title": "R packages",
     "section": "",
-    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know! I wonder how this package can help!\nWe can use this historical data to do analysis and graphing. The Affluence (m³/s), for example, measures the amount of water that arrives at the reservoirs.\nYou can install it running:\n\n#if(!requireNamespace(\"remotes\", quietly = TRUE)){\n#    install.packages(\"remotes\")\n#  }\n#remotes::install_github(\"brunomioto/reservatoriosBR\")"
+    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know! I wonder how this package can help!\nWe can use this historical data to do analysis and graphing. The Affluence (m³/s), for example, measures the amount of water that arrives at the reservoirs.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
   },
   {
     "objectID": "r-packages.html#ggimprensa",
     "href": "r-packages.html#ggimprensa",
     "title": "R packages",
     "section": "ggimprensa",
-    "text": "ggimprensa\n\nggimprensa brings themes from the main Brazilian newspapers for ggplot2.\nThis package was inspired by the ggthemes package.\nThe goal of this package is to help users to create more beautiful graphics in an easy and fast way.\nYou can install it running:\n\n#if(!requireNamespace(\"remotes\", quietly = TRUE)){\n#    install.packages(\"remotes\")\n#  }\n#remotes::install_github(\"brunomioto/ggimprensa\")\n\n\n\n\n\n\n\nG1 theme\n\n\n\n\n\n\n\nNexo theme\n\n\n\n\n\n\n\nPoder 360 theme"
+    "text": "ggimprensa\n\nggimprensa brings themes from the main Brazilian newspapers for ggplot2.\nThis package was inspired by the ggthemes package.\nThe goal of this package is to help users to create more beautiful graphics in an easy and fast way.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/ggimprensa\")\n\n\n\n\n\n\n\nG1 theme\n\n\n\n\n\n\n\nNexo theme\n\n\n\n\n\n\n\nPoder 360 theme"
   },
   {
     "objectID": "r-packages.html#more-packages-soon",
