@@ -1,0 +1,58 @@
+---
+title: "Sobre mim"
+about:
+  template: solana
+  image: /figures/bruno.png
+  links:
+    - icon: envelope
+      text: e-mail
+      href: mailto:bhmstabile@gmail.com
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/BrunoHMioto
+    - icon: github
+      text: Github
+      href: https://github.com/brunomioto
+---
+
+<center>
+
+::: {.btn-group role="group" aria-label="About"}
+<a href="about.html"> <button type="button" class="btn btn-primary me-md-2 btn-sm">English</button></a> 
+<a href="about-pt.html"> <button type="button" class="btn btn-primary me-md-2 btn-sm">Português</button></a>
+:::
+
+</center>
+
+Oi! Me chamo Bruno Mioto, sou biólogo, atualmente faço doutorado em Ecologia de Ambientes Aquáticos Continentais ([PEA-UEM](https://www.pea.uem.br/)) e estudo **filogeografia de peixes**!
+
+Tenho experiência com análise de dados e criação de gráficos, amo criar novos **pacotes em R** e trabalho como **freelancer de visualização de dados**!
+
+Veja meu perfil de freelas aqui: **[Upwork](https://www.upwork.com/freelancers/~01b609b6016a32f6c6)**
+
+E meu portifólio aqui: **[Behance](https://www.behance.net/gallery/136021485/Data-Visualization-Portfolio)**
+
+Sempre busco levar a informação correta de forma mais simples à sociedade.
+
+## Educação
+
+[Programa de Ecologia em Ambientes Aquáticos Continentais (PEA-UEM)](https://www.pea.uem.br/) | Maringá - PR<br>
+Doutorado | 2021 - Presente
+
+Programa de Ecologia em Ambientes Aquáticos Continentais (PEA-UEM) | Maringá - PR<br>
+Mestrado | 2019 - 2021
+
+Universidade Estadual de Maringá (UEM) | Maringá - PR<br>
+Licenciatura | 2015 - 2019
+
+## Experiência
+
+[Galápagos](https://www.brgalapagos.com/) - Gráficos e Mapas<br>
+Diretor de Gráficos | 2022 - Presente
+
+[Upwork](https://www.upwork.com/freelancers/~01b609b6016a32f6c6)<br>
+Freelancer | 2022 - Presente
+
+Cursinho Voluntário Renovação<br>
+Professor Voluntário - Biologia | 2019 - Presente
+

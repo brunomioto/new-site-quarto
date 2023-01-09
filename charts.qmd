@@ -1,0 +1,42 @@
+---
+title: "Charts"
+filters:
+   - lightbox
+format: 
+  html:
+    page-layout: full
+---
+
+I make original charts on demand for presentations/scientific articles/publications
+
+Access my complete portfolio: [**Behance**](https://www.behance.net/gallery/136021485/Data-Visualization-Portfolio)
+
+I work as a freelancer here: [**Upwork**](https://www.upwork.com/freelancers/~01b609b6016a32f6c6) (Top Rated Freelancer)
+
+My contact email address is **bhmstabile\@gmail.com**
+
+------------------------------------------------------------------------
+
+I wrote a text for [basedosdados](https://basedosdados.org/) with a tutorial on how I made this chart of the vaccinated population using R! #vacinasim
+
+Check it out [here](https://medium.com/basedosdados/analisando-dados-de-vacina%C3%A7%C3%A3o-contra-covid-19-com-a-bd-49fe3db8c7f4)!
+
+![](figures/charts-vaccines.png){fig-align="center" width="350" .lightbox}
+
+I also published a chart together with [Nexo Jornal](nexojornal.com.br/) about inflation and unemployment in Brazil, updating a very interesting chart!
+
+Check it out [here](https://www.nexojornal.com.br/grafico/2022/05/16/Infla%C3%A7%C3%A3o-e-desemprego-batem-recorde-e-passam-de-10-no-Brasil)!
+
+![](figures/charts-nexo.png){fig-align="center" width="350" .lightbox}
+
+## Original charts
+
+::: {layout-ncol="2"}
+![Surus](figures/charts/density-nfl.png){.lightbox group="my-gallery"}
+
+![Hanno](figures/charts/scatter-nfl.png){.lightbox group="my-gallery"}
+
+![Abdul Abbas](abdul-abbas.png)
+
+![Lin Wang](lin-wang.png)
+:::

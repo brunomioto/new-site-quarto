@@ -1,0 +1,56 @@
+---
+title: "About me"
+about:
+  template: solana
+  image: /figures/bruno.png
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:bhmstabile@gmail.com
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/BrunoHMioto
+    - icon: github
+      text: Github
+      href: https://github.com/brunomioto
+---
+
+<center>
+
+::: {.btn-group role="group" aria-label="About"}
+<a href="about.html"> <button type="button" class="btn btn-primary me-md-2 btn-sm">English</button></a> <a href="about-pt.html"> <button type="button" class="btn btn-primary me-md-2 btn-sm">Português</button></a>
+:::
+
+</center>
+
+Hi, my name is Bruno Mioto, I'm a biologist, currently doing my PhD in Ecology of Inland Water Ecosystems ([PEA-UEM](https://en.pea.uem.br/)) and I study **fish phylogeography**!
+
+I have experience with data analysis and chart creation, I love to create new **R packages** and work as a **data visualization freelancer**!
+
+See my freelance profile here: **[Upwork](https://www.upwork.com/freelancers/~01b609b6016a32f6c6)**
+
+And my portfolio here: **[Behance](https://www.behance.net/gallery/136021485/Data-Visualization-Portfolio)**
+
+I always seek to bring the right information in a simpler way to society.
+
+## Education
+
+[Graduate Program in Ecology of Inland Water Ecosystems (PEA-UEM)](https://en.pea.uem.br/) | Maringá - PR
+PhD | 2021 - Present
+
+Graduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PR
+Master's Program | 2019 - 2021
+
+State University of Maringá (UEM) | Maringá - PR
+Undergraduate | 2015 - 2019
+
+## Experience
+
+[Galápagos](https://www.brgalapagos.com/) - Charts and Maps
+Director of Graphics | 2022 - Present
+
+[Upwork](https://www.upwork.com/freelancers/~01b609b6016a32f6c6)
+Top Rated Freelancer | 2022 - Present
+
+Renovação Preparatory School
+Volunteer Teacher - Biology | 2019 - Present
