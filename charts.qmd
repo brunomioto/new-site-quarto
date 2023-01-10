@@ -15,8 +15,6 @@ I work as a freelancer here: [**Upwork**](https://www.upwork.com/freelancers/~01
 
 My contact email address is **bhmstabile\@gmail.com**
 
-------------------------------------------------------------------------
-
 ## Collaborations 
 
 I wrote a text for [basedosdados](https://basedosdados.org/) with a tutorial on how I made this chart of the vaccinated population using R! #vacinasim

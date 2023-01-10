@@ -7,6 +7,7 @@ execute:
 website:
   title: "Bruno Mioto"
   favicon: /figures/logo.png
+  google-analytics: "G-XTWGVVSED5"
   navbar:
     logo: "figures/logo.png"
     foreground: "#40609f"
