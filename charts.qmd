@@ -33,7 +33,7 @@ Check it out [here](https://www.nexojornal.com.br/grafico/2022/05/16/Infla%C3%A7
 
 ## Original charts
 
-You can click on each plot to see each detail.
+All the following charts were made entirely using ggplot2/R.<br>You can click on each plot to see each detail.
 
 ```{=html}
 <style>
@@ -50,19 +50,39 @@ You can click on each plot to see each detail.
 
 ![](figures/charts/ttt-nfl.png){.lightbox group="my-gallery"}
 
-![](figures/charts/epa-career-nfl.png){.lightbox group="my-gallery"}
+![](figures/charts/avocado.png){.lightbox group="my-gallery"}
 
-![](figures/charts/slope-nfl.png){.lightbox group="my-gallery"}
+![](figures/charts/rnd-players-nfl.png){.lightbox group="my-gallery"}
 
 ![](figures/charts/density-nfl.png){.lightbox group="my-gallery"}
 
 ![](figures/charts/elephant.png){.lightbox group="my-gallery"}
 
-![](figures/charts/election-star.png){.lightbox group="my-gallery"}
+![](figures/charts/temp_max_mga.png){.lightbox group="my-gallery"}
 
 ![](figures/charts/drink-owid.png){.lightbox group="my-gallery"}
+
+![](figures/charts/election-star.png){.lightbox group="my-gallery"}
+
+![](figures/charts/spider.png){.lightbox group="my-gallery"}
+
+![](figures/charts/epa-career-nfl.png){.lightbox group="my-gallery"}
+
+![](figures/charts/slope-nfl.png){.lightbox group="my-gallery"}
+
+![](figures/charts/icmbio.png){.lightbox group="my-gallery"}
+
+![](figures/charts/omega_paper.png){.lightbox group="my-gallery"}
+
+![](figures/charts/copacabana.png){.lightbox group="my-gallery"}
+
+![](figures/charts/eye.png){.lightbox group="my-gallery"}
 :::
 
 ::: {layout-ncol="1"}
 ![](figures/charts/starwars.png){.lightbox group="my-gallery2"}
+
+![](figures/charts/github_deaths_covid_br.png){.lightbox group="my-gallery2"}
+![](figures/charts/color.png){.lightbox group="my-gallery2"}
+![](figures/charts/punt_J.Hekker_18.png){.lightbox group="my-gallery2"}
 :::
