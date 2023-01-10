@@ -60,7 +60,7 @@
     "href": "charts.html#original-charts",
     "title": "Charts",
     "section": "Original charts",
-    "text": "Original charts\nYou can click on each plot to see each detail."
+    "text": "Original charts\nAll the following charts were made entirely using ggplot2/R.You can click on each plot to see each detail."
   },
   {
     "objectID": "r-packages.html",
