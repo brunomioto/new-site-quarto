@@ -1,24 +1,31 @@
 [
   {
-    "objectID": "about-en.html",
-    "href": "about-en.html",
-    "title": "About me",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bruno Mioto",
     "section": "",
-    "text": "English  Português\nHi, my name is Bruno Mioto, I’m a biologist, currently doing my PhD in Ecology of Inland Water Ecosystems (PEA-UEM) and I study fish phylogeography!\nI have experience with data analysis and chart creation, I love to create new R packages and work as a data visualization freelancer!\nSee my freelance profile here: Upwork\nAnd my portfolio here: Behance\nI always seek to bring the right information in a simpler way to society."
+    "text": "Hello, this is my personal website.\nHere you’ll find pages about the Charts and R packages I made and some info about me."
   },
   {
-    "objectID": "about-en.html#education",
-    "href": "about-en.html#education",
-    "title": "About me",
-    "section": "Education",
-    "text": "Education\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PRPhD | 2021 - Present\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PRMaster’s Program | 2019 - 2021\nState University of Maringá (UEM) | Maringá - PRUndergraduate | 2015 - 2019"
+    "objectID": "r-packages.html",
+    "href": "r-packages.html",
+    "title": "R packages",
+    "section": "",
+    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know! I wonder how this package can help!\nWe can use this historical data to do analysis and graphing. The Affluence (m³/s), for example, measures the amount of water that arrives at the reservoirs.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
   },
   {
-    "objectID": "about-en.html#experience",
-    "href": "about-en.html#experience",
-    "title": "About me",
-    "section": "Experience",
-    "text": "Experience\nNupgen (DBC/Nupélia UEM) - Molecular Genetics LabPhD student | 2018 - Present\nGalápagos - Charts and MapsDirector of Graphics | 2022 - Present\nUpworkTop Rated Freelancer | 2022 - Present\nRenovação Preparatory SchoolVolunteer Teacher - Biology | 2019 - Present"
+    "objectID": "r-packages.html#ggimprensa",
+    "href": "r-packages.html#ggimprensa",
+    "title": "R packages",
+    "section": "ggimprensa",
+    "text": "ggimprensa\n\nggimprensa brings themes from the main Brazilian newspapers for ggplot2.\nThis package was inspired by the ggthemes package.\nThe goal of this package is to help users to create more beautiful graphics in an easy and fast way.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/ggimprensa\")\n\n\n\n\n\n\n\nG1 theme\n\n\n\n\n\n\n\nNexo theme\n\n\n\n\n\n\n\nPoder 360 theme"
+  },
+  {
+    "objectID": "r-packages.html#more-packages-soon",
+    "href": "r-packages.html#more-packages-soon",
+    "title": "R packages",
+    "section": "More packages soon…",
+    "text": "More packages soon…"
   },
   {
     "objectID": "about-pt.html",
@@ -63,31 +70,24 @@
     "text": "Original charts\nAll the following charts were made entirely using ggplot2/R.You can click on each plot to see each detail."
   },
   {
-    "objectID": "r-packages.html",
-    "href": "r-packages.html",
-    "title": "R packages",
+    "objectID": "about-en.html",
+    "href": "about-en.html",
+    "title": "About me",
     "section": "",
-    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know! I wonder how this package can help!\nWe can use this historical data to do analysis and graphing. The Affluence (m³/s), for example, measures the amount of water that arrives at the reservoirs.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
+    "text": "English  Português\nHi, my name is Bruno Mioto, I’m a biologist, currently doing my PhD in Ecology of Inland Water Ecosystems (PEA-UEM) and I study fish phylogeography!\nI have experience with data analysis and chart creation, I love to create new R packages and work as a data visualization freelancer!\nSee my freelance profile here: Upwork\nAnd my portfolio here: Behance\nI always seek to bring the right information in a simpler way to society."
   },
   {
-    "objectID": "r-packages.html#ggimprensa",
-    "href": "r-packages.html#ggimprensa",
-    "title": "R packages",
-    "section": "ggimprensa",
-    "text": "ggimprensa\n\nggimprensa brings themes from the main Brazilian newspapers for ggplot2.\nThis package was inspired by the ggthemes package.\nThe goal of this package is to help users to create more beautiful graphics in an easy and fast way.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/ggimprensa\")\n\n\n\n\n\n\n\nG1 theme\n\n\n\n\n\n\n\nNexo theme\n\n\n\n\n\n\n\nPoder 360 theme"
+    "objectID": "about-en.html#education",
+    "href": "about-en.html#education",
+    "title": "About me",
+    "section": "Education",
+    "text": "Education\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PRPhD | 2021 - Present\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PRMaster’s Program | 2019 - 2021\nState University of Maringá (UEM) | Maringá - PRUndergraduate | 2015 - 2019"
   },
   {
-    "objectID": "r-packages.html#more-packages-soon",
-    "href": "r-packages.html#more-packages-soon",
-    "title": "R packages",
-    "section": "More packages soon…",
-    "text": "More packages soon…"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bruno Mioto",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "objectID": "about-en.html#experience",
+    "href": "about-en.html#experience",
+    "title": "About me",
+    "section": "Experience",
+    "text": "Experience\nNupgen (DBC/Nupélia UEM) - Molecular Genetics LabPhD student | 2018 - Present\nGalápagos - Charts and MapsDirector of Graphics | 2022 - Present\nUpworkTop Rated Freelancer | 2022 - Present\nRenovação Preparatory SchoolVolunteer Teacher - Biology | 2019 - Present"
   }
 ]

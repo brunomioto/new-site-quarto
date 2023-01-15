@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/brunomioto/new-site-quarto/about-en.html</loc>
-    <lastmod>2023-01-10T03:27:32.916Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunomioto/new-site-quarto/about-pt.html</loc>
-    <lastmod>2023-01-10T03:27:33.576Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/brunomioto/new-site-quarto/charts.html</loc>
-    <lastmod>2023-01-10T03:27:33.944Z</lastmod>
+    <loc>https://github.com/brunomioto/new-site-quarto/index.html</loc>
+    <lastmod>2023-01-15T19:06:15.599Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/brunomioto/new-site-quarto/r-packages.html</loc>
-    <lastmod>2023-01-10T03:27:35.552Z</lastmod>
+    <lastmod>2023-01-15T19:06:17.259Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/brunomioto/new-site-quarto/index.html</loc>
-    <lastmod>2023-01-10T03:27:36.736Z</lastmod>
+    <loc>https://github.com/brunomioto/new-site-quarto/about-pt.html</loc>
+    <lastmod>2023-01-15T19:06:17.575Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunomioto/new-site-quarto/charts.html</loc>
+    <lastmod>2023-01-15T19:06:17.931Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/brunomioto/new-site-quarto/about-en.html</loc>
+    <lastmod>2023-01-15T19:06:18.235Z</lastmod>
   </url>
 </urlset>
