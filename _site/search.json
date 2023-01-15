@@ -67,7 +67,7 @@
     "href": "index.html",
     "title": "Bruno Mioto",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Hello, this is my personal website.\nHere you’ll find pages about the Charts and R packages I made and some info about me."
   },
   {
     "objectID": "r-packages.html",
