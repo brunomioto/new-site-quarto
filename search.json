@@ -21,27 +21,6 @@
     "text": "Experience\nNupgen (DBC/Nupélia UEM) - Molecular Genetics LabPhD student | 2018 - Present\nGalápagos - Charts and MapsDirector of Graphics | 2022 - Present\nUpworkTop Rated Freelancer | 2022 - Present\nRenovação Preparatory SchoolVolunteer Teacher - Biology | 2019 - Present"
   },
   {
-    "objectID": "charts.html",
-    "href": "charts.html",
-    "title": "Charts",
-    "section": "",
-    "text": "I make original charts on demand for presentations/scientific articles/publications\nAccess my complete portfolio: Behance\nI work as a freelancer here: Upwork (Top Rated Freelancer)\nMy contact email address is bhmstabile@gmail.com"
-  },
-  {
-    "objectID": "charts.html#collaborations",
-    "href": "charts.html#collaborations",
-    "title": "Charts",
-    "section": "Collaborations",
-    "text": "Collaborations\nI wrote a text for basedosdados with a tutorial on how I made this chart of the vaccinated population using R! #vacinasim\nCheck it out here!\n\n\n\n\n\nI also published a chart together with Nexo Jornal about inflation and unemployment in Brazil, updating a very interesting chart!\nCheck it out here!"
-  },
-  {
-    "objectID": "charts.html#original-charts",
-    "href": "charts.html#original-charts",
-    "title": "Charts",
-    "section": "Original charts",
-    "text": "Original charts\nAll the following charts were made entirely using ggplot2/R.You can click on each plot to see each detail."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Bruno Mioto",
@@ -77,11 +56,18 @@
     "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know! I wonder how this package can help!\nWe can use this historical data to do analysis and graphing. The Affluence (m³/s), for example, measures the amount of water that arrives at the reservoirs.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
   },
   {
+    "objectID": "r-packages.html#reservatoriosbr",
+    "href": "r-packages.html#reservatoriosbr",
+    "title": "R packages",
+    "section": "",
+    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know! I wonder how this package can help!\nWe can use this historical data to do analysis and graphing. The Affluence (m³/s), for example, measures the amount of water that arrives at the reservoirs.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
+  },
+  {
     "objectID": "r-packages.html#ggimprensa",
     "href": "r-packages.html#ggimprensa",
     "title": "R packages",
     "section": "ggimprensa",
-    "text": "ggimprensa\n\nggimprensa brings themes from the main Brazilian newspapers for ggplot2.\nThis package was inspired by the ggthemes package.\nThe goal of this package is to help users to create more beautiful graphics in an easy and fast way.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/ggimprensa\")\n\n\n\n\n\n\n\nG1 theme\n\n\n\n\n\n\n\nNexo theme\n\n\n\n\n\n\n\nPoder 360 theme"
+    "text": "ggimprensa\n\nggimprensa brings themes from the main Brazilian newspapers for ggplot2.\nThis package was inspired by the ggthemes package.\nThe goal of this package is to help users to create more beautiful graphics in an easy and fast way.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/ggimprensa\")\n\n\n\n\n\n\n\n\n\n\nG1 theme\n\n\n\n\n\n\n\nNexo theme\n\n\n\n\n\n\n\nPoder 360 theme"
   },
   {
     "objectID": "r-packages.html#more-packages-soon",
@@ -89,5 +75,26 @@
     "title": "R packages",
     "section": "More packages soon…",
     "text": "More packages soon…"
+  },
+  {
+    "objectID": "charts.html",
+    "href": "charts.html",
+    "title": "Charts",
+    "section": "",
+    "text": "I make original charts on demand for presentations/scientific articles/publications\nAccess my complete portfolio: Behance\nI work as a freelancer here: Upwork (Top Rated Freelancer)\nMy contact email address is bhmstabile@gmail.com"
+  },
+  {
+    "objectID": "charts.html#collaborations",
+    "href": "charts.html#collaborations",
+    "title": "Charts",
+    "section": "Collaborations",
+    "text": "Collaborations\nI wrote a text for basedosdados with a tutorial on how I made this chart of the vaccinated population using R! #vacinasim\nCheck it out here!\n\n\n\n\n\nI also published a chart together with Nexo Jornal about inflation and unemployment in Brazil, updating a very interesting chart!\nCheck it out here!"
+  },
+  {
+    "objectID": "charts.html#original-charts",
+    "href": "charts.html#original-charts",
+    "title": "Charts",
+    "section": "Original charts",
+    "text": "Original charts\nAll the following charts were made entirely using ggplot2/R.You can click on each plot to see each detail."
   }
 ]
