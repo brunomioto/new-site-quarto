@@ -1,1 +1,1 @@
-Sitemap: https://brunomioto.com/sitemap.xml
+Sitemap: https://brunomioto.github.io/new-site-quarto/sitemap.xml
