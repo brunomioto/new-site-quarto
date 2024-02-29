@@ -25,14 +25,35 @@
     "href": "r-packages.html",
     "title": "R packages",
     "section": "",
-    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know! I wonder how this package can help!\nWe can use this historical data to do analysis and graphing. The Affluence (m³/s), for example, measures the amount of water that arrives at the reservoirs.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
+    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know!\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
   },
   {
     "objectID": "r-packages.html#reservatoriosbr",
     "href": "r-packages.html#reservatoriosbr",
     "title": "R packages",
     "section": "",
-    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know! I wonder how this package can help!\nWe can use this historical data to do analysis and graphing. The Affluence (m³/s), for example, measures the amount of water that arrives at the reservoirs.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
+    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know!\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
+  },
+  {
+    "objectID": "r-packages.html#futebolplotr",
+    "href": "r-packages.html#futebolplotr",
+    "title": "R packages",
+    "section": "futebolplotR",
+    "text": "futebolplotR\n\nThe goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis. It provides a ggplot2 geom that does the heavy lifting of plotting Brazilian soccer badges in high quality, with correct aspect ratio and possible transparency.\nThe futebolplotR contains emblems of the teams that have participated in the Brasileirão Série A soccer league from 2003 to the present day. Other teams are also welcome!\nThis package can be used with data from brasileirao R package.\nThe code for this package was heavily based on nbaplotR with minor changes to support Brazilian soccer team badges.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
+  },
+  {
+    "objectID": "r-packages.html#worldclimdata",
+    "href": "r-packages.html#worldclimdata",
+    "title": "R packages",
+    "section": "WorldClimData",
+    "text": "WorldClimData\n\n \nWorldClimData presents a faster way to download WorldClim data using piggyback.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/WorldClimData\")"
+  },
+  {
+    "objectID": "r-packages.html#dnaplot",
+    "href": "r-packages.html#dnaplot",
+    "title": "R packages",
+    "section": "DNAplot",
+    "text": "DNAplot\n\n  \nThe DNAplot package provides a simple and customizable function to create aesthetically pleasing plots of DNA sequences. Each base is represented by a colored rectangle, allowing for easy visualization and analysis of sequence features.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/DNAplot\")\n\n\nlibrary(DNAplot)\n\nsequence &lt;- \"ACTGAAGTA\"\n\nplot_dna(sequence)\n\nℹ Plotting 9 bases"
   },
   {
     "objectID": "r-packages.html#ggimprensa",
@@ -116,7 +137,21 @@
     "href": "index.html",
     "title": "Bruno Mioto",
     "section": "",
-    "text": "Hello, this is my personal website.\nHere you’ll find pages about the Charts and R packages I made and some info about me."
+    "text": "Hello, this is my personal website!\nI’m a biologist and dataviz freelancer! Here you’ll find pages about the Charts and R packages I made and some info about me.\nIf you want to support my work, buy me a coffee!"
+  },
+  {
+    "objectID": "index.html#posts-in-english",
+    "href": "index.html#posts-in-english",
+    "title": "Bruno Mioto",
+    "section": "Posts in English",
+    "text": "Posts in English\n\n\n\n\n\n\n\n\n\n\nggplot2 101\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nFeb 27, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nDrawing waterlines with ggplot2 in R\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nFeb 1, 2023\n\n\nBruno Mioto\n\n\n5 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#posts-em-português",
+    "href": "index.html#posts-em-português",
+    "title": "Bruno Mioto",
+    "section": "Posts em Português",
+    "text": "Posts em Português\n\n\n\n\n\n\n\n\n\n\nIntrodução ao ggplot2\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nMapeando as árvores de Maringá-PR\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about-pt.html",
@@ -140,6 +175,13 @@
     "text": "Experiência\nNupgen (DBC/Nupélia UEM) - Laboratório de Genética MolecularAluno de doutorado | 2018 - Present\nGalápagos - Gráficos e Mapas Diretor de Gráficos | 2022 - Presente\nUpwork Freelancer | 2022 - Presente\nCursinho Voluntário Renovação Professor Voluntário - Biologia | 2019 - Presente"
   },
   {
+    "objectID": "about-pt.html#artigos-publicados",
+    "href": "about-pt.html#artigos-publicados",
+    "title": "Sobre mim",
+    "section": "Artigos publicados",
+    "text": "Artigos publicados\nThe first record of Centrocestus formosanus (Trematoda: Heterophyidae) in southern Brazil supported by molecular data - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nMolecular evidence of new freshwater turtle blood flukes (Digenea: Spirorchiidae) in the intermediate snail host Biomphalaria occidentalis Paraense, 1981 in an urban aquatic ecosystem in Brazil - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Fábio Fermino, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nCyanobacteria in an urban lake: hidden diversity revealed by metabarcoding - 2020\nThomaz Mansini Carrenho Fabrin, Bruno Henrique Mioto Stabile, Matheus Vieira da Silva, Susicley Jati, Liliana Rodrigues, Alessandra Valéria de Oliveira\nDivulgação da ciência desde a sala de aula - 2020\nYasmin Rodrigues de Souza, Carolina Pedrozo do Nascimento, Melissa Progênio da Silva, Gabriela Cassia Zanon Reinas, Edilaine Corrêa Leite, João Otávio Santos Silva, Bárbara Scorsim Arjona, Rejane Guimarães Melo, Bruno Henrique Mioto Stabile, Hugo Lima Kirsten, Renan Borges dos Reis, Matheus Henrique Ferreira Aleixo, Larissa Carrara Gonçalves, Fernanda Moreira Florêncio, Aline Favaro Mendes, Alessandra Barbosa da Silva, Alfonso Pineda, Luzia Cleide Rodrigues"
+  },
+  {
     "objectID": "about-en.html",
     "href": "about-en.html",
     "title": "About me",
@@ -161,25 +203,32 @@
     "text": "Experience\nNupgen (DBC/Nupélia UEM) - Molecular Genetics LabPhD student | 2018 - Present\nGalápagos - Charts and MapsDirector of Graphics | 2022 - Present\nUpworkTop Rated Freelancer | 2022 - Present\nRenovação Preparatory SchoolVolunteer Teacher - Biology | 2019 - Present"
   },
   {
+    "objectID": "about-en.html#published-papers",
+    "href": "about-en.html#published-papers",
+    "title": "About me",
+    "section": "Published papers",
+    "text": "Published papers\nThe first record of Centrocestus formosanus (Trematoda: Heterophyidae) in southern Brazil supported by molecular data - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nMolecular evidence of new freshwater turtle blood flukes (Digenea: Spirorchiidae) in the intermediate snail host Biomphalaria occidentalis Paraense, 1981 in an urban aquatic ecosystem in Brazil - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Fábio Fermino, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nCyanobacteria in an urban lake: hidden diversity revealed by metabarcoding - 2020\nThomaz Mansini Carrenho Fabrin, Bruno Henrique Mioto Stabile, Matheus Vieira da Silva, Susicley Jati, Liliana Rodrigues, Alessandra Valéria de Oliveira\nDivulgação da ciência desde a sala de aula - 2020\nYasmin Rodrigues de Souza, Carolina Pedrozo do Nascimento, Melissa Progênio da Silva, Gabriela Cassia Zanon Reinas, Edilaine Corrêa Leite, João Otávio Santos Silva, Bárbara Scorsim Arjona, Rejane Guimarães Melo, Bruno Henrique Mioto Stabile, Hugo Lima Kirsten, Renan Borges dos Reis, Matheus Henrique Ferreira Aleixo, Larissa Carrara Gonçalves, Fernanda Moreira Florêncio, Aline Favaro Mendes, Alessandra Barbosa da Silva, Alfonso Pineda, Luzia Cleide Rodrigues"
+  },
+  {
     "objectID": "charts.html",
     "href": "charts.html",
     "title": "Charts",
     "section": "",
-    "text": "I make original charts on demand for presentations/scientific articles/publications\nAccess my complete portfolio: Behance\nI work as a freelancer here: Upwork (Top Rated Freelancer)\nMy contact email address is bhmstabile@gmail.com"
+    "text": "I make original charts on demand for presentations/scientific articles/publications\nI work as a freelancer here: Upwork (Top Rated Freelancer)\nMy contact email address is bhmstabile@gmail.com\nWant to support my work? 🥧 Buy me a Pie chart"
   },
   {
     "objectID": "charts.html#collaborations",
     "href": "charts.html#collaborations",
     "title": "Charts",
     "section": "Collaborations",
-    "text": "Collaborations\nI wrote a text for basedosdados with a tutorial on how I made this chart of the vaccinated population using R! #vacinasim\nCheck it out here!\n\n\n\n\n\nI also published a chart together with Nexo Jornal about inflation and unemployment in Brazil, updating a very interesting chart!\nCheck it out here!"
+    "text": "Collaborations"
   },
   {
     "objectID": "charts.html#original-charts",
     "href": "charts.html#original-charts",
     "title": "Charts",
     "section": "Original charts",
-    "text": "Original charts\nAll the following charts were made entirely using ggplot2/R.You can click on each plot to see each detail."
+    "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\n\n\n\nPlay animation made for BigDataBowl ’24 Competition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\nPlay animation made for BigDataBowl ’24 Competition"
   },
   {
     "objectID": "intro-ggplot2.html",
