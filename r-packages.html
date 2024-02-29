@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href=".//figures/logo.png" rel="icon" type="image/png">
+<link href=".//figures/eye_website.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -112,6 +112,19 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 </script>
 
 
+<meta property="og:title" content="Bruno Mioto - R packages">
+<meta property="og:description" content="Hello, this is my personal website!">
+<meta property="og:image" content="https://brunomioto.com/figures/header.png">
+<meta property="og:site_name" content="Bruno Mioto">
+<meta property="og:image:height" content="227">
+<meta property="og:image:width" content="454">
+<meta name="twitter:title" content="Bruno Mioto">
+<meta name="twitter:description" content="Hello, this is my personal website!">
+<meta name="twitter:image" content="https://brunomioto.com/figures/header.png">
+<meta name="twitter:creator" content="@BrunoHMioto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="227">
+<meta name="twitter:image-width" content="454">
 </head>
 
 <body class="nav-fixed">
@@ -122,7 +135,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./figures/logo.png" alt="" class="navbar-logo">
+    <img src="./figures/eye_website.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Bruno Mioto</span>
@@ -142,10 +155,28 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
     <a class="nav-link" href="./charts.html"> 
 <span class="menu-text">Charts</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./r-packages.html" aria-current="page"> 
-<span class="menu-text">R packages</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">R</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-r">    
+        <li>
+    <a class="dropdown-item" href="./r-packages.html"><i class="bi bi-box-seam" role="img">
+</i> 
+ <span class="dropdown-text">R packages</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./scripts.html"><i class="bi bi-braces" role="img">
+</i> 
+ <span class="dropdown-text">Scripts</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./twitter-bots.html"><i class="bi bi-robot" role="img">
+</i> 
+ <span class="dropdown-text">Twitter bots</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./about-en.html"> 
 <span class="menu-text">About me</span></a>
@@ -167,6 +198,9 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#reservatoriosbr" id="toc-reservatoriosbr" class="nav-link active" data-scroll-target="#reservatoriosbr">reservatoriosBR</a></li>
+  <li><a href="#futebolplotr" id="toc-futebolplotr" class="nav-link" data-scroll-target="#futebolplotr">futebolplotR</a></li>
+  <li><a href="#worldclimdata" id="toc-worldclimdata" class="nav-link" data-scroll-target="#worldclimdata">WorldClimData</a></li>
+  <li><a href="#dnaplot" id="toc-dnaplot" class="nav-link" data-scroll-target="#dnaplot">DNAplot</a></li>
   <li><a href="#ggimprensa" id="toc-ggimprensa" class="nav-link" data-scroll-target="#ggimprensa">ggimprensa</a></li>
   <li><a href="#more-packages-soon" id="toc-more-packages-soon" class="nav-link" data-scroll-target="#more-packages-soon">More packages soon…</a></li>
   </ul>
@@ -199,14 +233,71 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p><img src="./figures/hex-reservatoriosBR.png" align="right" height="138"></p>
 <p><a href="https://brunomioto.github.io/reservatoriosBR/">reservatoriosBR</a> downloads data from <strong>Brazilian reservoirs</strong> from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!</p>
 <p>I am currently looking for volunteers to test the functions and data. If you can, <a href="mailto:bhmstabile@gmail.com">get in touch</a>!</p>
-<p>If you use it in any work, cite it or let me know! I wonder how this package can help!</p>
-<p>We can use this historical data to do analysis and graphing. The Affluence (m³/s), for example, measures the amount of water that arrives at the reservoirs.</p>
+<p>If you use it in any work, cite it or let me know!</p>
 <p>You can install it running:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)){</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"brunomioto/reservatoriosBR"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="futebolplotr" class="level2">
+<h2 class="anchored" data-anchor-id="futebolplotr">futebolplotR</h2>
+<p><img src="./figures/hex-futebolplotR.png" align="right" height="138"></p>
+<p>The goal of <a href="https://brunomioto.github.io/futebolplotR/"><strong>futebolplotR</strong></a> is to provide functions and geoms that help creating visualization of <strong>Brazilian soccer</strong> related analysis. It provides a ggplot2 geom that does the heavy lifting of plotting Brazilian soccer badges in high quality, with correct aspect ratio and possible transparency.</p>
+<p>The <strong>futebolplotR</strong> contains emblems of the teams that have participated in the Brasileirão Série A soccer league from 2003 to the present day. Other teams are also welcome!</p>
+<p>This package can be used with data from <a href="https://github.com/williamorim/brasileirao">brasileirao</a> R package.</p>
+<p>The code for this package was <strong>heavily</strong> based on <a href="https://mrcaseb.github.io/nbaplotR/">nbaplotR</a> with minor changes to support Brazilian soccer team badges.</p>
+<p>You can install it running:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)){</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"brunomioto/reservatoriosBR"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="worldclimdata" class="level2">
+<h2 class="anchored" data-anchor-id="worldclimdata">WorldClimData</h2>
+<!-- badges: start -->
+<p><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" class="img-fluid" alt="Lifecycle: experimental"></a> <!-- badges: end --></p>
+<p><a href="https://brunomioto.github.io/WorldClimData/">WorldClimData</a> presents a faster way to download <a href="https://www.worldclim.org/">WorldClim</a> data using <a href="https://docs.ropensci.org/piggyback/index.html">piggyback</a>.</p>
+<p>You can install it running:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"brunomioto/WorldClimData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dnaplot" class="level2">
+<h2 class="anchored" data-anchor-id="dnaplot">DNAplot</h2>
+<!-- badges: start -->
+<p><a href="https://github.com/brunomioto/DNAplot/actions/workflows/R-CMD-check.yaml"><img src="https://github.com/brunomioto/DNAplot/actions/workflows/R-CMD-check.yaml/badge.svg" class="img-fluid" alt="R-CMD-check"></a> <a href="https://app.codecov.io/gh/brunomioto/DNAplot?branch=master"><img src="https://codecov.io/gh/brunomioto/DNAplot/branch/master/graph/badge.svg" class="img-fluid" alt="Codecov test coverage"></a> <!-- badges: end --></p>
+<p>The <a href="https://brunomioto.github.io/DNAplot/">DNAplot</a> package provides a simple and customizable function to create aesthetically pleasing plots of DNA sequences. Each base is represented by a colored rectangle, allowing for easy visualization and analysis of sequence features.</p>
+<p>You can install it running:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)){</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"brunomioto/DNAplot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DNAplot)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sequence <span class="ot">&lt;-</span> <span class="st">"ACTGAAGTA"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dna</span>(sequence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Plotting 9 bases</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="r-packages_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="5400"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="ggimprensa" class="level2">
@@ -217,10 +308,10 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>The goal of this package is to help users to create more beautiful graphics in an easy and fast way.</p>
 <p>You can install it running:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)){</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"brunomioto/ggimprensa"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)){</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"brunomioto/ggimprensa"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
 
@@ -340,6 +431,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/brunomioto\.com\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -652,7 +763,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Website made with <a href="https://quarto.org/">Quarto</a> by Bruno Mioto, 2022</p>
+<p>Website made with Quarto by Bruno Mioto, 2023.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

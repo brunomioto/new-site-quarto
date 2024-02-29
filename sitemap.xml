@@ -1,23 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://brunomioto.github.io/new-site-quarto/about-en.html</loc>
-    <lastmod>2024-02-28T19:36:51.208Z</lastmod>
+    <loc>https://brunomioto.com/twitter-bots.html</loc>
+    <lastmod>2023-07-10T02:59:34.763Z</lastmod>
   </url>
   <url>
-    <loc>https://brunomioto.github.io/new-site-quarto/index.html</loc>
-    <lastmod>2024-02-28T19:36:51.480Z</lastmod>
+    <loc>https://brunomioto.com/r-packages.html</loc>
+    <lastmod>2024-01-19T11:58:14.150Z</lastmod>
   </url>
   <url>
-    <loc>https://brunomioto.github.io/new-site-quarto/about-pt.html</loc>
-    <lastmod>2024-02-28T19:36:51.208Z</lastmod>
+    <loc>https://brunomioto.com/posts/trees_mga/pt/index.html</loc>
+    <lastmod>2023-12-05T14:23:57.712Z</lastmod>
   </url>
   <url>
-    <loc>https://brunomioto.github.io/new-site-quarto/r-packages.html</loc>
-    <lastmod>2024-02-28T19:36:51.480Z</lastmod>
+    <loc>https://brunomioto.com/posts/intro_ggplot2/pt/index.html</loc>
+    <lastmod>2024-02-23T19:15:58.000Z</lastmod>
   </url>
   <url>
-    <loc>https://brunomioto.github.io/new-site-quarto/charts.html</loc>
-    <lastmod>2024-02-28T19:36:51.208Z</lastmod>
+    <loc>https://brunomioto.com/posts/en.html</loc>
+    <lastmod>2023-07-24T18:35:03.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/index.html</loc>
+    <lastmod>2023-10-13T13:46:14.272Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/about-pt.html</loc>
+    <lastmod>2024-01-31T00:47:15.890Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/about-en.html</loc>
+    <lastmod>2023-01-31T13:18:49.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/charts.html</loc>
+    <lastmod>2024-01-09T18:24:46.674Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/intro-ggplot2.html</loc>
+    <lastmod>2024-01-28T02:59:31.743Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/intro_ggplot2/en/index.html</loc>
+    <lastmod>2024-02-27T13:52:33.293Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/pt.html</loc>
+    <lastmod>2023-07-24T18:35:55.521Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/waterlines/en/index.html</loc>
+    <lastmod>2023-02-01T12:05:45.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/scripts.html</loc>
+    <lastmod>2023-07-24T16:55:31.425Z</lastmod>
   </url>
 </urlset>
