@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "/posts/en.html",
+    "items": [
+      "/posts/intro_ggplot2/en/index.html",
+      "/posts/waterlines/en/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/pt.html",
+    "items": [
+      "/posts/intro_ggplot2/pt/index.html",
+      "/posts/trees_mga/pt/index.html"
+    ]
+  }
+]

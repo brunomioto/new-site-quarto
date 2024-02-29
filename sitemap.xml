@@ -1,23 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://brunomioto.github.io/new-site-quarto/about-en.html</loc>
-    <lastmod>2024-02-29T02:27:06.051Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/new-site-quarto/index.html</loc>
-    <lastmod>2024-02-29T02:27:06.319Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/new-site-quarto/about-pt.html</loc>
-    <lastmod>2024-02-29T02:27:06.051Z</lastmod>
+    <loc>https://brunomioto.github.io/new-site-quarto/twitter-bots.html</loc>
+    <lastmod>2023-07-10T02:59:34.763Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.github.io/new-site-quarto/r-packages.html</loc>
-    <lastmod>2024-02-29T02:27:06.319Z</lastmod>
+    <lastmod>2024-02-29T02:15:54.033Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/posts/trees_mga/pt/index.html</loc>
+    <lastmod>2023-12-05T14:23:57.712Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/posts/intro_ggplot2/pt/index.html</loc>
+    <lastmod>2024-02-23T19:15:58.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/posts/en.html</loc>
+    <lastmod>2023-07-24T18:35:03.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/index.html</loc>
+    <lastmod>2024-02-29T02:15:53.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/about-pt.html</loc>
+    <lastmod>2024-02-29T02:15:53.158Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/about-en.html</loc>
+    <lastmod>2024-02-29T02:15:53.128Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.github.io/new-site-quarto/charts.html</loc>
-    <lastmod>2024-02-29T02:27:06.051Z</lastmod>
+    <lastmod>2024-02-29T02:15:53.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/intro-ggplot2.html</loc>
+    <lastmod>2024-01-28T02:59:31.743Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/posts/intro_ggplot2/en/index.html</loc>
+    <lastmod>2024-02-27T13:52:33.293Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/posts/pt.html</loc>
+    <lastmod>2023-07-24T18:35:55.521Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/posts/waterlines/en/index.html</loc>
+    <lastmod>2023-02-01T12:05:45.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.github.io/new-site-quarto/scripts.html</loc>
+    <lastmod>2023-07-24T16:55:31.425Z</lastmod>
   </url>
 </urlset>
