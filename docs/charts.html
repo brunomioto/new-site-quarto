@@ -205,7 +205,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="figures/charts/charts-vaccines.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-description="I
+<p><a href="figures/charts/charts-vaccines.png" class="lightbox" data-description="I
 
 wrote
 
@@ -255,12 +255,12 @@ out
 
 <a
 href=&quot;https://medium.com/basedosdados/analisando-dados-de-vacina%C3%A7%C3%A3o-contra-covid-19-com-a-bd-49fe3db8c7f4&quot;>here</a>
-!"><img src="figures/charts/charts-vaccines.png" class="img-fluid" width="350"></a></p>
+!" data-gallery="quarto-lightbox-gallery-1"><img src="figures/charts/charts-vaccines.png" class="img-fluid" width="350"></a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/charts/charts-nexo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-description="I
+<p><a href="figures/charts/charts-nexo.png" class="lightbox" data-description="I
 
 also
 
@@ -306,7 +306,7 @@ out
 
 <a
 href=&quot;https://www.nexojornal.com.br/grafico/2022/05/16/Infla%C3%A7%C3%A3o-e-desemprego-batem-recorde-e-passam-de-10-no-Brasil&quot;>here</a>
-!"><img src="figures/charts/charts-nexo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></a></p>
+!" data-gallery="quarto-lightbox-gallery-2"><img src="figures/charts/charts-nexo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></a></p>
 </figure>
 </div>
 </div>
@@ -325,7 +325,7 @@ href=&quot;https://www.nexojornal.com.br/grafico/2022/05/16/Infla%C3%A7%C3%A3o-e
 </style>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/charts/animation_kaggle_small_size.gif" class="lightbox" data-description="I
+<p><a href="figures/charts/animation_kaggle_small_size.gif" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-description="I
 
 made
 
@@ -358,7 +358,7 @@ notebook
 at
 
 <a
-href=&quot;https://www.kaggle.com/code/stevenpatton97/the-components-of-a-tackle-a-physics-driven-study&quot;>Kaggle</a>" data-gallery="my-gallery" data-glightbox="description: .lightbox-desc-3" title="Play animation made for BigDataBowl ’24 Competition"><img src="figures/charts/animation_kaggle_small_size.gif" class="img-fluid figure-img" alt="Play animation made for BigDataBowl ’24 Competition"></a></p>
+href=&quot;https://www.kaggle.com/code/stevenpatton97/the-components-of-a-tackle-a-physics-driven-study&quot;>Kaggle</a>" data-gallery="my-gallery" title="Play animation made for BigDataBowl ’24 Competition"><img src="figures/charts/animation_kaggle_small_size.gif" class="img-fluid figure-img" alt="Play animation made for BigDataBowl ’24 Competition"></a></p>
 <figcaption>Play animation made for BigDataBowl ’24 Competition</figcaption>
 </figure>
 </div>
@@ -578,8 +578,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           if (link.getAttribute("rel") === null) {
             link.setAttribute("rel", "noopener");
           }
-          // default icon
-          link.classList.add("external");
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -917,7 +915,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
