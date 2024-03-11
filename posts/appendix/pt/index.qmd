@@ -1,0 +1,65 @@
+---
+title: "Homens têm mais apendicite?"
+draft: true
+lightbox: true
+# description: "Iniciando na visualização de dados"
+author: "Bruno Mioto"
+date: "2024-03-04"
+image: cover.png
+categories: ["ggplot2","dataviz"]
+open-graph:
+  # description: "Iniciando na visualização de dados"
+  image: cover.png
+twitter-card:
+  # description: "Iniciando na visualização de dados"
+  image: cover.png
+  card-style: summary_large_image
+format:
+  html:
+    code-link: true
+execute:
+  freeze: true
+---
+
+![](cover.png)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+link::auto()
+```
+
+Mês passado tive uma apendicite. Uma inflamação que apareceu de uma hora para outra (literalmente) e adiou todos meus planos e compromissos. O que me fez ter bastante tempo livre por uma semana. Com todo esse tempo longe do computador (seja por enjôo ou dor), não pude deixar de pensar nos dados por trás dessa condição...
+
+Antes de tudo, quanto a apendicite me fez parar quieto? Eu já não ando muito normalmente, mas depois da cirurgia no dia 16...
+
+![](figures/calendar.png){width=85% fig-align="center"}
+
+Só fui me recuperar no dia 22, dia do retorno ao médico.
+
+Mas eu ainda tinha uma dúvida comigo. Todas as outras pessoas que conheço que tiveram apendicite (4) são homens e jovens. A prevalência é maior em pessoas com esse perfil?
+
+Para responder essa dúvida eu preciso de **todos** os registros de cirurgias dos hospitais! **Bom, mas nós temos o SUS!**
+
+Utilizando o pacote {microdatasus}, consegui obter todos os dados de apendicite registrados no Paraná em 2023 e responder minha dúvida!
+
+![](figures/plot.png)
+
+<!-- Quanta gente tem apendicite no Brasil todos os anos? -->
+Realmente, **jovens do sexo masculino têm mais apendicite!**
+
+Mas será que jovens não tem mais apendicite apenas porque existem mais jovens do que idosos na população?
+
+Para isso vamos utilizar os dados do [**Censo 2022**](https://censo2022.ibge.gov.br/panorama/) e calcular a proporção de casos de Apendicite de acordo com a população do Paraná.
+
+![](figures/plot_incidencia_pop.png)
+
+Agora podemos observar que a diferença não é tão grande entre as idades como visto anteriormente, mas o padrão de jovens do sexo masculino ainda se mantém!
+
+E quais as explicações de pessoas do sexo masculino terem mais apendicite? Isso vamos deixar para um outro post...
+
+
+
+
+
+
+

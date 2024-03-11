@@ -1,0 +1,146 @@
+projections
+proj-string: +proj=adams_hemi
+proj-string: +proj=adams_ws1
+proj-string: +proj=adams_ws2
+proj-string: +proj=aea +lat_1=29.5 +lat_2=42.5
+proj-string: +proj=aeqd
+proj-string: +proj=airy
+proj-string: +proj=aitoff
+proj-string: +proj=alsk
+proj-string: +proj=apian
+proj-string: +proj=august
+proj-string: +proj=bacon
+proj-string: +proj=bertin1953
+proj-string: +proj=bipc +ns
+proj-string: +proj=boggs
+proj-string: +proj=bonne +lat_1=10
+proj-string: +proj=cass
+proj-string: +proj=cc
+proj-string: +proj=ccon +lat_1=52 +lon_0=19
+proj-string: +proj=cea
+proj-string: +proj=chamb +lat_1=10 +lon_1=30 +lon_2=40
+proj-string: +proj=collg
+proj-string: +proj=comill
+proj-string: +proj=crast
+proj-string: +proj=denoy
+proj-string: +proj=eck1
+proj-string: +proj=eck2
+proj-string: +proj=eck3
+proj-string: +proj=eck4
+proj-string: +proj=eck5
+proj-string: +proj=eck6
+proj-string: +proj=eqc
+proj-string: +proj=eqdc +lat_1=55 +lat_2=60
+proj-string: +proj=eqearth
+proj-string: +proj=euler +lat_1=67 +lat_2=75
+proj-string: +proj=fahey
+proj-string: +proj=fouc
+proj-string: +proj=fouc_s
+proj-string: +proj=gall
+proj-string: +proj=geos +h=35785831.0 +lon_0=-60 +sweep=y
+proj-string: +proj=gins8
+proj-string: +proj=gn_sinu +m=2 +n=3
+proj-string: +proj=gnom +lat_0=90 +lon_0=-50 +R=6.4e6
+proj-string: +proj=goode
+proj-string: +proj=gs48
+proj-string: +proj=gs50
+proj-string: +proj=guyou
+proj-string: +proj=hammer
+proj-string: +proj=hatano
+proj-string: +proj=igh
+proj-string: +proj=igh_o +lon_0=-160
+proj-string: +proj=imoll
+proj-string: +proj=imoll_o +lon_0=-160
+proj-string: +proj=imw_p +lat_1=30 +lat_2=-40
+proj-string: +proj=isea
+proj-string: +proj=kav5
+proj-string: +proj=kav7
+proj-string: +proj=krovak
+proj-string: +proj=labrd +lon_0=40 +lat_0=-10
+proj-string: +proj=laea
+proj-string: +proj=lagrng
+proj-string: +proj=larr
+proj-string: +proj=lask
+proj-string: +proj=lcc +lon_0=-90 +lat_1=33 +lat_2=45
+proj-string: +proj=lcca +lat_0=35
+proj-string: +proj=leac
+proj-string: +proj=lee_os
+proj-string: +proj=loxim
+proj-string: +proj=lsat +lat_1=-60 +lat_2=60 +lsat=2 +path=2
+proj-string: +proj=mbt_s
+proj-string: +proj=mbt_fps
+proj-string: +proj=mbtfpp
+proj-string: +proj=mbtfpq
+proj-string: +proj=mbtfps
+proj-string: +proj=merc
+proj-string: +proj=mil_os
+proj-string: +proj=mill
+proj-string: +proj=misrsom +path=1
+proj-string: +proj=moll
+proj-string: +proj=murd1 +lat_1=30 +lat_2=50
+proj-string: +proj=murd2 +lat_1=30 +lat_2=50
+proj-string: +proj=murd3 +lat_1=30 +lat_2=50
+proj-string: +proj=natearth
+proj-string: +proj=natearth2
+proj-string: +proj=nell
+proj-string: +proj=nell_h
+proj-string: +proj=nicol
+proj-string: +proj=nsper +h=3000000 +lat_0=-20 +lon_0=145
+proj-string: +proj=nzmg
+proj-string: +proj=ob_tran +o_proj=moll +o_lon_p=40 +o_lat_p=50 +lon_0=60
+proj-string: +proj=ocea
+proj-string: +proj=oea +m=1 +n=2
+proj-string: +proj=omerc +lat_1=45 +lat_2=55
+proj-string: +proj=ortel
+proj-string: +proj=ortho
+proj-string: +proj=patterson
+proj-string: +proj=pconic +lat_1=25 +lat_2=75
+proj-string: +proj=peirce_q +lon_0=25 +shape=square
+proj-string: +proj=poly
+proj-string: +proj=putp1
+proj-string: +proj=putp2
+proj-string: +proj=putp3
+proj-string: +proj=putp3p
+proj-string: +proj=putp4p
+proj-string: +proj=putp5
+proj-string: +proj=putp5p
+proj-string: +proj=putp6
+proj-string: +proj=putp6p
+proj-string: +proj=qua_aut
+proj-string: +proj=robin
+proj-string: +proj=rouss
+proj-string: +proj=rpoly
+proj-string: +proj=sinu
+proj-string: +proj=som +inc_angle=98.303820000243860022 +ps_rev=0.06866666666666667 +asc_lon=64.412896137498847793
+proj-string: +proj=somerc
+proj-string: +proj=stere +lat_0=90 +lat_ts=75
+proj-string: +proj=sterea +lat_0=90
+proj-string: +proj=gstmerc
+proj-string: +proj=tcc
+proj-string: +proj=tcea
+proj-string: +proj=times
+proj-string: +proj=tissot +lat_1=60 +lat_2=65
+proj-string: +proj=tmerc
+proj-string: +proj=tobmerc
+proj-string: +proj=tpeqd +lat_1=60 +lat_2=65
+proj-string: +proj=tpers +h=5500000 +lat_0=40
+proj-string: +proj=ups
+proj-string: +proj=urm5 +n=0.9 +alpha=2 +q=4
+proj-string: +proj=urmfps +n=0.5
+UTM zones.
+proj-string: +proj=vandg
+proj-string: +proj=vandg2
+proj-string: +proj=vandg3
+proj-string: +proj=vandg4
+proj-string: +proj=vitk1 +lat_1=45 +lat_2=55
+proj-string: +proj=wag1
+proj-string: +proj=wag2
+proj-string: +proj=wag3
+proj-string: +proj=wag4
+proj-string: +proj=wag5
+proj-string: +proj=wag6
+proj-string: +proj=wag7
+proj-string: +proj=weren
+proj-string: +proj=wink1
+proj-string: +proj=wink2
+proj-string: +proj=wintri

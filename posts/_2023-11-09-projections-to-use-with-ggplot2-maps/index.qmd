@@ -1,0 +1,47 @@
+---
+title: "Projections to use with ggplot2 maps"
+description: |
+  A list with all supported projections and its code
+author: Bruno Mioto
+date: 2023-11-09
+draft: true
+---
+
+```{r}
+library(rnaturalearth)
+library(ggplot2)
+library(dplyr)
+
+world <- ne_countries(returnclass = "sf")
+world2 <- world %>% 
+      select(geometry)
+
+for (i in tabela$projections) {
+  tryCatch({
+  world2 %>% 
+  ggplot()+
+  geom_sf(fill = "#111111",
+          color = "white",
+          linewidth = 0.1)+
+  coord_sf(crs = i)+
+  theme_classic()+
+  theme(
+    panel.grid.major = element_line(),
+    axis.line = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  )
+
+ggsave(paste0("figures/",i,".png"), width = 7, height = 5, dpi = 600)
+  print(i)
+  }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
+}
+
+```
+
+
+```{r}
+coord_sf("+proj=aea")
+```
+
+

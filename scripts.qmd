@@ -1,0 +1,1535 @@
+---
+title: "Scripts"
+filters:
+   - lightbox
+format: 
+  html:
+    code-fold: true
+    code-summary: "**Code - Click to view**"
+    back-to-top-navigation: true
+description: "Scripts for my charts!"
+image: figures/header.png
+open-graph:
+  description: "Scripts for my charts!"
+  image: figures/header.png
+twitter-card:
+  description: "Scripts for my charts!"
+  creator: "@BrunoHMioto"
+  card-style: summary_large_image
+  image: figures/header.png
+---
+
+This is some of the codes I wrote to create my charts. Each chart has its own code right below it.
+
+You can navigate through the site using the sidebar on desktop.
+
+If some code is useful to you, please consider [donating](https://www.buymeacoffee.com/brunomioto).
+
+## Random charts
+
+### *Boa constrictor* 🐍
+
+![](figures/charts/elephant.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(dplyr)
+library(ggplot2)
+library(geomtextpath)
+
+# data --------------------------------------------------------------------
+
+data <- data.frame(a = c(2.8,2.8,3.8,2.9,2.8,3,4.5,5.6,5.7,4.4,5.8))
+
+quote <- "'My drawing was not a picture of a hat. It was a picture of a <i>Boa constrictor</i> digesting an elephant.'"
+
+scatter = data.frame(
+  x = runif(10000,-5,18),
+  y = runif(10000,-1,1)
+)
+
+# plot --------------------------------------------------------------------
+
+data %>% 
+  ggplot(aes(x = a))+
+  geom_density(adjust = 1,
+               fill = "#784707",
+               color = "#462e0a",
+               size = 3)+
+  geom_textdensity(size = 5, fontface = 2, spacing = 30,
+                   vjust = -0.35, hjust = 0.2,
+                   label = quote,
+                   color = "#462e0a",
+                   rich = TRUE)+
+  geom_segment(x = -2.5, xend = 12, y = 0, yend = 0,
+               size = 3, color = "#462e0a",lineend = "round")+
+  geom_point(x = 11.95, y = 0.002, size = 0.5)+
+  annotate("text", x = 12, y = 0, label = "- The Little Prince by\nAntoine de Saint-Exupéry\nBruno Mioto - @BrunoHMioto",
+           hjust = 1, vjust = 1.2, fontface = "bold",
+           color = "#462e0a")+
+  scale_y_continuous(expand = c(0,0))+
+  scale_x_continuous(limits = c(-2.5,12))+
+  theme_void()+
+  theme(
+    panel.background = element_rect(fill = "#f7f8f8", color = NA)
+  )+
+  coord_cartesian(ylim = c(-.4,0.8), xlim = c(-4,13))
+
+
+ggsave("elephant.png", width = 10, height = 6)
+```
+
+### Alcohol consumption 🍺
+
+![](figures/charts/drink-owid.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(elementalist)
+library(janitor)
+library(ggrepel)
+library(rcartocolor)
+library(ggforce)
+
+# data --------------------------------------------------------------------
+
+data <- read_csv("data/alcohol-consumption-by-15-19-year-old-males-vs-females.csv") %>% 
+  clean_names()
+
+countries <- read_csv("data/continents2.csv") %>%
+  clean_names() %>% 
+  select(alpha_3, region)
+
+data2 <- data %>% 
+  rename(male = 4,
+         female = 5) %>% 
+  filter(year == 2010,
+         !is.na(male),
+         !is.na(female)) %>% 
+  left_join(countries, by = c("code" = "alpha_3"))
+
+data_points <- tibble(
+  x = c(15,38,38),
+  y = c(5,5,28)
+)
+
+# plot --------------------------------------------------------------------
+
+data2 %>% 
+  ggplot(aes(x = female, y = male, 
+             color = region))+
+  geom_abline(color = "grey")+
+  geom_text_repel(aes(label = ifelse(entity == "Brazil",
+                                     entity,
+                                     "")),
+                  fontface = "bold",
+                  max.overlaps = 40,
+                  min.segment.length = 0,box.padding = 0.6,
+                  show.legend = FALSE)+
+  geom_text_repel(aes(label = ifelse(male > 25| female>10,
+                                     entity,
+                                     "")),
+                  fontface = "bold",box.padding = 0.3,
+                  max.overlaps = 20,
+                  show.legend = FALSE)+
+  geom_point(alpha = 0.7, 
+             aes(
+    size = population_historical_estimates))+
+  annotate("text",
+           x = 30, y = 30, label = paste0("\u2191 Men drink more\n\u2193 Women drink more"),
+           angle = 33,fontface = "bold", color = "grey")+
+  ggforce::geom_mark_hull(data = data_points, aes(x = x, y = y), color = "grey20", fill = "grey20",
+                          linetype = "dashed",alpha = 0.1)+
+  annotate("text",
+          x = 31.5, y = 11.5, label = "A better\nworld?",
+          lineheight = 0.8,
+          fontface = "bold",
+          family = "Open Sans",
+          color = "grey40")+
+  guides(size = "none")+
+  #rcartocolor::scale_color_carto_d(palette = "Bold")+
+  scale_color_manual(
+    values = c("#7f3c8d",
+               "#11a579",
+               "#3969ac",
+               "#e68310",
+               "#e73f74")
+  )+
+  scale_x_continuous(labels = scales::label_number(scale = 1,suffix = "L"),
+                     expand = expansion(mult = c(0,0.05)))+
+  scale_y_continuous(labels = scales::label_number(scale = 1,suffix = "L"),
+                     expand = expansion(mult = c(0,0.05)))+
+  labs(
+    title = "Average alcohol consumption with 15-19 year old, 2010",
+    subtitle = "Measured in litres of pure alcohol per year",
+    x = "Avg alcohol consumption per capita (Females)",
+    y = "Avg alcohol consumption per capita (Males)",
+    color = "Continent",
+    caption = "Bruno Mioto @BrunoHMioto - Data: WHO, Global Health Observatory (GHO)"
+  )+
+  theme_classic()+
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(face = "bold"),
+    legend.margin = margin(0,0,0,0,"pt"),
+    legend.text = element_text(margin = margin(0,5,0,0, unit = 'pt')),
+    legend.title = element_text(face = "bold"),
+    axis.title = element_text(face = "bold"),
+    axis.text = element_text(face = "bold", angle = c(1,3,-3,-5,6)),
+    legend.position = "top",
+    panel.grid.major = element_line_wiggle(2.5),
+    panel.grid.minor = element_line_wiggle(2.5, color = "#f1f1f1"),
+    axis.line = element_line_wiggle(3),
+    text = element_text(family = "Open Sans")
+  )+
+  coord_cartesian(xlim = c(0,40),
+                  ylim = c(0,40))
+
+
+ggsave("test12_5.png", width = 6, height = 5)
+```
+
+### Pfizer vaccine 💉
+
+![](figures/charts/pfizer_trial.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(dplyr)
+library(ggplot2)
+library(ggrepel)
+library(extrafont)
+library(readr)
+
+# data --------------------------------------------------------------------
+
+data <- read_csv("https://raw.githubusercontent.com/brunomioto/dataviz/main/pfizer_vaccine/pfizer_vaccine_trial.csv")
+
+# plot --------------------------------------------------------------------
+
+data %>% 
+  ggplot(aes(x = days_after_dose_1))+
+  #dif
+  geom_segment(aes(x = 110, xend = 110, y = 0.29413854, yend = 2.24653641),
+               color = "#bdbdbd",
+               size = 2)+
+  geom_label(aes(x = 110, y = 1.4, label = "7.6x"),
+             color = "#bdbdbd",
+             fill = "#fcfcfc",
+             size = 8,
+             label.padding = unit(10, "pt"),
+             label.size = NA,
+             hjust = 0.43)+
+  #placebo
+  geom_step(aes(y = placebo),
+            color = "#f76833",
+            size = 1)+
+  geom_point(data = data %>%  
+               distinct(placebo, .keep_all = TRUE),
+             aes(y = placebo),
+             color = "#f76833",
+             shape = 21,
+             fill = NA)+
+  geom_text_repel(aes(label = ifelse(days_after_dose_1 == 73, "Placebo group",""),
+                      y = placebo),
+                  nudge_x = -5,
+                  box.padding = 0.5,
+                  nudge_y = 0.3,
+                  segment.curvature = 0.1,
+                  segment.ncp = 3,
+                  segment.angle = 20,
+                  fontface = "bold",
+                  color = "#f76833",
+                  size = 4)+
+  #vaccine
+  geom_step(aes(y = vaccine),
+            color = "#196299",
+            size = 1)+
+  geom_point(data = data %>%  
+               distinct(vaccine, .keep_all = TRUE),
+             aes(y = vaccine),
+             color = "#196299",
+             shape = 21,
+             fill = NA)+
+  geom_text_repel(aes(label = ifelse(days_after_dose_1 == 96, paste("Vaccinated group\nBNT162b2 (30\u03bcg)"),""),
+                      y = vaccine),
+                  nudge_x = -5,
+                  box.padding = 0.5,
+                  nudge_y = 0.3,
+                  segment.curvature = 0.1,
+                  segment.ncp = 3,
+                  segment.angle = 20,
+                  fontface = "bold",
+                  color = "#196299",
+                  size = 4)+
+  scale_y_continuous(breaks = seq(0,2.4,0.4), expand = expansion(mult = c(0,0.05)))+
+  scale_x_continuous(breaks = seq(0,119,7), expand = expansion(mult = c(0.01,0.02)))+
+  coord_cartesian(ylim = c(0,2.4))+
+  labs(
+    title = "COVID-19 incidence rates in Pfizer/BioNTech's vaccine trial",
+    x = "Days after first dose",
+    y = "Cumulative incidence (%)",
+    caption = "Chart: Bruno Mioto @BrunoHMioto - Source: New England Journal of Medicine"
+  )+
+  theme_minimal()+
+  theme(
+    plot.background = element_rect(fill = "#fcfcfc", color = NA),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line.x = element_line(),
+    axis.ticks.x = element_line(),
+    axis.title = element_text(face = "bold"),
+    axis.text = element_text(face = "bold", size = 10),
+    text = element_text(family = "Open Sans"),
+    plot.title.position = "plot",
+    plot.title = element_text(face = "bold", size = 16),
+    plot.margin = margin(10,10,10,10, unit = "pt")
+  )
+
+ggsave("pfizer_trial.png", width = 10, height = 7)
+```
+
+### Spider 🕷️
+
+![](figures/charts/spider.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(ggtext)
+library(ggthemes)
+library(nflplotR) #we can use ggpath now
+
+# data --------------------------------------------------------------------
+
+data <- read_csv("species_export_20220408.csv")
+
+# plot --------------------------------------------------------------------
+
+#point
+plot <- data %>% 
+  group_by(year) %>% 
+  count() %>% 
+  ungroup() %>% 
+  mutate(cum_sum = cumsum(n)) %>% 
+  ggplot(aes(x = year, y = cum_sum))+
+  geom_line(color = "grey50")+
+  geom_point(
+    aes(color = ifelse(year == 2022, "#735133", "grey50"))
+  )+
+  annotate(
+    geom = "curve", x = 1950, y = 45000, xend = 2022, yend = 50000, 
+    curvature = -.2,
+    color = "#735133"
+  ) +
+  geom_richtext(x = 1950, 
+                y = 40000, 
+                size = 4.5,
+                color = "#735133",
+                label.color = NA,
+                fill = "#f0f0f0",
+                label = "<i>Guriurius minuano</i><br>Marta, Bustamante, Ruiz &<br>Rodrigues, 2022"
+  )+
+  annotate(
+    nflplotR::GeomFromPath,
+    x = 1787, y = 40000,
+    path = "./spider_picture.png",
+    width = 0.2
+  ) +
+  scale_color_identity()+
+  scale_y_continuous(expand = expansion(mult = c(0.02,0.02)),
+                     labels = scales::unit_format(big.mark = ",", unit = ""))+
+  scale_x_continuous(breaks = c(seq(1750, 2022, 25),2022))+
+  labs(
+    title = "The world of spiders: The 50,000th species described!",
+    x = "Year",
+    y = "Number of species",
+    caption = "Data: World Spider Catalog\nFigure:  Marta, Bustamante, Ruiz & Rodrigues (2022)"
+  )+
+  theme_fivethirtyeight() +
+  theme(
+    panel.grid.minor.y = element_blank(),
+    axis.title = element_text(face = "bold"),
+    plot.title.position = "plot",
+    axis.title.x = element_text(margin = margin(5,0,-5,0)),
+    plot.caption = element_text(margin = margin(0,0,0,0))
+  )+
+  coord_cartesian(ylim = c(0,NA))
+
+```
+
+### Star Wars 🌌
+
+![](figures/charts/starwars.png){.lightbox group="my-gallery2"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(ggfx)
+
+# data --------------------------------------------------------------------
+
+data <- dplyr::starwars
+
+list_char <- c("Luke Skywalker",
+               "Darth Vader",
+               "Obi-Wan Kenobi",
+               "Yoda",
+               "Mace Windu",
+               "Leia Organa")
+
+data2 <- data %>%
+  mutate(height = height/100)
+
+# plot --------------------------------------------------------------------
+
+plot <- data2 %>% 
+  ggplot(aes(x = height, y = height))+
+    #Yoda
+    with_outer_glow(
+      geom_segment(data=filter(data2,name == "Yoda"),
+                   aes(x = 0, xend = height, yend = name, y = name),
+                   color = "#ffffff",
+                   size = 3,
+                   lineend = "round"),
+      colour = "#02fe2c",
+      sigma = 20,
+      expand = 10
+    )+ 
+    #Leia
+    with_outer_glow(
+      geom_segment(data=filter(data2,name == "Leia Organa"),
+                   aes(x = 0, xend = height, yend = name, y = name),
+                   color = "#ffffff",
+                   size = 3,
+                   lineend = "round"),
+      colour = "#006be4",
+      sigma = 20,
+      expand = 10
+    )+ 
+    #luke
+    with_outer_glow(
+      geom_segment(data=filter(data2,name == "Luke Skywalker"),
+                   aes(x = 0, xend = height, yend = name, y = name),
+                   color = "#ffffff",
+                   size = 3,
+                   lineend = "round"),
+      colour = "#02fe2c",
+      sigma = 20,
+      expand = 10
+    )+
+    #Obi-Wan Kenobi
+    with_outer_glow(
+      geom_segment(data=filter(data2,name == "Obi-Wan Kenobi"),
+                   aes(x = 0, xend = height, yend = name, y = name),
+                   color = "#ffffff",
+                   size = 3,
+                   lineend = "round"),
+      colour = "#006be4",
+      sigma = 20,
+      expand = 10
+    )+ 
+    #Mace Windu
+    with_outer_glow(
+      geom_segment(data=filter(data2,name == "Mace Windu"),
+                   aes(x = 0, xend = height, yend = name, y = name),
+                   color = "#ffffff",
+                   size = 3,
+                   lineend = "round"),
+      colour = "#d413ef",
+      sigma = 20
+    )+
+    #darth vader
+    with_outer_glow(
+      geom_segment(data=filter(data2,name == "Darth Vader"),
+                   aes(x = 0, xend = height, yend = name, y = name),
+                   color = "#ffffff",
+                   size = 3,
+                   lineend = "round"),
+      colour = "#e00301",
+      sigma = 30,
+      expand = 10
+    )+
+    labs(
+      title = "Height of some Star Wars characters",
+      x = "Height, m",
+      caption = "Bruno Mioto - @BrunoHMioto"
+    )+
+    scale_x_continuous(expand = expansion(mult = c(0,0.05)))+
+    scale_y_discrete(limits = c("Yoda",
+                                "Leia Organa",
+                                "Luke Skywalker",
+                                "Obi-Wan Kenobi",
+                                "Mace Windu",
+                                "Darth Vader"))+
+    theme_minimal()+
+    theme(
+      plot.background = element_rect(fill = "black"),
+      panel.background = element_rect(fill = "black"),
+      panel.grid.major.y = element_line(linetype = "dashed", color = "grey"),
+      panel.grid.minor.y = element_blank(),
+      panel.grid.major.x = element_blank(),
+      plot.title.position = "plot",
+      plot.title = element_text(size = rel(1.5)),
+      text = element_text(color = "white", face = "bold"),
+      axis.text = element_text(color = "white"),
+      axis.title.x = element_blank(),
+      axis.text.x = element_text(angle = 90,vjust = 0.5, hjust = 1)
+    )+
+  coord_flip()
+
+
+ggsave(plot = plot, "starwars_height_flip.png", height = 10, width = 5)
+```
+
+### Copacabana 🏖️
+
+![](figures/charts/copacabana.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(tidyverse)
+library(ggforce)
+library(patchwork)
+
+# data --------------------------------------------------------------------
+
+col_1 <- c("a", "b", "c", "d")
+col_2 <- c("e", "f", "g", "h")
+col_3 <- c("i", "j", "k", "l")
+value <- c(0, 5, 5, 5)
+
+df <- data.frame(col_1, col_2, col_3, value)
+
+df <- gather_set_data(df, 1:3)
+
+df$y <- factor(df$y, levels = c("a", "b", "c", "d",
+                                "f", "g", "h", "e",
+                                "i", "j", "k", "l"
+                                ))
+
+# plot -------------------------------------------------
+
+a <- df %>%
+  ggplot(aes(x, id = id, split = y, value = value)) +
+  geom_parallel_sets(
+    fill = "black",
+    axis.width = 0,
+    sep = 0.5,
+    strength = 0.7
+  ) +
+  geom_parallel_sets_axes(axis.width = 0) +
+  scale_y_continuous(expand = c(0, 0)) +
+  scale_x_discrete(expand = c(0, 0)) +
+  theme_void()
+
+# copacabana ------------------------------------------
+
+(a|a|a|a|a)/(a|a|a|a|a)
+
+ggsave("copacabana3.png", width = 6, height = 6)
+```
+
+### Eye 👁️
+
+![](figures/charts/eye.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(dplyr)
+library(ggplot2)
+library(ggforce)
+library(ggnewscale)
+
+# data --------------------------------------------------------------------
+
+data <- data.frame(x = runif(1000),
+                   y = runif(1000))
+
+circle <- data.frame(
+  x0 = 0.1,
+  y0 = 0.9,
+  r = 0.06
+)
+
+# plot --------------------------------------------------------------------
+
+eye <- ggplot(data)+
+  #fundo
+  geom_tile(aes(x = 0.5, y=1, fill = y)) +
+  scale_fill_gradient2(low = '#ffffff', mid = "#f3f1f4", high = '#e8e4e9',
+                       midpoint = 0.6) +
+  ggnewscale::new_scale_fill()+
+  #iris fundo
+  geom_tile(aes(x = 0.5, y=0.5, fill = y)) +
+  scale_fill_gradient2(low = '#2b5a74', mid = '#08303c', high = '#08303c',
+                       midpoint = 0.8) +
+  #iris linha
+  geom_line(aes(x,y,color = y))+
+  scale_color_gradient(low = "#412808", high = "#ad8d6d30")+
+  #contorno
+  geom_hline(yintercept = 1.5, size = 1.2)+
+  ggnewscale::new_scale_fill()+
+  #pupila
+  geom_rect(xmin = 0, xmax = 1, ymin = 0, ymax = 0.4,
+            fill = "#000000")+
+  #reflexo
+  geom_circle(data = circle, aes(x0 = x0, y0 = y0, r = r, fill = r),
+              fill = "#ffffff")+
+  scale_y_continuous(limits = c(0,1.5))+
+  coord_polar()+
+  theme_void()+
+  theme(
+    legend.position = "none",
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+
+# save --------------------------------------------------------------------
+
+ggsave(plot = eye, "eye.png", width = 6, height = 6)
+```
+
+### US Nuclear Tests 💣️
+
+![](figures/charts/us_nuclear_tests.png){.lightbox group="my-gallery"}
+
+```{r us_nuclear_tests}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(dplyr)
+library(ggplot2)
+library(ggfx)
+library(ggpath)
+
+# data --------------------------------------------------------------------
+
+nuclear_tests <- read.csv("https://raw.githubusercontent.com/owid/notebooks/main/BastianHerre/nuclear_weapons/Arms%20Control%20Association%20(2020)%20nuclear%20weapons%20tests/nuclear_weapons_tests_states.csv")
+
+usa_tests <- nuclear_tests %>% 
+  filter(country_name == "United States") %>% 
+  group_by(year) %>% 
+  count(wt = nuclear_weapons_tests)
+
+# plot --------------------------------------------------------------------
+
+usa_tests %>% 
+  ggplot(aes(x = year, y = n))+
+  #1st bomb
+  annotate(
+    "curve",
+    x = 1944.5, xend = 1944,
+    y = 2, yend = 28,
+    color = "white",
+    curvature = -0.3
+  )+
+  annotate(
+    "text",
+    x = 1948,
+    y = 32,
+    label = "'Trinity' was the first\nUS bomb to be tested",
+    family = "Open Sans",
+    lineheight = 0.85,
+    color = "white"
+  )+
+  #moratorium 
+  annotate(
+    "rect",
+    xmin = 1958.5, xmax = 1960.5,
+    ymin = -Inf, ymax = 102,
+    fill = "#cbcbc2",
+    alpha = 0.3
+  )+
+  annotate(
+    "label",
+    x = 1951,
+    y = 87.5,
+    label = "URSS, UK, and the US\nagreed to a moratorium\non nuclear weapon tests in 1958",
+    size = 3,
+    family = "Open Sans",
+    lineheight = 0.87,
+    color = "white",
+    fill = "#171515",
+    label.size = NA,
+  )+
+  annotate(
+    "curve",
+    x = 1955, xend = 1958.3,
+    y = 92, yend = 95,
+    color = "white",
+    curvature = -0.2,
+    linewidth = 0.3
+  )+
+  #record
+  annotate(
+    "label",
+    x = 1975,
+    y = 93,
+    label = "After the moratorium was broken in August 1961,\nthe US tested 96 nuclear bombs in 1962",
+    size = 3.5,
+    family = "Open Sans",
+    lineheight = 0.87,
+    color = "white",
+    fill = "#171515",
+    label.size = NA,
+  )+
+  #last test
+  annotate(
+    "label",
+    x = 1988,
+    y = 31.25,
+    label = "Following intense public pressure,\nthe US adheres to a testing\nmoratorium in 1992",
+    size = 3,
+    family = "Open Sans",
+    lineheight = 0.87,
+    color = "white",
+    fill = "#171515",
+    label.size = NA,
+  )+
+  annotate(
+    "curve",
+    x = 1992, xend = 1993,
+    y = 7, yend = 28,
+    color = "white",
+    curvature = 0.2,
+    linewidth = 0.3
+  )+
+  #tests label
+  annotate(
+    "label",
+    x = 1942,
+    y = 100,
+    label = "tests",
+    hjust = 0,
+    vjust = 0.45,
+    label.size = NA,
+    fill = "#171515",
+    color = "white",
+    family = "Open Sans",
+    fontface = "bold"
+  )+
+  geom_from_path(
+    path = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Nuclear_symbol.svg",
+    x = 1994,
+    y = 107,
+    width = 0.07,
+    stat = "unique"
+  )+
+  with_outer_glow(
+    geom_col(fill = "#fefb8c"),
+    colour = "#cb3200",
+    sigma = 60
+  )+
+  scale_y_continuous(
+    expand = expansion(mult = c(0,0.05)),
+  )+
+  labs(
+    title = "Number of nuclear weapons tests by the United States",
+    caption = "Bruno Mioto @BrunoHMioto - data: Arms Control Association (2020)"
+  )+
+  theme_grey(base_family = "Open Sans")+
+  theme(
+    plot.margin = margin(10,10,10,10,"pt"),
+    plot.title.position = "plot",
+    plot.title = element_text(face = "bold", 
+                              size = 16,
+                              color = "white"),
+    plot.caption = element_text(color = "white"),
+    plot.background = element_rect(fill = "#171515", color = NA),
+    panel.background = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_line(color = "#cbcbc2"),
+    panel.grid.minor.y = element_line(color = "#cbcbc2",
+                                      linetype = "dashed"),
+    axis.ticks = element_blank(),
+    axis.text = element_text(color = "white",
+                             face = "bold"),
+    axis.text.y = element_text(size = 10),
+    axis.title = element_blank()
+  )+
+  coord_cartesian(xlim = c(1945, 1993),
+                  ylim = c(0,100),
+                  clip = "off")
+
+# save --------------------------------------------------------------------
+
+ggsave("figures/us_nuclear_tests.png", width = 8, height = 6, dpi = 600)
+
+
+```
+
+## NFL Charts 🏈
+
+### Time to throw ⏱️
+
+![](figures/charts/ttt-nfl.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(nflreadr)
+library(dplyr)
+library(ggplot2)
+library(nflplotR)
+library(ggh4x)
+library(ggbeeswarm)
+
+# data --------------------------------------------------------------------
+
+tt <- nflreadr::load_nextgen_stats(stat_type = "passing",seasons = 2022) %>%
+  mutate(team_abbr = ifelse(team_abbr == "LAR", "LA", team_abbr))
+
+
+tt_qbs <- tt %>%
+  filter(week == 0) %>%
+  group_by(team_abbr) %>%
+  arrange(desc(attempts)) %>%
+  slice_head() %>%
+  select(player_display_name, team_abbr, player_gsis_id) %>%
+  ungroup()
+
+tt_top <- tt %>%
+  filter(player_gsis_id %in% tt_qbs$player_gsis_id,
+         (player_display_name != "Baker Mayfield" | team_abbr != "CAR")
+         )
+
+tt_avg <- tt %>%
+  summarise(avg = mean(avg_time_to_throw))
+
+tt_all <- nflreadr::load_nextgen_stats(stat_type = "passing", seasons = 2016:2022) %>%
+  mutate(team_abbr = ifelse(team_abbr == "LAR", "LA", team_abbr))
+
+tt_all2 <- tt_all %>%
+  filter(player_gsis_id %in% tt_top$player_gsis_id,
+         week != 0) %>%
+  group_by(player_gsis_id) %>%
+  arrange(desc(season)) %>%
+  mutate(team_abbr = ifelse(season == 2022, team_abbr, NA)) %>%
+  tidyr::fill(team_abbr) %>%
+  filter(season != 2022) %>%
+  ungroup() %>%
+  add_row(team_abbr = "PIT")
+
+
+tt_top$team_abbr2 <- nfl_team_factor(tt_top$team_abbr)
+tt_all2$team_abbr2 <- nfl_team_factor(tt_all2$team_abbr)
+
+# tt_top %>%
+#   filter(week == 0) %>%
+#   select(player_display_name, team_abbr) %>%
+#   clipr::write_clip()
+
+
+label_names <- c(
+  "MIA" = "Tua Tagovailoa",
+  "LV" = "Derek Carr",
+  "NYJ" = "Zach Wilson",
+  "NYG" = "Daniel Jones",
+  "BUF" = "Josh Allen",
+  "DAL" = "Dak Prescott",
+  "SF" = "Jimmy Garoppolo",
+  "PIT" = "Kenny Pickett",
+  "TEN" = "Ryan Tannehill",
+  "PHI" = "Jalen Hurts",
+  "ARI" = "Kyler Murray",
+  "CAR" = 'Sam Darnold',
+  "HOU" = "Davis Mills",
+  "NE" = "Mac Jones",
+  "LAC" = "Justin Herbert",
+  "BAL" = "Lamar Jackson",
+  "IND" = "Matt Ryan",
+  "MIN" = "Kirk Cousins",
+  "JAX" = "Trevor Lawrence",
+  "SEA" = "Geno Smith",
+  "WAS" = "Carson Wentz",
+  "LA" = "Baker Mayfield",
+  "KC" = "Patrick Mahomes",
+  "GB" = "Aaron Rodgers",
+  "TB" = "Tom Brady",
+  "CLE" = "Jacoby Brissett",
+  "NO" = "Andy Dalton",
+  "ATL" = "Marcus Mariota",
+  "CHI" = "Justin Fields",
+  "DEN" = "Russell Wilson",
+  "DET" = "Jared Goff",
+  "CIN" = "Joe Burrow"
+
+)
+
+# plot --------------------------------------------------------------------
+
+g <- tt_top %>%
+  ggplot(aes(x = avg_time_to_throw, y = player_display_name))+
+  nflplotR::geom_nfl_logos(aes(team_abbr = team_abbr2), width = 0.4,
+                           stat = "unique",
+                           alpha = 0.2,
+                           x = 3.7, y = 1)+
+  geom_beeswarm(data = tt_all2 %>% filter(week != 0),
+                size = 2.8,
+                alpha = 0.2,
+                shape = 16,
+                cex= 4,
+                priority='random',
+                color = "grey50")+
+  geom_vline(data = tt_avg,
+             aes(xintercept = avg),
+             color = "#0570b0",
+             linetype = "dashed")+
+  geom_vline(data = . %>% filter(week == 0),
+             aes(xintercept = avg_time_to_throw))+
+  geom_beeswarm(data = . %>% filter(week != 0),
+                size = 2.5,
+                cex=4,
+                priority='random',
+                shape = 21,
+                aes(color = team_abbr2,
+                    fill = team_abbr2))+
+  geom_text(data = . %>% filter(week == 0),
+            x = 1.9, y = 1.4,
+            hjust = 0,
+            family = "Open Sans",
+            aes(label = paste0(scales::number(avg_time_to_throw,accuracy = 0.01)," s")))+
+  scale_color_nfl(type = "secondary")+
+  scale_fill_nfl(type = "primary")+
+  facet_wrap2(team_abbr2~.,
+              labeller = as_labeller(label_names),
+              scales = "free_y",
+              axes = "x",
+              remove_labels = "x",
+              ncol = 4)+
+  labs(
+    title = "Average time to throw for each QB - 2022 Regular season",
+    subtitle = glue::glue("Current season highlighted - QB with most attempts per team. NFL 2022 season average ({round(tt_avg$avg,2)} sec) in blue."),
+    caption = "Bruno Mioto @BrunoHMioto - Data: Next Gen Stats with nflreadr"
+  )+
+  theme_classic()+
+  theme(
+    text = element_text(family = "Open Sans"),
+    plot.title.position = "plot",
+    plot.title = element_text(face = "bold", size = 18),
+    plot.subtitle = element_text(face = "bold"),
+    axis.text.x = element_text(face = "bold"),
+    axis.text.y = element_blank(),
+    axis.title = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.ticks.x = element_line(color = "black", size = 0.8),
+    axis.line.y = element_blank(),
+    axis.line.x = element_line(size = 0.8),
+    panel.grid.major.x = element_line(),
+    plot.background = element_rect(fill = "#f0f0f0"),
+    strip.background = element_blank(),
+    strip.text = element_text(face = "bold", size = 10)
+  )
+
+
+ggsave(plot = g, "ttt_2022_season_logo.png", width = 9, height = 9)
+
+```
+
+### Players by draft round 🎟️
+
+![](figures/charts/rnd-players-nfl.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(nflplotR)
+library(nflfastR)
+library(ggchicklet)
+library(ggh4x)
+
+# data --------------------------------------------------------------------
+
+url <- "https://raw.githubusercontent.com/ajreinhard/NFL-public/main/misc-data/2013_to_2022_init53.csv"
+
+rosters <- read_csv(url)
+
+roster_2022 <- rosters %>% 
+  filter(season == 2022) %>% 
+  mutate(draft_rnd = ifelse(draft_type == "Undrafted","UFA",draft_rnd))
+
+round_players <- roster_2022 %>% 
+  count(team, draft_rnd) %>% 
+  left_join(nflfastR::teams_colors_logos,
+          by = c("team" = "team_abbr"))
+
+
+round_players$team <- nfl_team_factor(round_players$team)
+
+round_players$team_division <- factor(round_players$team_division,
+                                      levels = c("AFC West","AFC North","AFC South","AFC East",
+                                                 "NFC West","NFC North","NFC South","NFC East"))
+
+round_players$draft_rnd <- factor(round_players$draft_rnd,
+       levels = c("1","2","3","4","5","6","7","UFA"))
+
+# plot --------------------------------------------------------------------
+
+round_players %>% 
+  ggplot(aes(x = team, y = n, fill = draft_rnd))+
+  geom_chicklet()+
+  geom_text(position = position_stack(vjust = 0.5,reverse = TRUE),
+            aes(label = ifelse(n > 2, n, "")),
+            color = "white")+
+  facet_wrap2(~team_division, ncol = 4, scales = "free_y", axes = "all")+
+  scale_y_continuous(breaks = seq(0,50,10),
+                     expand = c(0,0))+
+  scale_fill_manual(
+    values = c('#dc3913',
+               '#3366cc',
+               '#0f9618',
+               '#992299',
+               '#0099c6',
+               '#dd4477',
+               '#e67300',
+               '#737373')
+  )+
+  labs(
+    title = "Number of players of each team by draft round in the 2022 season",
+    fill = "Draft round",
+    caption = "Bruno Mioto @BrunoHMioto - Data: TheFootballDB by @reinhurdler"
+  )+
+  guides(fill = guide_legend(nrow = 1,
+                             label.position = "bottom"))+
+  theme_minimal()+
+  theme(
+    plot.title = element_text(size = rel(1.5), face = "bold"),
+    plot.title.position = "plot",
+    plot.background = element_rect(fill = "white", color = NA),
+    plot.margin = margin(15,15,15,15,unit = "pt"),
+    legend.title = element_text(face = "bold"),
+    axis.text.y = element_nfl_logo(size = 0.7),
+    axis.title = element_blank(),
+    legend.position = "top",
+    legend.spacing.x = unit(0.1, 'cm'),
+    legend.spacing.y = unit(0, 'cm'),
+    legend.key.height =  unit(1, "cm"),
+    legend.box.margin = margin(-5,0,-10,0,unit = "pt"),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_line(color = "#999999"),
+    strip.text = element_text(size = rel(1.2),
+                              face = "bold"),
+    text = element_text(family = "Open Sans")
+  )+
+  coord_flip()
+
+ggsave("rnd_players_2022.png", width = 10, height = 6)
+```
+
+### Early-Late downs QBs slope 🚀
+
+![](figures/charts/slope-nfl.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(nflreadr)
+library(nflplotR)
+library(dplyr)
+library(ggplot2)
+library(ggrepel)
+library(tidyr)
+library(ggtext)
+
+# data --------------------------------------------------------------------
+
+pbp <- load_pbp(seasons = 2022)
+rosters <- load_rosters(2022)
+
+snap_counts <- nflreadr::load_snap_counts()
+
+snap_counts_topQB <- snap_counts %>%
+  filter(position == "QB") %>%
+  group_by(team, player, pfr_player_id) %>%
+  summarise(total_off_snaps = sum(offense_snaps)) %>%
+  filter(!pfr_player_id %in% c("RushCo00")) %>%
+  group_by(team) %>%
+  arrange(desc(total_off_snaps)) %>%
+  slice_head()
+
+qb_active <- rosters %>%
+  filter((pfr_id %in% c(snap_counts_topQB$pfr_player_id))|
+           gsis_id == "00-0038102" #Kenny Pickett
+  )
+
+QB_EPA <- pbp %>%
+  filter(!is.na(qb_epa),
+         passer_id %in% qb_active$gsis_id,
+         qb_dropback == 1,
+         down <= 4
+  ) %>%
+  mutate(down_type = ifelse(down %in% c(1,2), "early", "late")) %>%
+  group_by(name, passer_id, posteam, season, down_type) %>%
+  summarize(tot_epa = sum(qb_epa),
+            mean_epa = mean(qb_epa),
+            n = n()) %>%
+  ungroup() %>%
+  left_join(rosters, by = c("passer_id" = "gsis_id"))
+
+QB_EPA_better <- QB_EPA %>%
+  select(-c(tot_epa,n)) %>%
+  pivot_wider(
+    names_from = down_type,
+    values_from = mean_epa
+  ) %>%
+  pull(name)
+
+# plot --------------------------------------------------------------------
+
+QB_EPA %>%
+  ggplot(aes(x = down_type, y = mean_epa, color = posteam, group = posteam))+
+  annotate(
+    "segment",
+    x = -Inf, xend = 2,
+    y = seq(-0.4,0.8,0.2), yend = seq(-0.4,0.8,0.2),
+    color = "#d1d1d1",
+    linetype = "dashed",
+    linewidth = 0.4)+
+  geom_vline(xintercept = c(1,2))+
+  geom_line(data = . %>% filter(!name %in% QB_EPA_better),
+            color = "grey")+
+  geom_point(data = . %>% filter(!name %in% QB_EPA_better),
+             color = "grey",
+             shape = 21,
+             fill = "white")+
+  geom_text_repel(data = . %>% filter(down_type == "late",
+                                      name %in% QB_EPA_better),
+                  aes(x = 2,
+                      label = last_name),
+                  nudge_x = 0.05,
+                  hjust = 0,
+                  direction = "y",
+                  min.segment.length = unit(8,"pt"),
+                  fontface = "bold",
+                  family = "Open Sans"
+  )+
+  geom_line(data = . %>% filter(name %in% QB_EPA_better),
+            linewidth = 1)+
+  geom_point(data = . %>% filter(name %in% QB_EPA_better),
+             shape = 21,
+             size = 2,
+             fill = "white")+
+  annotate(
+    "text",
+    x = 1.5, y =0.46, angle = 35,
+    label = "Better on late downs"
+  )+
+  annotate(
+    "text",
+    x = 1.5, y = -0.31, angle = -32,
+    label = "Worse on late downs",
+    color = "grey"
+  )+
+  scale_x_discrete(
+    expand = expansion(mult = c(0.2,0.4)),
+    labels = c(
+      "Early Downs\n(1st/2nd)",
+      "Late Downs\n(3rd/4th)"
+    )
+  )+
+  scale_y_continuous(
+    breaks = seq(-1,1,0.2)
+  )+
+  scale_color_nfl()+
+  labs(
+    title = "<span style='color:#E31837'>Mahomes</span> and <span style='color:#008E97'>Tua</span> are another level for late downs",
+    y = "EPA/dropback",
+    caption = "Bruno Mioto @BrunoHMioto - data: @nflverse"
+  )+
+  theme_minimal()+
+  theme(
+    text = element_text(family = "Open Sans"),
+    plot.title = element_markdown(size = 13, face = "bold"),
+    plot.title.position = "plot",
+    plot.background = element_rect(fill = "#f1f1f1", color = NA),
+    axis.title.x = element_blank(),
+    axis.text.x = element_text(face = "bold"),
+    panel.grid = element_blank()
+  )
+
+ggsave("slope_early_late_downs.png", width = 5, height = 6)
+
+```
+
+
+### Mahomes Scale 📐
+
+![](figures/charts/mahomes_scale.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(dplyr)
+library(nflreadr)
+library(nflplotR)
+library(ggplot2)
+library(ggrepel)
+library(tidyr)
+library(elementalist)
+library(stringr)
+library(scales)
+
+# data --------------------------------------------------------------------
+
+pbp <- nflreadr::load_pbp(seasons = c(2018:2022))
+
+QB_data <- pbp %>%
+  dplyr::filter(
+    !is.na(qb_epa),
+    qb_dropback == 1,
+    down <= 4
+    ) %>%
+  dplyr::mutate(down_var = ifelse(down <= 2, 
+                                  "early", 
+                                  "late")
+                ) %>% 
+  dplyr::group_by(name, 
+                  passer_id, 
+                  posteam, 
+                  down_var
+                  ) %>% 
+  dplyr::summarize(
+    mean_epa = mean(qb_epa),
+    n = n()
+    ) %>% 
+  dplyr::filter(n >= 100) %>% 
+  tidyr::pivot_wider(
+    names_from = down_var,
+    values_from = c(mean_epa,n)
+    ) %>% 
+  dplyr::filter(
+    !is.na(mean_epa_early),
+    !is.na(mean_epa_late)
+    ) %>% 
+  dplyr::mutate(
+    n_combined = n_early+n_late,
+    name = stringr::str_extract(name, "(?<=\\.).*")
+    )
+
+# plot --------------------------------------------------------------------
+
+# to ggrepel with bubble size work
+my_pal <- function(range = c(1,6)) {
+  force(range)
+  function(x) scales::rescale(x, to = range, from = c(0, 1))
+}
+
+QB_data %>% 
+  ggplot(aes(x = mean_epa_early, y = mean_epa_late))+
+  geom_hline(yintercept = 0, linetype = "dashed",
+             color = "grey30")+
+  geom_vline(xintercept = 0, linetype = "dashed",
+             color = "grey30")+
+  geom_path(aes(x = c(0:0.1), y = c(0:0.2)),
+            color = "blue")+
+  geom_point(aes(fill = posteam, color = posteam, 
+                 size = n_combined),
+             shape = 21)+
+  continuous_scale(
+    aesthetics = c("size", "point.size"), scale_name = "size",
+    palette = my_pal(c(2,6)),
+    guide = guide_legend(override.aes = list(label = "")) # hide "a" in legend
+  ) +
+  geom_text_repel(aes(label = name,
+                      point.size = n_combined,
+                      fontface = ifelse(name == "Mahomes", "bold", "plain")),max.time = 5,
+                  max.overlaps = 7)+
+  scale_x_continuous(breaks = seq(-0.5,0.5,0.1),
+                     limits = c(-0.02,NA))+
+  scale_y_continuous(breaks = seq(-0.5,0.5,0.1),
+                     limits = c(-0.21,NA))+
+  scale_fill_nfl("primary")+
+  scale_color_nfl("secondary")+
+  labs(
+    title = "Introducing the Mahomes Scale",
+    subtitle = "For players breaking records and charts (2018-2022 min. 100 dropbacks)",
+    caption = "Bruno Mioto @BrunoHMioto - data: nflfastR",
+    x = "EPA/Play on early downs (1st&2nd)",
+    y = "EPA/Play on late downs (3rd&4th)"
+  )+
+  theme_classic()+
+  theme(
+    text = element_text(family = "Open Sans"),
+    axis.line = element_line(linewidth = 1),
+    axis.line.x = element_line_multicolour(c("black", "black", "black","black","black","black", "#E31837"),
+                                           size = 1),
+    axis.line.y = element_line_multicolour(c("black", "black", "#E31837", "#E31837"),
+                                           size = 1),
+    axis.text = element_text(face = "bold", color = "black"),
+    axis.text.y = element_text(color = c(rep("black",4),"#d02138","#e31d3b","#E31837")),
+    axis.ticks.y = element_line(color = c(rep("black",4),"#d02138","#e31d3b","#E31837")),
+    axis.ticks.x = element_line(color = "black"),
+    axis.title = element_text(face = "bold"),
+    panel.grid.major.x = element_line(color = "#dddddd"),
+    panel.grid.major.y = element_line(color = c("#E3A3AD","#E38A98","#E36679","#dddddd","#dddddd","#dddddd", "#dddddd")),
+    plot.title = element_text(face = "bold", size = 18),
+    plot.title.position = "plot",
+    plot.background = element_rect(fill = "#f1f1f1", color = NA),
+    panel.background = element_rect(fill = NA, color = NA),
+    legend.position = "none"
+  )+
+  coord_cartesian(xlim = c(-0.02,NA),
+                  ylim = c(-0.2,NA))
+
+
+ggsave("figures/mahomes_scale.png", width = 8, height = 6.5)
+```
+
+
+
+### EPA&CPOE Scatterplot 💫
+
+![](figures/charts/EPA&CPOE_scatter.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+
+# packages ----------------------------------------------------------------
+
+library(dplyr)
+library(nflreadr)
+library(nflplotR)
+library(ggplot2)
+library(ggdensity)
+library(ggforce)
+library(ggrepel)
+library(ggtext)
+library(ggthemes)
+
+# data --------------------------------------------------------------------
+
+pbp_2006_2009 <- progressr::with_progress(load_pbp(seasons = 2006:2009))
+
+pbp_2010_2022 <- progressr::with_progress(load_pbp(seasons = 2010:2022))
+
+pbp_all <- pbp_2006_2009 %>% 
+  bind_rows(pbp_2010_2022)
+
+players <- load_players()
+
+passerID <- "00-0033873" #P. Mahomes
+
+QB_CPOE <- pbp_all %>% 
+  filter(!is.na(cpoe),
+         !is.na(passer_id),
+         down <= 4,
+         game_half != "Overtime") %>% 
+  group_by(game_id, game_half, passer_id) %>% 
+  mutate(rows = n()) %>% 
+  filter(rows >= 5) %>% 
+  ungroup() %>% 
+  group_by(game_id, game_half, passer_id) %>% 
+  summarize(cmp = mean(complete_pass),
+            mean_cpe = mean(cp, na.rm = TRUE),
+            mean_cpoe = mean(cpoe, na.rm = TRUE))
+
+
+QB_EPA <- pbp_all %>%
+  filter(!is.na(qb_epa),
+         !is.na(passer_id),
+         rush == 1 | pass == 1,
+         down <= 4,
+         game_half != "Overtime"
+  ) %>%
+  group_by(game_id,game_half, passer_id) %>% 
+  mutate(rows = n()) %>% 
+  filter(rows >= 5) %>% 
+  ungroup() %>% 
+  group_by(game_id, passer_id,game_half, posteam, defteam, season, week, game_date) %>% 
+  summarize(tot_epa = sum(qb_epa),
+            mean_epa = mean(qb_epa)) 
+
+
+last_game <- QB_EPA %>% 
+  filter(passer_id %in% passerID) %>% 
+  tail(2)
+
+
+
+all_epa_cpoe <- QB_EPA %>% 
+  left_join(QB_CPOE) %>% 
+  filter(!is.na(cmp))
+
+ggplot(all_epa_cpoe, aes(x=mean_cpoe, y=mean_epa))+
+  geom_hdr(method = "mvnorm")+
+  geom_vline(xintercept = 0, color = "#F0F0F0")+
+  geom_hline(yintercept = 0, color = "#F0F0F0")+
+  geom_vline(xintercept = 0, linetype = "dashed", color = "#333333")+
+  geom_hline(yintercept = 0, linetype = "dashed", color = "#333333")+
+  #career
+  geom_point(data = all_epa_cpoe %>% 
+               filter(passer_id %in% passerID),
+             fill = "#F0F0F0",
+             color = "black",
+             shape = 21,
+             size=4,
+             alpha = 0.8)+
+  #text
+  geom_text_repel(data = all_epa_cpoe %>% 
+                    filter(passer_id %in% passerID),
+                  size = 5, 
+                  box.padding = 1.2,
+                  min.segment.length = 0,
+                  segment.curvature = -0.1,
+                  segment.ncp = 3,
+                  #segment.angle = 20,
+                  segment.size = 0.8,
+                  force = 3,
+                  force_pull = 0.2,
+                  max.overlaps = Inf,
+                  #max.time = 5,max.iter = 1000000,
+                  lineheight = 0.8,
+                  bg.color = "#fafafa",
+                  aes(label = ifelse(game_id %in% last_game$game_id &
+                                       game_half == "Half1",
+                                     #glue::glue("1st Half\nvs. {last_game$defteam}"),
+                                     "",
+                                     ifelse(game_id %in% last_game$game_id &
+                                              game_half == "Half2",
+                                            glue::glue("2nd Half\nSB LVII"),"")))
+  )+
+  #text
+  geom_text_repel(data = all_epa_cpoe %>% 
+                    filter(passer_id %in% passerID),
+                  #x = -7, y = 0.75,
+                  xlim = -13,
+                  ylim = 0.6,
+                  size = 5, 
+                  box.padding = 1.2,
+                  min.segment.length = 0,
+                  segment.curvature = 0.1,
+                  segment.ncp = 2,
+                  segment.angle = 30,
+                  segment.size = 0.8,
+                  force = 3,
+                  force_pull = 0.2,
+                  max.overlaps = Inf,
+                  #max.time = 5,max.iter = 1000000,
+                  lineheight = 0.8,
+                  bg.color = "#fafafa",
+                  aes(label = ifelse(game_id %in% last_game$game_id &
+                                       game_half == "Half1",
+                                     glue::glue("1st Half\nSB LVII"),
+                                     ""))
+  )+
+  #this season
+  geom_point(data = all_epa_cpoe %>% 
+               filter(passer_id %in% passerID &
+                        season == 2022),
+             aes(fill = posteam),
+             color = "white",
+             shape = 21,
+             size=4)+
+  #last game
+  geom_point(data = all_epa_cpoe %>% 
+               filter(passer_id %in% passerID &
+                        game_id %in% last_game$game_id),
+             aes(fill = posteam),
+             color = "black",
+             show.legend = FALSE,
+             shape = 21,
+             size=4,
+             stroke = 1.2)+
+  #annotate 1.5-1.5 -35-35
+  annotate(geom = "text",
+         x = 21, y = -1.17,
+         label = "Passing accuracy")+
+  annotate(geom = "segment",
+           size = 1,
+           x = 13, y = -1.25, xend = 30, yend = -1.25,
+           arrow = arrow(length = unit(0.5, "cm")),
+           lineend = "round",
+           linejoin = "round")+
+  annotate(geom = "text",
+           angle = 90,
+           x = -32.5, y = 0.85,
+           label = "Scoring efficiency")+
+  annotate(geom = "segment",
+           size = 1,
+           x = -34, y = 0.55, xend = -34, yend = 1.3,
+           arrow = arrow(length = unit(0.5, "cm")),
+           lineend = "round",
+           linejoin = "round")+
+  scale_fill_nfl()+
+  #scale_color_identity()+
+  guides(alpha = guide_legend(reverse = TRUE))+
+  labs(#title = glue::glue("EPA/play and CPOE in half games of {last_game$full_name}<br> career and <span style='color:{last_game$team_color}'>2022 season</span>"),
+      title = "EPA/play and CPOE in half games of Patrick Mahomes<br>career and <span style='color:#E31837'>2022 season</span>", 
+      subtitle = "NFL QB games from 2006 to 2022 season",
+       y = "Expected Points Added per play (EPA/Play)",
+       x = "Completion % over expected (CPOE)",
+       alpha = "NFL QB games density",
+       caption = "Bruno Mioto @BrunoHMioto - Data: nflfastR")+
+  theme_classic()+
+  theme(
+    text = element_text(family = "Open Sans"),
+    strip.text = element_text(face = "bold"),
+    axis.text = element_text(face = "bold"),
+    axis.title = element_text(face = "bold"),
+    axis.ticks = element_blank(),
+    axis.line = element_blank(),
+    plot.title = element_markdown(size = 20, face = "bold", color = "#3c3c3c"),
+    plot.subtitle = element_text(size = 12),
+    plot.title.position = "plot",
+    plot.margin = margin(15,15,15,15,"pt"),
+    legend.position = "top",
+    panel.grid.major = element_line(),
+    plot.background = element_rect(fill = "#fafafa"),
+    panel.background = element_rect(fill = "#fafafa"),
+    legend.background = element_rect(fill = "#fafafa"),
+  )+
+  coord_cartesian(ylim = c(-1.3, 1.3),
+                  xlim = c(-35, 35),
+                  clip = "off")
+
+
+ggsave(filename = "CPOE&EPA_P_Mahomes_SB_2022_2.png",
+       #filename = glue::glue("CPOE&EPA_{last_game$full_name}_{last_game$game_id}_bengals_games.png"),
+       width = 8,
+       height = 8)
+
+```
+

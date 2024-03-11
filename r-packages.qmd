@@ -10,9 +10,7 @@ title: "R packages"
 
 I am currently looking for volunteers to test the functions and data. If you can, [get in touch](mailto:bhmstabile@gmail.com)!
 
-If you use it in any work, cite it or let me know! I wonder how this package can help!
-
-We can use this historical data to do analysis and graphing. The Affluence (m³/s), for example, measures the amount of water that arrives at the reservoirs.
+If you use it in any work, cite it or let me know!
 
 You can install it running:
 
@@ -21,6 +19,71 @@ if(!requireNamespace("remotes", quietly = TRUE)){
     install.packages("remotes")
   }
 remotes::install_github("brunomioto/reservatoriosBR")
+```
+
+## futebolplotR
+
+<img src="/figures/hex-futebolplotR.png" align="right" height="138"/>
+
+The goal of [**futebolplotR**](https://brunomioto.github.io/futebolplotR/) is to provide functions and geoms that help creating visualization of **Brazilian soccer** related analysis. It provides a ggplot2 geom that does the heavy lifting of plotting Brazilian soccer badges in high quality, with correct aspect ratio and possible transparency.
+
+The **futebolplotR** contains emblems of the teams that have participated in the Brasileirão Série A soccer league from 2003 to the present day. Other teams are also welcome!
+
+This package can be used with data from [brasileirao](https://github.com/williamorim/brasileirao) R package.
+
+The code for this package was **heavily** based on [nbaplotR](https://mrcaseb.github.io/nbaplotR/) with minor changes to support Brazilian soccer team badges.
+
+
+You can install it running:
+
+```{r, eval=FALSE}
+if(!requireNamespace("remotes", quietly = TRUE)){
+    install.packages("remotes")
+  }
+remotes::install_github("brunomioto/reservatoriosBR")
+```
+
+## WorldClimData
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
+[WorldClimData](https://brunomioto.github.io/WorldClimData/) presents a faster way to download [WorldClim](https://www.worldclim.org/) data using [piggyback](https://docs.ropensci.org/piggyback/index.html).
+
+You can install it running:
+
+```{r, eval=FALSE}
+if(!requireNamespace("remotes", quietly = TRUE)){
+    install.packages("remotes")
+  }
+remotes::install_github("brunomioto/WorldClimData")
+```
+
+## DNAplot
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/brunomioto/DNAplot/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/brunomioto/DNAplot/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/brunomioto/DNAplot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/brunomioto/DNAplot?branch=master)
+<!-- badges: end -->
+
+The [DNAplot](https://brunomioto.github.io/DNAplot/) package provides a simple and customizable function to create aesthetically pleasing plots of DNA sequences. Each base is represented by a colored rectangle, allowing for easy visualization and analysis of sequence features.
+
+You can install it running:
+
+```{r, eval=FALSE}
+if(!requireNamespace("remotes", quietly = TRUE)){
+    install.packages("remotes")
+  }
+remotes::install_github("brunomioto/DNAplot")
+```
+
+```{r, fig.width = 9, fig.height = 1, dpi=600}
+library(DNAplot)
+
+sequence <- "ACTGAAGTA"
+
+plot_dna(sequence)
 ```
 
 ## ggimprensa
@@ -35,7 +98,7 @@ The goal of this package is to help users to create more beautiful graphics in a
 
 You can install it running:
 
-```{r, eval=FALSE, }
+```{r, eval=FALSE}
 if(!requireNamespace("remotes", quietly = TRUE)){
     install.packages("remotes")
   }

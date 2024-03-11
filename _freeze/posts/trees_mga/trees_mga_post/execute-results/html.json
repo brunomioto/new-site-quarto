@@ -1,0 +1,16 @@
+{
+  "hash": "3a6e525cedf384ab4426b1ded896a76d",
+  "result": {
+    "markdown": "---\ntitle: \"Mapeando as árvores de Maringá-PR\"\nfilters:\n   - lightbox\n#description: \"Learn how to easily create these awesome waterlines\"\nauthor: \"Bruno Mioto\"\ndate: \"2023-07-01\"\n#image: post_waterline.png\ncategories: [\"ggplot2\",\"dataviz\",\"maps\"]\nopen-graph:\n  #description: \"Learn how to easily create these awesome waterlines\"\n  #image: post_waterline.png\ntwitter-card:\n  #description: \"Learn how to easily create these awesome waterlines\"\n  #image: post_waterline.png\n  card-style: summary_large_image\nformat:\n  html:\n    code-link: true\ndraft: true\n---\n\n\n## A cidade\n\nMaringá é uma cidade paranaense com 409 mil habitantes segundo o [Censo 2022](https://cidades.ibge.gov.br/brasil/pr/maringa/panorama) conhecida nacionalmente pela flora abundante, onde 97,5% das edificações da cidade tinha uma ávore próxima (**pesquisar número de árvores ou áreas verdes próximas de residências no censo 2010!!!**).\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](trees_mga_post_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\nA cidade foi planejada em 1947 como [Cidade-Jardim](https://pt.wikipedia.org/wiki/Cidade-jardim_(teoria)), onde os parques e a vegetação permeiam a cidade idealizando um *cinturão verde*. O planejamento também pode ser visto com as vias atuais que seguem um padrão Norte-Sul e Leste-Oeste bem evidente.\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](trees_mga_post_files/figure-html/streets-1.png){width=672}\n:::\n:::\n\n\nMas as as vias e parques não contam toda a história...\n\n##  As árvores\n\nCom acesso aos dados georreferenciados de todas as árvores de Maringá (disclaimer sobre os dados!!, são 140 mil), cada árvore pode ser visualizada como um ponto no mapa!\n\n![](figures/map_tree.png){.lightbox group=\"map-tree\"}\n\nNeste mapa não existe nada além de pontos para cada árvore. O conjunto delas forma exatamente o desenho das vias da cidade.\n\n\n::: {layout-ncol=3}\n![Árvores](figures/map_tree.png){.lightbox group=\"map-3\"}\n\n![Árvores+Vias](figures/map_all.png){.lightbox group=\"map-3\"}\n\n![Vias](figures/map_street.png){.lightbox group=\"map-3\"}\n:::\n\n\n\n\n\n\n\n\n\n",
+    "supporting": [
+      "trees_mga_post_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

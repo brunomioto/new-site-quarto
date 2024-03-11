@@ -1,0 +1,19 @@
+{
+  "hash": "2ed80214406c9642006a7ee6cd6a0d35",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Homens têm mais apendicite?\"\ndraft: true\nlightbox: true\n# description: \"Iniciando na visualização de dados\"\nauthor: \"Bruno Mioto\"\ndate: \"2024-03-04\"\nimage: cover.png\ncategories: [\"ggplot2\",\"dataviz\"]\nopen-graph:\n  # description: \"Iniciando na visualização de dados\"\n  image: cover.png\ntwitter-card:\n  # description: \"Iniciando na visualização de dados\"\n  image: cover.png\n  card-style: summary_large_image\nformat:\n  html:\n    code-link: true\nexecute:\n  freeze: true\n---\n\n\n![](cover.png)\n\n\n\n\n\nMês passado tive uma apendicite. Uma inflamação que apareceu de uma hora para outra (literalmente) e adiou todos meus planos e compromissos. O que me fez ter bastante tempo livre por uma semana. Com todo esse tempo longe do computador (seja por enjôo ou dor), não pude deixar de pensar nos dados por trás dessa condição...\n\nAntes de tudo, quanto a apendicite me fez parar quieto? Eu já não ando muito normalmente, mas depois da cirurgia no dia 16...\n\n![](figures/calendar.png){width=85% fig-align=\"center\"}\n\nSó fui me recuperar no dia 22, dia do retorno ao médico.\n\nMas eu ainda tinha uma dúvida comigo. Todas as outras pessoas que conheço que tiveram apendicite (4) são homens e jovens. A prevalência é maior em pessoas com esse perfil?\n\nPara responder essa dúvida eu preciso de **todos** os registros de cirurgias dos hospitais! **Bom, mas nós temos o SUS!**\n\nUtilizando o pacote <bslib-tooltip placement=\"auto\" bsOptions=\"[]\" data-require-bs-version=\"5\" data-require-bs-caller=\"tooltip()\">\n  <template>GitHub - rfsaldanha/microdatasus: Download de dados do DataSUS e pré-processamento no R.</template>\n  <a href=\"https://github.com/rfsaldanha/microdatasus\" class=\"r-link-pkg\" target=\"_blank\">{microdatasus}</a>\n</bslib-tooltip>, consegui obter todos os dados de apendicite registrados no Paraná em 2023 e responder minha dúvida!\n\n![](figures/plot.png)\n\n<!-- Quanta gente tem apendicite no Brasil todos os anos? -->\nRealmente, **jovens do sexo masculino têm mais apendicite!**\n\nMas será que jovens não tem mais apendicite apenas porque existem mais jovens do que idosos na população?\n\nPara isso vamos utilizar os dados do [**Censo 2022**](https://censo2022.ibge.gov.br/panorama/) e calcular a proporção de casos de Apendicite de acordo com a população do Paraná.\n\n![](figures/plot_incidencia_pop.png)\n\nAgora podemos observar que a diferença não é tão grande entre as idades como visto anteriormente, mas o padrão de jovens do sexo masculino ainda se mantém!\n\nE quais as explicações de pessoas do sexo masculino terem mais apendicite? Isso vamos deixar para um outro post...\n\n\n\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"../../../site_libs/bslib-component-js-0.6.1/components.min.js\"></script>\n<script src=\"../../../site_libs/bslib-component-js-0.6.1/web-components.min.js\" type=\"module\"></script>\n<link href=\"../../../site_libs/bslib-component-css-0.6.1/components.css\" rel=\"stylesheet\" />\n<script src=\"../../../site_libs/bslib-tag-require-0.6.1/tag-require.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

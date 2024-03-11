@@ -2,7 +2,7 @@
 title: "About me"
 about:
   template: solana
-  image: /figures/bruno.png
+  image: figures/bruno.png
   links:
     - icon: envelope
       text: Email
@@ -13,12 +13,15 @@ about:
     - icon: github
       text: Github
       href: https://github.com/brunomioto
+format: 
+  html:
+    page-layout: full
 ---
 
 <center>
 
 ::: {.btn-group role="group" aria-label="About"}
-<a href="about.html"> <button type="button" class="btn btn-primary me-md-2 btn-sm">English</button></a> <a href="about-pt.html"> <button type="button" class="btn btn-primary me-md-2 btn-sm">Português</button></a>
+<a href="about-en.html"> <button type="button" class="btn btn-primary">English</button></a> <a href="about-pt.html"> <button type="button" class="btn btn-primary">Português</button></a>
 :::
 
 </center>
@@ -50,3 +53,21 @@ State University of Maringá (UEM) \| Maringá - PR<br>Undergraduate \| 2015 - 2
 [Upwork](https://www.upwork.com/freelancers/~01b609b6016a32f6c6)<br>Top Rated Freelancer \| 2022 - Present
 
 Renovação Preparatory School<br>Volunteer Teacher - Biology \| 2019 - Present
+
+## Published papers
+
+[**The first record of Centrocestus formosanus (Trematoda: Heterophyidae) in southern Brazil supported by molecular data**](https://www.scielo.br/j/aabc/a/ctF3q4RXNTjvjhHGst3zpjc/abstract/?lang=en) **- 2021**
+
+Juliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça
+
+[**Molecular evidence of new freshwater turtle blood flukes (Digenea: Spirorchiidae) in the intermediate snail host Biomphalaria occidentalis Paraense, 1981 in an urban aquatic ecosystem in Brazil**](https://link.springer.com/article/10.1007/s00436-020-06945-4) **- 2021**
+
+Juliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Fábio Fermino, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça
+
+[**Cyanobacteria in an urban lake: hidden diversity revealed by metabarcoding**](https://link.springer.com/article/10.1007/s10452-020-09763-z) **- 2020**
+
+Thomaz Mansini Carrenho Fabrin, Bruno Henrique Mioto Stabile, Matheus Vieira da Silva, Susicley Jati, Liliana Rodrigues, Alessandra Valéria de Oliveira
+
+[**Divulgação da ciência desde a sala de aula**](https://revistabioika.org/pt/transformando-o-mundo/post?id=81) **- 2020**
+
+Yasmin Rodrigues de Souza, Carolina Pedrozo do Nascimento, Melissa Progênio da Silva, Gabriela Cassia Zanon Reinas, Edilaine Corrêa Leite, João Otávio Santos Silva, Bárbara Scorsim Arjona, Rejane Guimarães Melo, Bruno Henrique Mioto Stabile, Hugo Lima Kirsten, Renan Borges dos Reis, Matheus Henrique Ferreira Aleixo, Larissa Carrara Gonçalves, Fernanda Moreira Florêncio, Aline Favaro Mendes, Alessandra Barbosa da Silva, Alfonso Pineda, Luzia Cleide Rodrigues

@@ -1,7 +1,54 @@
 ---
 title: "Bruno Mioto"
+image: figures/header.png
+open-graph:
+  image: figures/header.png
+twitter-card:
+  title: "Bruno Mioto"
+  creator: "@BrunoHMioto"
+  card-style: summary_large_image
+  image: figures/header.png
+listing:
+  - id: posts-en
+    contents: posts/**/en/*.qmd
+    type: default
+    fields: [image, date, title, subtitle, categories, author, reading-time]
+    sort: "date desc"
+    #categories: cloud
+    sort-ui: false
+    filter-ui: false
+    page-size: 3
+  - id: posts-pt
+    contents: posts/**/pt/*.qmd
+    type: default
+    fields: [image, date, title, subtitle, categories, author, reading-time]
+    sort: "date desc"
+    #categories: cloud
+    sort-ui: false
+    filter-ui: false
+    page-size: 3
+toc: false
 ---
 
-Hello, this is my personal website.
+<img src="/figures/bruno.png" align="right" height="180"/>
 
-Here you'll find pages about the [Charts](charts.qmd) and [R packages](r-packages.qmd) I made and some info [about me](about-en.qmd).
+Hello, this is my personal website!
+
+<!-- I'm a biologist and dataviz freelancer! Here you'll find pages about the [Charts](charts.qmd) and [R packages](r-packages.qmd) I made and some info [about me](about-en.qmd). -->
+
+If you want to support my work, buy me a [coffee](https://www.buymeacoffee.com/brunomioto)!
+
+<br>
+
+
+## Posts in English
+
+::: {#posts-en}
+:::
+
+
+## Posts em Português
+
+::: {#posts-pt}
+:::
+

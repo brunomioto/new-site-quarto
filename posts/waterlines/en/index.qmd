@@ -1,0 +1,162 @@
+---
+title: "Drawing waterlines with ggplot2 in R"
+description: "Learn how to easily create these awesome waterlines"
+author: "Bruno Mioto"
+date: "2023-02-01"
+image: post_waterline.png
+categories: ["ggplot2","dataviz","maps"]
+open-graph:
+  description: "Learn how to easily create these awesome waterlines"
+  image: post_waterline.png
+twitter-card:
+  description: "Learn how to easily create these awesome waterlines"
+  image: post_waterline.png
+  card-style: summary_large_image
+format:
+  html:
+    code-link: true
+---
+
+![](post_waterline.png)
+
+## Motivation
+
+<img src="https://raw.githubusercontent.com/thomasp85/boundaries/main/man/figures/logo.png" align="right" height="138"/>
+
+Last week I saw that [Thomas Lin Pedersen](https://www.data-imaginist.com/) (currently responsible for ggplot2) has started developing a new package called [boundaries](https://boundaries.r-euclid.com/). It did not take me much effort to understand the main function of the package, because this amazing hex logo explains it very well, to create **waterlines** from boudaries!
+
+But this is a package from the new [euclid ecosystem](https://r-euclid.com/), which aims to *"provide a new unified foundation for computational geometry in R"*. Awesome, but at that moment I wanted to know if I could create the waterlines for any shapefile I find on my computer, and the boundaries package doesn't support `sf` objects, which I use to create maps...
+
+And so, like a good Ph.D. student, I began a saga of Google and StackOverFlow searches to find the answers I was looking for. Coincidentally, on the same day (!), I came across Olivia Vane's [tweet](https://twitter.com/OliviaFVane/status/1583064125156241409) about her talk at Observable Insight 2022, where she teaches drawing waterlines with code, but using D3.js.
+
+Her [article](https://observablehq.com/@oliviafvane/i-drawing-water-in-old-maps?collection=@oliviafvane/watermarks) about waterlines is great and explains all the context behind this visualization. I highly recommend reading it!
+
+But the topic was hot, and I already had an idea how to use waterlines: Re-create an old map of the Brazilian coast!
+
+Then I discovered that there is a way to create waterlines using the `sf` and `ggplot2` packages! So I created this text as a guide for the next people who need it! Today I will try to present a basic version for everyone to understand the idea and create their own amazing maps!
+
+Look how my map turned out!
+
+{{< tweet BrunoHMioto 1619370088670416897 >}}
+
+## Creating our map
+
+We need a map with some water masses. Since my girlfriend is of Japanese descent, I will use today's post to thank this culture for providing me with sushi, lamen, yakisoba, anime, and a lot of knowledge and respect!
+
+Let's load the necessary packages, I'll talk about them during the text.
+
+If you have questions about a function, just click on its name to go to the package page!
+
+```{r}
+#| warning: false
+
+# Packages
+library(dplyr) #pipe and basics
+library(ggplot2) #plotting
+library(sf) #working with maps
+library(rnaturalearth) #get countries shapefiles
+```
+
+Now we need the map of Japan. Good thing we have the `rnaturalearth` package!
+
+```{r}
+#| warning: false
+japan_map <- rnaturalearth::ne_countries(country = "Japan", #country name
+                                         scale = "medium", #map resolution
+                                         returnclass = "sf" #object class
+                                         )
+```
+
+We can check out the map we just downloaded
+
+```{r}
+japan_map %>% 
+  ggplot()+
+  geom_sf()
+```
+
+::: callout-important
+Since the next process requires some geometry calculations, we will tell the `sf` package not to use the `s2` package, as this can lead to errors.
+
+```{r}
+#| comment: '#>'
+#| code-overflow: wrap
+sf::sf_use_s2(FALSE)
+```
+:::
+
+All done, now we just need to create the **waterlines**! We will use the `st_buffer` function from the `sf` package, as the name says, it calculates a buffer around the geometry, which is exactly what we need! Each line of code is a waterline, add as many as you like!
+
+After executing each line you will get a `warning`. Don't worry, it will work!
+
+```{r}
+#| comment: '#>'
+#| code-overflow: wrap
+#| warning: false
+
+japan_buffer1 <- sf::st_buffer(japan_map, dist = 0.1)
+japan_buffer2 <- sf::st_buffer(japan_map, dist = 0.2)
+japan_buffer3 <- sf::st_buffer(japan_map, dist = 0.3)
+japan_buffer4 <- sf::st_buffer(japan_map, dist = 0.4)
+
+#> Warning: st_buffer does not correctly buffer longitude/latitude datadist is assumed to be in decimal degrees (arc_degrees).
+```
+
+Now we can plot it!
+
+```{r}
+japan_map %>% 
+  ggplot()+
+  geom_sf()+
+  geom_sf(data = japan_buffer1, fill = NA)+
+  geom_sf(data = japan_buffer2, fill = NA)+
+  geom_sf(data = japan_buffer3, fill = NA)+
+  geom_sf(data = japan_buffer4, fill = NA)
+```
+
+Let's add some details and make this map even cooler!
+
+```{r}
+japan_map %>% 
+  ggplot()+
+  geom_sf(fill = "#f9e9ca", 
+          color = "#48351c",
+          linewidth = 0.4)+
+  geom_sf(data = japan_buffer1, 
+          fill = NA, 
+          color = "#48351c90")+
+  geom_sf(data = japan_buffer2, 
+          fill = NA, 
+          color = "#48351c70")+
+  geom_sf(data = japan_buffer3, 
+          fill = NA, 
+          color = "#48351c50")+
+  geom_sf(data = japan_buffer4, 
+          fill = NA, 
+          color = "#48351c30")+
+  theme_bw()+
+  theme(
+    panel.background = element_rect(fill = "#badff0"),
+    panel.grid = element_line(color = "#afd2e2")
+  )+
+  coord_sf(clip = "off")
+```
+
+Awesome! I hope you enjoyed this tutorial. I would like to thanks [Olivia Vane](https://twitter.com/OliviaFVane), [Maya Gans](https://twitter.com/Mayacelium) and [Georgios Karamanis](https://twitter.com/geokaramanis) for the inspiration and tips for this post!
+
+Share it with your friends and [send me](https://twitter.com/BrunoHMioto) your maps with waterlines!
+
+Don't forget to take a look at my [Charts](https://brunomioto.com/charts.html) page!
+
+------------------------------------------------------------------------
+
+::: {.callout-tip collapse="true"}
+## Expand for Session Info
+
+```{r}
+#| echo: false
+#| warning: false
+library(sessioninfo)
+session_info(pkgs = "attached")
+```
+:::

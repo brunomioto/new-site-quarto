@@ -16,5 +16,38 @@
   },
   "about-en.qmd": {
     "about-en.html": "17072539"
+  },
+  "intro-ggplot2.qmd": {
+    "intro-ggplot2.html": "79ad1270"
+  },
+  "intro-tidyverse.qmd": {
+    "intro-tidyverse.html": "f2f3c48d"
+  },
+  "posts/appendix/pt/index.qmd": {
+    "index.html": "7419751e"
+  },
+  "posts/en.qmd": {
+    "en.html": "78c36856"
+  },
+  "posts/intro_ggplot2/en/index.qmd": {
+    "index.html": "acb0eb10"
+  },
+  "posts/intro_ggplot2/pt/index.qmd": {
+    "index.html": "1392b565"
+  },
+  "posts/pt.qmd": {
+    "pt.html": "78834717"
+  },
+  "posts/trees_mga/pt/index.qmd": {
+    "index.html": "7d03ee56"
+  },
+  "posts/waterlines/en/index.qmd": {
+    "index.html": "5e7d102e"
+  },
+  "scripts.qmd": {
+    "scripts.html": "a75f6957"
+  },
+  "twitter-bots.qmd": {
+    "twitter-bots.html": "7ee7129d"
   }
 }

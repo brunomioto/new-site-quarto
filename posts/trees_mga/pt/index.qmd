@@ -1,0 +1,318 @@
+---
+title: "Mapeando as árvores de Maringá-PR"
+preview-colour:
+  code: true
+  text: true
+filters:
+   - lightbox
+   - preview-colour
+description: "Uma análise das 142 mil árvores da cidade"
+author: "Bruno Mioto"
+date: "2023-12-05"
+image: post_trees_mga.png
+categories: ["ggplot2","dataviz","maps"]
+open-graph:
+  description: "Uma análise das 142 mil árvores da cidade"
+  image: post_trees_mga.png
+twitter-card:
+  description: "Uma análise das 142 mil árvores da cidade"
+  image: post_trees_mga.png
+  card-style: summary_large_image
+format:
+  html:
+    code-link: true
+---
+
+![](post_trees_mga.png)
+
+## A cidade
+
+Maringá é uma cidade paranaense com 409 mil habitantes segundo o [Censo 2022](https://cidades.ibge.gov.br/brasil/pr/maringa/panorama) conhecida nacionalmente pela flora abundante, onde [97,5%](https://www.ibge.gov.br/estatisticas/sociais/populacao/9662-censo-demografico-2010.html?edicao=9755&t=resultados) das edificações da cidade tinha uma ávore próxima.
+
+```{r, eval=FALSE, warning=FALSE, message=FALSE, echo=FALSE,results=FALSE }
+
+#packages
+library(geobr)
+library(dplyr)
+library(patchwork)
+library(ggplot2)
+library(osmdata)
+
+#data
+brasil <- read_country() %>% 
+  rmapshaper::ms_filter_islands(min_area = 12391399903) %>% 
+  rmapshaper::ms_simplify()
+
+estados <- read_state() %>% 
+  rmapshaper::ms_simplify()
+
+mga <- read_municipality(code_muni = 4115200) %>% 
+  sf::st_transform(crs = "WGS84")
+
+
+
+brasil_map <- ggplot()+
+  geom_sf(data = brasil,
+          fill = "#e5f5f9",
+          linewidth = 0.5)+
+  geom_sf(data = estados %>% filter(abbrev_state == "PR"),
+          fill = "#63d07d",
+          linewidth = 0.5)+
+  geom_sf(data = mga,
+          fill = "#31a354")+
+  theme_void()
+
+
+mga_map <- ggplot()+
+  geom_sf(data = mga,
+          fill = "#2ca25f",
+          linewidth = 0.5)+
+  theme_void()
+               
+brasil_map+mga_map
+
+ggsave("figures/brasil_mga.png", width = 8, height = 5)
+```
+
+![Brasil e Maringá](figures/brasil_mga.png){.lightbox}
+
+A cidade foi planejada em 1947 como [Cidade-Jardim](https://pt.wikipedia.org/wiki/Cidade-jardim_(teoria)), onde os parques e a vegetação permeiam a cidade idealizando um *cinturão verde*. O planejamento também pode ser visto com as vias atuais que seguem um padrão Norte-Sul e Leste-Oeste bem evidente.
+
+```{r streets, eval=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
+streets <- getbb("Maringá, Paraná, Brasil")%>%
+  opq() %>%
+  add_osm_feature(key = "highway",
+                  value = c("motorway", "primary",
+                            "secondary", "tertiary",
+                            "residential")) %>%
+  osmdata_sf()
+
+vegetation <- getbb("Maringá, Paraná, Brasil")%>%
+  opq() %>%
+  add_osm_feature(key = "natural",
+                  value = c("wood")) %>%
+  osmdata_sf()
+
+new_streets <- streets$osm_lines %>%
+  sf::st_transform(crs = "WGS84") %>%
+  sf::st_intersection(mga)
+
+new_vegetation <- vegetation$osm_polygons %>%
+  sf::st_transform(crs = "WGS84") %>%
+  sf::st_intersection(mga)
+
+streets_vegetation_map <- ggplot()+
+  geom_sf(data = new_vegetation,
+          fill = "#2ca25f",
+          color = NA)+
+  geom_sf(data = new_streets)+
+  theme_void()+
+  coord_sf(xlim= c(-52,-51.87), 
+           ylim=c(-23.48,-23.36),
+           expand = FALSE)+
+  theme(
+    plot.background = element_rect(fill = "#ffffff",
+                                   color = NA)
+  )
+
+ggsave(plot = streets_vegetation_map,
+       "figures/streets_vegetation_map.png",
+       width = 6, height = 6, dpi = 600)
+
+```
+
+![](figures/streets_vegetation_map.png){.lightbox}
+
+Mas as as vias e parques não contam toda a história...
+
+##  As árvores
+
+Com acesso via **LAI** aos dados georreferenciados de todas as árvores de Maringá, cada árvore pode ser visualizada como um ponto no mapa!
+
+![](figures/map_tree.png){.lightbox}
+
+No mapa acima não existe nada além de pontos para cada árvore. **São exatamente 142.893 árvores catalogadas** que seguem o desenho das vias da cidade.
+
+::: {layout-ncol=3}
+![Árvores](figures/map_tree.png){.lightbox group="map-3"}
+
+![Árvores+Vias](figures/map_all.png){.lightbox group="map-3"}
+
+![Vias](figures/map_street.png){.lightbox group="map-3"}
+:::
+
+
+```{r, eval=FALSE, echo=FALSE}
+trees_dataset <- readxl::read_excel("data/SEMAARVORES.xlsx") %>% 
+  janitor::clean_names()
+
+trees_dataset2 <- trees_dataset %>% 
+  mutate(especie = ifelse(is.na(especie), 
+                          "Não identificada", 
+                          stringr::str_to_title(especie)),
+         especie = stringr::str_replace(especie, "Ipe", "Ipê"),
+         especie = stringr::str_replace(especie,
+                                        " De "," de "),
+         especie = stringr::str_replace(especie,
+                                        " Do "," do "),
+         especie = stringr::str_replace(especie,
+                                        "Chorao","Chorão"),
+         especie = stringr::str_replace(especie,
+                                        "Alecrim","Alecrim de Campinas"))
+
+trees_cont_10 <- trees_dataset2 %>% 
+  group_by(especie) %>% 
+  count(sort = TRUE) %>% 
+  ungroup() %>% 
+  mutate(perc = (n/sum(n))*100) %>% 
+  head(10) #%>% 
+  # mutate(cor = case_match(
+  #   especie,
+  #   "Sibipiruna" ~ "#fec44f",
+  #   "Oiti" ~ "#ffffff",
+  #   "Não identificada" ~ "#dedede",
+  #   "Ipê Roxo" ~ "#7a0177",
+  #   "Aroeira Chorão" ~ "green",
+  #   "Tipuana" ~ "#fec44f",
+  #   "Falsa Murta" ~ "#ffffff",
+  #   "Ipê Branco" ~ "#ffffff",
+  #   "Alecrim" ~ "green",
+  #   "Ipê Amarelo" ~ "#fec44f"
+  # ))
+
+trees_cont_10 %>% 
+  ggplot(aes(x = n, y = forcats::fct_reorder(especie,n)))+
+  geom_vline(xintercept = 0)+
+  geom_col(#aes(fill = cor),
+    width = 0.5,
+           aes(fill = ifelse(especie == "Não identificada",
+                             "#dedede", "#31a354")),
+           color = "black")+
+  geom_text(aes(label = ifelse(especie == "Sibipiruna",
+                               paste(scales::number(n,
+                                             big.mark = "."),
+                                     "árvores -",
+                              scales::percent(perc, 
+                                              decimal.mark = ",",
+                                              scale = 1,
+                                              accuracy = 0.1)),
+                              paste(scales::number(n,
+                                             big.mark = "."),
+                                    "-",
+                              scales::percent(perc, 
+                                              decimal.mark = ",",
+                                              scale = 1,
+                                              accuracy = 0.1))),
+                hjust = ifelse(especie == "Sibipiruna",
+                               1,0),
+                color = ifelse(especie == "Sibipiruna",
+                               "white","black")),
+            nudge_x = ifelse(trees_cont_10$especie == "Sibipiruna",
+                               -200,200),
+            family = "Open Sans",
+            fontface = "bold")+
+  geom_text(aes(label = especie),
+            x = 100, hjust = 0, 
+            #nudge_x = 1000,
+            nudge_y = 0.45,
+            family = "Open Sans",
+            fontface = "bold")+
+  scale_x_continuous(expand = c(0,0),
+                     labels = scales::label_number(scale_cut = 
+                                                     c(" " = 0,
+                                                       " mil" = 1000)))+
+  scale_color_identity()+
+  scale_fill_identity()+
+  labs(
+    x = "Nº de árvores"
+  )+
+  theme_minimal()+
+  theme(
+    text = element_text(family = "Open Sans"),
+    axis.title.x = element_text(face = "bold"),
+    axis.title.y = element_blank(),
+    axis.text = element_text(face = "bold"),
+    axis.text.y = element_blank(),
+    panel.grid.minor.x = element_line(linetype = "dashed"),
+    panel.grid.major.y = element_blank(),
+    plot.background = element_rect(fill = "#ffffff", color = NA)
+  )+
+  coord_cartesian(
+    clip = "off"
+  )
+
+ggsave("figures/top10_trees.png", width = 8, height = 6, dpi = 600)
+
+```
+
+A partir dos microdados de cada árvore na cidade, percebe-se a dominância de **Sibipirunas** na cidade (23,6%), seguida de **Oitis** (15,3%). Das 142 mil árvores catalogadas, cerca de 17 mil não puderam ser identificadas.
+
+![10 espécies de árvores mais comuns em Maringá](figures/top10_trees.png){.lightbox}
+
+Dentre as árvore da cidade, os **Ipês** se destacam pela beleza exuberante que apresentam no período do inverno. Em destaque, são apresentados os ipês roxos (`#984ea3`), ipês brancos (`#ffffff`), ipês amarelos (`#ffff33`) e ipês rosas (`#f781bf`).
+
+![](figures/map_ipe.png){.lightbox}
+
+Mas essas não são todas as árvores da cidade, já que o levantamento florístico foi realizado apenas nas vias urbanas. Praticamente todas as grandes áreas sem pontos na visualização são áreas florestais, fundos de vale, universidades (a UEM está bem no centro do mapa) ou novos bairros não estudados.
+
+O acesso a esses dados via **LAI** só foi possível com a ajuda do **Bruno Morassutti**, Co-fundador e Diretor de Advocacy da [Fiquem Sabendo](https://fiquemsabendo.com.br/). A tabela com os dados disponibilizados pela prefeitura (espécie e coordenadas) pode ser acessado [aqui](https://github.com/brunomioto/arvores_mga).
+
+```{r, eval=FALSE, echo=FALSE}
+cont_setores <- trees_dataset2 %>% 
+  filter(!is.na(setor),
+         setor %in% c("Central",
+                      "Nordeste",
+                      "Noroeste",
+                      "Sudeste",
+                      "Sudoeste")) %>% 
+  group_by(setor) %>% 
+  count()
+
+df_sf <- sf::st_as_sf(trees_dataset2, coords = c('longitude', 'latitude'))
+
+centroides <-  df_sf %>% 
+  filter(!is.na(setor),
+         setor %in% c("Central",
+                      "Nordeste",
+                      "Noroeste",
+                      "Sudeste",
+                      "Sudoeste")) %>% 
+  group_by(setor) %>% 
+  summarize(geometry = sf::st_union(geometry)) %>% 
+  sf::st_centroid() %>% 
+  sf::st_set_crs("WGS84") %>% 
+  left_join(cont_setores)
+
+
+setores_map <- trees_dataset2 %>% 
+  filter(!is.na(setor),
+         setor %in% c("Central",
+                      "Nordeste",
+                      "Noroeste",
+                      "Sudeste",
+                      "Sudoeste")) %>% 
+  ggplot(aes(x=longitude, y=latitude, color = setor))+
+  geom_point(size = 0.1)+
+  geom_sf_label(data = centroides,
+               aes(label = paste0(setor,"\n",n," árvores")),
+               inherit.aes = FALSE,
+               family = "Open Sans")+
+  scale_color_brewer(type = "qual", 
+                     palette = "Set1")+
+  theme_void()+
+  theme(
+    plot.background = element_rect(fill = "#ffffff", color = NA),
+    legend.position = "none"
+  )+
+  coord_sf(xlim= c(-52,-51.87), 
+           ylim=c(-23.48,-23.36),
+           expand = FALSE,
+           crs = "WGS84")
+
+ggsave(plot = setores_map,
+       "figures/setores_map.png",
+       width = 6, height = 6, dpi = 600)
+
+```
+
+

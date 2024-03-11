@@ -1,0 +1,24 @@
+---
+title: "Twitter bots"
+---
+
+I created some Twitter bots to tweet daily! But ~~Elon Musk~~ killed it.
+
+```{=html}
+<a href="https://twitter.com/MancheteBot?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @MancheteBot</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<a href="https://twitter.com/ReservatorioBot?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @ReservatorioBot</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+```
+
+## Reservatórios bot
+
+```{=html}
+<a class="twitter-timeline" data-height="500" href="https://twitter.com/ReservatorioBot?ref_src=twsrc%5Etfw">Tweets by ReservatorioBot</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+```
+
+## Manchete bot
+
+```{=html}
+<a class="twitter-timeline" data-height="500" href="https://twitter.com/MancheteBot?ref_src=twsrc%5Etfw">Tweets by MancheteBot</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+```
+

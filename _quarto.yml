@@ -6,33 +6,57 @@ execute:
 
 website:
   title: "Bruno Mioto"
-  favicon: /figures/logo.png
+  site-url: "https://brunomioto.com/"
+  favicon: /figures/eye_website.png
   google-analytics: "G-XTWGVVSED5"
+  description: "Hello, this is my personal website!"
+  image: figures/header.png
+  open-graph:
+    description: "Hello, this is my personal website!"
+    image: figures/header.png
+  twitter-card:
+    title: "Bruno Mioto"
+    description: "Hello, this is my personal website!"
+    creator: "@BrunoHMioto"
+    card-style: summary_large_image
+    image: figures/header.png
+
   navbar:
-    logo: "figures/logo.png"
+    logo: figures/eye_website.png
     foreground: "#40609f"
     background: "#f1f1f1"
     right:
-      - href: index.qmd
-        text: Home
-      - charts.qmd
-      - r-packages.qmd
-      - about-en.qmd
+      - text: "Home"
+        file: index.qmd
+      - text: "Charts"
+        file: charts.qmd
+      - text: "R"
+        menu:
+          - text: "R packages"
+            icon: "box-seam"
+            href: r-packages.qmd
+          - text: "Scripts"
+            icon: "braces"
+            href: scripts.qmd
+          - text: "Twitter bots"
+            icon: "robot"
+            href: twitter-bots.qmd
+      - text: "About me"
+        file: about-en.qmd
+  
   page-footer: 
-    left: "Website made with [Quarto](https://quarto.org/) by Bruno Mioto, 2022" 
+    left: "Website made with Quarto by Bruno Mioto, 2023." 
     right: 
       - icon: github
         href: https://github.com/brunomioto
       - icon: twitter 
         href: https://twitter.com/BrunoHMioto
 
-  
 format:
   html:
-    theme:
-      light: cosmo
-      #dark: [cosmo, theme-dark.scss]
+    theme: 
+      - united
+      - styles.css
     toc: true
 
-editor: visual
-
+editor: source

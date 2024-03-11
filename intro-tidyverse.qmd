@@ -1,0 +1,514 @@
+---
+title: "Introdução ao R - CBLimno - Dia 2 (Tidyverse)"
+author: "Rafaela Granzotti e Bruno Mioto"
+date: 07/10/2022
+draft: true
+---
+
+<!-- ```{r setup, include=FALSE} -->
+<!-- knitr::opts_chunk$set(echo = TRUE) -->
+<!-- ``` -->
+
+<!-- # O pacote -->
+
+<!-- O Tidyverse é um pacote de pacotes. Sim, ele já traz funções de vááários outros pacotes e por isso ele também demora um pouquinho para instalar. -->
+
+<!-- Para instalar o pacote Tidyverse, e qualquer outor pacote que esteja no CRAN, utilizamos a função `install.packages()` com o nome do pacote: -->
+
+<!-- ```{r, eval=FALSE} -->
+<!-- install.packages("tidyverse")  #USAR ASPAS! -->
+<!-- ``` -->
+
+<!-- e para carregar o pacote antes de usá-lo, utilizamos: -->
+<!-- ```{r, warning=FALSE, message=FALSE} -->
+<!-- library(tidyverse) -->
+<!-- ``` -->
+
+<!-- # Carregar os dados -->
+
+<!-- Imagine que você e eu somos pesquisadores de biologia marinha do Projeto Ecológico de Longa Duração na Antártida Vamos estudar pinguins! -->
+
+<!-- ```{r} -->
+<!-- pinguins <- read.csv("dados_pinguins.csv") -->
+<!-- ``` -->
+
+<!-- Vamos ver se deu tudo certo agora chamando as 6 primeiras linhas do nosso dataset: -->
+
+<!-- ```{r} -->
+<!-- head(pinguins) -->
+<!-- ``` -->
+
+<!-- caso você queria ver em uma nova janela, pode usar `view(pinguins)`! -->
+
+<!-- # Pipe -->
+
+<!-- O `pipe` é um operador implementado no pacote `magrittr`, que também está dentro do `tidyverse`. -->
+<!-- Com ele podemos facilitar o funcionamento das funções e tornar nosso código mais legível. -->
+<!-- `pipe` significa "canos" e o sinal é: `%>%` (atalho: Ctrl+Shift+m). -->
+<!-- Leia ele como se fosse um: `e então...` -->
+
+<!-- Vamos ver como seria escrever uma receita de bolo no R sem pipe, do jeito tradicional. Tente entender o que é preciso fazer. -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+
+<!-- esfrie( -->
+<!--   asse( -->
+<!--     coloque( -->
+<!--       bata( -->
+<!--         acrescente( -->
+<!--           recipiente( -->
+<!--             rep("farinha", 2), -->
+<!--             "água", -->
+<!--             "fermento", -->
+<!--             "leite", -->
+<!--             "óleo" -->
+<!--           ), -->
+<!--           "farinha", -->
+<!--           ate = "macio" -->
+<!--         ), -->
+<!--         duracao = "3min" -->
+<!--       ), -->
+<!--       lugar = "forma", -->
+<!--       tipo = "grande", -->
+<!--       untada = TRUE -->
+<!--     ), -->
+<!--     duracao = "50min" -->
+<!--   ), -->
+<!--   lugar = "geladeira", -->
+<!--   duracao = "20min" -->
+<!-- ) -->
+<!-- ``` -->
+
+<!-- Bem confuso, né? É porque somos acostumados a ler de cima para baixo, da esquerda para direita. -->
+<!-- Veja como o código acima pode ser reescrito utilizando-se o pipe. -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- recipiente(rep("farinha", 2), "água", "fermento", "leite", "óleo") %>% -->
+<!--   acrescente("farinha", ate = "macio") %>% -->
+<!--   bata(duracao = "3min") %>% -->
+<!--   coloque(lugar = "forma", tipo = "grande", untada = TRUE) %>% -->
+<!--   asse(duracao = "50min") %>% -->
+<!--   esfrie(lugar = "geladeira", duracao = "20min") -->
+<!-- ``` -->
+
+<!-- Agora realmente se parece com uma receita de bolo! -->
+
+<!-- # Editando os dados -->
+
+<!-- Agora que sabemos utilizar o `pipe`, podemos utilizá-lo em vários lugares! -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- #ao invés de -->
+<!-- view(pinguins) -->
+
+<!-- #podemos usar -->
+<!-- pinguins %>% -->
+<!--   view() -->
+<!-- ``` -->
+
+<!-- Para vermos a estrutura dos nossos dados, podemos utilizar a função `str()` -->
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   str() -->
+<!-- ``` -->
+
+<!-- mas o pacote tidyverse tem o `glimpse()` também, com a mesma funcionalidade, mas um pouco diferente. Pode usar qual achar melhor! -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   glimpse() -->
+<!-- ``` -->
+
+
+<!-- # tibble  -->
+
+<!-- Nossos dados aestão em formato dataframe, mas olha como fica gigante quando queremos ver ele no console (e vou cortar um pedaço ainda, no meu R aparecem 125 linhas!!!): -->
+
+<!-- ```{r, eval=FALSE} -->
+<!-- pinguins -->
+<!-- ``` -->
+<!-- ```{r, echo=FALSE} -->
+<!-- pinguins %>%  -->
+<!--   head(50) -->
+<!-- ``` -->
+
+<!-- o `tibble` é a "nova versão" do dataframe, ele funciona praticamente do mesmo jeito, mas facilita a leitura no console: -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   as_tibble() -->
+<!-- ``` -->
+
+<!-- Perceba que ele apresenta ali em cima que existem 344 linhas e 8 colunas, e embaixo diz quais variáveis foram cortadas, e qual a classe de cada uma delas. É tão bonito! -->
+
+<!-- por isso vamos tornar essa a versão padrão para `pinguins` -->
+
+<!-- ```{r} -->
+<!-- pinguins <- pinguins %>% -->
+<!--   as_tibble() -->
+<!-- ``` -->
+
+
+<!-- # janitor -->
+
+<!-- O pacote `janitor`, como o nome já diz (janitor é zelador(a) em inglês), é utilizado para a limpeza de alguns dados do nosso dataset. -->
+
+<!-- Imagine que os nomes das colunas estivessem uma zona! Tem acento, espaço (que o R já transforma em `.`). Não é nada bom ter os nomes das variáveis assim -->
+
+<!-- ```{r, echo = FALSE} -->
+<!-- pinguins_zoado <- readr::read.csv("dados_pinguins_nomescolunas2.csv", check.names = FALSE) -->
+
+<!-- pinguins_zoado <- as_tibble(pinguins_zoado) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- pinguins_zoado %>%  -->
+<!--   head() -->
+<!-- ``` -->
+
+
+<!-- Podemos usar o rename! Mas para muitas colunas é trabalhoso (veja como queremos deixar tudo em minúsculo, sem acentuação e com `_` no lugar dos espaços) -->
+
+<!-- ```{r} -->
+<!-- pinguins_zoado %>% -->
+<!--   rename(especie = "Espécie", -->
+<!--          ilha = "Ilha", -->
+<!--          comprimento_bico = "Comprimento.Bico", -->
+<!--          profundidade_bico = "Profundidade.Bico", -->
+<!--          comprimento_nadadeira = "Comprimento.Nadadeira", -->
+<!--          massa_corporal = "Massa.Corporal", -->
+<!--          sexo = "Sexo", -->
+<!--          ano = "Ano" -->
+<!--          ) -->
+<!-- ``` -->
+
+<!-- para isso existe o `janitor`! -->
+
+<!-- ```{r, warning=FALSE, message=FALSE} -->
+<!-- library(janitor) -->
+
+<!-- pinguins_zoado %>% -->
+<!--   clean_names() -->
+<!-- ``` -->
+
+<!-- Ufa Agora sim podemos mexer com nossos dados de pesquisa!! -->
+
+<!-- # filter() -->
+
+<!-- Agora queremos filtrar alguns dados em nosso dataset. Afinal de contas, é muito dado! -->
+
+<!-- Se quisermos filtrar apenas os pinguins da ilha `Dream` em nosso dataset, podemos utilizar: -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   filter(ilha == "Dream") -->
+<!-- ``` -->
+
+<!-- Ou então os que **não** são da ilha `Dream`: -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   filter(ilha != "Dream") -->
+<!-- ``` -->
+
+
+<!-- Ou digamos que queremos estudar apenas pinguins adultos, que o comprimento do bico é maior que 45 mm (eu não faço ideia, vocês que são os futuros biólogos marinhos!). Vamos filtrar esses dados! -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   filter(comprimento_bico >= 45) -->
+<!-- ``` -->
+
+<!-- Mas vocês repararam que no dataset inicial tem alguns valores faltantes? São os `NA` que vemos no lugar de valores. Dependendo do que você está buscando, é bom retirá-los do dataset. -->
+
+<!-- Nesse caso, vamos usar a função `is.na()` que aponta onde temos `NA` no dataset. -->
+<!-- ```{r} -->
+<!-- is.na(pinguins) %>%  -->
+<!--   as_tibble() #para não ficar muito extenso -->
+<!-- ```    -->
+<!-- E para filtrar essas observações utilizamos o `is.na()` dentro do `filter()` com uma determinada variável. -->
+
+<!-- ```{r} -->
+<!-- pinguins %>%  -->
+<!--   filter(is.na(sexo)) -->
+<!-- ```  -->
+
+<!-- Mas como queremos os valores que **não** são NA, escrevemos `!is.na()`, que seria a negação da função. Veja no exemplo: -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   filter(!is.na(sexo)) -->
+<!-- ``` -->
+
+<!-- Além disso, é possível utilizar vários filtros ao mesmo tempo. Vamos utilizar o que aprendemos na aula de R base! -->
+
+<!-- Aqui usamos o **&** para dizer que queremos filtrar pinguins da ilha `Dream` **E** que são da espécie `Pinguim-de-barbicha` -->
+<!-- ```{r} -->
+<!-- pinguins %>%  -->
+<!--   filter(ilha == "Dream" & -->
+<!--            especie == "Pinguim-de-barbicha") -->
+<!-- ``` -->
+
+<!-- Aqui usamos o **|** para dizer que queremos filtrar pinguins da ilha `Dream` **OU** que são da espécie `Pinguim-de-barbicha` -->
+<!-- ```{r} -->
+<!-- pinguins %>%  -->
+<!--   filter(ilha == "Dream" | -->
+<!--            especie == "Pinguim-de-barbicha") -->
+<!-- ``` -->
+
+<!-- Preste atenção no número de linhas retornadas em cada filtro! -->
+
+<!-- Quando usamos a vírgula, estamos usando o **&** basicamente. -->
+
+<!-- ```{r} -->
+<!-- pinguins %>%  -->
+<!--   filter(ilha == "Dream", -->
+<!--          especie == "Pinguim-de-barbicha") -->
+<!-- ``` -->
+
+<!-- Mas se quisermos combinar todos os filtros em um dataset só, podemos também! -->
+<!-- Vamos filtrar apenas os pinguins da ilha "Dream", com comprimento do bico maior ou igual 45mm e com o sexo determinado (macho ou fêmea). -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   filter(ilha == "Dream", -->
+<!--          comprimento_bico >= 45, -->
+<!--          !is.na(sexo)) -->
+<!-- ``` -->
+
+<!-- E, por fim, se quisermos filtrar vários valores da mesma variável, podemos usar o operador `%in%`! -->
+
+<!-- ```{r} -->
+<!-- pinguins %>%  -->
+<!--   filter(ilha %in% c("Dream", "Biscoe")) -->
+<!-- ``` -->
+
+<!-- Podemos ler isso como: "Filtre os pinguins em que as ilhas estão contidas no vetor `c("Dream", "Biscoe")`" -->
+
+<!-- Para o contrário, utilizamos o sinal `!` antes da variável, dizendo para filtrar as ilhas que **não** estão contidas no vetor `c("Dream", "Biscoe")` -->
+
+<!-- ```{r} -->
+<!-- pinguins %>%  -->
+<!--   filter(!ilha %in% c("Dream", "Biscoe")) -->
+<!-- ``` -->
+
+<!-- # arrange() -->
+
+<!-- Muitas vezes queremos ordenar nosso dataset, seja pela data inicial até a final, ou mesmo de valores menores para maiores, para isso usamos a função `arrange()`. -->
+
+<!-- Essa função sempre vai ordenar de forma crescente, veja só: -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   arrange(comprimento_bico) -->
+<!-- ``` -->
+
+<!-- Se quisermos que ordene de forma descrescente, podemos usar: -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   arrange(desc(comprimento_bico)) -->
+
+<!-- #ou -->
+
+<!-- pinguins %>% -->
+<!--   arrange(-comprimento_bico) -->
+
+<!-- ``` -->
+
+<!-- # select() -->
+
+<!-- Um dataset cheio de informações as vezes não é tão útil para algumas análises. Certas vezes, menos é mais! Nosso dataset atualmente tem 8 variáveis: `especie`, `ilha`, `comprimento_bico`, `profundidade_bico`, `comprimento_nadadeira`, `massa_corporal`, `sexo` e `ano`.                  -->
+
+<!-- Mas e se quisermos usar apenas as 5 primeiras? -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   select(especie, -->
+<!--          ilha, -->
+<!--          comprimento_bico, -->
+<!--          profundidade_bico, -->
+<!--          comprimento_nadadeira) -->
+<!-- ``` -->
+
+<!-- Mas já vimos anteriormente como selecionar que podemos escrever (por exemplo), `1, 2, 3, 4, 5` ou também `1:5`. Vamos fazer isso com nossas variáveis então, é só seguir a ordem! -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   select(especie:comprimento_nadadeira) -->
+<!-- ``` -->
+
+<!-- E caso queira deletar colunas, você pode utilizar o sinal de `-` -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   select(-ilha) -->
+<!-- ``` -->
+
+
+<!-- # mutate() -->
+
+<!-- Pode ser muito útil criar uma nova coluna em nosso dataset com base em outras colunas, e a função `mutate()` foi feita para isso! -->
+
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   #vou selecionar algumas colunas para facilitar a visualização -->
+<!--   select(especie, ilha, comprimento_bico, profundidade_bico) %>%  -->
+<!--   mutate(area_bico = comprimento_bico*profundidade_bico) -->
+<!-- ``` -->
+
+
+
+<!-- # transmute() -->
+
+<!-- Muito semelhante ao `mutate()`, temos a função `transmute()`, que também cria uma nova coluna, mas exclui todas as outras. Pode ser muito útil para tranformar todo o dataset com apenas uma função -->
+
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   transmute(area_bico = comprimento_bico*profundidade_bico) -->
+<!-- ``` -->
+
+
+<!-- # summarise() -->
+
+<!-- Sumarizar bases, ou melhor, *resumir* bases é muito útil! Temos muitos dados, mas qual a média do comprimento dos bicos dos pinguins, por exemplo? Veja como é fácil: -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   summarise(media_comprimento = mean(comprimento_bico, na.rm = TRUE)) -->
+<!-- ``` -->
+
+<!-- Na função, colocamos o nome da coluna que será sumarizada, e como temos valores `NA` no dataset, precisamos colocar o argumento `na.rm = TRUE`, que quer dizer: `NA remove = TRUE`. Pense bem, não é possível fazer a média de `1, 2 e nada`. Mas lembre-se que estamos excluindo dados do nosso dataset! -->
+
+<!-- E podemos sumarizar várias coisas de uma só vez! -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   summarise(media_comprimento = mean(comprimento_bico, na.rm = TRUE), -->
+<!--             mediana_comprimento = median(comprimento_bico, na.rm = TRUE), -->
+<!--             media_profundidade = mean(profundidade_bico, na.rm = TRUE), -->
+<!--             mediana_profundidade = median(profundidade_bico, na.rm = TRUE)) -->
+<!-- ``` -->
+
+
+<!-- # group_by() -->
+
+<!-- Acabamos de ver como sumarizar bases, mas e se quisermos saber a média por espécie? Ou por ilha? Ou por ambos??? -->
+
+<!-- Agora é a hora da função `group_by()`! Essa é uma função mais abstrata, pois ela funciona como intermediária no R, e não vemos o resultado dela, mas podemos imaginar! Pensem comigo! -->
+
+<!-- Imaginem que existe um **Mundo das Ideias** do R. Quando rodamos alguma função, elas acontecem lá e é retornado o resultado. Nós não vemos os cálculos acontecendo. -->
+
+<!-- Quando utilizamos o `group_by()` estamos dizendo: "R, separe esse dataset em grupos, faça tudo separadamente e retorne o resultado deles no final". Mas ele não tem o que retornar ainda, então podemos dizer: "**Separe os pinguins por especies**, e retorne a média e mediana do comprimento do bico". -->
+
+<!-- Veja como podemos dizer isso para o R: -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   #agrupe por espécies -->
+<!--   group_by(especie) %>% -->
+<!--   #retorne com a sumarização -->
+<!--   summarise(media_comprimento = mean(comprimento_bico, na.rm = TRUE), -->
+<!--             mediana_comprimento = median(comprimento_bico, na.rm = TRUE)) -->
+<!-- ``` -->
+
+<!-- E olha só! Agora temos nosso resultado separado por espécies! -->
+
+<!-- Imaginem agora que somos o **Darwin**, lá nos anos 1840 vendo os dados coletados na viagem com o Beagle. Sim, estamos no séc. XIX mas temos o R para nos ajudar. Como seria se o Darwin usasse o R? -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   #será que existe diferença dos animais por ilhas?? -->
+<!--   group_by(ilha) %>% -->
+<!--   #retorne com a sumarização -->
+<!--   summarise(media_comprimento = mean(comprimento_bico, na.rm = TRUE), -->
+<!--             mediana_comprimento = median(comprimento_bico, na.rm = TRUE)) -->
+<!-- ``` -->
+
+
+<!-- # count() -->
+
+<!-- Essa é uma função bem simples, que nos possibilita contar observações em nosso dataset. Será que coletamos o mesmo número de dados para todas as espécies? -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   count(especie) -->
+<!-- ``` -->
+
+<!-- Será que coletamos o mesmo número de machos e fêmeas? -->
+
+<!-- ```{r} -->
+<!-- pinguins %>%  -->
+<!--   count(sexo) -->
+<!-- ``` -->
+
+
+<!-- # distinct() -->
+
+<!-- Algumas vezes aparecem valores repetidos em nosso dataset (as vezes dados de terceiros...), então é bom filtrá-los antes de fazer qualquer análise. -->
+<!-- Vamos utilizar: -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   distinct() -->
+<!-- ``` -->
+
+<!-- Felizmente não havia nenhum dado duplicado em nosso dataset, mas podemos usar a função `distinct()` para visualizar quais observações diferentes temos em nosso dataset! -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   distinct(ano) -->
+<!-- ``` -->
+
+<!-- Veja só, temos dados de 3 anos de coleta desse PELD! -->
+
+
+
+<!-- # Exercício! -->
+
+<!-- Seu projeto de pesquisa envolve estudar as medidas de nadadeira e massa corporal dos pinguins fêmea da espécie "Pinguim-de-adélia" da ilha "Biscoe". Você usará um índice obtido a partir da multiplicação do comprimento da nadadeira pela massa corporal, chamado de IMC_pinguin. Por fim, faça uma sumarização com a média do IMC dos pinguins, agrupados por ano. -->
+
+
+<!-- ::: {.callout-note collapse="true"} -->
+
+<!-- ## Resposta -->
+
+<!-- ```{r} -->
+<!-- pinguins %>% -->
+<!--   #vamos filtrar a espécie, sexo e ilha -->
+<!--   filter(especie == "Pinguim-de-adélia", -->
+<!--          sexo == "fêmea", -->
+<!--          ilha == "Biscoe") %>% -->
+<!--   #agora vamos criar a coluna IM -->
+<!--   mutate(IMC_pinguin = comprimento_nadadeira*massa_corporal) %>% -->
+<!--   group_by(ano) %>% -->
+<!--   summarise(media_IMC = mean(IMC_pinguin, na.rm = TRUE)) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- <!-- #Joins --> -->
+
+
+<!-- <!-- Se quisermos juntar 2 bases com variáveis em comum, podemos usar as funções de **join**! --> -->
+
+<!-- <!-- Vamos criar uma nova base com informações de "cores" para alguns pinguins". Imagine que encontramos esse base na internet. Tem dados de alguns pinguins que temos, e de outro também. --> -->
+
+
+<!-- <!-- ```{r} --> -->
+<!-- <!-- cores_pinguins <- tibble( --> -->
+<!-- <!--   especie = c("Pinguim-de-barbicha", "Pinguim-gentoo", "Pinguim-imperador"), --> -->
+<!-- <!--   cor = c("#c75dca", "#0f6f74", "#d8c101") --> -->
+<!-- <!-- ) --> -->
+
+<!-- <!-- cores_pinguins --> -->
+<!-- <!-- ``` --> -->
+<!-- <!-- ``` --> -->
+
+
+
+
+
+<!-- Isso foi apenas uma introdução ao tidyverse e seus sub-pacotes! Ainda tem muito a aprender!! -->

@@ -1,0 +1,629 @@
+---
+title: "Introdução ao ggplot2"
+preview-colour:
+  code: true
+  text: true
+filters:
+   - preview-colour
+description: "Iniciando na visualização de dados"
+author: "Bruno Mioto"
+date: "2024-01-30"
+image: cover.png
+categories: ["ggplot2","dataviz"]
+open-graph:
+  description: "Iniciando na visualização de dados"
+  image: cover.png
+twitter-card:
+  description: "Iniciando na visualização de dados"
+  image: cover.png
+  card-style: summary_large_image
+format:
+  html:
+    code-link: true
+execute:
+  freeze: true
+---
+
+![](cover.png)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+::: {.callout-note appearance="simple"}
+
+## Antes de começarmos...
+
+Este é um material adaptado de uma aula sobre **Visualização de dados** ministrada na disciplina de **Introdução ao R** para meu programa de pós-graduação. O objetivo não era apresentar **tudo** do ggplot2, apenas o **mais importante** que possa ser utilizado em artigos científicos.
+
+Como isso pode ser útil para mais pessoas, decidi disponibilizar para todos por aqui. Fique à vontade para compartilhar com outras pessoas!
+
+:::
+
+## Pacotes utilizados
+
+Nessa aula vamos utilizar os seguintes pacotes:
+
+- `dplyr` para manipulação de dados
+
+- `ggplot2` para criar gráficos
+
+- `ggpath` para plotar imagens de uma forma bem mais fácil
+
+- `pokemon` para obter a tabela de pokemons em pt-br
+
+Para instalar os pacotes, utilizamos o seguinte script:
+
+```{r, eval=FALSE}
+install.packages(c("dplyr", "ggplot2", 
+                   "ggpath", "pokemon"))
+```
+
+Agora que temos os pacotes instalados, é só carregá-los.
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+library(pokemon)
+library(ggplot2)
+library(ggpath)
+```
+
+## Os dados
+
+Para criar nossos gráficos, precisamos de um conjunto de dados. Vamos utilizar o pacote **pokemon** criado pelo [William Amorim](https://twitter.com/wamorim_) que tem o dataset traduzido!
+
+```{r}
+pokemon_df <- pokemon::pokemon_ptbr
+```
+
+## Gráficos com R base
+
+Uma forma de criar gráficos é usando o próprio R base, que é bem simples mas permite visualizações rápidas.
+
+Podemos criar gráficos de dispersão, por exemplo.
+
+```{r}
+plot(altura ~ peso, data = pokemon_df)
+```
+
+O problema começa quando queremos deixar esses gráficos mais bonitos
+
+```{r}
+plot(altura ~ peso, data = pokemon_df,
+     main = "Título",
+     xlab = "Massa (kg)", ylab = "Altura (m)",
+     pch = 19, frame = FALSE)
+abline(lm(altura ~ peso, data = pokemon_df), col = "blue")
+```
+
+Isso é confuso e eu acho muito difícil de deixar qualquer gráfico assim mais bonito.
+
+## Gráficos com ggplot2
+
+Mas agora vamos conhecer o pacote `ggplot2`. Esse pacote foi a tese do [Hadley Wickham](https://en.wikipedia.org/wiki/Hadley_Wickham), atual cientista-chefe da RStudio/Posit. 
+
+A mágica aqui é que esse pacote incorporou a **gramática de gráficos** (por isso o `gg`), que trouxe vários fundamentos a serem seguidos. Um deles é a criação de gráficos por camadas, como se fosse uma pintura!
+
+![Fonte: QCBS R Workshop Series](figures/gglayers.png){width=50%}
+
+Esse pacote já está incluso no `tidyverse` e segue o mesmo princípio.
+
+```{r, warning=FALSE}
+library(ggplot2)
+```
+
+Se rodarmos só um `ggplot()`, teremos uma tela em branco.
+
+```{r}
+ggplot()
+```
+
+Agora temos que adicionar o nosso dataset e quais serão nossos eixos.
+
+Sempre que estivermos falando de uma **variável** do nosso dataset, temos que colocar dentro do argumento `aes()`, que significa **aesthetics**.
+
+```{r}
+ggplot(data = pokemon_df,
+       aes(x = peso,
+           y = altura))
+```
+
+Inclusive, como o ggplot2 funciona em camadas, podemos usar da seguinte forma:
+
+```{r}
+ggplot(data = pokemon_df)+
+  aes(x = peso,
+      y = altura)
+```
+
+Como o **ggplot2** faz parte do tidyverse, podemos falar para o R no imperativo: *"Pegue o dataset `pokemon_df` e então crie o ggplot..."*. O bom dessa abordagem é que, como o ggplot já sabe o dataset de antemão, ele nos ajuda a selecionar as variáveis (aperte `tab` antes de escrever as variáveis).
+
+```{r}
+pokemon_df %>% 
+  ggplot(aes(x = peso,
+             y = altura))
+```
+
+Agora temos nosso gráfico com os eixos delimitados, e podemos adicionar as camadas que quisermos. O princípio do ggplot é parecido com o pipe, onde as informações são passadas diretamente para a camada abaixo, assim não precisamos adicionar os dados novamente.
+
+### Geometrias
+
+As geometrias são funções que começam por `geom_*`. Existem muitas e podemos ter uma ajudinha com a [colinha do ggplot2](https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf).
+
+Primeiro, vamos criar um gráfico de dispersão
+
+```{r}
+pokemon_df %>% 
+  ggplot(aes(x = peso,
+             y = altura))+
+  geom_point()
+```
+
+Para adicionar mais uma camada de geometria, é só adicionar mais uma camada nessa pintura. Vamos adicionar uma linha de tendência com a função `geom_smooth()`.
+
+```{r}
+pokemon_df %>% 
+  ggplot(aes(x = peso,
+             y = altura))+
+  geom_point()+
+  geom_smooth()
+```
+
+Podemos adicionar uma linha de tendência linear com o argumento `method = "lm"`!
+
+```{r}
+pokemon_df %>% 
+  ggplot(aes(x = peso,
+             y = altura))+
+  geom_point()+
+  geom_smooth(method = "lm")
+```
+
+
+Aqui podemos perceber como o ggplot2 funciona igual a uma pintura. Como o `geom_smooth()` foi chamado **depois** do `geom_point()`, ele é plotado por cima. 
+
+Vamos ver o mesmo exemplo mas invertendo essas geometrias.
+
+```{r}
+pokemon_df %>% 
+  ggplot(aes(x = peso,
+             y = altura))+
+  geom_smooth(method = "lm")+
+  geom_point()
+```
+
+Vamos fazer um boxplot (utilizando a geometria `geom_boxplot`) do tipo do pokemon por altura
+
+```{r}
+pokemon_df %>% 
+  ggplot(aes(x = tipo_1, y = altura))+
+  geom_boxplot()
+```
+
+Agora vamos fazer um gráfico de colunas (utilizando a geometria `geom_col()`) do ataque dos pokemons.
+
+```{r}
+pokemon_df %>% 
+  ggplot(aes(x = pokemon, y = ataque))+
+  geom_col()
+```
+
+Eita! Nós temos muitos dados! Vamos filtrar só os pokemons iniciais e suas evoluções para plotar.
+
+```{r}
+iniciais <- pokemon_df %>% 
+  filter(id %in% 1:9)
+```
+
+Vamos testar!
+
+```{r}
+iniciais %>% 
+  ggplot(aes(x = pokemon, y = ataque))+
+  geom_col()
+```
+
+Podemos inverter os eixos, é só mudar. Inclusive com textos grandes, é mais indicado eles ficarem no eixo y.
+
+```{r}
+iniciais %>% 
+  ggplot(aes(x = ataque, y = pokemon))+
+  geom_col()
+```
+
+Os pokemons não estão na ordem que gostaríamos (como no dataset), estão em ordem alfabética. Então temos que ordená-los pela `id`, mas para serem ordenados precisamos considerá-los como fatores.
+
+```{r}
+iniciais2 <- iniciais %>% 
+  mutate(pokemon = reorder(pokemon, id))
+```
+
+Vamos ver se funcionou usando a função `glimpse()` (significa *espiadinha* do dplyr). Perceba a classe de cada variável entre `<...> `
+
+```{r}
+glimpse(iniciais2)
+```
+
+Olha como ficou ordenado agora!
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon))+
+  geom_col()
+```
+
+Estão faltando **cores** nesses gráficos!
+
+Agora vamos utilizar os argumentos `color` e `fill`. Quando a forma for sólida, utilizamos apenas o `color`, se tiver contorno e preenchimento, utilizamos o `color`e `fill`, respectivamente.
+
+Podemos colorir de acordo com qualquer variável, nesse caso vamos colorir por **tipo**!
+
+Veja que podemos determinar a variável na função `ggplot()` e ela servirá para todas as seguintes. Se quisermos aplicar a uma camada apenas, colocamos apenas nela.
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col()
+```
+
+Agora podemos adicionar o contorno. Como ele não é uma variável (é uma cor fixa), não precisa ir dentro do `aes()`
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")
+```
+
+### Labels
+
+Todo gráfico pode ter título, subtítulo, titulo dos eixos, etc.
+
+Tudo isso pode ser determinado utilizando a função `labs()` dentro do ggplot. Perceba que a legenda é criada de acordo com a variável `fill`, por isso o título da legenda seguirá essa variável.
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  labs(
+    title = "Os pokemons iniciais",
+    subtitle = "Separados por tipo",
+    caption = "Bruno Mioto",
+    x = "Ataque",
+    y = "Pokemon",
+    fill = "Tipo"
+  )
+```
+
+### Escalas
+
+E se quisermos editar as escalas? Nesse caso vamos utilizar o conjunto de funções `scale_*`.
+
+Vamos editar o eixo X. As quebras estão de 20 em 20, vamos colocar de 10 em 10. Como o eixo x é contínuo, vamos usar a função `scale_x_continuous()`. O argumento `breaks` nos ajuda com essa tarefa!
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  scale_x_continuous(breaks = seq(0,200,10))
+```
+
+As cores também podem ser definidas pela função `scale_*`. Essas cores não são exatamente as que queremos, podemos definir manualmente usando a função `scale_fill_manual()`.
+
+Como as cores estão definidas de acordo com o tipo, vamos usar elas como base. O próprio dataset traz as cores para cada tipo. Para o tipo **água** usaremos a cor `#6890F0`, para o tipo **fogo** usaremos a cor `#F08030` e para o tipo **grama** usaremos a cor `#78C850`.
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )
+```
+
+Além de determinar as cores, também podemos determinar as labels que cada cor terá na legenda. Vamos fazer isso dentro da função `scale` também, mas com o argumento `labels`.
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    ),
+    labels = c(
+      "fogo" = "Fogo",
+      "grama" = "Grama",
+      "água" = "Água"
+    )
+  )
+```
+
+### Temas
+
+Mas esses gráficos não estão tão bonitos ainda, podemos editar **qualquer** coisa dos gráficos, desde a cor do fundo até a fonte. 
+
+O ggplot2 já tem alguns temas pré definidos. Vamos testar
+
+Essa é a `theme_bw()`
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )+
+  theme_bw()
+```
+
+Eu gosto bastante do `theme_classic()`
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )+
+  theme_classic()
+```
+
+O `theme_minimal()` também é muito utilizado.
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )+
+  theme_minimal()
+```
+
+O tema `theme_void()` mantém **apenas** as geometrias do gráfico gerado.
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )+
+  theme_void()
+```
+
+Mas podemos editar qualquer coisa dentro do tema escolhido também. Essas funções são apenas configuração pré-determinadas.
+
+A maioria das configurações podem ser vistas [neste site](https://ggplot2tor.com/theme). Para mudar as configurações do tema, adicionamos os argumentos na função `theme()`
+
+Vamos eliminar o título dos eixos
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )+
+  theme(
+    axis.title = element_blank()
+  )
+```
+
+Ou mudar o fundo do gráfico. Perceba que temos `plot` (o gráfico total) e `panel` (apenas o painel entre os eixos)
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )+
+  theme(
+    plot.background = element_rect(fill = "pink"),
+    panel.background = element_rect(fill = "yellow")
+  )
+```
+
+Vamos mudar as linhas de grade!
+
+```{r}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )+
+  theme(
+    plot.background = element_rect(fill = "pink"),
+    panel.background = element_rect(fill = "yellow",
+                                    color = "blue"),
+    panel.grid.major = element_line(color = "green"),
+    panel.grid.major.x = element_line(linetype = "dashed"),
+    panel.grid.minor.x = element_line(color = "black")
+  )
+```
+
+Meu Deus! O gráfico não ficou bonito, mas ficou didático! (Mas nunca faça algo assim de verdade, por favor)
+
+### Facetas
+
+Muitas vezes temos muitas informações para mostrar em apenas um gráfico. Para isso podemos utilizar a ideia de **pequenos múltiplos** com a função `facet_wrap()`!
+
+```{r}
+pokemon_df %>% 
+  ggplot(aes(x = ataque, 
+             y = defesa, 
+             color = id_geracao))+
+  geom_point()+
+  facet_wrap(.~id_geracao)
+```
+
+Nesse caso o ggplot interpretou a coluna `id_geracao` como numérica contínua. Mas nesse caso cada **geração** é independente de outra. Podemos dizer para o ggplot2 interpretas essa variável como **fator**.
+
+```{r}
+pokemon_df %>% 
+  ggplot(aes(x = ataque, 
+             y = defesa, 
+             color = factor(id_geracao)))+
+  geom_point()+
+  facet_wrap(.~factor(id_geracao))
+```
+
+Podemos usar as facetas com outros dados também.
+
+```{r}
+pokemon_df %>% 
+  ggplot(aes(x = ataque, 
+             y = defesa, 
+             color = tipo_1))+
+  geom_point()+
+  facet_wrap(.~tipo_1)
+```
+
+## Plotar imagens
+
+Se quisermos colocar figuras nos nosso gráficos, a melhor indicação é usar o pacote [**ggpath**](https://mrcaseb.github.io/ggpath/). Essa é melhor forma de plotar imagens!
+
+Para isso vamos utilizar a função `geom_from_path()`. Só precisamos informar qual é a coluna com o caminho para a figura.
+
+Uma sugestão é colocar o argumento da largura `width` como 0.1 pois as figuras podem ficar **gigantes**!
+
+```{r ggpath, warning=FALSE}
+library(ggpath)
+
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  geom_col(color = "black")+
+  geom_from_path(aes(path = url_imagem),
+                 width = 0.1)+
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )
+```
+
+### Gráfico finalizado
+
+Aqui adicionei alguns toques finais em nosso gráfico (veja o posicionamente dos nomes e figuras!). Infelizmente não cabe a esse post abordar todos esses detalhes, mas deixei **tudo** com comentários!
+
+```{r final}
+iniciais2 %>% 
+  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+
+  #adiciona colunas
+  geom_col(color = "black",
+           width = 0.5)+
+  #adiciona nomes
+  geom_text(aes(label = pokemon,
+                color = tipo_1),
+            x = 1,
+            hjust = 0, #alinhamento lateral
+            nudge_y = 0.45, #ajuste vertical
+            fontface = "bold" #negrito
+            )+
+  #adiciona figuras
+  geom_from_path(aes(path = url_imagem),
+                 width = 0.1, #largura relativa ao total
+                 hjust = 0 #alinhamento lateral
+                 )+
+  #adiciona linha vertical
+  geom_vline(xintercept = 0)+
+  #expande eixo x
+  scale_x_continuous(
+    expand = expansion(mult = c(0,0.1)) #expansão esquerda-direita
+  )+
+  #edita cores (vai afetar o texto que usa color)
+  scale_color_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )+
+  #edita cores (vai afetar a coluna que usa fill)
+  scale_fill_manual(
+    values = c(
+      "água" = "#6890F0",
+      "fogo" = "#F08030",
+      "grama" = "#78C850"
+    )
+  )+
+  #edita labs
+  labs(
+    x = "Ataque",
+    caption = "Bruno Mioto - @BrunoHMioto"
+  )+
+  #usa tema inicial
+  theme_classic()+
+  #edita tema
+  theme(
+    #remover toda a legenda
+    legend.position = "none",
+    #remove título do eixo y
+    axis.title.y = element_blank(),
+    #remove texto do eixo y
+    axis.text.y = element_blank(),
+    #remove ticks
+    axis.ticks = element_blank(),
+    #remove eixos
+    axis.line = element_blank(),
+    #adiciona linha de grade - major
+    panel.grid.major.x = element_line(),
+    #adiciona linha de grade pontilhada - minor
+    panel.grid.minor.x = element_line(linetype = "dashed"),
+    #aumenta as margens do gráfico
+    plot.margin = margin(10,10,10,10,"pt"),
+    #muda a cor do fundo do gráfico
+    plot.background = element_rect(fill = "#f1f1f1", color = NA),
+    #muda a cor do fundo do painel
+    panel.background = element_rect(fill = "#f1f1f1", color = NA)
+  )+
+  #não corta as imagens que saem do painel
+  coord_cartesian(
+    clip = "off"
+  )
+
+```
+
+Tudo o que vimos até aqui é o básico do básico no ggplot2, mas que já nos permite fazer muita coisa legal! Tem vários exemplos de gráficos com ggplot2 [aqui](../../../charts.qmd), e alguns [scripts](../../../scripts.qmd) prontinhos aqui! 
+
+Se achou este conteúdo útil de alguma forma, compartilhe com seus amigos!
+
+Quer um minicurso/workshop com este material? Entre em [contato](mailto:bhmstabile@gmail.com)!

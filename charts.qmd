@@ -2,6 +2,7 @@
 title: "Charts"
 filters:
    - lightbox
+lightbox: auto
 format: 
   html:
     page-layout: full
@@ -9,29 +10,24 @@ format:
 
 I make original charts on demand for presentations/scientific articles/publications
 
-Access my complete portfolio: [**Behance**](https://www.behance.net/gallery/136021485/Data-Visualization-Portfolio)
-
 I work as a freelancer here: [**Upwork**](https://www.upwork.com/freelancers/~01b609b6016a32f6c6) (Top Rated Freelancer)
 
 My contact email address is **bhmstabile\@gmail.com**
 
-## Collaborations 
+Want to support my work? [🥧 Buy me a Pie <s>chart</s>](https://www.buymeacoffee.com/brunomioto)
 
-I wrote a text for [basedosdados](https://basedosdados.org/) with a tutorial on how I made this chart of the vaccinated population using R! #vacinasim
+## Collaborations
 
-Check it out [here](https://medium.com/basedosdados/analisando-dados-de-vacina%C3%A7%C3%A3o-contra-covid-19-com-a-bd-49fe3db8c7f4)!
+::: {layout-ncol="2"}
+![](figures/charts/charts-vaccines.png){width="350" description="I wrote a text for [basedosdados](https://basedosdados.org/) with a tutorial on how I made this chart of the vaccinated population using R! Check it out [here](https://medium.com/basedosdados/analisando-dados-de-vacina%C3%A7%C3%A3o-contra-covid-19-com-a-bd-49fe3db8c7f4)!"}
 
-![](figures/charts/charts-vaccines.png){.lightbox fig-align="center" width="350"}
+![](figures/charts/charts-nexo.png){fig-align="center" width="350" description="I also published a chart together with [Nexo Jornal](https://nexojornal.com.br/) about inflation and unemployment in Brazil, updating a very interesting chart! Check it out [here](https://www.nexojornal.com.br/grafico/2022/05/16/Infla%C3%A7%C3%A3o-e-desemprego-batem-recorde-e-passam-de-10-no-Brasil)!"}
 
-I also published a chart together with [Nexo Jornal](nexojornal.com.br/) about inflation and unemployment in Brazil, updating a very interesting chart!
-
-Check it out [here](https://www.nexojornal.com.br/grafico/2022/05/16/Infla%C3%A7%C3%A3o-e-desemprego-batem-recorde-e-passam-de-10-no-Brasil)!
-
-![](figures/charts/charts-nexo.png){.lightbox fig-align="center" width="350"}
+:::
 
 ## Original charts
 
-All the following charts were made entirely using ggplot2/R.<br>You can click on each plot to see each detail.
+All the following charts and maps were made entirely using **ggplot2/R**.<br>You can click on each plot to see each detail.
 
 ```{=html}
 <style>
@@ -43,10 +39,12 @@ All the following charts were made entirely using ggplot2/R.<br>You can click on
 </style>
 ```
 
+![Play animation made for BigDataBowl '24 Competition](figures/charts/animation_kaggle_small_size.gif){.lightbox group="my-gallery" description="I made this animation for the BigDataBowl '24 Competition. You can see my team's notebook at [Kaggle](https://www.kaggle.com/code/stevenpatton97/the-components-of-a-tackle-a-physics-driven-study)"}
+
 ::: {layout-ncol="2"}
 ![](figures/charts/scatter-nfl.png){.lightbox group="my-gallery"}
 
-![](figures/charts/ttt-nfl.png){.lightbox group="my-gallery"}
+![](figures/charts/map_rj.png){.lightbox group="my-gallery"}
 
 ![](figures/charts/avocado.png){.lightbox group="my-gallery"}
 
@@ -58,7 +56,19 @@ All the following charts were made entirely using ggplot2/R.<br>You can click on
 
 ![](figures/charts/temp_max_mga.png){.lightbox group="my-gallery"}
 
+![](figures/charts/pfizer_trial.png){.lightbox group="my-gallery"}
+
+![](figures/charts/ttt-nfl.png){.lightbox group="my-gallery"}
+
+![](figures/charts/dna_matrix.png){.lightbox group="my-gallery"}
+
 ![](figures/charts/drink-owid.png){.lightbox group="my-gallery"}
+
+![](figures/charts/mahomes_scale.png){.lightbox group="my-gallery"}
+
+![](figures/charts/pokemon.png){.lightbox group="my-gallery"}
+
+![](figures/charts/us_nuclear_tests.png){.lightbox group="my-gallery"}
 
 ![](figures/charts/election-star.png){.lightbox group="my-gallery"}
 
@@ -80,7 +90,7 @@ All the following charts were made entirely using ggplot2/R.<br>You can click on
 ::: {layout-ncol="1"}
 ![](figures/charts/starwars.png){.lightbox group="my-gallery2"}
 
-![](figures/charts/github_deaths_covid_br.png){.lightbox group="my-gallery2"}
-![](figures/charts/color.png){.lightbox group="my-gallery2"}
+![](figures/charts/github_deaths_covid_br.png){.lightbox group="my-gallery2"} ![](figures/charts/color.png){.lightbox group="my-gallery2"}
+
 ![](figures/charts/punt_J.Hekker_18.png){.lightbox group="my-gallery2"}
 :::
