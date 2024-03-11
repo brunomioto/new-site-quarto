@@ -34,7 +34,7 @@ toc: false
 
 Hello, this is my personal website!
 
-<!-- I'm a biologist and dataviz freelancer! Here you'll find pages about the [Charts](charts.qmd) and [R packages](r-packages.qmd) I made and some info [about me](about-en.qmd). -->
+I'm a biologist and dataviz freelancer! Here you'll find pages about the [Charts](charts.qmd) and [R packages](r-packages.qmd) I made and some info [about me](about-en.qmd).
 
 If you want to support my work, buy me a [coffee](https://www.buymeacoffee.com/brunomioto)!
 
