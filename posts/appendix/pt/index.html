@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Bruno Mioto">
-<meta name="dcterms.date" content="2024-03-04">
+<meta name="dcterms.date" content="2024-03-19">
+<meta name="description" content="Uma análise utilizando os dados do SUS">
 
 <title>Bruno Mioto - Homens têm mais apendicite?</title>
 <style>
@@ -88,13 +89,13 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 
 
 <meta property="og:title" content="Bruno Mioto - Homens têm mais apendicite?">
-<meta property="og:description" content="Hello, this is my personal website!">
+<meta property="og:description" content="Uma análise utilizando dandos do SUS">
 <meta property="og:image" content="https://brunomioto.com/posts/appendix/pt/cover.png">
 <meta property="og:site_name" content="Bruno Mioto">
 <meta property="og:image:height" content="5030">
 <meta property="og:image:width" content="14017">
 <meta name="twitter:title" content="Bruno Mioto">
-<meta name="twitter:description" content="Hello, this is my personal website!">
+<meta name="twitter:description" content="Uma análise utilizando dandos do SUS">
 <meta name="twitter:image" content="https://brunomioto.com/posts/appendix/pt/cover.png">
 <meta name="twitter:creator" content="@BrunoHMioto">
 <meta name="twitter:card" content="summary_large_image">
@@ -168,7 +169,14 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#homens-são-mais-propensos-a-ter-apendicite" id="toc-homens-são-mais-propensos-a-ter-apendicite" class="nav-link active" data-scroll-target="#homens-são-mais-propensos-a-ter-apendicite">Homens são mais propensos a ter apendicite?</a></li>
+  <li><a href="#por-que-homens-jovens-são-mais-propensos-à-apendicite" id="toc-por-que-homens-jovens-são-mais-propensos-à-apendicite" class="nav-link" data-scroll-target="#por-que-homens-jovens-são-mais-propensos-à-apendicite">Por que homens jovens são mais propensos à apendicite?</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -179,9 +187,15 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
   <div class="quarto-categories">
     <div class="quarto-category">ggplot2</div>
     <div class="quarto-category">dataviz</div>
+    <div class="quarto-category">saúde</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    Uma análise utilizando os dados do SUS
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -196,7 +210,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 4, 2024</p>
+      <p class="date">March 19, 2024</p>
     </div>
   </div>
   
@@ -210,26 +224,32 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 
 <p><a href="cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="cover.png" class="img-fluid"></a></p>
 <p>Mês passado tive uma apendicite. Uma inflamação que apareceu de uma hora para outra (literalmente) e adiou todos meus planos e compromissos. O que me fez ter bastante tempo livre por uma semana. Com todo esse tempo longe do computador (seja por enjôo ou dor), não pude deixar de pensar nos dados por trás dessa condição…</p>
-<p>Antes de tudo, quanto a apendicite me fez parar quieto? Eu já não ando muito normalmente, mas depois da cirurgia no dia 16…</p>
+<p>Antes de tudo, quanto a apendicite me fez parar quieto?</p>
+<p>Mesmo que eu não seja o tipo de pessoa que anda muito no dia a dia, depois da cirurgia no dia 16… eu só fiquei deitado!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="figures/calendar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="figures/calendar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%"></a></p>
 </figure>
 </div>
 <p>Só fui me recuperar no dia 22, dia do retorno ao médico.</p>
+<section id="homens-são-mais-propensos-a-ter-apendicite" class="level2">
+<h2 class="anchored" data-anchor-id="homens-são-mais-propensos-a-ter-apendicite">Homens são mais propensos a ter apendicite?</h2>
 <p>Mas eu ainda tinha uma dúvida comigo. Todas as outras pessoas que conheço que tiveram apendicite (4) são homens e jovens. A prevalência é maior em pessoas com esse perfil?</p>
 <p>Para responder essa dúvida eu preciso de <strong>todos</strong> os registros de cirurgias dos hospitais! <strong>Bom, mas nós temos o SUS!</strong></p>
 <p>Utilizando o pacote <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()"> <template>GitHub - rfsaldanha/microdatasus: Download de dados do DataSUS e pré-processamento no R.</template> <a href="https://github.com/rfsaldanha/microdatasus" class="r-link-pkg" target="_blank">{microdatasus}</a> </bslib-tooltip>, consegui obter todos os dados de apendicite registrados no Paraná em 2023 e responder minha dúvida!</p>
 <p><a href="figures/plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="figures/plot.png" class="img-fluid"></a></p>
-<!-- Quanta gente tem apendicite no Brasil todos os anos? -->
 <p>Realmente, <strong>jovens do sexo masculino têm mais apendicite!</strong></p>
 <p>Mas será que jovens não tem mais apendicite apenas porque existem mais jovens do que idosos na população?</p>
-<p>Para isso vamos utilizar os dados do <a href="https://censo2022.ibge.gov.br/panorama/"><strong>Censo 2022</strong></a> e calcular a proporção de casos de Apendicite de acordo com a população do Paraná.</p>
+<p>Para isso utilizei os dados do <a href="https://censo2022.ibge.gov.br/panorama/"><strong>Censo 2022</strong></a> para calcular a proporção de casos de Apendicite de acordo com a população do Paraná.</p>
 <p><a href="figures/plot_incidencia_pop.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="figures/plot_incidencia_pop.png" class="img-fluid"></a></p>
 <p>Agora podemos observar que a diferença não é tão grande entre as idades como visto anteriormente, mas o padrão de jovens do sexo masculino ainda se mantém!</p>
-<p>E quais as explicações de pessoas do sexo masculino terem mais apendicite? Isso vamos deixar para um outro post…</p>
+</section>
+<section id="por-que-homens-jovens-são-mais-propensos-à-apendicite" class="level2">
+<h2 class="anchored" data-anchor-id="por-que-homens-jovens-são-mais-propensos-à-apendicite">Por que homens jovens são mais propensos à apendicite?</h2>
+<p>E quais as explicações científicas de pessoas do sexo masculino terem mais apendicite? Isso vamos deixar para um outro post…</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -668,7 +688,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
