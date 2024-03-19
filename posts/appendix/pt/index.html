@@ -89,13 +89,13 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 
 
 <meta property="og:title" content="Bruno Mioto - Homens têm mais apendicite?">
-<meta property="og:description" content="Uma análise utilizando dandos do SUS">
+<meta property="og:description" content="Uma análise utilizando os dados do SUS">
 <meta property="og:image" content="https://brunomioto.com/posts/appendix/pt/cover.png">
 <meta property="og:site_name" content="Bruno Mioto">
 <meta property="og:image:height" content="5030">
 <meta property="og:image:width" content="14017">
 <meta name="twitter:title" content="Bruno Mioto">
-<meta name="twitter:description" content="Uma análise utilizando dandos do SUS">
+<meta name="twitter:description" content="Uma análise utilizando os dados do SUS">
 <meta name="twitter:image" content="https://brunomioto.com/posts/appendix/pt/cover.png">
 <meta name="twitter:creator" content="@BrunoHMioto">
 <meta name="twitter:card" content="summary_large_image">
@@ -222,7 +222,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 </header>
 
 
-<p><a href="cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="cover.png" class="img-fluid"></a></p>
+<p><a href="cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="cover.png" class="preview-image img-fluid"></a></p>
 <p>Mês passado tive uma apendicite. Uma inflamação que apareceu de uma hora para outra (literalmente) e adiou todos meus planos e compromissos. O que me fez ter bastante tempo livre por uma semana. Com todo esse tempo longe do computador (seja por enjôo ou dor), não pude deixar de pensar nos dados por trás dessa condição…</p>
 <p>Antes de tudo, quanto a apendicite me fez parar quieto?</p>
 <p>Mesmo que eu não seja o tipo de pessoa que anda muito no dia a dia, depois da cirurgia no dia 16… eu só fiquei deitado!</p>
@@ -240,13 +240,14 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p><a href="figures/plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="figures/plot.png" class="img-fluid"></a></p>
 <p>Realmente, <strong>jovens do sexo masculino têm mais apendicite!</strong></p>
 <p>Mas será que jovens não tem mais apendicite apenas porque existem mais jovens do que idosos na população?</p>
-<p>Para isso utilizei os dados do <a href="https://censo2022.ibge.gov.br/panorama/"><strong>Censo 2022</strong></a> para calcular a proporção de casos de Apendicite de acordo com a população do Paraná.</p>
+<p>Para isso utilizei os dados do <a href="https://censo2022.ibge.gov.br/panorama/"><strong>Censo 2022</strong></a> para calcular a <strong>proporção</strong> de casos de Apendicite de acordo com a população do Paraná.</p>
 <p><a href="figures/plot_incidencia_pop.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="figures/plot_incidencia_pop.png" class="img-fluid"></a></p>
 <p>Agora podemos observar que a diferença não é tão grande entre as idades como visto anteriormente, mas o padrão de jovens do sexo masculino ainda se mantém!</p>
 </section>
 <section id="por-que-homens-jovens-são-mais-propensos-à-apendicite" class="level2">
 <h2 class="anchored" data-anchor-id="por-que-homens-jovens-são-mais-propensos-à-apendicite">Por que homens jovens são mais propensos à apendicite?</h2>
-<p>E quais as explicações científicas de pessoas do sexo masculino terem mais apendicite? Isso vamos deixar para um outro post…</p>
+<p>E quais as explicações científicas de pessoas do sexo masculino terem mais apendicite?</p>
+<p>Isso vamos ter que deixar para um outro post…</p>
 
 
 </section>
@@ -688,7 +689,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
