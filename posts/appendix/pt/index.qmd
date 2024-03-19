@@ -1,6 +1,5 @@
 ---
 title: "Homens têm mais apendicite?"
-draft: true
 lightbox: true
 description: "Uma análise utilizando os dados do SUS"
 author: "Bruno Mioto"
