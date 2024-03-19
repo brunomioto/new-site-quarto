@@ -7,10 +7,10 @@ date: "2024-03-19"
 image: cover.png
 categories: ["ggplot2","dataviz", "saúde"]
 open-graph:
-  description: "Uma análise utilizando dandos do SUS"
+  description: "Uma análise utilizando os dados do SUS"
   image: cover.png
 twitter-card:
-  description: "Uma análise utilizando dandos do SUS"
+  description: "Uma análise utilizando os dados do SUS"
   image: cover.png
   card-style: summary_large_image
 format:
@@ -20,7 +20,7 @@ execute:
   freeze: true
 ---
 
-![](cover.png)
+![](cover.png){.preview-image}
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -51,7 +51,7 @@ Realmente, **jovens do sexo masculino têm mais apendicite!**
 
 Mas será que jovens não tem mais apendicite apenas porque existem mais jovens do que idosos na população?
 
-Para isso utilizei os dados do [**Censo 2022**](https://censo2022.ibge.gov.br/panorama/) para calcular a proporção de casos de Apendicite de acordo com a população do Paraná.
+Para isso utilizei os dados do [**Censo 2022**](https://censo2022.ibge.gov.br/panorama/) para calcular a **proporção** de casos de Apendicite de acordo com a população do Paraná.
 
 ![](figures/plot_incidencia_pop.png)
 
@@ -59,7 +59,9 @@ Agora podemos observar que a diferença não é tão grande entre as idades como
 
 ## Por que homens jovens são mais propensos à apendicite?
 
-E quais as explicações científicas de pessoas do sexo masculino terem mais apendicite? Isso vamos deixar para um outro post...
+E quais as explicações científicas de pessoas do sexo masculino terem mais apendicite? 
+
+Isso vamos ter que deixar para um outro post...
 
 
 
