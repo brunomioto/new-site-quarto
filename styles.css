@@ -8,3 +8,8 @@ $primary:       #2780e3 !default;
 
 // stylelint-disable-next-line value-keyword-case
 $font-family-sans-serif:     "Open Sans", Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+
+// Background color
+
+$body-bg: #fafafa !default;

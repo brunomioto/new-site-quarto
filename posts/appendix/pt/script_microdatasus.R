@@ -12,7 +12,7 @@ conn <- dbConnect(RSQLite::SQLite(), "sih.SQLite")
 
 
 anos <- c(2023)
-meses <- 1:12
+meses <- 7
 ufs <- c("PR")
 
 for(ano in anos){
@@ -39,6 +39,7 @@ for(ano in anos){
 }
 
 datasus_final <- tbl(conn, "sih") %>%
+  distinct() %>% 
   select(COD_IDADE, DIAG_PRINC, IDADE, SEXO) %>%
   filter(COD_IDADE == "Anos") %>%
   # filter(grepl("K35|K36",DIAG_PRINC)) %>%
@@ -88,6 +89,9 @@ mutate(
     
   ))
 )
+
+
+readr::write_csv(datasus_final2, "posts/appendix/pt/data/datasus_final2.csv")
 
 
 ##dados censo
@@ -236,10 +240,11 @@ datasus_final2 %>%
     #                           color = "#dedede")
   )+
   coord_cartesian(
-    xlim = c(-1000,1000)
+    xlim = c(-800,800)
   )
 
 ggsave("posts/appendix/pt/figures/plot.png", width = 6, height = 4.5, dpi = 600)
+ggsave("posts/appendix/pt/figures/plot.svg", width = 6, height = 4.5, dpi = 600)
 
 
 
@@ -266,7 +271,7 @@ datasus_final_censo %>%
   )+
   annotate(
     "label",
-    x = c(-0.2,0.2),
+    x = c(-0.15,0.15),
     y = 14,
     label = c("Masculino", "Feminino"),
     fontface = "bold",
@@ -316,10 +321,11 @@ datasus_final_censo %>%
                               color = "#dedede")
   )+
   coord_cartesian(
-    xlim = c(-0.3,0.3)
+    xlim = c(-0.2,0.2)
   )
 
 
 
 ggsave("posts/appendix/pt/figures/plot_incidencia_pop.png", width = 6, height = 4.5, dpi = 600)
+ggsave("posts/appendix/pt/figures/plot_incidencia_pop.svg", width = 6, height = 4.5, dpi = 600)
 

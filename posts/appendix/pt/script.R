@@ -201,7 +201,7 @@ ggplot(daily_totals, aes(x = wday, y = week)) +
 
 
 
-ggsave("posts\\appendix\\pt\\figures\\calendar.png", bg = "#fafafa",
+ggsave("posts\\appendix\\pt\\figures\\calendar.svg", bg = "#fafafa",
        width = 6, height = 4.5, 
        dpi = 1200)
 
