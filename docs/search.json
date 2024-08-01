@@ -39,7 +39,14 @@
     "href": "r-packages.html#futebolplotr",
     "title": "R packages",
     "section": "futebolplotR",
-    "text": "futebolplotR\n\nThe goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis. It provides a ggplot2 geom that does the heavy lifting of plotting Brazilian soccer badges in high quality, with correct aspect ratio and possible transparency.\nThe futebolplotR contains emblems of the teams that have participated in the Brasileirão Série A soccer league from 2003 to the present day. Other teams are also welcome!\nThis package can be used with data from brasileirao R package.\nThe code for this package was heavily based on nbaplotR with minor changes to support Brazilian soccer team badges.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
+    "text": "futebolplotR\n\nThe goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis. It provides a ggplot2 geom that does the heavy lifting of plotting Brazilian soccer badges in high quality, with correct aspect ratio and possible transparency.\nThe futebolplotR contains emblems of the teams that have participated in the Brasileirão Série A soccer league from 2003 to the present day. Other teams are also welcome!\nThis package can be used with data from brasileirao R package.\nThe code for this package was heavily based on nbaplotR with minor changes to support Brazilian soccer team badges.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/futebolplotR\")"
+  },
+  {
+    "objectID": "r-packages.html#feowr",
+    "href": "r-packages.html#feowr",
+    "title": "R packages",
+    "section": "feowR",
+    "text": "feowR\n\n  \n\nfeowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW) using piggyback R package.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/feowR\")"
   },
   {
     "objectID": "r-packages.html#worldclimdata",
@@ -151,7 +158,7 @@
     "href": "index.html#posts-em-português",
     "title": "Bruno Mioto",
     "section": "Posts em Português",
-    "text": "Posts em Português\n\n\n\n\n\n\n\n\n\n\nIntrodução ao ggplot2\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nMapeando as árvores de Maringá-PR\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Posts em Português\n\n\n\n\n\n\n\n\n\n\nHomens têm mais apendicite?\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntrodução ao ggplot2\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nMapeando as árvores de Maringá-PR\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about-pt.html",
@@ -224,11 +231,18 @@
     "text": "Collaborations"
   },
   {
+    "objectID": "charts.html#published-charts",
+    "href": "charts.html#published-charts",
+    "title": "Charts",
+    "section": "Published charts",
+    "text": "Published charts\nThese are some charts published in scientific papers.\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study"
+  },
+  {
     "objectID": "charts.html#original-charts",
     "href": "charts.html#original-charts",
     "title": "Charts",
     "section": "Original charts",
-    "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\n\n\n\nPlay animation made for BigDataBowl ’24 Competition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\nPlay animation made for BigDataBowl ’24 Competition"
+    "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\n\n\n\nPlay animation made for BigDataBowl ’24 Competition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study\nPlay animation made for BigDataBowl ’24 Competition"
   },
   {
     "objectID": "intro-ggplot2.html",
@@ -287,6 +301,27 @@
     "text": "Plotar imagens\nSe quisermos colocar figuras nos nosso gráficos, a melhor indicação é usar o pacote ggpath. Essa é melhor forma de plotar imagens!\nPara isso vamos utilizar a função geom_from_path(). Só precisamos informar qual é a coluna com o caminho para a figura.\nUma sugestão é colocar o argumento da largura width como 0.1 pois as figuras podem ficar gigantes!\n\nlibrary(ggpath)\n\niniciais2 %&gt;% \n  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+\n  geom_col(color = \"black\")+\n  geom_from_path(aes(path = url_imagem),\n                 width = 0.1)+\n  scale_fill_manual(\n    values = c(\n      \"fogo\" = \"#F08030\",\n      \"grama\" = \"#78C850\",\n      \"água\" = \"#6890F0\"\n    )\n  )\n\n\n\n\n\n\n\nGráfico finalizado\nCom comentários!\n\niniciais2 %&gt;% \n  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+\n  #adiciona colunas\n  geom_col(color = \"black\",\n           width = 0.5)+\n  #adiciona nomes\n  geom_text(aes(label = pokemon,\n                color = tipo_1),\n            x = 1,\n            hjust = 0,\n            nudge_y = 0.45,\n            fontface = \"bold\")+\n  #adiciona figuras\n  geom_from_path(aes(path = url_imagem),\n                 width = 0.1,\n                 hjust = 0)+\n  #adiciona linha vertical\n  geom_vline(xintercept = 0)+\n  #expande eixo x\n  scale_x_continuous(\n    expand = expansion(mult = c(0,0.1))\n  )+\n  #edita cores (vai afetar o texto que usa color)\n  scale_color_manual(\n    values = c(\n      \"fogo\" = \"#F08030\",\n      \"grama\" = \"#78C850\",\n      \"água\" = \"#6890F0\"\n    )\n  )+\n  #edita cores (vai afetar a coluna que usa fill)\n  scale_fill_manual(\n    values = c(\n      \"fogo\" = \"#F08030\",\n      \"grama\" = \"#78C850\",\n      \"água\" = \"#6890F0\"\n    )\n  )+\n  #edita labs\n  labs(\n    x = \"Ataque\",\n    caption = \"Bruno Mioto - @BrunoHMioto\"\n  )+\n  #usa tema inicial\n  theme_classic()+\n  #edita tema\n  theme(\n    #remover toda a legenda\n    legend.position = \"none\",\n    #remove título do eixo y\n    axis.title.y = element_blank(),\n    #remove texto do eixo y\n    axis.text.y = element_blank(),\n    #remove ticks\n    axis.ticks = element_blank(),\n    #remove eixos\n    axis.line = element_blank(),\n    #adiciona linha de grade - major\n    panel.grid.major.x = element_line(),\n    #adiciona linha de grade pontilhada - minor\n    panel.grid.minor.x = element_line(linetype = \"dashed\"),\n    #aumenta as margens do gráfico\n    plot.margin = margin(10,10,10,10,\"pt\"),\n    #muda a cor do fundo do gráfico\n    plot.background = element_rect(fill = \"#f1f1f1\", color = NA),\n    #muda a cor do fundo do painel\n    panel.background = element_rect(fill = \"#f1f1f1\", color = NA),\n  )+\n  #não corta as imagens que saem do painel\n  coord_cartesian(\n    clip = \"off\"\n  )\n\n\n\n\n\n\n#salva o gráfico\n#ggsave(\"figures/grafico_final.png\", width = 8, height = 6)"
   },
   {
+    "objectID": "posts/appendix/pt/index.html",
+    "href": "posts/appendix/pt/index.html",
+    "title": "Homens têm mais apendicite?",
+    "section": "",
+    "text": "Mês passado tive uma apendicite. Uma inflamação que apareceu de uma hora para outra (literalmente) e adiou todos meus planos e compromissos. O que me fez ter bastante tempo livre por uma semana. Com todo esse tempo longe do computador (seja por enjôo ou dor), não pude deixar de pensar nos dados por trás dessa condição…\nAntes de tudo, quanto a apendicite me fez parar quieto?\nMesmo que eu não seja o tipo de pessoa que anda muito no dia a dia, depois da cirurgia no dia 16… eu só fiquei deitado!\nSó fui me recuperar no dia 22, dia do retorno ao médico."
+  },
+  {
+    "objectID": "posts/appendix/pt/index.html#homens-são-mais-propensos-a-ter-apendicite",
+    "href": "posts/appendix/pt/index.html#homens-são-mais-propensos-a-ter-apendicite",
+    "title": "Homens têm mais apendicite?",
+    "section": "Homens são mais propensos a ter apendicite?",
+    "text": "Homens são mais propensos a ter apendicite?\nMas eu ainda tinha uma dúvida comigo. Todas as outras pessoas que conheço que tiveram apendicite (4) são homens e jovens. A prevalência é maior em pessoas com esse perfil?\nPara responder essa dúvida eu preciso de todos os registros de cirurgias dos hospitais! Bom, mas nós temos o SUS!\nUtilizando o pacote {microdatasus} , consegui obter todos os dados de apendicite registrados no Paraná em 2023 e responder minha dúvida!\n\nRealmente, jovens do sexo masculino têm mais apendicite!\nMas será que jovens não tem mais apendicite apenas porque existem mais jovens do que idosos na população?\nPara isso utilizei os dados do Censo 2022 para calcular a proporção de casos de Apendicite de acordo com a população do Paraná.\n\nAgora podemos observar que a diferença não é tão grande entre as idades como visto anteriormente, mas o padrão de jovens do sexo masculino ainda se mantém!"
+  },
+  {
+    "objectID": "posts/appendix/pt/index.html#por-que-homens-jovens-são-mais-propensos-à-apendicite",
+    "href": "posts/appendix/pt/index.html#por-que-homens-jovens-são-mais-propensos-à-apendicite",
+    "title": "Homens têm mais apendicite?",
+    "section": "Por que homens jovens são mais propensos à apendicite?",
+    "text": "Por que homens jovens são mais propensos à apendicite?\nE quais as explicações científicas de pessoas do sexo masculino terem mais apendicite?\nIsso vamos ter que deixar para um outro post…"
+  },
+  {
     "objectID": "posts/intro_ggplot2/en/index.html#used-packages",
     "href": "posts/intro_ggplot2/en/index.html#used-packages",
     "title": "ggplot2 101",
@@ -326,14 +361,14 @@
     "href": "posts/pt.html",
     "title": "Bruno Mioto",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/pt.html#posts-em-português",
     "href": "posts/pt.html#posts-em-português",
     "title": "Bruno Mioto",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/waterlines/en/index.html#motivation",

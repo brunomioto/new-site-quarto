@@ -167,6 +167,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#collaborations" id="toc-collaborations" class="nav-link active" data-scroll-target="#collaborations">Collaborations</a></li>
+  <li><a href="#published-charts" id="toc-published-charts" class="nav-link" data-scroll-target="#published-charts">Published charts</a></li>
   <li><a href="#original-charts" id="toc-original-charts" class="nav-link" data-scroll-target="#original-charts">Original charts</a></li>
   </ul>
 </nav>
@@ -313,6 +314,16 @@ href=&quot;https://www.nexojornal.com.br/grafico/2022/05/16/Infla%C3%A7%C3%A3o-e
 </div>
 </div>
 </section>
+<section id="published-charts" class="level2">
+<h2 class="anchored" data-anchor-id="published-charts">Published charts</h2>
+<p>These are some charts published in scientific papers.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="figures/charts/charts_jama.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="Kieling et al.&nbsp;(2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study"><img src="figures/charts/charts_jama.png" class="img-fluid figure-img" alt="Kieling et al.&nbsp;(2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study"></a></p>
+<figcaption><a href="https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2814639">Kieling et al.&nbsp;(2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study</a></figcaption>
+</figure>
+</div>
+</section>
 <section id="original-charts" class="level2">
 <h2 class="anchored" data-anchor-id="original-charts">Original charts</h2>
 <p>All the following charts and maps were made entirely using <strong>ggplot2/R</strong>.<br>You can click on each plot to see each detail.</p>
@@ -325,7 +336,7 @@ href=&quot;https://www.nexojornal.com.br/grafico/2022/05/16/Infla%C3%A7%C3%A3o-e
 </style>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/charts/animation_kaggle_small_size.gif" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-description="I
+<p><a href="figures/charts/animation_kaggle_small_size.gif" class="lightbox" data-description="I
 
 made
 
@@ -358,7 +369,7 @@ notebook
 at
 
 <a
-href=&quot;https://www.kaggle.com/code/stevenpatton97/the-components-of-a-tackle-a-physics-driven-study&quot;>Kaggle</a>" data-gallery="my-gallery" title="Play animation made for BigDataBowl ’24 Competition"><img src="figures/charts/animation_kaggle_small_size.gif" class="img-fluid figure-img" alt="Play animation made for BigDataBowl ’24 Competition"></a></p>
+href=&quot;https://www.kaggle.com/code/stevenpatton97/the-components-of-a-tackle-a-physics-driven-study&quot;>Kaggle</a>" data-glightbox="description: .lightbox-desc-4" data-gallery="my-gallery" title="Play animation made for BigDataBowl ’24 Competition"><img src="figures/charts/animation_kaggle_small_size.gif" class="img-fluid figure-img" alt="Play animation made for BigDataBowl ’24 Competition"></a></p>
 <figcaption>Play animation made for BigDataBowl ’24 Competition</figcaption>
 </figure>
 </div>
@@ -478,7 +489,8 @@ href=&quot;https://www.kaggle.com/code/stevenpatton97/the-components-of-a-tackle
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-3">Play animation made for BigDataBowl ’24 Competition</span>
+<span class="glightbox-desc lightbox-desc-3"><a href="https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2814639">Kieling et al.&nbsp;(2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study</a></span>
+<span class="glightbox-desc lightbox-desc-4">Play animation made for BigDataBowl ’24 Competition</span>
 </div>
 </section>
 
@@ -562,24 +574,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/brunomioto\.com\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -915,7 +909,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

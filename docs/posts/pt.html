@@ -274,7 +274,46 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ggplot2,dataviz" data-listing-date-sort="1706583600000" data-listing-file-modified-sort="1708715758000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3027">
+<div class="quarto-post image-right" data-index="0" data-categories="ggplot2,dataviz,saúde" data-listing-date-sort="1710990000000" data-listing-file-modified-sort="1711027646616" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="276">
+<div class="thumbnail">
+<p><a href="../posts/appendix/pt/index.html" class="no-external"></a></p><a href="../posts/appendix/pt/index.html" class="no-external">
+<p><img src="../posts/appendix/pt/cover.png" class="thumbnail-image"></p>
+</a><p><a href="../posts/appendix/pt/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../posts/appendix/pt/index.html" class="no-external">Homens têm mais apendicite?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../posts/appendix/pt/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+ggplot2
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('dataviz'); return false;">
+dataviz
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('saúde'); return false;">
+saúde
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="../posts/appendix/pt/index.html" class="no-external">
+<div class="listing-date">
+Mar 21, 2024
+</div>
+<div class="listing-author">
+Bruno Mioto
+</div>
+<div class="listing-reading-time">
+2 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="ggplot2,dataviz" data-listing-date-sort="1706583600000" data-listing-file-modified-sort="1708715758000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3027">
 <div class="thumbnail">
 <p><a href="../posts/intro_ggplot2/pt/index.html" class="no-external"></a></p><a href="../posts/intro_ggplot2/pt/index.html" class="no-external">
 <p><img src="../posts/intro_ggplot2/pt/cover.png" class="thumbnail-image"></p>
@@ -310,7 +349,7 @@ Bruno Mioto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="ggplot2,dataviz,maps" data-listing-date-sort="1701745200000" data-listing-file-modified-sort="1701786237712" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2871">
+<div class="quarto-post image-right" data-index="2" data-categories="ggplot2,dataviz,maps" data-listing-date-sort="1701745200000" data-listing-file-modified-sort="1701786237712" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2871">
 <div class="thumbnail">
 <p><a href="../posts/trees_mga/pt/index.html" class="no-external"></a></p><a href="../posts/trees_mga/pt/index.html" class="no-external">
 <p><img src="../posts/trees_mga/pt/post_trees_mga.png" class="thumbnail-image"></p>
@@ -439,24 +478,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/brunomioto\.com\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,

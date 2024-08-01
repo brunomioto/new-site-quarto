@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brunomioto.com/twitter-bots.html</loc>
-    <lastmod>2023-07-10T02:59:34.763Z</lastmod>
+    <lastmod>2023-07-10T17:08:58.000Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/r-packages.html</loc>
-    <lastmod>2024-01-19T11:58:14.150Z</lastmod>
+    <lastmod>2024-08-01T01:52:05.651Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/posts/trees_mga/pt/index.html</loc>
@@ -22,23 +22,27 @@
   </url>
   <url>
     <loc>https://brunomioto.com/index.html</loc>
-    <lastmod>2023-10-13T13:46:14.272Z</lastmod>
+    <lastmod>2024-03-11T02:22:43.937Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/about-pt.html</loc>
-    <lastmod>2024-01-31T00:47:15.890Z</lastmod>
+    <lastmod>2024-01-31T03:59:10.000Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/about-en.html</loc>
-    <lastmod>2023-01-31T13:18:49.103Z</lastmod>
+    <lastmod>2024-02-29T02:53:13.498Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/charts.html</loc>
-    <lastmod>2024-01-09T18:24:46.674Z</lastmod>
+    <lastmod>2024-08-01T02:01:16.810Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/intro-ggplot2.html</loc>
     <lastmod>2024-01-28T02:59:31.743Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/appendix/pt/index.html</loc>
+    <lastmod>2024-03-21T13:27:26.616Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/posts/intro_ggplot2/en/index.html</loc>
@@ -54,6 +58,6 @@
   </url>
   <url>
     <loc>https://brunomioto.com/scripts.html</loc>
-    <lastmod>2023-07-24T16:55:31.425Z</lastmod>
+    <lastmod>2023-07-25T16:21:04.000Z</lastmod>
   </url>
 </urlset>
