@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://brunomioto.com/twitter-bots.html</loc>
-    <lastmod>2024-08-01T02:33:22.279Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/about-pt.html</loc>
-    <lastmod>2024-08-01T02:33:21.043Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/intro-ggplot2.html</loc>
-    <lastmod>2024-08-01T02:33:21.351Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/en.html</loc>
-    <lastmod>2024-08-01T02:33:22.083Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/intro_ggplot2/en/index.html</loc>
-    <lastmod>2024-08-01T02:33:22.099Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/appendix/pt/index.html</loc>
-    <lastmod>2024-08-01T02:33:22.079Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/scripts.html</loc>
-    <lastmod>2024-08-01T02:33:22.279Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/charts.html</loc>
-    <lastmod>2024-08-01T02:33:21.043Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/trees_mga/pt/index.html</loc>
-    <lastmod>2024-08-01T02:33:22.271Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/waterlines/en/index.html</loc>
-    <lastmod>2024-08-01T02:33:22.275Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/intro_ggplot2/pt/index.html</loc>
-    <lastmod>2024-08-01T02:33:22.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/pt.html</loc>
-    <lastmod>2024-08-01T02:33:22.107Z</lastmod>
+    <loc>https://brunomioto.com/r-packages.html</loc>
+    <lastmod>2024-08-01T02:53:17.308Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/index.html</loc>
-    <lastmod>2024-08-01T02:33:21.351Z</lastmod>
+    <lastmod>2024-08-01T02:53:16.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/appendix/pt/index.html</loc>
+    <lastmod>2024-08-01T02:53:17.112Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/waterlines/en/index.html</loc>
+    <lastmod>2024-08-01T02:53:17.304Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/en.html</loc>
+    <lastmod>2024-08-01T02:53:17.116Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/intro_ggplot2/pt/index.html</loc>
+    <lastmod>2024-08-01T02:53:17.144Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/about-pt.html</loc>
+    <lastmod>2024-08-01T02:53:16.092Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/about-en.html</loc>
-    <lastmod>2024-08-01T02:33:21.043Z</lastmod>
+    <lastmod>2024-08-01T02:53:16.092Z</lastmod>
   </url>
   <url>
-    <loc>https://brunomioto.com/r-packages.html</loc>
-    <lastmod>2024-08-01T02:33:22.279Z</lastmod>
+    <loc>https://brunomioto.com/charts.html</loc>
+    <lastmod>2024-08-01T02:53:16.092Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/scripts.html</loc>
+    <lastmod>2024-08-01T02:53:17.308Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/intro_ggplot2/en/index.html</loc>
+    <lastmod>2024-08-01T02:53:17.132Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/trees_mga/pt/index.html</loc>
+    <lastmod>2024-08-01T02:53:17.304Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/pt.html</loc>
+    <lastmod>2024-08-01T02:53:17.144Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/twitter-bots.html</loc>
+    <lastmod>2024-08-01T02:53:17.308Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/intro-ggplot2.html</loc>
+    <lastmod>2024-08-01T02:53:16.392Z</lastmod>
   </url>
 </urlset>
