@@ -3,7 +3,7 @@ title: "Homens têm mais apendicite?"
 lightbox: true
 description: "Uma análise utilizando os dados do SUS"
 author: "Bruno Mioto"
-date: "2024-03-19"
+date: "2024-03-21"
 image: cover.png
 categories: ["ggplot2","dataviz", "saúde"]
 open-graph:

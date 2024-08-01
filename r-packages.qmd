@@ -40,7 +40,27 @@ You can install it running:
 if(!requireNamespace("remotes", quietly = TRUE)){
     install.packages("remotes")
   }
-remotes::install_github("brunomioto/reservatoriosBR")
+remotes::install_github("brunomioto/futebolplotR")
+```
+
+## feowR
+
+<!-- badges: start -->
+[![Codecov test coverage](https://codecov.io/gh/brunomioto/feowR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/brunomioto/feowR?branch=master)
+[![R-CMD-check](https://github.com/brunomioto/feowR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/brunomioto/feowR/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+<img src="/figures/hex-feowr.png" align="right" height="138"/>
+
+**feowR** provides a faster and secure way to download shapefiles of [Freshwater Ecoregions of the World (FEOW)](https://feow.org) using [piggyback](https://docs.ropensci.org/piggyback/index.html) R package.
+
+You can install it running:
+
+```{r, eval=FALSE}
+if(!requireNamespace("remotes", quietly = TRUE)){
+    install.packages("remotes")
+  }
+remotes::install_github("brunomioto/feowR")
 ```
 
 ## WorldClimData

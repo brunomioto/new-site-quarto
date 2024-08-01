@@ -25,6 +25,12 @@ Want to support my work? [🥧 Buy me a Pie <s>chart</s>](https://www.buymeacoff
 
 :::
 
+## Published charts
+
+This is some charts published in scientific papers.
+
+![[Kieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study](https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2814639)](figures/charts/charts_jama.png)
+
 ## Original charts
 
 All the following charts and maps were made entirely using **ggplot2/R**.<br>You can click on each plot to see each detail.
