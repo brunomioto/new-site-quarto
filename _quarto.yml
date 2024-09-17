@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+
+resources:
+  - CNAME
   
 execute:
   freeze: auto
