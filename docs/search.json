@@ -140,109 +140,25 @@
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nFeb 27, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nFeb 1, 2023\n\n\nBruno Mioto\n\n\n5 min\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bruno Mioto",
+    "objectID": "posts/appendix/pt/index.html",
+    "href": "posts/appendix/pt/index.html",
+    "title": "Homens têm mais apendicite?",
     "section": "",
-    "text": "Hello, this is my personal website!\nI’m a biologist and dataviz freelancer! Here you’ll find pages about the Charts and R packages I made and some info about me.\nIf you want to support my work, buy me a coffee!"
+    "text": "Mês passado tive uma apendicite. Uma inflamação que apareceu de uma hora para outra (literalmente) e adiou todos meus planos e compromissos. O que me fez ter bastante tempo livre por uma semana. Com todo esse tempo longe do computador (seja por enjôo ou dor), não pude deixar de pensar nos dados por trás dessa condição…\nAntes de tudo, quanto a apendicite me fez parar quieto?\nMesmo que eu não seja o tipo de pessoa que anda muito no dia a dia, depois da cirurgia no dia 16… eu só fiquei deitado!\nSó fui me recuperar no dia 22, dia do retorno ao médico."
   },
   {
-    "objectID": "index.html#posts-in-english",
-    "href": "index.html#posts-in-english",
-    "title": "Bruno Mioto",
-    "section": "Posts in English",
-    "text": "Posts in English\n\n\n\n\n\n\n\n\n\n\nggplot2 101\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nFeb 27, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nDrawing waterlines with ggplot2 in R\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nFeb 1, 2023\n\n\nBruno Mioto\n\n\n5 min\n\n\n\n\n\n\nNo matching items"
+    "objectID": "posts/appendix/pt/index.html#homens-são-mais-propensos-a-ter-apendicite",
+    "href": "posts/appendix/pt/index.html#homens-são-mais-propensos-a-ter-apendicite",
+    "title": "Homens têm mais apendicite?",
+    "section": "Homens são mais propensos a ter apendicite?",
+    "text": "Homens são mais propensos a ter apendicite?\nMas eu ainda tinha uma dúvida comigo. Todas as outras pessoas que conheço que tiveram apendicite (4) são homens e jovens. A prevalência é maior em pessoas com esse perfil?\nPara responder essa dúvida eu preciso de todos os registros de cirurgias dos hospitais! Bom, mas nós temos o SUS!\nUtilizando o pacote {microdatasus} , consegui obter todos os dados de apendicite registrados no Paraná em 2023 e responder minha dúvida!\n\nRealmente, jovens do sexo masculino têm mais apendicite!\nMas será que jovens não tem mais apendicite apenas porque existem mais jovens do que idosos na população?\nPara isso utilizei os dados do Censo 2022 para calcular a proporção de casos de Apendicite de acordo com a população do Paraná.\n\nAgora podemos observar que a diferença não é tão grande entre as idades como visto anteriormente, mas o padrão de jovens do sexo masculino ainda se mantém!"
   },
   {
-    "objectID": "index.html#posts-em-português",
-    "href": "index.html#posts-em-português",
-    "title": "Bruno Mioto",
-    "section": "Posts em Português",
-    "text": "Posts em Português\n\n\n\n\n\n\n\n\n\n\nHomens têm mais apendicite?\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntrodução ao ggplot2\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nEleição Maringá-PR 2024\n\n\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nMapeando as árvores de Maringá-PR\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about-pt.html",
-    "href": "about-pt.html",
-    "title": "Sobre mim",
-    "section": "",
-    "text": "English  Português\nOi! Me chamo Bruno Mioto, sou biólogo, atualmente faço doutorado em Ecologia de Ambientes Aquáticos Continentais (PEA-UEM) e estudo filogeografia de peixes!\nTenho experiência com análise de dados e criação de gráficos, amo criar novos pacotes em R e trabalho como freelancer de visualização de dados!\nVeja meu perfil de freelas aqui: Upwork\nE meu portifólio aqui: Behance\nSempre busco levar a informação correta de forma mais simples à sociedade."
-  },
-  {
-    "objectID": "about-pt.html#educação",
-    "href": "about-pt.html#educação",
-    "title": "Sobre mim",
-    "section": "Educação",
-    "text": "Educação\nPrograma de Ecologia em Ambientes Aquáticos Continentais (PEA-UEM) | Maringá - PR Doutorado | 2021 - Presente\nPrograma de Ecologia em Ambientes Aquáticos Continentais (PEA-UEM) | Maringá - PR Mestrado | 2019 - 2021\nUniversidade Estadual de Maringá (UEM) | Maringá - PR Licenciatura | 2015 - 2019"
-  },
-  {
-    "objectID": "about-pt.html#experiência",
-    "href": "about-pt.html#experiência",
-    "title": "Sobre mim",
-    "section": "Experiência",
-    "text": "Experiência\nNupgen (DBC/Nupélia UEM) - Laboratório de Genética MolecularAluno de doutorado | 2018 - Present\nGalápagos - Gráficos e Mapas Diretor de Gráficos | 2022 - Presente\nUpwork Freelancer | 2022 - Presente\nCursinho Voluntário Renovação Professor Voluntário - Biologia | 2019 - Presente"
-  },
-  {
-    "objectID": "about-pt.html#artigos-publicados",
-    "href": "about-pt.html#artigos-publicados",
-    "title": "Sobre mim",
-    "section": "Artigos publicados",
-    "text": "Artigos publicados\nThe first record of Centrocestus formosanus (Trematoda: Heterophyidae) in southern Brazil supported by molecular data - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nMolecular evidence of new freshwater turtle blood flukes (Digenea: Spirorchiidae) in the intermediate snail host Biomphalaria occidentalis Paraense, 1981 in an urban aquatic ecosystem in Brazil - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Fábio Fermino, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nCyanobacteria in an urban lake: hidden diversity revealed by metabarcoding - 2020\nThomaz Mansini Carrenho Fabrin, Bruno Henrique Mioto Stabile, Matheus Vieira da Silva, Susicley Jati, Liliana Rodrigues, Alessandra Valéria de Oliveira\nDivulgação da ciência desde a sala de aula - 2020\nYasmin Rodrigues de Souza, Carolina Pedrozo do Nascimento, Melissa Progênio da Silva, Gabriela Cassia Zanon Reinas, Edilaine Corrêa Leite, João Otávio Santos Silva, Bárbara Scorsim Arjona, Rejane Guimarães Melo, Bruno Henrique Mioto Stabile, Hugo Lima Kirsten, Renan Borges dos Reis, Matheus Henrique Ferreira Aleixo, Larissa Carrara Gonçalves, Fernanda Moreira Florêncio, Aline Favaro Mendes, Alessandra Barbosa da Silva, Alfonso Pineda, Luzia Cleide Rodrigues"
-  },
-  {
-    "objectID": "about-en.html",
-    "href": "about-en.html",
-    "title": "About me",
-    "section": "",
-    "text": "English  Português\nHi, my name is Bruno Mioto, I’m a biologist, currently doing my PhD in Ecology of Inland Water Ecosystems (PEA-UEM) and I study fish phylogeography!\nI have experience with data analysis and chart creation, I love to create new R packages and work as a data visualization freelancer!\nSee my freelance profile here: Upwork\nAnd my portfolio here: Behance\nI always seek to bring the right information in a simpler way to society."
-  },
-  {
-    "objectID": "about-en.html#education",
-    "href": "about-en.html#education",
-    "title": "About me",
-    "section": "Education",
-    "text": "Education\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PRPhD | 2021 - Present\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PRMaster’s Program | 2019 - 2021\nState University of Maringá (UEM) | Maringá - PRUndergraduate | 2015 - 2019"
-  },
-  {
-    "objectID": "about-en.html#experience",
-    "href": "about-en.html#experience",
-    "title": "About me",
-    "section": "Experience",
-    "text": "Experience\nNupgen (DBC/Nupélia UEM) - Molecular Genetics LabPhD student | 2018 - Present\nGalápagos - Charts and MapsDirector of Graphics | 2022 - Present\nUpworkTop Rated Freelancer | 2022 - Present\nRenovação Preparatory SchoolVolunteer Teacher - Biology | 2019 - Present"
-  },
-  {
-    "objectID": "about-en.html#published-papers",
-    "href": "about-en.html#published-papers",
-    "title": "About me",
-    "section": "Published papers",
-    "text": "Published papers\nThe first record of Centrocestus formosanus (Trematoda: Heterophyidae) in southern Brazil supported by molecular data - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nMolecular evidence of new freshwater turtle blood flukes (Digenea: Spirorchiidae) in the intermediate snail host Biomphalaria occidentalis Paraense, 1981 in an urban aquatic ecosystem in Brazil - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Fábio Fermino, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nCyanobacteria in an urban lake: hidden diversity revealed by metabarcoding - 2020\nThomaz Mansini Carrenho Fabrin, Bruno Henrique Mioto Stabile, Matheus Vieira da Silva, Susicley Jati, Liliana Rodrigues, Alessandra Valéria de Oliveira\nDivulgação da ciência desde a sala de aula - 2020\nYasmin Rodrigues de Souza, Carolina Pedrozo do Nascimento, Melissa Progênio da Silva, Gabriela Cassia Zanon Reinas, Edilaine Corrêa Leite, João Otávio Santos Silva, Bárbara Scorsim Arjona, Rejane Guimarães Melo, Bruno Henrique Mioto Stabile, Hugo Lima Kirsten, Renan Borges dos Reis, Matheus Henrique Ferreira Aleixo, Larissa Carrara Gonçalves, Fernanda Moreira Florêncio, Aline Favaro Mendes, Alessandra Barbosa da Silva, Alfonso Pineda, Luzia Cleide Rodrigues"
-  },
-  {
-    "objectID": "charts.html",
-    "href": "charts.html",
-    "title": "Charts",
-    "section": "",
-    "text": "I make original charts on demand for presentations/scientific articles/publications\nI work as a freelancer here: Upwork (Top Rated Freelancer)\nMy contact email address is bhmstabile@gmail.com\nWant to support my work? 🥧 Buy me a Pie chart"
-  },
-  {
-    "objectID": "charts.html#collaborations",
-    "href": "charts.html#collaborations",
-    "title": "Charts",
-    "section": "Collaborations",
-    "text": "Collaborations"
-  },
-  {
-    "objectID": "charts.html#published-charts",
-    "href": "charts.html#published-charts",
-    "title": "Charts",
-    "section": "Published charts",
-    "text": "Published charts\nThese are some charts published in scientific papers.\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study"
-  },
-  {
-    "objectID": "charts.html#original-charts",
-    "href": "charts.html#original-charts",
-    "title": "Charts",
-    "section": "Original charts",
-    "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\n\n\n\nPlay animation made for BigDataBowl ’24 Competition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study\nPlay animation made for BigDataBowl ’24 Competition"
+    "objectID": "posts/appendix/pt/index.html#por-que-homens-jovens-são-mais-propensos-à-apendicite",
+    "href": "posts/appendix/pt/index.html#por-que-homens-jovens-são-mais-propensos-à-apendicite",
+    "title": "Homens têm mais apendicite?",
+    "section": "Por que homens jovens são mais propensos à apendicite?",
+    "text": "Por que homens jovens são mais propensos à apendicite?\nE quais as explicações científicas de pessoas do sexo masculino terem mais apendicite?\nIsso vamos ter que deixar para um outro post…"
   },
   {
     "objectID": "intro-ggplot2.html",
@@ -301,25 +217,109 @@
     "text": "Plotar imagens\nSe quisermos colocar figuras nos nosso gráficos, a melhor indicação é usar o pacote ggpath. Essa é melhor forma de plotar imagens!\nPara isso vamos utilizar a função geom_from_path(). Só precisamos informar qual é a coluna com o caminho para a figura.\nUma sugestão é colocar o argumento da largura width como 0.1 pois as figuras podem ficar gigantes!\n\nlibrary(ggpath)\n\niniciais2 %&gt;% \n  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+\n  geom_col(color = \"black\")+\n  geom_from_path(aes(path = url_imagem),\n                 width = 0.1)+\n  scale_fill_manual(\n    values = c(\n      \"fogo\" = \"#F08030\",\n      \"grama\" = \"#78C850\",\n      \"água\" = \"#6890F0\"\n    )\n  )\n\n\n\n\n\n\n\nGráfico finalizado\nCom comentários!\n\niniciais2 %&gt;% \n  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+\n  #adiciona colunas\n  geom_col(color = \"black\",\n           width = 0.5)+\n  #adiciona nomes\n  geom_text(aes(label = pokemon,\n                color = tipo_1),\n            x = 1,\n            hjust = 0,\n            nudge_y = 0.45,\n            fontface = \"bold\")+\n  #adiciona figuras\n  geom_from_path(aes(path = url_imagem),\n                 width = 0.1,\n                 hjust = 0)+\n  #adiciona linha vertical\n  geom_vline(xintercept = 0)+\n  #expande eixo x\n  scale_x_continuous(\n    expand = expansion(mult = c(0,0.1))\n  )+\n  #edita cores (vai afetar o texto que usa color)\n  scale_color_manual(\n    values = c(\n      \"fogo\" = \"#F08030\",\n      \"grama\" = \"#78C850\",\n      \"água\" = \"#6890F0\"\n    )\n  )+\n  #edita cores (vai afetar a coluna que usa fill)\n  scale_fill_manual(\n    values = c(\n      \"fogo\" = \"#F08030\",\n      \"grama\" = \"#78C850\",\n      \"água\" = \"#6890F0\"\n    )\n  )+\n  #edita labs\n  labs(\n    x = \"Ataque\",\n    caption = \"Bruno Mioto - @BrunoHMioto\"\n  )+\n  #usa tema inicial\n  theme_classic()+\n  #edita tema\n  theme(\n    #remover toda a legenda\n    legend.position = \"none\",\n    #remove título do eixo y\n    axis.title.y = element_blank(),\n    #remove texto do eixo y\n    axis.text.y = element_blank(),\n    #remove ticks\n    axis.ticks = element_blank(),\n    #remove eixos\n    axis.line = element_blank(),\n    #adiciona linha de grade - major\n    panel.grid.major.x = element_line(),\n    #adiciona linha de grade pontilhada - minor\n    panel.grid.minor.x = element_line(linetype = \"dashed\"),\n    #aumenta as margens do gráfico\n    plot.margin = margin(10,10,10,10,\"pt\"),\n    #muda a cor do fundo do gráfico\n    plot.background = element_rect(fill = \"#f1f1f1\", color = NA),\n    #muda a cor do fundo do painel\n    panel.background = element_rect(fill = \"#f1f1f1\", color = NA),\n  )+\n  #não corta as imagens que saem do painel\n  coord_cartesian(\n    clip = \"off\"\n  )\n\n\n\n\n\n\n#salva o gráfico\n#ggsave(\"figures/grafico_final.png\", width = 8, height = 6)"
   },
   {
-    "objectID": "posts/appendix/pt/index.html",
-    "href": "posts/appendix/pt/index.html",
-    "title": "Homens têm mais apendicite?",
+    "objectID": "charts.html",
+    "href": "charts.html",
+    "title": "Charts",
     "section": "",
-    "text": "Mês passado tive uma apendicite. Uma inflamação que apareceu de uma hora para outra (literalmente) e adiou todos meus planos e compromissos. O que me fez ter bastante tempo livre por uma semana. Com todo esse tempo longe do computador (seja por enjôo ou dor), não pude deixar de pensar nos dados por trás dessa condição…\nAntes de tudo, quanto a apendicite me fez parar quieto?\nMesmo que eu não seja o tipo de pessoa que anda muito no dia a dia, depois da cirurgia no dia 16… eu só fiquei deitado!\nSó fui me recuperar no dia 22, dia do retorno ao médico."
+    "text": "I make original charts on demand for presentations/scientific articles/publications\nI work as a freelancer here: Upwork (Top Rated Freelancer)\nMy contact email address is bhmstabile@gmail.com\nWant to support my work? 🥧 Buy me a Pie chart"
   },
   {
-    "objectID": "posts/appendix/pt/index.html#homens-são-mais-propensos-a-ter-apendicite",
-    "href": "posts/appendix/pt/index.html#homens-são-mais-propensos-a-ter-apendicite",
-    "title": "Homens têm mais apendicite?",
-    "section": "Homens são mais propensos a ter apendicite?",
-    "text": "Homens são mais propensos a ter apendicite?\nMas eu ainda tinha uma dúvida comigo. Todas as outras pessoas que conheço que tiveram apendicite (4) são homens e jovens. A prevalência é maior em pessoas com esse perfil?\nPara responder essa dúvida eu preciso de todos os registros de cirurgias dos hospitais! Bom, mas nós temos o SUS!\nUtilizando o pacote {microdatasus} , consegui obter todos os dados de apendicite registrados no Paraná em 2023 e responder minha dúvida!\n\nRealmente, jovens do sexo masculino têm mais apendicite!\nMas será que jovens não tem mais apendicite apenas porque existem mais jovens do que idosos na população?\nPara isso utilizei os dados do Censo 2022 para calcular a proporção de casos de Apendicite de acordo com a população do Paraná.\n\nAgora podemos observar que a diferença não é tão grande entre as idades como visto anteriormente, mas o padrão de jovens do sexo masculino ainda se mantém!"
+    "objectID": "charts.html#collaborations",
+    "href": "charts.html#collaborations",
+    "title": "Charts",
+    "section": "Collaborations",
+    "text": "Collaborations"
   },
   {
-    "objectID": "posts/appendix/pt/index.html#por-que-homens-jovens-são-mais-propensos-à-apendicite",
-    "href": "posts/appendix/pt/index.html#por-que-homens-jovens-são-mais-propensos-à-apendicite",
-    "title": "Homens têm mais apendicite?",
-    "section": "Por que homens jovens são mais propensos à apendicite?",
-    "text": "Por que homens jovens são mais propensos à apendicite?\nE quais as explicações científicas de pessoas do sexo masculino terem mais apendicite?\nIsso vamos ter que deixar para um outro post…"
+    "objectID": "charts.html#published-charts",
+    "href": "charts.html#published-charts",
+    "title": "Charts",
+    "section": "Published charts",
+    "text": "Published charts\nThese are some charts published in scientific papers.\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study"
+  },
+  {
+    "objectID": "charts.html#original-charts",
+    "href": "charts.html#original-charts",
+    "title": "Charts",
+    "section": "Original charts",
+    "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\n\n\n\nPlay animation made for BigDataBowl ’24 Competition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study\nPlay animation made for BigDataBowl ’24 Competition"
+  },
+  {
+    "objectID": "about-en.html",
+    "href": "about-en.html",
+    "title": "About me",
+    "section": "",
+    "text": "English  Português\nHi, my name is Bruno Mioto, I’m a biologist, currently doing my PhD in Ecology of Inland Water Ecosystems (PEA-UEM) and I study fish phylogeography!\nI have experience with data analysis and chart creation, I love to create new R packages and work as a data visualization freelancer!\nSee my freelance profile here: Upwork\nAnd my portfolio here: Behance\nI always seek to bring the right information in a simpler way to society."
+  },
+  {
+    "objectID": "about-en.html#education",
+    "href": "about-en.html#education",
+    "title": "About me",
+    "section": "Education",
+    "text": "Education\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PRPhD | 2021 - Present\nGraduate Program in Ecology of Inland Water Ecosystems (PEA-UEM) | Maringá - PRMaster’s Program | 2019 - 2021\nState University of Maringá (UEM) | Maringá - PRUndergraduate | 2015 - 2019"
+  },
+  {
+    "objectID": "about-en.html#experience",
+    "href": "about-en.html#experience",
+    "title": "About me",
+    "section": "Experience",
+    "text": "Experience\nNupgen (DBC/Nupélia UEM) - Molecular Genetics LabPhD student | 2018 - Present\nGalápagos - Charts and MapsDirector of Graphics | 2022 - Present\nUpworkTop Rated Freelancer | 2022 - Present\nRenovação Preparatory SchoolVolunteer Teacher - Biology | 2019 - Present"
+  },
+  {
+    "objectID": "about-en.html#published-papers",
+    "href": "about-en.html#published-papers",
+    "title": "About me",
+    "section": "Published papers",
+    "text": "Published papers\nThe first record of Centrocestus formosanus (Trematoda: Heterophyidae) in southern Brazil supported by molecular data - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nMolecular evidence of new freshwater turtle blood flukes (Digenea: Spirorchiidae) in the intermediate snail host Biomphalaria occidentalis Paraense, 1981 in an urban aquatic ecosystem in Brazil - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Fábio Fermino, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nCyanobacteria in an urban lake: hidden diversity revealed by metabarcoding - 2020\nThomaz Mansini Carrenho Fabrin, Bruno Henrique Mioto Stabile, Matheus Vieira da Silva, Susicley Jati, Liliana Rodrigues, Alessandra Valéria de Oliveira\nDivulgação da ciência desde a sala de aula - 2020\nYasmin Rodrigues de Souza, Carolina Pedrozo do Nascimento, Melissa Progênio da Silva, Gabriela Cassia Zanon Reinas, Edilaine Corrêa Leite, João Otávio Santos Silva, Bárbara Scorsim Arjona, Rejane Guimarães Melo, Bruno Henrique Mioto Stabile, Hugo Lima Kirsten, Renan Borges dos Reis, Matheus Henrique Ferreira Aleixo, Larissa Carrara Gonçalves, Fernanda Moreira Florêncio, Aline Favaro Mendes, Alessandra Barbosa da Silva, Alfonso Pineda, Luzia Cleide Rodrigues"
+  },
+  {
+    "objectID": "about-pt.html",
+    "href": "about-pt.html",
+    "title": "Sobre mim",
+    "section": "",
+    "text": "English  Português\nOi! Me chamo Bruno Mioto, sou biólogo, atualmente faço doutorado em Ecologia de Ambientes Aquáticos Continentais (PEA-UEM) e estudo filogeografia de peixes!\nTenho experiência com análise de dados e criação de gráficos, amo criar novos pacotes em R e trabalho como freelancer de visualização de dados!\nVeja meu perfil de freelas aqui: Upwork\nE meu portifólio aqui: Behance\nSempre busco levar a informação correta de forma mais simples à sociedade."
+  },
+  {
+    "objectID": "about-pt.html#educação",
+    "href": "about-pt.html#educação",
+    "title": "Sobre mim",
+    "section": "Educação",
+    "text": "Educação\nPrograma de Ecologia em Ambientes Aquáticos Continentais (PEA-UEM) | Maringá - PR Doutorado | 2021 - Presente\nPrograma de Ecologia em Ambientes Aquáticos Continentais (PEA-UEM) | Maringá - PR Mestrado | 2019 - 2021\nUniversidade Estadual de Maringá (UEM) | Maringá - PR Licenciatura | 2015 - 2019"
+  },
+  {
+    "objectID": "about-pt.html#experiência",
+    "href": "about-pt.html#experiência",
+    "title": "Sobre mim",
+    "section": "Experiência",
+    "text": "Experiência\nNupgen (DBC/Nupélia UEM) - Laboratório de Genética MolecularAluno de doutorado | 2018 - Present\nGalápagos - Gráficos e Mapas Diretor de Gráficos | 2022 - Presente\nUpwork Freelancer | 2022 - Presente\nCursinho Voluntário Renovação Professor Voluntário - Biologia | 2019 - Presente"
+  },
+  {
+    "objectID": "about-pt.html#artigos-publicados",
+    "href": "about-pt.html#artigos-publicados",
+    "title": "Sobre mim",
+    "section": "Artigos publicados",
+    "text": "Artigos publicados\nThe first record of Centrocestus formosanus (Trematoda: Heterophyidae) in southern Brazil supported by molecular data - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nMolecular evidence of new freshwater turtle blood flukes (Digenea: Spirorchiidae) in the intermediate snail host Biomphalaria occidentalis Paraense, 1981 in an urban aquatic ecosystem in Brazil - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Fábio Fermino, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nCyanobacteria in an urban lake: hidden diversity revealed by metabarcoding - 2020\nThomaz Mansini Carrenho Fabrin, Bruno Henrique Mioto Stabile, Matheus Vieira da Silva, Susicley Jati, Liliana Rodrigues, Alessandra Valéria de Oliveira\nDivulgação da ciência desde a sala de aula - 2020\nYasmin Rodrigues de Souza, Carolina Pedrozo do Nascimento, Melissa Progênio da Silva, Gabriela Cassia Zanon Reinas, Edilaine Corrêa Leite, João Otávio Santos Silva, Bárbara Scorsim Arjona, Rejane Guimarães Melo, Bruno Henrique Mioto Stabile, Hugo Lima Kirsten, Renan Borges dos Reis, Matheus Henrique Ferreira Aleixo, Larissa Carrara Gonçalves, Fernanda Moreira Florêncio, Aline Favaro Mendes, Alessandra Barbosa da Silva, Alfonso Pineda, Luzia Cleide Rodrigues"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bruno Mioto",
+    "section": "",
+    "text": "Hello, this is my personal website!\nI’m a biologist and dataviz freelancer! Here you’ll find pages about the Charts and R packages I made and some info about me.\nIf you want to support my work, buy me a coffee!"
+  },
+  {
+    "objectID": "index.html#posts-in-english",
+    "href": "index.html#posts-in-english",
+    "title": "Bruno Mioto",
+    "section": "Posts in English",
+    "text": "Posts in English\n\n\n\n\n\n\n\n\n\n\nggplot2 101\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nFeb 27, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nDrawing waterlines with ggplot2 in R\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nFeb 1, 2023\n\n\nBruno Mioto\n\n\n5 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#posts-em-português",
+    "href": "index.html#posts-em-português",
+    "title": "Bruno Mioto",
+    "section": "Posts em Português",
+    "text": "Posts em Português\n\n\n\n\n\n\n\n\n\n\nHomens têm mais apendicite?\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntrodução ao ggplot2\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nMapeando as árvores de Maringá-PR\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/intro_ggplot2/en/index.html#used-packages",
@@ -361,14 +361,14 @@
     "href": "posts/pt.html",
     "title": "Bruno Mioto",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/pt.html#posts-em-português",
     "href": "posts/pt.html#posts-em-português",
     "title": "Bruno Mioto",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/waterlines/en/index.html#motivation",
