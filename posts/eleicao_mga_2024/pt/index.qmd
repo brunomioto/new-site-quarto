@@ -1,0 +1,27 @@
+---
+title: "Eleição Maringá-PR 2024"
+preview-colour:
+  code: true
+  text: true
+filters:
+   - lightbox
+   - preview-colour
+description: "texto"
+author: "Bruno Mioto"
+date: "2023-12-05"
+image: post_trees_mga.png
+# categories: ["ggplot2","dataviz","maps"]
+open-graph:
+  # description: "Uma análise das 142 mil árvores da cidade"
+  # image: post_trees_mga.png
+twitter-card:
+  # description: "Uma análise das 142 mil árvores da cidade"
+  # image: post_trees_mga.png
+  card-style: summary_large_image
+format:
+  html:
+    code-link: true
+---
+
+<!-- ![](post_trees_mga.png) -->
+
