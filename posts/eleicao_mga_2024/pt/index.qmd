@@ -1,121 +1,142 @@
 ---
 title: "A regionalização dos Vereadores eleitos em Maringá"
 lightbox: true
-draft: true
-# description: "Iniciando na visualização de dados"
+description: "Análise visual da distribuição geográfica de votos nas eleições de 2024"
 author: "Bruno Mioto"
-date: "2024-10-14"
-# image: cover.png
+date: "2024-10-16"
+image: post_eleicao_mga_2024.png
 categories: ["ggplot2","dataviz","política"]
 open-graph:
-  # description: "Iniciando na visualização de dados"
-  # image: cover.png
+  description: "Análise visual da distribuição geográfica de votos nas eleições de 2024"
+  image: post_eleicao_mga_2024.png
 twitter-card:
-  # description: "Iniciando na visualização de dados"
-  # image: cover.png
-  # card-style: summary_large_image
+  description: "Análise visual da distribuição geográfica de votos nas eleições de 2024"
+  image: post_eleicao_mga_2024.png
+  card-style: summary_large_image
 execute:
   freeze: true
 ---
 
-As eleições de 2024 em Maringá-PR .......
+![](post_eleicao_mga_2024.png)
+
+# A eleição
+
+A cidade de Maringá-PR, com seus 409.657 habitantes^[[IBGE 2022](https://www.ibge.gov.br/cidades-e-estados/pr/maringa.html)], é a terceira maior do Paraná. Com essa diversidade populacional, é natural que diferentes perfis sociais e políticos se manifestem em distintas regiões da cidade. As eleições municipais de 2024 trouxeram dados que reforçam essa ideia, revelando uma maior identidade dos eleitores de cada região com um candidato específico, seja por compartilhar ideais ou mesmo por este representar o seu bairro na Câmara de Vereadores.
+
+Um fato relevante é que o número de cadeiras na Câmara Municipal aumentou de 15 para 23 vereadores para a legislatura de 2025-2028, o que foi justificado como uma forma de ampliar a representatividade da população nas discussões parlamentares^[[Entidades manifestam apoio à adequação ao número de vereadores
+](https://www.cmm.pr.gov.br/?inc=noticia&id=4891)]. Com isso, mais bairros e regiões da cidade puderam eleger representantes que levarão suas demandas ao poder público de forma mais direta.
+
+Os mapas a seguir mostram a distribuição geográfica dos votos recebidos pelos 23 vereadores eleitos. Como o número de votos varia bastante entre eles (de 1.525 até 7.531 votos^[[TSE](https://resultados.tse.jus.br/oficial/app/index.html#/eleicao;e=e619;uf=pr;mu=76910;tipo=3/resultados/cargo/13)]), os dados foram normalizados para refletir a porcentagem de votos que cada candidato obteve em diferentes regiões. Além de Maringá, os três distritos de Iguatemi, São Domingos e Floriano, que foram responsáveis por grande parte dos votos de três vereadores eleitos (Bravin, Uilian da Farmácia e William Gentil), também estão representados. Cada ponto no mapa corresponde a um local de votação.
+
+Detalhes da metodologia da análise podem ser encontrados no fim do texto. Caso tenha interesse na análise de outros candidatos, entre em contato: [brunomioto97@gmail.com](mailto:brunomioto97@gmail.com).
+
+
+# Vereadores eleitos em Maringá-PR
 
 ::: {layout-ncol=2}
 ## Akemi Nishimori
 
-![Akemi Nishimori](/posts/eleicao_mga_2024/pt/figures/votacao/55555_heat.png){group='my-gallery'}
+![Akemi Nishimori](figures/votacao/55555_heat.png){group='my-gallery'}
 
 ## Angelo Salgueiro
 
-![Angelo Salgueiro](/posts/eleicao_mga_2024/pt/figures/votacao/20999_heat.png){group='my-gallery'}
+![Angelo Salgueiro](figures/votacao/20999_heat.png){group='my-gallery'}
 
 ## Biazon
 
-![Biazon](/posts/eleicao_mga_2024/pt/figures/votacao/44190_heat.png){group='my-gallery'}
+![Biazon](figures/votacao/44190_heat.png){group='my-gallery'}
 
 ## Bravin
 
-![Bravin](/posts/eleicao_mga_2024/pt/figures/votacao/11900_heat.png){group='my-gallery'}
+![Bravin](figures/votacao/11900_heat.png){group='my-gallery'}
 
 ## Cris Lauer
 
-![Cris Lauer](/posts/eleicao_mga_2024/pt/figures/votacao/30123_heat.png){group='my-gallery'}
+![Cris Lauer](figures/votacao/30123_heat.png){group='my-gallery'}
 
 ## Daniel Malvezzi
 
-![Daniel Malvezzi](/posts/eleicao_mga_2024/pt/figures/votacao/30030_heat.png){group='my-gallery'}
+![Daniel Malvezzi](figures/votacao/30030_heat.png){group='my-gallery'}
 
 ## Delegado Luiz Alves
 
-![Delegado Luiz Alves](/posts/eleicao_mga_2024/pt/figures/votacao/22222_heat.png){group='my-gallery'}
+![Delegado Luiz Alves](figures/votacao/22222_heat.png){group='my-gallery'}
 
 ## Diogo Altamir da Lotérica
 
-![Diogo Altamir da Lotérica](/posts/eleicao_mga_2024/pt/figures/votacao/45800_heat.png){group='my-gallery'}
+![Diogo Altamir da Lotérica](figures/votacao/45800_heat.png){group='my-gallery'}
 
 ## Flavio Mantovani
 
-![Flavio Mantovani](/posts/eleicao_mga_2024/pt/figures/votacao/55001_heat.png){group='my-gallery'}
+![Flavio Mantovani](figures/votacao/55001_heat.png){group='my-gallery'}
 
 ## Giselli Bianchini
 
-![Giselli Bianchini](/posts/eleicao_mga_2024/pt/figures/votacao/11222_heat.png){group='my-gallery'}
+![Giselli Bianchini](figures/votacao/11222_heat.png){group='my-gallery'}
 
 ## Italo Maroneze
 
-![Italo Maroneze](/posts/eleicao_mga_2024/pt/figures/votacao/12345_heat.png){group='my-gallery'}
+![Italo Maroneze](figures/votacao/12345_heat.png){group='my-gallery'}
 
 ## Jeremias
 
-![Jeremias](/posts/eleicao_mga_2024/pt/figures/votacao/22111_heat.png){group='my-gallery'}
+![Jeremias](figures/votacao/22111_heat.png){group='my-gallery'}
 
 ## Lemuel do Salvando Vidas
 
-![Lemuel do Salvando Vidas](/posts/eleicao_mga_2024/pt/figures/votacao/12122_heat.png){group='my-gallery'}
+![Lemuel do Salvando Vidas](figures/votacao/12122_heat.png){group='my-gallery'}
 
 ## Luiz Neto
 
-![Luiz Neto](/posts/eleicao_mga_2024/pt/figures/votacao/36333_heat.png){group='my-gallery'}
+![Luiz Neto](figures/votacao/36333_heat.png){group='my-gallery'}
 
 ## Majô
 
-![Majô](/posts/eleicao_mga_2024/pt/figures/votacao/11411_heat.png){group='my-gallery'}
+![Majô](figures/votacao/11411_heat.png){group='my-gallery'}
 
 ## Maninho
 
-![Maninho](/posts/eleicao_mga_2024/pt/figures/votacao/10123_heat.png){group='my-gallery'}
+![Maninho](figures/votacao/10123_heat.png){group='my-gallery'}
 
 ## Mario Hossokawa
 
-![Mario Hossokawa](/posts/eleicao_mga_2024/pt/figures/votacao/11789_heat.png){group='my-gallery'}
+![Mario Hossokawa](figures/votacao/11789_heat.png){group='my-gallery'}
 
 ## Mario Verri
 
-![Mario Verri](/posts/eleicao_mga_2024/pt/figures/votacao/13300_heat.png){group='my-gallery'}
+![Mario Verri](figures/votacao/13300_heat.png){group='my-gallery'}
 
 ## Odair Fogueteiro
 
-![Odair Fogueteiro](/posts/eleicao_mga_2024/pt/figures/votacao/11511_heat.png){group='my-gallery'}
+![Odair Fogueteiro](figures/votacao/11511_heat.png){group='my-gallery'}
 
 ## Profª Ana Lucia
 
-![Profª Ana Lucia](/posts/eleicao_mga_2024/pt/figures/votacao/12412_heat.png){group='my-gallery'}
+![Profª Ana Lucia](figures/votacao/12412_heat.png){group='my-gallery'}
 
 ## Sidnei Telles
 
-![Sidnei Telles](/posts/eleicao_mga_2024/pt/figures/votacao/20123_heat.png){group='my-gallery'}
+![Sidnei Telles](figures/votacao/20123_heat.png){group='my-gallery'}
 
 ## Uilian da Farmácia
 
-![Uilian da Farmácia](/posts/eleicao_mga_2024/pt/figures/votacao/44456_heat.png){group='my-gallery'}
+![Uilian da Farmácia](figures/votacao/44456_heat.png){group='my-gallery'}
 
 ## William Gentil
 
-![William Gentil](/posts/eleicao_mga_2024/pt/figures/votacao/11800_heat.png){group='my-gallery'}
+![William Gentil](figures/votacao/11800_heat.png){group='my-gallery'}
 :::
 
+# Metodologia
+
+## Metodologia
+
+Os dados referentes à votação em cada seção eleitoral foram obtidos através do TSE. A localização de cada colégio eleitoral foi obtida via Lei de Acesso à Informação (TRE-PR). As vias da cidade de Maringá foram obtidas através da plataforma OpenStreetMap. Os dados foram tratados, cruzados e analisados utilizando ferramentas de processamentos de dados em linguagem R. Todas as visualizações foram criadas utilizando o pacote ggplot2.
+
+Quer entender mais sobre os dados, análises e visualizações de dados? [Entre em contato](mailto:brunomioto97@gmail.com)
+
 <!-- ```{r, eval = FALSE, echo = FALSE} -->
-<!-- # tabela_nomes <- readr::read_csv("./posts/eleicao_mga_2024/pt/data/tabela_nomes.csv") -->
+<!-- # tabela_nomes <- readr::read_csv(".data/tabela_nomes.csv") -->
 <!-- tabela_nomes2 <- tabela_nomes |>  -->
 <!--   arrange(nome_urna) -->
 
@@ -135,7 +156,7 @@ As eleições de 2024 em Maringá-PR .......
 
 <!--   cli::cli_text("## {nome_urna}") -->
 <!--   cli::cli_text(" ") -->
-<!--   cli::cli_text("![{nome_urna}](/posts/eleicao_mga_2024/pt/figures/votacao/{numero}_heat.png)") -->
+<!--   cli::cli_text("![{nome_urna}](figures/votacao/{numero}_heat.png)") -->
 <!--   cli::cli_text(" ") -->
 <!-- } -->
 <!-- ``` -->
