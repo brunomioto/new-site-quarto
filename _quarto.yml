@@ -10,6 +10,7 @@ execute:
 
 website:
   title: "Bruno Mioto"
+  draft-mode: unlinked
   site-url: "https://brunomioto.com/"
   favicon: /figures/eye_website.png
   google-analytics: "G-XTWGVVSED5"
@@ -49,7 +50,7 @@ website:
         file: about-en.qmd
   
   page-footer: 
-    left: "Website made with Quarto by Bruno Mioto, 2023." 
+    left: "Website made with Quarto by Bruno Mioto, 2024." 
     right: 
       - icon: github
         href: https://github.com/brunomioto
