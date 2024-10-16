@@ -35,6 +35,181 @@
     "text": "Plotting images\nIf we want to put images in our charts, the best indication is to use the package   {ggpath} 📦. This is the best way to plot images!\nTo do this, use the geom_from_path() function. All we need to do is enter the column with the path to the picture.\nOne suggestion is to set the width argument to 0.1 as the pictures can get big!\n\nlibrary(ggpath)\n\nstarters2 %&gt;% \n  ggplot(aes(x = attack, y = pokemon, fill = type_1))+\n  geom_col(color = \"black\")+\n  geom_from_path(aes(path = url_image),\n                 width = 0.1)+\n  scale_fill_manual(\n    values = c(\n      \"water\" = \"#6890F0\",\n      \"fire\" = \"#F08030\",\n      \"grass\" = \"#78C850\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nChart finished\nHere I’ve added a few finishing touches to our chart (check the positioning of the names and figures!). Unfortunately it’s not for this post to go into all these details, but I’ve left everything in the comments!\n\nstarters2 %&gt;% \n  ggplot(aes(x = attack, y = pokemon, fill = type_1))+\n  #add columns\n  geom_col(color = \"black\",\n           width = 0.5)+\n  #add names\n  geom_text(aes(label = pokemon,\n                color = type_1),\n            x = 1,\n            hjust = 0, #side alignment\n            nudge_y = 0.45, #vertical adjustment\n            fontface = \"bold\"\n            )+\n  #add figures\n  geom_from_path(aes(path = url_image),\n                 width = 0.1, #width relative to total\n                 hjust = 0 #side alignment\n                 )+\n  #add vertical line\n  geom_vline(xintercept = 0)+\n  #expand x-axis\n  scale_x_continuous(\n    expand = expansion(mult = c(0,0.1)) #expand left-right\n  )+\n  #edit colors (will affect text that uses color)\n  scale_color_manual(\n    values = c(\n      \"water\" = \"#6890F0\",\n      \"fire\" = \"#F08030\",\n      \"grass\" = \"#78C850\"\n    )\n  )+\n  #edit colors (will affect the column that uses fill)\n  scale_fill_manual(\n    values = c(\n      \"water\" = \"#6890F0\",\n      \"fire\" = \"#F08030\",\n      \"grass\" = \"#78C850\"\n    )\n  )+\n  #edit labs\n  labs(\n    x = \"Attack\",\n    caption = \"Bruno Mioto - @BrunoHMioto\"\n  )+\n  #use initial theme\n  theme_classic()+\n  #edit theme\n  theme(\n    #remove all subtitles\n    legend.position = \"none\",\n    #remove y-axis title\n    axis.title.y = element_blank(),\n    #remove text from y-axis\n    axis.text.y = element_blank(),\n    #remove ticks\n    axis.ticks = element_blank(),\n    #remove axes\n    axis.line = element_blank(),\n    #add grid line - major\n    panel.grid.major.x = element_line(),\n    #add dotted grid line - minor\n    panel.grid.minor.x = element_line(linetype = \"dashed\"),\n    #increase plot margins\n    plot.margin = margin(10,10,10,10,\"pt\"),\n    #change the color of the plot background\n    plot.background = element_rect(fill = \"#f1f1f1\", color = NA),\n    #change the background color of the panel\n    panel.background = element_rect(fill = \"#f1f1f1\", color = NA)\n  )+\n  #doesn't crop the images that come out of the panel\n  coord_cartesian(\n    clip = \"off\"\n  )\n\n\n\n\n\n\n\n\nEverything we’ve seen so far is the basics of the basics in ggplot2, but it already allows us to do a lot of cool stuff! There are several examples of charts with ggplot2 here, and some ready-made scripts here!\nIf you found this content useful in any way, share it with your friends!\nWould you like a workshop with this material? Get in touch!"
   },
   {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#akemi-nishimori",
+    "href": "posts/eleicao_mga_2024/pt/index.html#akemi-nishimori",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Akemi Nishimori",
+    "text": "Akemi Nishimori\n\n\n\nAkemi Nishimori"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#angelo-salgueiro",
+    "href": "posts/eleicao_mga_2024/pt/index.html#angelo-salgueiro",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Angelo Salgueiro",
+    "text": "Angelo Salgueiro\n\n\n\nAngelo Salgueiro"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#biazon",
+    "href": "posts/eleicao_mga_2024/pt/index.html#biazon",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Biazon",
+    "text": "Biazon\n\n\n\nBiazon"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#bravin",
+    "href": "posts/eleicao_mga_2024/pt/index.html#bravin",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Bravin",
+    "text": "Bravin\n\n\n\nBravin"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#cris-lauer",
+    "href": "posts/eleicao_mga_2024/pt/index.html#cris-lauer",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Cris Lauer",
+    "text": "Cris Lauer\n\n\n\nCris Lauer"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#daniel-malvezzi",
+    "href": "posts/eleicao_mga_2024/pt/index.html#daniel-malvezzi",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Daniel Malvezzi",
+    "text": "Daniel Malvezzi\n\n\n\nDaniel Malvezzi"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#delegado-luiz-alves",
+    "href": "posts/eleicao_mga_2024/pt/index.html#delegado-luiz-alves",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Delegado Luiz Alves",
+    "text": "Delegado Luiz Alves\n\n\n\nDelegado Luiz Alves"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#diogo-altamir-da-lotérica",
+    "href": "posts/eleicao_mga_2024/pt/index.html#diogo-altamir-da-lotérica",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Diogo Altamir da Lotérica",
+    "text": "Diogo Altamir da Lotérica\n\n\n\nDiogo Altamir da Lotérica"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#flavio-mantovani",
+    "href": "posts/eleicao_mga_2024/pt/index.html#flavio-mantovani",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Flavio Mantovani",
+    "text": "Flavio Mantovani\n\n\n\nFlavio Mantovani"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#giselli-bianchini",
+    "href": "posts/eleicao_mga_2024/pt/index.html#giselli-bianchini",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Giselli Bianchini",
+    "text": "Giselli Bianchini\n\n\n\nGiselli Bianchini"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#italo-maroneze",
+    "href": "posts/eleicao_mga_2024/pt/index.html#italo-maroneze",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Italo Maroneze",
+    "text": "Italo Maroneze\n\n\n\nItalo Maroneze"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#jeremias",
+    "href": "posts/eleicao_mga_2024/pt/index.html#jeremias",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Jeremias",
+    "text": "Jeremias\n\n\n\nJeremias"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#lemuel-do-salvando-vidas",
+    "href": "posts/eleicao_mga_2024/pt/index.html#lemuel-do-salvando-vidas",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Lemuel do Salvando Vidas",
+    "text": "Lemuel do Salvando Vidas\n\n\n\nLemuel do Salvando Vidas"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#luiz-neto",
+    "href": "posts/eleicao_mga_2024/pt/index.html#luiz-neto",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Luiz Neto",
+    "text": "Luiz Neto\n\n\n\nLuiz Neto"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#majô",
+    "href": "posts/eleicao_mga_2024/pt/index.html#majô",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Majô",
+    "text": "Majô\n\n\n\nMajô"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#maninho",
+    "href": "posts/eleicao_mga_2024/pt/index.html#maninho",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Maninho",
+    "text": "Maninho\n\n\n\nManinho"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#mario-hossokawa",
+    "href": "posts/eleicao_mga_2024/pt/index.html#mario-hossokawa",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Mario Hossokawa",
+    "text": "Mario Hossokawa\n\n\n\nMario Hossokawa"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#mario-verri",
+    "href": "posts/eleicao_mga_2024/pt/index.html#mario-verri",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Mario Verri",
+    "text": "Mario Verri\n\n\n\nMario Verri"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#odair-fogueteiro",
+    "href": "posts/eleicao_mga_2024/pt/index.html#odair-fogueteiro",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Odair Fogueteiro",
+    "text": "Odair Fogueteiro\n\n\n\nOdair Fogueteiro"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#profª-ana-lucia",
+    "href": "posts/eleicao_mga_2024/pt/index.html#profª-ana-lucia",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Profª Ana Lucia",
+    "text": "Profª Ana Lucia\n\n\n\nProfª Ana Lucia"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#sidnei-telles",
+    "href": "posts/eleicao_mga_2024/pt/index.html#sidnei-telles",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Sidnei Telles",
+    "text": "Sidnei Telles\n\n\n\nSidnei Telles"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#uilian-da-farmácia",
+    "href": "posts/eleicao_mga_2024/pt/index.html#uilian-da-farmácia",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Uilian da Farmácia",
+    "text": "Uilian da Farmácia\n\n\n\nUilian da Farmácia"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#william-gentil",
+    "href": "posts/eleicao_mga_2024/pt/index.html#william-gentil",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "William Gentil",
+    "text": "William Gentil\n\n\n\nWilliam Gentil"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#metodologia-1",
+    "href": "posts/eleicao_mga_2024/pt/index.html#metodologia-1",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Metodologia",
+    "text": "Metodologia\nOs dados referentes à votação em cada seção eleitoral foram obtidos através do TSE. A localização de cada colégio eleitoral foi obtida via Lei de Acesso à Informação (TRE-PR). As vias da cidade de Maringá foram obtidas através da plataforma OpenStreetMap. Os dados foram tratados, cruzados e analisados utilizando ferramentas de processamentos de dados em linguagem R. Todas as visualizações foram criadas utilizando o pacote ggplot2.\nQuer entender mais sobre os dados, análises e visualizações de dados? Entre em contato"
+  },
+  {
+    "objectID": "posts/eleicao_mga_2024/pt/index.html#footnotes",
+    "href": "posts/eleicao_mga_2024/pt/index.html#footnotes",
+    "title": "A regionalização dos Vereadores eleitos em Maringá",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIBGE 2022↩︎\nEntidades manifestam apoio à adequação ao número de vereadores↩︎\nTSE↩︎"
+  },
+  {
     "objectID": "posts/waterlines/en/index.html#motivation",
     "href": "posts/waterlines/en/index.html#motivation",
     "title": "Drawing waterlines with ggplot2 in R",
@@ -319,7 +494,7 @@
     "href": "index.html#posts-em-português",
     "title": "Bruno Mioto",
     "section": "Posts em Português",
-    "text": "Posts em Português\n\n\n\n\n\n\n\n\n\n\nHomens têm mais apendicite?\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntrodução ao ggplot2\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nMapeando as árvores de Maringá-PR\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Posts em Português\n\n\n\n\n\n\n\n\n\n\nA regionalização dos Vereadores eleitos em Maringá\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\npolítica\n\n\n\n\n\n\nOct 16, 2024\n\n\nBruno Mioto\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nHomens têm mais apendicite?\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntrodução ao ggplot2\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nMapeando as árvores de Maringá-PR\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/appendix/pt/index.html",
@@ -347,14 +522,14 @@
     "href": "posts/pt.html",
     "title": "Bruno Mioto",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\npolítica\n\n\n\n\n\n\nOct 16, 2024\n\n\nBruno Mioto\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/pt.html#posts-em-português",
     "href": "posts/pt.html#posts-em-português",
     "title": "Bruno Mioto",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\npolítica\n\n\n\n\n\n\nOct 16, 2024\n\n\nBruno Mioto\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/intro_ggplot2/pt/index.html#pacotes-utilizados",
