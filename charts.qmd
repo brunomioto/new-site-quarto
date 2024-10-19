@@ -29,7 +29,9 @@ Want to support my work? [🥧 Buy me a Pie <s>chart</s>](https://www.buymeacoff
 
 These are some charts published in scientific papers.
 
-![[Kieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study](https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2814639)](figures/charts/charts_jama.png)
+![[Kieling *et al*. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study](https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2814639)](figures/charts/charts_jama.png)
+
+![[Martins *et al*. (2024) - Iterative taxonomy reveals a new species of *Cambeva* (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil](https://www.scielo.br/j/ni/a/CCGbxJbhKRs74jjnL7Rn8hN/)](figures/charts/charts_cambevaperobana.png)
 
 ## Original charts
 

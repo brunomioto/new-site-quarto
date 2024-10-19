@@ -14,7 +14,6 @@ listing:
     type: default
     fields: [image, date, title, subtitle, categories, author, reading-time]
     sort: "date desc"
-    #categories: cloud
     sort-ui: false
     filter-ui: false
     page-size: 3
@@ -26,7 +25,7 @@ listing:
     #categories: cloud
     sort-ui: false
     filter-ui: false
-    page-size: 3
+    page-size: 5
 toc: false
 ---
 
