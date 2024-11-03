@@ -25,14 +25,14 @@
     "href": "r-packages.html",
     "title": "R packages",
     "section": "",
-    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know!\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
+    "text": "One of my hobbies is creating R packages, for so many things! From getting reservoir data to plotting teams’ badges, everything is an opportunity to create a package!"
   },
   {
     "objectID": "r-packages.html#reservatoriosbr",
     "href": "r-packages.html#reservatoriosbr",
     "title": "R packages",
-    "section": "",
-    "text": "reservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know!\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
+    "section": "reservatoriosBR",
+    "text": "reservatoriosBR\n\nreservatoriosBR downloads data from Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\nI am currently looking for volunteers to test the functions and data. If you can, get in touch!\nIf you use it in any work, cite it or let me know!\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/reservatoriosBR\")"
   },
   {
     "objectID": "r-packages.html#futebolplotr",
@@ -60,7 +60,7 @@
     "href": "r-packages.html#dnaplot",
     "title": "R packages",
     "section": "DNAplot",
-    "text": "DNAplot\n\n  \nThe DNAplot package provides a simple and customizable function to create aesthetically pleasing plots of DNA sequences. Each base is represented by a colored rectangle, allowing for easy visualization and analysis of sequence features.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/DNAplot\")\n\n\nlibrary(DNAplot)\n\nsequence &lt;- \"ACTGAAGTA\"\n\nplot_dna(sequence)\n\nℹ Plotting 9 bases"
+    "text": "DNAplot\n\n \n    \n        \n        \n    \n    \n        \n    \n    \n        \n        \n        \n    \n    \n        codecov\n        codecov\n        100%\n        100%\n    \n    \n        \n     \nThe DNAplot package provides a simple and customizable function to create aesthetically pleasing plots of DNA sequences. Each base is represented by a colored rectangle, allowing for easy visualization and analysis of sequence features.\nYou can install it running:\n\nif(!requireNamespace(\"remotes\", quietly = TRUE)){\n    install.packages(\"remotes\")\n  }\nremotes::install_github(\"brunomioto/DNAplot\")\n\n\nlibrary(DNAplot)\n\nsequence &lt;- \"ACTGAAGTA\"\n\nplot_dna(sequence)\n\nℹ Plotting 9 bases"
   },
   {
     "objectID": "r-packages.html#ggimprensa",
@@ -217,32 +217,39 @@
     "text": "Plotar imagens\nSe quisermos colocar figuras nos nosso gráficos, a melhor indicação é usar o pacote ggpath. Essa é melhor forma de plotar imagens!\nPara isso vamos utilizar a função geom_from_path(). Só precisamos informar qual é a coluna com o caminho para a figura.\nUma sugestão é colocar o argumento da largura width como 0.1 pois as figuras podem ficar gigantes!\n\nlibrary(ggpath)\n\niniciais2 %&gt;% \n  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+\n  geom_col(color = \"black\")+\n  geom_from_path(aes(path = url_imagem),\n                 width = 0.1)+\n  scale_fill_manual(\n    values = c(\n      \"fogo\" = \"#F08030\",\n      \"grama\" = \"#78C850\",\n      \"água\" = \"#6890F0\"\n    )\n  )\n\n\n\n\n\n\n\nGráfico finalizado\nCom comentários!\n\niniciais2 %&gt;% \n  ggplot(aes(x = ataque, y = pokemon, fill = tipo_1))+\n  #adiciona colunas\n  geom_col(color = \"black\",\n           width = 0.5)+\n  #adiciona nomes\n  geom_text(aes(label = pokemon,\n                color = tipo_1),\n            x = 1,\n            hjust = 0,\n            nudge_y = 0.45,\n            fontface = \"bold\")+\n  #adiciona figuras\n  geom_from_path(aes(path = url_imagem),\n                 width = 0.1,\n                 hjust = 0)+\n  #adiciona linha vertical\n  geom_vline(xintercept = 0)+\n  #expande eixo x\n  scale_x_continuous(\n    expand = expansion(mult = c(0,0.1))\n  )+\n  #edita cores (vai afetar o texto que usa color)\n  scale_color_manual(\n    values = c(\n      \"fogo\" = \"#F08030\",\n      \"grama\" = \"#78C850\",\n      \"água\" = \"#6890F0\"\n    )\n  )+\n  #edita cores (vai afetar a coluna que usa fill)\n  scale_fill_manual(\n    values = c(\n      \"fogo\" = \"#F08030\",\n      \"grama\" = \"#78C850\",\n      \"água\" = \"#6890F0\"\n    )\n  )+\n  #edita labs\n  labs(\n    x = \"Ataque\",\n    caption = \"Bruno Mioto - @BrunoHMioto\"\n  )+\n  #usa tema inicial\n  theme_classic()+\n  #edita tema\n  theme(\n    #remover toda a legenda\n    legend.position = \"none\",\n    #remove título do eixo y\n    axis.title.y = element_blank(),\n    #remove texto do eixo y\n    axis.text.y = element_blank(),\n    #remove ticks\n    axis.ticks = element_blank(),\n    #remove eixos\n    axis.line = element_blank(),\n    #adiciona linha de grade - major\n    panel.grid.major.x = element_line(),\n    #adiciona linha de grade pontilhada - minor\n    panel.grid.minor.x = element_line(linetype = \"dashed\"),\n    #aumenta as margens do gráfico\n    plot.margin = margin(10,10,10,10,\"pt\"),\n    #muda a cor do fundo do gráfico\n    plot.background = element_rect(fill = \"#f1f1f1\", color = NA),\n    #muda a cor do fundo do painel\n    panel.background = element_rect(fill = \"#f1f1f1\", color = NA),\n  )+\n  #não corta as imagens que saem do painel\n  coord_cartesian(\n    clip = \"off\"\n  )\n\n\n\n\n\n\n#salva o gráfico\n#ggsave(\"figures/grafico_final.png\", width = 8, height = 6)"
   },
   {
-    "objectID": "charts.html",
-    "href": "charts.html",
-    "title": "Charts",
+    "objectID": "hexout.html",
+    "href": "hexout.html",
+    "title": "Bruno Mioto",
     "section": "",
-    "text": "I make original charts on demand for presentations/scientific articles/publications\nI work as a freelancer here: Upwork (Top Rated Freelancer)\nMy contact email address is bhmstabile@gmail.com\nWant to support my work? 🥧 Buy me a Pie chart"
+    "text": "Warning: package 'htmltools' was built under R version 4.3.3\n\n\n\n\n\n\n  \n    \n  \n  \n    created with hexsession"
   },
   {
-    "objectID": "charts.html#collaborations",
-    "href": "charts.html#collaborations",
-    "title": "Charts",
-    "section": "Collaborations",
-    "text": "Collaborations"
+    "objectID": "about-pt.html",
+    "href": "about-pt.html",
+    "title": "Sobre mim",
+    "section": "",
+    "text": "English  Português\nOi! Me chamo Bruno Mioto, sou biólogo, atualmente faço doutorado em Ecologia de Ambientes Aquáticos Continentais (PEA-UEM) e estudo filogeografia de peixes!\nTenho experiência com análise de dados e criação de gráficos, amo criar novos pacotes em R e trabalho como freelancer de visualização de dados!\nVeja meu perfil de freelas aqui: Upwork\nE meu portifólio aqui: Behance\nSempre busco levar a informação correta de forma mais simples à sociedade."
   },
   {
-    "objectID": "charts.html#published-charts",
-    "href": "charts.html#published-charts",
-    "title": "Charts",
-    "section": "Published charts",
-    "text": "Published charts\nThese are some charts published in scientific papers.\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study\n\n\n\n\n\nMartins et al. (2024) - Iterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil"
+    "objectID": "about-pt.html#educação",
+    "href": "about-pt.html#educação",
+    "title": "Sobre mim",
+    "section": "Educação",
+    "text": "Educação\nPrograma de Ecologia em Ambientes Aquáticos Continentais (PEA-UEM) | Maringá - PR Doutorado | 2021 - Presente\nPrograma de Ecologia em Ambientes Aquáticos Continentais (PEA-UEM) | Maringá - PR Mestrado | 2019 - 2021\nUniversidade Estadual de Maringá (UEM) | Maringá - PR Licenciatura | 2015 - 2019"
   },
   {
-    "objectID": "charts.html#original-charts",
-    "href": "charts.html#original-charts",
-    "title": "Charts",
-    "section": "Original charts",
-    "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\n\n\n\nPlay animation made for BigDataBowl ’24 Competition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nI wrote a text for basedosdados with a tutorial on how I made this chart of the vaccinated population using R! Check it out here!\n\n\nI also published a chart together with Nexo Jornal about inflation and unemployment in Brazil, updating a very interesting chart! Check it out here!\n\n\nI made this animation for the BigDataBowl ’24 Competition. You can see my team’s notebook at Kaggle"
+    "objectID": "about-pt.html#experiência",
+    "href": "about-pt.html#experiência",
+    "title": "Sobre mim",
+    "section": "Experiência",
+    "text": "Experiência\nNupgen (DBC/Nupélia UEM) - Laboratório de Genética MolecularAluno de doutorado | 2018 - Present\nGalápagos - Gráficos e Mapas Diretor de Gráficos | 2022 - Presente\nUpwork Freelancer | 2022 - Presente\nCursinho Voluntário Renovação Professor Voluntário - Biologia | 2019 - Presente"
+  },
+  {
+    "objectID": "about-pt.html#artigos-publicados",
+    "href": "about-pt.html#artigos-publicados",
+    "title": "Sobre mim",
+    "section": "Artigos publicados",
+    "text": "Artigos publicados\nMorphology and molecular evidence of a new species of Characidium (Characiformes: Crenuchidae) from the edges of a protected area at Rio Itararé, upper Rio Paraná, southern Brazil - 2024\nBruno Henrique Mioto Stabile, Renan Borges dos Reis, Augusto Frota, Weferson Júnio da Graça, Alessandra Valéria de Oliveira\nOrnamental fish mortality reveals an old parasite introduction: A case study of Koi carp and fish louse - 2024\nJoão Otávio Santos Silva, Bruno Henrique Mioto Stabile, Rodrigo Junio da Graça, Alessandra Valéria Oliveira, Ricardo Massato Takemoto\nIterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil - 2024\nIsadora Carolina Martins, Renan Borges dos Reis, Bruno Henrique Mioto Stabile, Weferson Júnio da Graça\nThe first record of Centrocestus formosanus (Trematoda: Heterophyidae) in southern Brazil supported by molecular data - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nMolecular evidence of new freshwater turtle blood flukes (Digenea: Spirorchiidae) in the intermediate snail host Biomphalaria occidentalis Paraense, 1981 in an urban aquatic ecosystem in Brazil - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Fábio Fermino, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nCyanobacteria in an urban lake: hidden diversity revealed by metabarcoding - 2020\nThomaz Mansini Carrenho Fabrin, Bruno Henrique Mioto Stabile, Matheus Vieira da Silva, Susicley Jati, Liliana Rodrigues, Alessandra Valéria de Oliveira\nDivulgação da ciência desde a sala de aula - 2020\nYasmin Rodrigues de Souza, Carolina Pedrozo do Nascimento, Melissa Progênio da Silva, Gabriela Cassia Zanon Reinas, Edilaine Corrêa Leite, João Otávio Santos Silva, Bárbara Scorsim Arjona, Rejane Guimarães Melo, Bruno Henrique Mioto Stabile, Hugo Lima Kirsten, Renan Borges dos Reis, Matheus Henrique Ferreira Aleixo, Larissa Carrara Gonçalves, Fernanda Moreira Florêncio, Aline Favaro Mendes, Alessandra Barbosa da Silva, Alfonso Pineda, Luzia Cleide Rodrigues"
   },
   {
     "objectID": "about-en.html",
@@ -273,32 +280,32 @@
     "text": "Published papers\nMorphology and molecular evidence of a new species of Characidium (Characiformes: Crenuchidae) from the edges of a protected area at Rio Itararé, upper Rio Paraná, southern Brazil - 2024\nBruno Henrique Mioto Stabile, Renan Borges dos Reis, Augusto Frota, Weferson Júnio da Graça, Alessandra Valéria de Oliveira\nOrnamental fish mortality reveals an old parasite introduction: A case study of Koi carp and fish louse - 2024\nJoão Otávio Santos Silva, Bruno Henrique Mioto Stabile, Rodrigo Junio da Graça, Alessandra Valéria Oliveira, Ricardo Massato Takemoto\nIterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil - 2024\nIsadora Carolina Martins, Renan Borges dos Reis, Bruno Henrique Mioto Stabile, Weferson Júnio da Graça\nThe first record of Centrocestus formosanus (Trematoda: Heterophyidae) in southern Brazil supported by molecular data - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nMolecular evidence of new freshwater turtle blood flukes (Digenea: Spirorchiidae) in the intermediate snail host Biomphalaria occidentalis Paraense, 1981 in an urban aquatic ecosystem in Brazil - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Fábio Fermino, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nCyanobacteria in an urban lake: hidden diversity revealed by metabarcoding - 2020\nThomaz Mansini Carrenho Fabrin, Bruno Henrique Mioto Stabile, Matheus Vieira da Silva, Susicley Jati, Liliana Rodrigues, Alessandra Valéria de Oliveira\nDivulgação da ciência desde a sala de aula - 2020\nYasmin Rodrigues de Souza, Carolina Pedrozo do Nascimento, Melissa Progênio da Silva, Gabriela Cassia Zanon Reinas, Edilaine Corrêa Leite, João Otávio Santos Silva, Bárbara Scorsim Arjona, Rejane Guimarães Melo, Bruno Henrique Mioto Stabile, Hugo Lima Kirsten, Renan Borges dos Reis, Matheus Henrique Ferreira Aleixo, Larissa Carrara Gonçalves, Fernanda Moreira Florêncio, Aline Favaro Mendes, Alessandra Barbosa da Silva, Alfonso Pineda, Luzia Cleide Rodrigues"
   },
   {
-    "objectID": "about-pt.html",
-    "href": "about-pt.html",
-    "title": "Sobre mim",
+    "objectID": "charts.html",
+    "href": "charts.html",
+    "title": "Charts",
     "section": "",
-    "text": "English  Português\nOi! Me chamo Bruno Mioto, sou biólogo, atualmente faço doutorado em Ecologia de Ambientes Aquáticos Continentais (PEA-UEM) e estudo filogeografia de peixes!\nTenho experiência com análise de dados e criação de gráficos, amo criar novos pacotes em R e trabalho como freelancer de visualização de dados!\nVeja meu perfil de freelas aqui: Upwork\nE meu portifólio aqui: Behance\nSempre busco levar a informação correta de forma mais simples à sociedade."
+    "text": "I make original charts on demand for presentations/scientific articles/publications\nI work as a freelancer here: Upwork (Top Rated Freelancer)\nMy contact email address is bhmstabile@gmail.com\nWant to support my work? 🥧 Buy me a Pie chart"
   },
   {
-    "objectID": "about-pt.html#educação",
-    "href": "about-pt.html#educação",
-    "title": "Sobre mim",
-    "section": "Educação",
-    "text": "Educação\nPrograma de Ecologia em Ambientes Aquáticos Continentais (PEA-UEM) | Maringá - PR Doutorado | 2021 - Presente\nPrograma de Ecologia em Ambientes Aquáticos Continentais (PEA-UEM) | Maringá - PR Mestrado | 2019 - 2021\nUniversidade Estadual de Maringá (UEM) | Maringá - PR Licenciatura | 2015 - 2019"
+    "objectID": "charts.html#collaborations",
+    "href": "charts.html#collaborations",
+    "title": "Charts",
+    "section": "Collaborations",
+    "text": "Collaborations"
   },
   {
-    "objectID": "about-pt.html#experiência",
-    "href": "about-pt.html#experiência",
-    "title": "Sobre mim",
-    "section": "Experiência",
-    "text": "Experiência\nNupgen (DBC/Nupélia UEM) - Laboratório de Genética MolecularAluno de doutorado | 2018 - Present\nGalápagos - Gráficos e Mapas Diretor de Gráficos | 2022 - Presente\nUpwork Freelancer | 2022 - Presente\nCursinho Voluntário Renovação Professor Voluntário - Biologia | 2019 - Presente"
+    "objectID": "charts.html#published-charts",
+    "href": "charts.html#published-charts",
+    "title": "Charts",
+    "section": "Published charts",
+    "text": "Published charts\nThese are some charts published in scientific papers.\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study\n\n\n\n\n\nMartins et al. (2024) - Iterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil"
   },
   {
-    "objectID": "about-pt.html#artigos-publicados",
-    "href": "about-pt.html#artigos-publicados",
-    "title": "Sobre mim",
-    "section": "Artigos publicados",
-    "text": "Artigos publicados\nMorphology and molecular evidence of a new species of Characidium (Characiformes: Crenuchidae) from the edges of a protected area at Rio Itararé, upper Rio Paraná, southern Brazil - 2024\nBruno Henrique Mioto Stabile, Renan Borges dos Reis, Augusto Frota, Weferson Júnio da Graça, Alessandra Valéria de Oliveira\nOrnamental fish mortality reveals an old parasite introduction: A case study of Koi carp and fish louse - 2024\nJoão Otávio Santos Silva, Bruno Henrique Mioto Stabile, Rodrigo Junio da Graça, Alessandra Valéria Oliveira, Ricardo Massato Takemoto\nIterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil - 2024\nIsadora Carolina Martins, Renan Borges dos Reis, Bruno Henrique Mioto Stabile, Weferson Júnio da Graça\nThe first record of Centrocestus formosanus (Trematoda: Heterophyidae) in southern Brazil supported by molecular data - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nMolecular evidence of new freshwater turtle blood flukes (Digenea: Spirorchiidae) in the intermediate snail host Biomphalaria occidentalis Paraense, 1981 in an urban aquatic ecosystem in Brazil - 2021\nJuliana Rosa Matias Ciccheto, Bruno Henrique Mioto Stabile, Fábio Fermino, Thomaz Mansini Carrenho Fabrin, Alessandra Valéria de Oliveira, Ricardo Massato Takemoto, Rodrigo Junio da Graça\nCyanobacteria in an urban lake: hidden diversity revealed by metabarcoding - 2020\nThomaz Mansini Carrenho Fabrin, Bruno Henrique Mioto Stabile, Matheus Vieira da Silva, Susicley Jati, Liliana Rodrigues, Alessandra Valéria de Oliveira\nDivulgação da ciência desde a sala de aula - 2020\nYasmin Rodrigues de Souza, Carolina Pedrozo do Nascimento, Melissa Progênio da Silva, Gabriela Cassia Zanon Reinas, Edilaine Corrêa Leite, João Otávio Santos Silva, Bárbara Scorsim Arjona, Rejane Guimarães Melo, Bruno Henrique Mioto Stabile, Hugo Lima Kirsten, Renan Borges dos Reis, Matheus Henrique Ferreira Aleixo, Larissa Carrara Gonçalves, Fernanda Moreira Florêncio, Aline Favaro Mendes, Alessandra Barbosa da Silva, Alfonso Pineda, Luzia Cleide Rodrigues"
+    "objectID": "charts.html#original-charts",
+    "href": "charts.html#original-charts",
+    "title": "Charts",
+    "section": "Original charts",
+    "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\n\n\n\nPlay animation made for BigDataBowl ’24 Competition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nI wrote a text for basedosdados with a tutorial on how I made this chart of the vaccinated population using R! Check it out here!\n\n\nI also published a chart together with Nexo Jornal about inflation and unemployment in Brazil, updating a very interesting chart! Check it out here!\n\n\nI made this animation for the BigDataBowl ’24 Competition. You can see my team’s notebook at Kaggle"
   },
   {
     "objectID": "index.html",

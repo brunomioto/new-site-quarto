@@ -27,6 +27,8 @@ resultado_votos_locais_prop <- resultado_votos_locais |>
 sf::write_sf(resultado_votos_locais_prop, "./posts/eleicao_mga_2024/pt/data/resultado_votos_locais_prop.geojson")
 
 
+
+
 resultado_votos_locais_eleitos <- resultado_votos_locais_prop |> 
   ungroup() |> 
   filter(nr_votavel %in% ver_eleitos)
