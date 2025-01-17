@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-45fd12c81e23b35c86e68d3536f0ae21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -274,7 +274,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ggplot2,dataviz" data-listing-date-sort="1708992000000" data-listing-file-modified-sort="1730599001993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3132">
+<div class="quarto-post image-right" data-index="0" data-categories="Z2dwbG90MiUyQ2RhdGF2aXo=" data-listing-date-sort="1708992000000" data-listing-file-modified-sort="1737127138293" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3132">
 <div class="thumbnail">
 <p><a href="../posts/intro_ggplot2/en/index.html" class="no-external"></a></p><a href="../posts/intro_ggplot2/en/index.html" class="no-external">
 <p><img loading="lazy" src="../posts/intro_ggplot2/en/cover.png" class="thumbnail-image"></p>
@@ -288,10 +288,10 @@ window.Quarto = {
 <a href="../posts/intro_ggplot2/en/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">
 ggplot2
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('dataviz'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YXZpeg=='); return false;">
 dataviz
 </div>
 </div>
@@ -310,7 +310,7 @@ Bruno Mioto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="ggplot2,dataviz,maps" data-listing-date-sort="1675209600000" data-listing-file-modified-sort="1730599002161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="930">
+<div class="quarto-post image-right" data-index="1" data-categories="Z2dwbG90MiUyQ2RhdGF2aXolMkNtYXBz" data-listing-date-sort="1675209600000" data-listing-file-modified-sort="1737127138443" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="930">
 <div class="thumbnail">
 <p><a href="../posts/waterlines/en/index.html" class="no-external"></a></p><a href="../posts/waterlines/en/index.html" class="no-external">
 <p><img loading="lazy" src="../posts/waterlines/en/post_waterline.png" class="thumbnail-image"></p>
@@ -324,13 +324,13 @@ Bruno Mioto
 <a href="../posts/waterlines/en/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">
 ggplot2
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('dataviz'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YXZpeg=='); return false;">
 dataviz
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('maps'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('bWFwcw=='); return false;">
 maps
 </div>
 </div>
@@ -442,8 +442,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -554,7 +552,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

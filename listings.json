@@ -1,16 +1,5 @@
 [
   {
-    "listing": "/index.html",
-    "items": [
-      "/posts/intro_ggplot2/en/index.html",
-      "/posts/waterlines/en/index.html",
-      "/posts/eleicao_mga_2024/pt/index.html",
-      "/posts/appendix/pt/index.html",
-      "/posts/intro_ggplot2/pt/index.html",
-      "/posts/trees_mga/pt/index.html"
-    ]
-  },
-  {
     "listing": "/posts/pt.html",
     "items": [
       "/posts/eleicao_mga_2024/pt/index.html",
@@ -24,6 +13,17 @@
     "items": [
       "/posts/intro_ggplot2/en/index.html",
       "/posts/waterlines/en/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/intro_ggplot2/en/index.html",
+      "/posts/waterlines/en/index.html",
+      "/posts/eleicao_mga_2024/pt/index.html",
+      "/posts/appendix/pt/index.html",
+      "/posts/intro_ggplot2/pt/index.html",
+      "/posts/trees_mga/pt/index.html"
     ]
   }
 ]
