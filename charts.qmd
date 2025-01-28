@@ -49,6 +49,8 @@ All the following charts and maps were made entirely using **ggplot2/R**.<br>You
 
 ![Play animation made for BigDataBowl '24 Competition](figures/charts/animation_kaggle_small_size.gif){.lightbox group="my-gallery" description="I made this animation for the BigDataBowl '24 Competition. You can see my team's notebook at [Kaggle](https://www.kaggle.com/code/stevenpatton97/the-components-of-a-tackle-a-physics-driven-study)"}
 
+![](figures/charts/black_qbs.png){.lightbox group="my-gallery"}
+
 ::: {layout-ncol="2"}
 ![](figures/charts/scatter-nfl.png){.lightbox group="my-gallery"}
 
