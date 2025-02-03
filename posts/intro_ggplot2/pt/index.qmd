@@ -34,7 +34,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Antes de começarmos...
 
-Este é um material adaptado de uma aula sobre **Visualização de dados** ministrada na disciplina de **Introdução ao R** para meu programa de pós-graduação. O objetivo não era apresentar **tudo** do ggplot2, apenas o **mais importante** que possa ser utilizado em artigos científicos.
+Este é o material utilizado na aula sobre **Visualização de dados** ministrada na disciplina de **Introdução ao R** em 2024 para o **Programa de Pós-Graduação em Ecologia de Ambientes Aquáticos Continentais**. O objetivo não era apresentar **tudo** do ggplot2, apenas o **mais importante** que possa ser utilizado em artigos científicos.
 
 Como isso pode ser útil para mais pessoas, decidi disponibilizar para todos por aqui. Fique à vontade para compartilhar com outras pessoas!
 
