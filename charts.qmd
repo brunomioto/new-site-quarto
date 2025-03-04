@@ -51,6 +51,8 @@ All the following charts and maps were made entirely using **ggplot2/R**.<br>You
 
 ![](figures/charts/black_qbs.png){.lightbox group="my-gallery"}
 
+![](figures/charts/severance.png){.lightbox group="my-gallery"}
+
 ::: {layout-ncol="2"}
 ![](figures/charts/scatter-nfl.png){.lightbox group="my-gallery"}
 
