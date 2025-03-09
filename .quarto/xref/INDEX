@@ -64,5 +64,11 @@
   },
   "hexout.qmd": {
     "hexout.html": "dc42d8ee"
+  },
+  "posts/arlequin/pt/index.qmd": {
+    "index.html": "f214d196"
+  },
+  "posts/arlequin/en/index.qmd": {
+    "index.html": "525a9f71"
   }
 }
