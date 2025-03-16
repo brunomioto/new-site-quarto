@@ -26,6 +26,15 @@ listing:
     sort-ui: false
     filter-ui: false
     page-size: 5
+  - id: posts-decifrando
+    contents: posts/decifrando_graficos/**/*.qmd
+    type: default
+    fields: [image, date, title, subtitle, categories, author, reading-time]
+    sort: "date desc"
+    #categories: cloud
+    sort-ui: false
+    filter-ui: false
+    page-size: 5
 toc: false
 ---
 
@@ -45,9 +54,14 @@ If you want to support my work, buy me a [coffee](https://www.buymeacoffee.com/b
 ::: {#posts-en}
 :::
 
-
 ## Posts em Português
 
 ::: {#posts-pt}
 :::
+
+## Decifrando Gráficos
+
+::: {#posts-decifrando}
+:::
+
 
