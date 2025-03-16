@@ -40,7 +40,7 @@ Vamos começar com um gráfico publicado recentemente pelo **Nexo Jornal**: [O n
 
 ![](./figures/grafico_nexo.png)
 
-A equipe do Nexo é muito gente boa e sempre buscam explicar melhor como é o trabalho deles, que você pode conferir na série de posts [Nos Eixos](https://www.nexojornal.com.br/grafico/2024/03/08/grafico-e-infografico-como-faz-nexo-jornal). Eles utilizam o R para trabalhar com os dados e gerar os gráficos, e o Illustrator para retoques finais.
+A equipe do Nexo é muito gente boa e sempre busca explicar melhor como é o trabalho deles, que você pode conferir na série de posts [Nos Eixos](https://www.nexojornal.com.br/grafico/2024/03/08/grafico-e-infografico-como-faz-nexo-jornal). Eles utilizam o R para trabalhar com os dados e gerar os gráficos, e o Illustrator para retoques finais.
 
 Como ficaremos apenas no R, vamos focar na construção do gráfico em si (retângulos/tiles e eixo), sem as ilustrações no entorno.
 
@@ -84,7 +84,7 @@ pilotos_br <- pilotos_clean |>
 pilotos_br
 ```
 
-Neste dataset não temos o **Gabriel Bortoleto** que vai representar o Brasil em 2025. Vamos adicioná-lo com `dplyr::add_row()` e apenas as variável que vamos precisar.
+Neste dataset não temos o **Gabriel Bortoleto** que vai representar o Brasil em 2025. Vamos adicioná-lo com `dplyr::add_row()` e apenas as variáveis que vamos precisar.
 
 ```{r}
 pilotos_br2 <- pilotos_br |> 
@@ -104,7 +104,7 @@ Para o primeiro, vamos selecionar as colunas necessárias e salvar em `pilotos_b
 - `driver` (Nome do piloto)
 - `nationality` (Nacionalidade)
 - `seasons` (Temporadas)
-- `championship_years` (Anos que foi campeão)
+- `championship_years` (Anos em que foi campeão)
 
 ```{r}
 pilotos_br3 <- pilotos_br2 |> 
@@ -112,7 +112,7 @@ pilotos_br3 <- pilotos_br2 |>
                 championship_years)
 ```
 
-Mas veja que precisamos quebrar a coluna `seasons` para cada valor ficar em uma linha, obtendo um formato **tidy**, que utilizaremos no **ggplot2** mais pra frente. Para isso vamos usar a função `tidyr::separate_longer_delim()` que nos permite separar uma string por algum delimitador (nesse caso `, `). E vamos também remover os colchetes `[` ou `]` que ficarem perdidos utilizando o pacote {stringr} e transformar essa variáveis em numérica.
+Mas veja que precisamos quebrar a coluna `seasons` para cada valor ficar em uma linha, obtendo um formato **tidy**, que utilizaremos no **ggplot2** mais pra frente. Para isso vamos usar a função `tidyr::separate_longer_delim()` que nos permite separar uma string por algum delimitador (nesse caso `, `). E vamos também remover os colchetes `[` ou `]` que ficarem perdidos utilizando o pacote {stringr} e transformar essa variável em numérica.
 
 ```{r}
 pilotos_br4 <- pilotos_br3 |> 
