@@ -125,6 +125,34 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-posts-decifrando .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle','listing-categories','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-posts-decifrando'] = new List('listing-posts-decifrando', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XTWGVVSED5"></script>
 
@@ -278,7 +306,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="posts-in-english">Posts in English</h2>
 <div id="listing-posts-en" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Z2VuZXRpY3MlMkNwYWNrYWdlcw==" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1742142141073" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1841">
+<div class="quarto-post image-right" data-index="0" data-categories="Z2VuZXRpY3MlMkNwYWNrYWdlcw==" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1742142615416" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1841">
 <div class="thumbnail">
 <p><a href="./posts/arlequin/en/index.html" class="no-external"></a></p><a href="./posts/arlequin/en/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/arlequin/en/post_arlequin.png" class="thumbnail-image"></p>
@@ -314,7 +342,7 @@ Bruno Mioto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Z2dwbG90MiUyQ2RhdGF2aXo=" data-listing-date-sort="1708992000000" data-listing-file-modified-sort="1742142141587" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3132">
+<div class="quarto-post image-right" data-index="1" data-categories="Z2dwbG90MiUyQ2RhdGF2aXo=" data-listing-date-sort="1708992000000" data-listing-file-modified-sort="1742142615927" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3132">
 <div class="thumbnail">
 <p><a href="./posts/intro_ggplot2/en/index.html" class="no-external"></a></p><a href="./posts/intro_ggplot2/en/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/intro_ggplot2/en/cover.png" class="thumbnail-image"></p>
@@ -350,7 +378,7 @@ Bruno Mioto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Z2dwbG90MiUyQ2RhdGF2aXolMkNtYXBz" data-listing-date-sort="1675209600000" data-listing-file-modified-sort="1742142141739" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="930">
+<div class="quarto-post image-right" data-index="2" data-categories="Z2dwbG90MiUyQ2RhdGF2aXolMkNtYXBz" data-listing-date-sort="1675209600000" data-listing-file-modified-sort="1742142616078" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="930">
 <div class="thumbnail">
 <p><a href="./posts/waterlines/en/index.html" class="no-external"></a></p><a href="./posts/waterlines/en/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/waterlines/en/post_waterline.png" class="thumbnail-image"></p>
@@ -399,7 +427,7 @@ No matching items
 <h2 class="anchored" data-anchor-id="posts-em-português">Posts em Português</h2>
 <div id="listing-posts-pt" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Z2VuZXRpY3MlMkNwYWNrYWdlcw==" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1742142141074" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1850">
+<div class="quarto-post image-right" data-index="0" data-categories="Z2VuZXRpY3MlMkNwYWNrYWdlcw==" data-listing-date-sort="1741564800000" data-listing-file-modified-sort="1742142615416" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1850">
 <div class="thumbnail">
 <p><a href="./posts/arlequin/pt/index.html" class="no-external"></a></p><a href="./posts/arlequin/pt/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/arlequin/pt/post_arlequin.png" class="thumbnail-image"></p>
@@ -435,7 +463,7 @@ Bruno Mioto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Z2dwbG90MiUyQ2RhdGF2aXolMkNwb2wlQzMlQUR0aWNh" data-listing-date-sort="1729036800000" data-listing-file-modified-sort="1742142141572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="531">
+<div class="quarto-post image-right" data-index="1" data-categories="Z2dwbG90MiUyQ2RhdGF2aXolMkNwb2wlQzMlQUR0aWNh" data-listing-date-sort="1729036800000" data-listing-file-modified-sort="1742142615912" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="531">
 <div class="thumbnail">
 <p><a href="./posts/eleicao_mga_2024/pt/index.html" class="no-external"></a></p><a href="./posts/eleicao_mga_2024/pt/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/eleicao_mga_2024/pt/post_eleicao_mga_2024.png" class="thumbnail-image"></p>
@@ -474,7 +502,7 @@ Bruno Mioto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Z2dwbG90MiUyQ2RhdGF2aXolMkNzYSVDMyVCQWRl" data-listing-date-sort="1710979200000" data-listing-file-modified-sort="1742142141070" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="276">
+<div class="quarto-post image-right" data-index="2" data-categories="Z2dwbG90MiUyQ2RhdGF2aXolMkNzYSVDMyVCQWRl" data-listing-date-sort="1710979200000" data-listing-file-modified-sort="1742142615412" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="276">
 <div class="thumbnail">
 <p><a href="./posts/appendix/pt/index.html" class="no-external"></a></p><a href="./posts/appendix/pt/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/appendix/pt/cover.png" class="thumbnail-image"></p>
@@ -513,7 +541,7 @@ Bruno Mioto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Z2dwbG90MiUyQ2RhdGF2aXo=" data-listing-date-sort="1706572800000" data-listing-file-modified-sort="1742142141596" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3034">
+<div class="quarto-post image-right" data-index="3" data-categories="Z2dwbG90MiUyQ2RhdGF2aXo=" data-listing-date-sort="1706572800000" data-listing-file-modified-sort="1742142615936" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3034">
 <div class="thumbnail">
 <p><a href="./posts/intro_ggplot2/pt/index.html" class="no-external"></a></p><a href="./posts/intro_ggplot2/pt/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/intro_ggplot2/pt/cover.png" class="thumbnail-image"></p>
@@ -549,7 +577,7 @@ Bruno Mioto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Z2dwbG90MiUyQ2RhdGF2aXolMkNtYXBz" data-listing-date-sort="1701734400000" data-listing-file-modified-sort="1742142141738" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2871">
+<div class="quarto-post image-right" data-index="4" data-categories="Z2dwbG90MiUyQ2RhdGF2aXolMkNtYXBz" data-listing-date-sort="1701734400000" data-listing-file-modified-sort="1742142616077" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2871">
 <div class="thumbnail">
 <p><a href="./posts/trees_mga/pt/index.html" class="no-external"></a></p><a href="./posts/trees_mga/pt/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/trees_mga/pt/post_trees_mga.png" class="thumbnail-image"></p>
@@ -584,6 +612,55 @@ Bruno Mioto
 </div>
 <div class="listing-reading-time">
 15 min
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="decifrando-gráficos" class="level2">
+<h2 class="anchored" data-anchor-id="decifrando-gráficos">Decifrando Gráficos</h2>
+<div id="listing-posts-decifrando" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="dHV0b3JpYWwlMkNkYXRhdml6JTJDZ2dwbG90Mg==" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1742142615450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2785">
+<div class="thumbnail">
+<p><a href="./posts/decifrando_graficos/1_nexo/index.html" class="no-external"></a></p><a href="./posts/decifrando_graficos/1_nexo/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/decifrando_graficos/1_nexo/cover.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/decifrando_graficos/1_nexo/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/decifrando_graficos/1_nexo/index.html" class="no-external">Decifrando gráficos #1</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/decifrando_graficos/1_nexo/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('dHV0b3JpYWw='); return false;">
+tutorial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YXZpeg=='); return false;">
+dataviz
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">
+ggplot2
+</div>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/decifrando_graficos/1_nexo/index.html" class="no-external">
+<div class="listing-date">
+Mar 17, 2025
+</div>
+<div class="listing-author">
+Bruno Mioto
+</div>
+<div class="listing-reading-time">
+14 min
 </div>
 </a>
 </div>
