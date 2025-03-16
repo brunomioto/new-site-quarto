@@ -266,7 +266,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="pilotos-brasileiros-na-f1-nexo-jornal">#1 - Pilotos brasileiros na F1 (Nexo Jornal)</h2>
 <p>Vamos começar com um gráfico publicado recentemente pelo <strong>Nexo Jornal</strong>: <a href="https://www.nexojornal.com.br/grafico/2025/03/14/formula-1-pilotos-brasileiros-historico">O número de brasileiros na Fórmula 1 ao longo dos anos</a></p>
 <p><img src="./figures/grafico_nexo.png" class="img-fluid"></p>
-<p>A equipe do Nexo é muito gente boa e sempre buscam explicar melhor como é o trabalho deles, que você pode conferir na série de posts <a href="https://www.nexojornal.com.br/grafico/2024/03/08/grafico-e-infografico-como-faz-nexo-jornal">Nos Eixos</a>. Eles utilizam o R para trabalhar com os dados e gerar os gráficos, e o Illustrator para retoques finais.</p>
+<p>A equipe do Nexo é muito gente boa e sempre busca explicar melhor como é o trabalho deles, que você pode conferir na série de posts <a href="https://www.nexojornal.com.br/grafico/2024/03/08/grafico-e-infografico-como-faz-nexo-jornal">Nos Eixos</a>. Eles utilizam o R para trabalhar com os dados e gerar os gráficos, e o Illustrator para retoques finais.</p>
 <p>Como ficaremos apenas no R, vamos focar na construção do gráfico em si (retângulos/tiles e eixo), sem as ilustrações no entorno.</p>
 <section id="obtendo-os-dados" class="level3">
 <h3 class="anchored" data-anchor-id="obtendo-os-dados">Obtendo os dados</h3>
@@ -320,7 +320,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 #   years_active &lt;dbl&gt;, champion &lt;lgl&gt;</code></pre>
 </div>
 </div>
-<p>Neste dataset não temos o <strong>Gabriel Bortoleto</strong> que vai representar o Brasil em 2025. Vamos adicioná-lo com <code>dplyr::add_row()</code> e apenas as variável que vamos precisar.</p>
+<p>Neste dataset não temos o <strong>Gabriel Bortoleto</strong> que vai representar o Brasil em 2025. Vamos adicioná-lo com <code>dplyr::add_row()</code> e apenas as variáveis que vamos precisar.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pilotos_br2 <span class="ot">&lt;-</span> pilotos_br <span class="sc">|&gt;</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">add_row</span>(</span>
@@ -336,14 +336,14 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <li><code>driver</code> (Nome do piloto)</li>
 <li><code>nationality</code> (Nacionalidade)</li>
 <li><code>seasons</code> (Temporadas)</li>
-<li><code>championship_years</code> (Anos que foi campeão)</li>
+<li><code>championship_years</code> (Anos em que foi campeão)</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pilotos_br3 <span class="ot">&lt;-</span> pilotos_br2 <span class="sc">|&gt;</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(driver, nationality, seasons,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                championship_years)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Mas veja que precisamos quebrar a coluna <code>seasons</code> para cada valor ficar em uma linha, obtendo um formato <strong>tidy</strong>, que utilizaremos no <strong>ggplot2</strong> mais pra frente. Para isso vamos usar a função <code>tidyr::separate_longer_delim()</code> que nos permite separar uma string por algum delimitador (nesse caso <code>,</code>). E vamos também remover os colchetes <code>[</code> ou <code>]</code> que ficarem perdidos utilizando o pacote {stringr} e transformar essa variáveis em numérica.</p>
+<p>Mas veja que precisamos quebrar a coluna <code>seasons</code> para cada valor ficar em uma linha, obtendo um formato <strong>tidy</strong>, que utilizaremos no <strong>ggplot2</strong> mais pra frente. Para isso vamos usar a função <code>tidyr::separate_longer_delim()</code> que nos permite separar uma string por algum delimitador (nesse caso <code>,</code>). E vamos também remover os colchetes <code>[</code> ou <code>]</code> que ficarem perdidos utilizando o pacote {stringr} e transformar essa variável em numérica.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a>pilotos_br4 <span class="ot">&lt;-</span> pilotos_br3 <span class="sc">|&gt;</span> </span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_longer_delim</span>(</span>
