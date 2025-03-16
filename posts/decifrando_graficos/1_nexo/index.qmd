@@ -1,0 +1,361 @@
+---
+title: "Decifrando gráficos #1"
+description: "Do Jornal para o R"
+author: "Bruno Mioto"
+date: "2025-03-17"
+image: cover.png
+categories: ["tutorial","dataviz","ggplot2"]
+open-graph:
+  description: "Do Jornal para o R"
+  image: cover.png
+twitter-card:
+  description: "Do Jornal para o R"
+  image: cover.png
+  card-style: summary_large_image
+format:
+  html:
+    code-link: true
+    fig-width: 5
+    fig-height: 2
+    fig-dpi: 600
+execute:
+  warning: false
+---
+
+![](cover.png)
+
+## Como isso foi feito?
+
+Todo dia vemos gráficos nos jornais, mas nem sempre sabemos como eles foram feitos. De onde vieram os **dados**? Como foram **tratados**? E será que dá para **recriá-los** usando o R?
+
+Nesta série, vou pegar gráficos publicados nos principais **jornais** e recriá-los do zero usando **R, tidyverse e ggplot2**. Vou mostrar como encontrar os dados, organizá-los e gerar visualizações que chegam o mais próximo possível do original – tudo de forma transparente e didática. Sim! Vamos fazer e aprender juntos!
+
+E tem mais: **todo o código e dados utilizados estarão disponíveis e comentados (clique nos números abaixo de cada conjunto de código!)**. E por estarmos trabalhando com uma **linguagem de programação**, todos vão obter o mesmo resultado ao final do script.
+
+Acompanhe a série e veja como transformar dados brutos em visualizações incríveis!
+
+## #1 - Pilotos brasileiros na F1 (Nexo Jornal)
+
+Vamos começar com um gráfico publicado recentemente pelo **Nexo Jornal**: [O número de brasileiros na Fórmula 1 ao longo dos anos](https://www.nexojornal.com.br/grafico/2025/03/14/formula-1-pilotos-brasileiros-historico)
+
+![](./figures/grafico_nexo.png)
+
+A equipe do Nexo é muito gente boa e sempre buscam explicar melhor como é o trabalho deles, que você pode conferir na série de posts [Nos Eixos](https://www.nexojornal.com.br/grafico/2024/03/08/grafico-e-infografico-como-faz-nexo-jornal). Eles utilizam o R para trabalhar com os dados e gerar os gráficos, e o Illustrator para retoques finais.
+
+Como ficaremos apenas no R, vamos focar na construção do gráfico em si (retângulos/tiles e eixo), sem as ilustrações no entorno.
+
+### Obtendo os dados
+
+Segundo a fonte do gráfico, os dados foram obtidos pela plataforma Kaggle (utilizada para competições de Big Data), e podemos ver neste link: [Kaggle](https://www.kaggle.com/datasets/petalme/f1-drivers-dataset)
+
+Primeiro vamos carregar os pacotes necessários
+
+```{r}
+library(readr) #baixar dados csv
+library(janitor) #limpeza dos dados
+library(dplyr) #manipulação dos dados
+library(tidyr) #tratamento dos dados
+library(stringr) #trabalhar com strings/texto
+library(ggplot2) #gráficos
+```
+
+Agora vamos baixar a tabela disponibilizado no site e salvar com o nome `F1Drivers_Dataset.csv` dentro de uma pasta chamada `data`. Pronto, agora podemos importar os dados.
+
+```{r}
+pilotos <- readr::read_csv("data/F1Drivers_Dataset.csv")
+```
+
+Caramba! São **868 pilotos e 22 variáveis**!
+
+### Trabalhando com os dados
+
+Mas veja que os nomes das variáveis tem letras maiúsculas e espaços (Championship Years). Vamos padronizar para `snake_case`com o pacote {janitor}. Vamos salvar cada passo em um novo objeto para ficar mais fácil de acompanhar.
+
+```{r}
+pilotos_clean <- janitor::clean_names(pilotos)
+```
+
+Vamos filtrar apenas os brasileiros e analisar este dataset
+
+```{r}
+pilotos_br <- pilotos_clean |> 
+  dplyr::filter(nationality == "Brazil")
+
+pilotos_br
+```
+
+Neste dataset não temos o **Gabriel Bortoleto** que vai representar o Brasil em 2025. Vamos adicioná-lo com `dplyr::add_row()` e apenas as variável que vamos precisar.
+
+```{r}
+pilotos_br2 <- pilotos_br |> 
+  dplyr::add_row(
+    driver = "Gabriel Bortoleto",
+    nationality = "Brazil",
+    seasons = "[2025]"
+  )
+```
+
+São **33 pilotos brasileiros**, aí no meio devem estar os campeões **Emerson Fittipaldi, Nelson Piquet e Ayrton Senna**. Já já vamos chegar lá!
+
+Agora vamos criar 2 datasets, um para todas as temporadas de todos os pilotos, e outro para as temporadas em que algum foi campeão.
+
+Para o primeiro, vamos selecionar as colunas necessárias e salvar em `pilotos_br3`
+
+- `driver` (Nome do piloto)
+- `nationality` (Nacionalidade)
+- `seasons` (Temporadas)
+- `championship_years` (Anos que foi campeão)
+
+```{r}
+pilotos_br3 <- pilotos_br2 |> 
+  dplyr::select(driver, nationality, seasons,
+                championship_years)
+```
+
+Mas veja que precisamos quebrar a coluna `seasons` para cada valor ficar em uma linha, obtendo um formato **tidy**, que utilizaremos no **ggplot2** mais pra frente. Para isso vamos usar a função `tidyr::separate_longer_delim()` que nos permite separar uma string por algum delimitador (nesse caso `, `). E vamos também remover os colchetes `[` ou `]` que ficarem perdidos utilizando o pacote {stringr} e transformar essa variáveis em numérica.
+
+```{r}
+pilotos_br4 <- pilotos_br3 |> 
+  tidyr::separate_longer_delim( # <1>
+    cols = c(seasons), # <1>
+    delim = ", ") |>  # <1>
+  dplyr::mutate( # <2>
+    seasons = stringr::str_remove_all(seasons, "\\[|\\]"), # <2>
+    seasons = as.numeric(seasons) # <2>
+    )  # <2>
+```
+1. Separa os valores na coluna `seasons` em múltiplas linhas, usando a vírgula seguida de espaço como delimitador.
+2. Remove os colchetes `[` ou `]` e transforma a variável `seasons` em numérica.
+
+Agora vamos utilizar este dataset para criar o `pilotos_campeoes`. Vamos usar novamente o `tidyr::separate_longer_delim()`, mas dessa vez com a variável `championship_years`.
+Isso vai gerar linhas duplicadas, pois a função busca criar todas combinações entre as linhas. Como aqui queremos apenas os campeões nos respectivos anos, vamos filtrar as temporadas (`seasons`) que são iguais às temporadas vitoriosas (`championship_years`).
+Por fim, vamos criar uma coluna dizendo que eles foram campeões neste ano
+
+```{r}
+pilotos_campeoes <- pilotos_br4 |>
+  tidyr::separate_longer_delim( # <1>
+    cols = c(championship_years), # <1>
+    delim = ", ") |> # <1>
+  dplyr::mutate( # <2>
+    championship_years = stringr::str_remove_all( # <2>
+      championship_years, # <2>
+      "\\[|\\]")) |> # <2>
+  filter(seasons == championship_years) |>  # <3>
+  mutate( # <4>
+    campeao = TRUE # <4>
+  ) # <4>
+```
+1. Separa os valores na coluna `championship_years` em múltiplas linhas, usando a vírgula seguida de espaço como delimitador.
+2. Remove os colchetes `[` ou `]` e transforma a variável `seasons` em numérica.
+3. Filtra `seasons` iguais à `championship_years`.
+4. Cria uma coluna `campeao` com valor `TRUE` para estes pilotos.
+
+Agora só precisamos combinar o dataset `pilotos_campeoes` com o `pilotos_br4` utilizando o `left_join()`. Aqui vamos falar para utilizar as colunas `driver` e `seasons` como guias do **join**
+
+```{r}
+pilotos_br5 <- pilotos_br4 |> 
+  dplyr::left_join(
+    pilotos_campeoes,
+    by = c("driver", "seasons") # <2>
+    )
+```
+1. Define quais variávels serão combinadas de ambos os datasets.
+
+Pronto! Temos toda a informação que precisamos. Vamos aos gráficos!
+
+### Criando o gráfico
+
+Logo de cara, vemos que o gráfico do **Nexo** é um *tile plot*, em que utilizamos a função `geom_tile()`.
+
+Para isso, precisamos contar o número de pilotos em cada ano, já que o eixo Y apresenta a soma de pilotos. Para isso podemos agrupar nosso dataset por temporada (`group_by()`) e contar o numero de linhas/pilotos (`row_number()`)
+
+```{r}
+soma_pilotos <- pilotos_br5 |> 
+  dplyr::group_by(seasons) |> # <1>
+  dplyr::mutate(soma = dplyr::row_number()) # <2>
+```
+1. Agrupa os dados por temporada (`seasons`) 
+2. Conta o número de linhas (nesse caso, pilotos) em cada grupo
+
+Agora vamos plotar! Lembre-se que precisamos utilizar cores de preenchimento diferentes para campeões e também para a temporada atual!
+
+```{r}
+soma_pilotos |>                            # <1>
+  ggplot(aes(x = seasons, y = soma))+      # <2>
+  geom_tile(                                # <3>
+    aes(fill = dplyr::case_when(            # <4>
+      campeao == TRUE ~ "campeão",          # <4>
+      seasons == 2025 ~ "atual",            # <4>
+      TRUE ~ "normal"                        # <4>
+    ))                                      # <4>
+  )+                                        # <3>
+  theme(                                     # <5>
+    legend.position = "none"                 # <5>
+  )                                          # <5>
+
+```
+1. Pegamos `soma_pilotos` e passamos adiante com o pipe.
+2. Criamos um gráfico com `ggplot()`, onde `seasons` define o eixo X e `soma` define o eixo Y.
+3. Adicionamos `geom_tile()`, que cria um mosaico de retângulos para representar os valores.
+4. Definimos a cor de preenchimento com `case_when()`, categorizando os tiles como "campeão", "atual" ou "normal".
+5. Ajustamos o tema para remover a legenda `(legend.position = "none")`, deixando o gráfico mais limpo.
+
+Quase! Veja que os campeões não estão na base, como na figura original. Para isso precisamos ordenar (`arrange()`) o dataset para que os campeões apareçam primeiro na contagem de linhas. Vamos tentar novamente!
+
+
+```{r}
+soma_pilotos <- pilotos_br5 |> 
+  dplyr::group_by(seasons) |> 
+  dplyr::arrange(campeao) |> # <1>
+  mutate(soma = dplyr::row_number())
+```
+1. Ordena a coluna `campeao`. Assim, valores `TRUE` aparecem primeiro
+
+Agora vamos plotar!
+
+```{r}
+soma_pilotos |> 
+  ggplot(aes(x = seasons, y = soma))+
+  geom_tile(
+    aes(fill = dplyr::case_when(campeao == TRUE ~ "campeão",
+                                seasons == 2025 ~ "atual",
+                                TRUE ~ "normal"))
+  )+
+  theme(
+    legend.position = "none"
+  )
+```
+
+Perfeito! Agora vem a parte mais legal. Deixar o gráfico bonito!
+
+Vamos fazer uma checklist e ajustar tudo!
+
+- [ ] Gráfico clean (fundo branco, apenas eixo x, etc)
+- [ ] Eixo x de 10 em 10 anos
+- [ ] Sem espaço entre o gráfico e eixo x
+- [ ] Tamanho e cores dos retângulos
+- [ ] Gabriel Bortoleto destacado
+
+Começando pelo tema
+
+```{r}
+soma_pilotos |> 
+  ggplot(aes(x = seasons, y = soma))+
+  geom_tile(
+    aes(fill = dplyr::case_when(campeao == TRUE ~ "campeão",
+                                seasons == 2025 ~ "atual",
+                                TRUE ~ "normal"))
+  )+
+  theme_classic()+  # <1>
+  theme(
+    legend.position = "none",       # <2>
+    axis.line.y = element_blank(),  # <3>
+    axis.ticks.x = element_line(    # <4>
+      lineend = "round",            # <4>
+      color = "black"               # <4>
+    ),
+    axis.ticks.y = element_blank(), # <5>
+    axis.title = element_blank(),   # <6>
+    axis.text.y = element_blank(),  # <7>
+    axis.text.x = element_text(     # <8>
+      face = "bold",                # <8>
+      color = "black"               # <8>
+    )
+  )
+```
+1. `theme_classic()`: Remove as grades de fundo e simplifica o visual do gráfico.
+2. `legend.position = "none"`: Esconde a legenda do gráfico.
+3. `axis.line.y = element_blank()`: Remove a linha do eixo Y.
+4. `axis.ticks.x`: Personaliza os ticks (marcas) do eixo X, deixando-os arredondados e pretos.
+5. `axis.ticks.y = element_blank()`: Remove os ticks do eixo Y.
+6. `axis.title = element_blank()`: Remove os títulos dos eixos.
+7. `axis.text.y = element_blank()`: Esconde os rótulos do eixo Y.
+8. `axis.text.x`: Deixa os rótulos do eixo X em negrito e pretos.
+
+✅ Gráfico clean (fundo branco, apenas eixo x, etc)
+
+Agora os eixos
+
+```{r}
+soma_pilotos |> 
+  ggplot(aes(x = seasons, y = soma))+
+  geom_tile(
+    aes(fill = dplyr::case_when(campeao == TRUE ~ "campeão",
+                                seasons == 2025 ~ "atual",
+                                TRUE ~ "normal"))
+  )+
+  scale_x_continuous(             # <1>
+    breaks = seq(1950, 2020, 10)  # <1>
+  )+
+  scale_y_continuous(             # <2>
+    expand = expansion(mult = c(0, 0.05))  # <2>
+  )+
+  theme_classic()+
+  theme(
+    legend.position = "none",
+    axis.line.y = element_blank(),
+    axis.ticks.x = element_line(lineend = "round", color = "black"),
+    axis.ticks.y = element_blank(),
+    axis.title = element_blank(),
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(face = "bold", color = "black")
+  )
+```
+1. Define os pontos de quebra (ticks) do eixo X a cada 10 anos, de 1950 a 2020. Isso deixa o eixo X mais organizado.
+2. Ajusta o espaçamento do eixo Y a partir de uma multiplicação. O primeiro valor (0) remove espaço na parte inferior. O segundo valor (0.05) adiciona um pequeno espaço na parte superior (5%), evitando que os retângulos (*tiles*) fiquem colados à borda superior.
+
+✅ Eixo x de 10 em 10 anos
+
+✅ Sem espaço entre o gráfico e eixo x
+
+Falta ainda ajustarmos os retângulos
+
+```{r}
+soma_pilotos |> 
+  ggplot(aes(x = seasons, y = soma))+
+  geom_tile(
+    aes(fill = dplyr::case_when(campeao == TRUE ~ "campeão",
+                                seasons == 2025 ~ "atual",
+                                TRUE ~ "normal"),
+        linewidth = ifelse(driver == "Gabriel Bortoleto", 0.3, NA) # <1>
+    ),
+    color = "black",     # <2>
+    width = 0.8,         # <3>
+    height = 0.8         # <3>
+  )+
+  scale_x_continuous(
+    breaks = seq(1950, 2020, 10)
+  )+
+  scale_y_continuous(
+    expand = expansion(mult = c(0, 0.05))
+  )+
+  scale_linewidth_identity() + # <4>
+  scale_fill_manual(           # <5>
+    values = c(
+      "campeão" = "#ffce2e",
+      "normal" = "#ff7b80",
+      "atual" = "#a8a8a8"
+    )
+  )+
+  theme_classic()+
+  theme(
+    legend.position = "none",
+    axis.line.y = element_blank(),
+    axis.ticks.x = element_line(lineend = "round", color = "black"),
+    axis.ticks.y = element_blank(),
+    axis.title = element_blank(),
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(face = "bold", color = "black"),
+    plot.background = element_rect(fill = NA, color = NA),
+    panel.background = element_rect(fill = NA, color = NA)
+  )
+```
+1. Define `linewidth`, para que o retângulo (*tile*) do Gabriel Bortoleto tenha uma borda mais espessa (0.3), enquanto os demais têm borda invisível (NA).
+2. Define `color = "black"` para que as bordas dos tiles fiquem pretas (quando hourve borda).
+3. Controla o tamanho dos tiles com `width = 0.8`, `height = 0.8`, reduzindo ligeiramente o tamanho para criar uma separação entre os blocos.
+4. Usa `scale_linewidth_identity()` para interpretar os valores de *linewidth* diretamente, sem precisar de uma escala mapeada.
+5. Define `scale_fill_manual(values = c(...))` para atribuir cores personalizadas aos tiles: campeões em amarelo, normais em vermelho e a temporada atual em cinza.
+
+Agora sim! Aprendemos como uma equipe de jornal chegou até este gráfico!
+
+Espero que este post tenha sido útil para você! Se tiver alguma dúvida, sugestão ou crítica, [mande um e-mail](mailto:bhmstabile@gmail.com)!
