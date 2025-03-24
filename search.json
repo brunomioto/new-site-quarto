@@ -203,34 +203,6 @@
     "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\n\n\n\nPlay animation made for BigDataBowl ’24 Competition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nI wrote a text for basedosdados with a tutorial on how I made this chart of the vaccinated population using R! Check it out here!\n\n\nI also published a chart together with Nexo Jornal about inflation and unemployment in Brazil, updating a very interesting chart! Check it out here!\n\n\nI made this animation for the BigDataBowl ’24 Competition. You can see my team’s notebook at Kaggle"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bruno Mioto",
-    "section": "",
-    "text": "Hello, this is my personal website!\nI’m a biologist and dataviz freelancer! Here you’ll find pages about the Charts and R packages I made and some info about me.\nIf you want to support my work, buy me a coffee!"
-  },
-  {
-    "objectID": "index.html#posts-in-english",
-    "href": "index.html#posts-in-english",
-    "title": "Bruno Mioto",
-    "section": "Posts in English",
-    "text": "Posts in English\n\n\n\n\n\n\n\n\n\n\nFacilitating the Creation of Arlequin (.arp) Files with R\n\n\n\n\n\n\ngenetics\n\n\npackages\n\n\n\n\n\n\nMar 10, 2025\n\n\nBruno Mioto\n\n\n10 min\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2 101\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nFeb 27, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nDrawing waterlines with ggplot2 in R\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nFeb 1, 2023\n\n\nBruno Mioto\n\n\n5 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#posts-em-português",
-    "href": "index.html#posts-em-português",
-    "title": "Bruno Mioto",
-    "section": "Posts em Português",
-    "text": "Posts em Português\n\n\n\n\n\n\n\n\n\n\nFacilitando a criação de arquivos Arlequin (.arp) com R\n\n\n\n\n\n\ngenetics\n\n\npackages\n\n\n\n\n\n\nMar 10, 2025\n\n\nBruno Mioto\n\n\n10 min\n\n\n\n\n\n\n\n\n\n\n\n\nA regionalização dos Vereadores eleitos em Maringá\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\npolítica\n\n\n\n\n\n\nOct 16, 2024\n\n\nBruno Mioto\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nHomens têm mais apendicite?\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntrodução ao ggplot2\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nMapeando as árvores de Maringá-PR\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#decifrando-gráficos",
-    "href": "index.html#decifrando-gráficos",
-    "title": "Bruno Mioto",
-    "section": "Decifrando Gráficos",
-    "text": "Decifrando Gráficos\n\n\n\n\n\n\n\n\n\n\nDecifrando gráficos #1\n\n\n\n\n\n\ntutorial\n\n\ndataviz\n\n\nggplot2\n\n\n\n\n\n\nMar 17, 2025\n\n\nBruno Mioto\n\n\n14 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "r-packages.html",
     "href": "r-packages.html",
     "title": "R packages",
@@ -285,6 +257,41 @@
     "title": "R packages",
     "section": "More packages soon…",
     "text": "More packages soon…"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bruno Mioto",
+    "section": "",
+    "text": "Hello, this is my personal website!\nI’m a biologist and dataviz specialist! Here you’ll find pages about the Charts and R packages I made and some info about me.\nTake a look at my posts below!"
+  },
+  {
+    "objectID": "index.html#decifrando-gráficos",
+    "href": "index.html#decifrando-gráficos",
+    "title": "Bruno Mioto",
+    "section": "Decifrando Gráficos",
+    "text": "Decifrando Gráficos\n\n\n\n\n\n\n\n\n\n\nDecifrando gráficos #1\n\n\n\n\n\n\ntutorial\n\n\ndataviz\n\n\nggplot2\n\n\n\n\n\n\nMar 17, 2025\n\n\nBruno Mioto\n\n\n14 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#posts-in-english",
+    "href": "index.html#posts-in-english",
+    "title": "Bruno Mioto",
+    "section": "Posts in English",
+    "text": "Posts in English\n\n\n\n\n\n\n\n\n\n\nFacilitating the Creation of Arlequin (.arp) Files with R\n\n\n\n\n\n\ngenetics\n\n\npackages\n\n\n\n\n\n\nMar 10, 2025\n\n\nBruno Mioto\n\n\n10 min\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2 101\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nFeb 27, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nDrawing waterlines with ggplot2 in R\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nFeb 1, 2023\n\n\nBruno Mioto\n\n\n5 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#posts-em-português",
+    "href": "index.html#posts-em-português",
+    "title": "Bruno Mioto",
+    "section": "Posts em Português",
+    "text": "Posts em Português\n\n\n\n\n\n\n\n\n\n\nFacilitando a criação de arquivos Arlequin (.arp) com R\n\n\n\n\n\n\ngenetics\n\n\npackages\n\n\n\n\n\n\nMar 10, 2025\n\n\nBruno Mioto\n\n\n10 min\n\n\n\n\n\n\n\n\n\n\n\n\nA regionalização dos Vereadores eleitos em Maringá\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\npolítica\n\n\n\n\n\n\nOct 16, 2024\n\n\nBruno Mioto\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nHomens têm mais apendicite?\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nsaúde\n\n\n\n\n\n\nMar 21, 2024\n\n\nBruno Mioto\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntrodução ao ggplot2\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\n\n\n\n\nJan 30, 2024\n\n\nBruno Mioto\n\n\n16 min\n\n\n\n\n\n\n\n\n\n\n\n\nMapeando as árvores de Maringá-PR\n\n\n\n\n\n\nggplot2\n\n\ndataviz\n\n\nmaps\n\n\n\n\n\n\nDec 5, 2023\n\n\nBruno Mioto\n\n\n15 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "curriculum.html",
+    "href": "curriculum.html",
+    "title": "curriculum",
+    "section": "",
+    "text": "Hello World! Please read my Closeread story below.\n\n\n\n\nCloseread enables scrollytelling.\n\n\n\n\nDraw your readers attention with focus effects.\n\n\n\n\nWhen this paragraph scrolls into view it will reveal a histogram.\n\n\n\n\n\n\n\nHighlighting\nZooming\nPanning"
   },
   {
     "objectID": "twitter-bots.html",
