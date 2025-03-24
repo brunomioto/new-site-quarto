@@ -9,6 +9,15 @@ twitter-card:
   card-style: summary_large_image
   image: figures/header.png
 listing:
+  - id: posts-decifrando
+    contents: posts/decifrando_graficos/**/*.qmd
+    type: default
+    fields: [image, date, title, subtitle, categories, author, reading-time]
+    sort: "date desc"
+    #categories: cloud
+    sort-ui: false
+    filter-ui: false
+    page-size: 5
   - id: posts-en
     contents: posts/**/en/*.qmd
     type: default
@@ -26,15 +35,6 @@ listing:
     sort-ui: false
     filter-ui: false
     page-size: 5
-  - id: posts-decifrando
-    contents: posts/decifrando_graficos/**/*.qmd
-    type: default
-    fields: [image, date, title, subtitle, categories, author, reading-time]
-    sort: "date desc"
-    #categories: cloud
-    sort-ui: false
-    filter-ui: false
-    page-size: 5
 toc: false
 ---
 
@@ -42,12 +42,16 @@ toc: false
 
 Hello, this is my personal website!
 
-I'm a biologist and dataviz freelancer! Here you'll find pages about the [Charts](charts.qmd) and [R packages](r-packages.qmd) I made and some info [about me](about-en.qmd).
+I'm a biologist and dataviz specialist! Here you'll find pages about the [Charts](charts.qmd) and [R packages](r-packages.qmd) I made and some info [about me](about-en.qmd).
 
-If you want to support my work, buy me a [coffee](https://www.buymeacoffee.com/brunomioto)!
+Take a look at my posts below!
 
 <br>
 
+## Decifrando Gráficos
+
+::: {#posts-decifrando}
+:::
 
 ## Posts in English
 
@@ -59,9 +63,5 @@ If you want to support my work, buy me a [coffee](https://www.buymeacoffee.com/b
 ::: {#posts-pt}
 :::
 
-## Decifrando Gráficos
-
-::: {#posts-decifrando}
-:::
 
 

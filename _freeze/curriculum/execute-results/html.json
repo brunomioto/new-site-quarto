@@ -1,0 +1,17 @@
+{
+  "hash": "1697d1898dcb2dee423af34102dd388d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"curriculum\"\nformat: closeread-html\n---\n\n\n\n\nHello World! Please read my Closeread story below.\n\n:::{.cr-section}\n\nCloseread enables scrollytelling.\n\nDraw your readers attention with focus effects. @cr-features\n\n:::{#cr-features}\n1. Highlighting\n2. Zooming\n3. Panning\n:::\n\nWhen this paragraph scrolls into view it will reveal a histogram. [@cr-myplot]{pan-to=\"50%,50%\" scale-by=\"1.5\"}\n\n:::{#cr-myplot}\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](curriculum_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\n:::\n\n\n:::",
+    "supporting": [
+      "curriculum_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

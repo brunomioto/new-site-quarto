@@ -237,7 +237,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/z9dpRrLajCs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p>In this video, he demonstrates how to convert a <strong>FASTA</strong> file into an <strong>.arp</strong> file while also adding groupings to the data. The entire process is done using an R script, and the data are available in the video above.</p>
 </section><section id="a-simpler-approach" class="level2"><h2 class="anchored" data-anchor-id="a-simpler-approach">A Simpler Approach</h2>
-<p>However, the script for this task is quite confusing and may be challenging for those who are not very proficient in R. With that in mind, and to make things easier for my colleagues (and myself) in the future, I adapted this code into a <strong>simple R function</strong> called <code>create_arlequin()</code>.</p>
+<p>However, the script for this task is quite confusing and may be challenging for those who are not very proficient in R. With that in mind, and to make things easier for my colleagues (and myself) in the future, I adapted this code into a <strong>simple R function</strong> called <code><a href="https://brunomioto.github.io/nupgen/reference/create_arlequin.html">create_arlequin()</a></code>.</p>
 <p>This function is available in the package I created for my lab, Nupgen! <strong>This is a highly experimental package with extremely specific functions</strong>, so don’t worry about the other ones.</p>
 <p>To install the package, simply open R and run:</p>
 <div class="cell">
@@ -249,7 +249,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>Done! Now let’s create the <strong>.arp</strong> file we need. First, we need to load the required packages. We will use the <strong>ape</strong> package to import sequences and <strong>nupgen</strong> to create the file we want.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/emmanuelparadis/ape">ape</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">nupgen</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/brunomioto/nupgen">nupgen</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, let’s load a FASTA alignment and a group file. We will use the example files from Josh Banta’s tutorial, but you can use your own as well!</p>
 <p>The <strong>FASTA file</strong> is a common alignment file, trimmed in software like <a href="https://www.megasoftware.net">MEGA</a>, following this structure:</p>
@@ -301,13 +301,13 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>If needed, you can create this file using <strong>Excel</strong> and export it as a .csv file, but make sure the separator is a comma (,) instead of a semicolon (;).</p>
 <p>Note that my files are inside the <code>data</code> folder, so I include that in the file path:</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">alignment</span> <span class="op">&lt;-</span> <span class="fu">read.dna</span><span class="op">(</span><span class="st">"data/fasta_file.fas"</span>, format <span class="op">=</span> <span class="st">"fasta"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">alignment</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ape/man/read.dna.html">read.dna</a></span><span class="op">(</span><span class="st">"data/fasta_file.fas"</span>, format <span class="op">=</span> <span class="st">"fasta"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">groups</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"data/groups_file.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Agora que temos os arquivos carregados, é só rodar a função. Perceba que, além dos argumentos do alinhamento e grupos, temos um chamado <code>output.dir</code>, este argumento define qual diretório você deseja salvar o arquivo <strong>output.arp</strong>. O padrão é o diretório atual (“.”), mas aqui vou salvar na pasta <code>data</code>, junto com os outros arquivos.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">nupgen</span><span class="fu">::</span><span class="fu">create_arlequin</span><span class="op">(</span>fasta <span class="op">=</span> <span class="va">alignment</span>, groups <span class="op">=</span> <span class="va">groups</span>, output.dir <span class="op">=</span> <span class="st">"./data"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">nupgen</span><span class="fu">::</span><span class="fu"><a href="https://brunomioto.github.io/nupgen/reference/create_arlequin.html">create_arlequin</a></span><span class="op">(</span>fasta <span class="op">=</span> <span class="va">alignment</span>, groups <span class="op">=</span> <span class="va">groups</span>, output.dir <span class="op">=</span> <span class="st">"./data"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>ℹ Creating .arp file</code></pre>
 </div>
