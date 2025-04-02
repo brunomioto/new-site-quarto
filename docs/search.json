@@ -662,7 +662,7 @@
     "href": "portfolio.html",
     "title": "Portfolio",
     "section": "",
-    "text": "During all these years adventuring with data, science and deisgn, I’ve been able to turn my ideas into reality. Follow me on my social networks and see what I’ve been up to over the last few years!"
+    "text": "During all these years adventuring with data, science and design, I’ve been able to turn my ideas into reality. Follow me on my social networks and see what I’ve been up to over the last few years!"
   },
   {
     "objectID": "portfolio.html#tutorials",
@@ -704,7 +704,7 @@
     "href": "portfolio.html#r-packages",
     "title": "Portfolio",
     "section": "R packages",
-    "text": "R packages\nOne of my hobbies is creating packages in R! I’ve made new friends and greatly improved my code organization and git experience.\n\n    \n        reservatoriosBR\n        \n            \n        \n        \n            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\n        \n    \n\n    \n        futebolplotR\n        \n            \n        \n        \n            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.\n        \n    \n\n    \n        ggimprensa\n        \n            \n        \n        \n            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.\n        \n    \n\n    \n        feowR\n        \n            \n        \n        \n            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).\n        \n    \n\n\n    \n        See more R packages!"
+    "text": "R packages\nOne of my hobbies is creating packages in R! I’ve made new friends and greatly improved my code organization and git experience.\n\n    \n        reservatoriosBR\n        \n            \n        \n        \n            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\n        \n    \n\n    \n        futebolplotR\n        \n            \n        \n        \n            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.\n        \n    \n\n    \n        ggimprensa\n        \n            \n        \n        \n            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.\n        \n    \n\n    \n        feowR\n        \n            \n        \n        \n            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).\n        \n    \n\n\n\n    \n        See more R packages!"
   },
   {
     "objectID": "portfolio.html#datawrapper",

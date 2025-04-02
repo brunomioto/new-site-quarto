@@ -210,7 +210,7 @@ format:
 <!-- </div> -->
 ```
 
-During all these years adventuring with data, science and deisgn, I've been able to turn my ideas into reality. Follow me on my social networks and see what I've been up to over the last few years!
+During all these years adventuring with **data**, **science** and **design**, I've been able to turn my **ideas** into **reality**. Follow me on my social networks and see what I've been up to over the last few years!
 
 ```{=html}
 <style>
@@ -254,14 +254,7 @@ During all these years adventuring with data, science and deisgn, I've been able
     .social-logo {
         width: 50px;
         height: 50px;
-        margin: 10px auto;
-    }
-
-    .social-name {
-        padding: 10px;
-        font-size: 1rem;
-        font-weight: 500;
-        color: #333;
+        margin: 15px auto;
     }
 </style>
 
@@ -269,13 +262,11 @@ During all these years adventuring with data, science and deisgn, I've been able
     <a href="https://github.com/brunomioto" class="social-card" target="_blank" rel="noopener noreferrer">
         <div class="social-top-bar" style="background-color: #333;">GitHub</div>
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="social-logo" alt="GitHub">
-        <div class="social-name">GitHub</div>
     </a>
 
     <a href="https://www.linkedin.com/in/brunomioto/" class="social-card" target="_blank" rel="noopener noreferrer">
         <div class="social-top-bar" style="background-color: #0077b5;">LinkedIn</div>
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="social-logo" alt="LinkedIn">
-        <div class="social-name">LinkedIn</div>
     </a>
 </div>
 ```
@@ -393,6 +384,7 @@ One of my hobbies is creating packages in R! I've made new friends and greatly i
 ```
 
 ```{=html}
+<br>
 <div class="button-container">
     <a href="https://www.brunomioto.com/r-packages.html" class="see-more-button" target="_blank" rel="noopener noreferrer">
         See more R packages!
