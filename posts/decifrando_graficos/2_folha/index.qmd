@@ -1,0 +1,529 @@
+---
+title: "Decifrando gráficos #2"
+description: "Do Jornal para o R"
+author: "Bruno Mioto"
+date: "2025-03-17"
+image: cover.png
+categories: ["tutorial","dataviz","ggplot2"]
+open-graph:
+  description: "Do Jornal para o R"
+  image: cover.png
+twitter-card:
+  description: "Do Jornal para o R"
+  image: cover.png
+  card-style: summary_large_image
+format:
+  html:
+    code-link: true
+    fig-width: 5
+    fig-height: 2
+    fig-dpi: 600
+execute:
+  warning: false
+---
+
+![](cover.png)
+
+## Como isso foi feito?
+
+Todo dia vemos gráficos nos jornais, mas nem sempre sabemos como eles foram feitos. De onde vieram os **dados**? Como foram **tratados**? E será que dá para **recriá-los** usando o R?
+
+Nesta série, pegamos gráficos publicados nos principais **jornais** e recriamos do zero usando **R, tidyverse e ggplot2**. Vou mostrar como encontrar os dados, organizá-los e gerar visualizações que chegam o mais próximo possível do original – tudo de forma transparente e didática. Sim! Vamos fazer e aprender juntos!
+
+E tem mais: **todo o código e dados utilizados estarão disponíveis e comentados (clique nos números abaixo de cada conjunto de código!)**. E por estarmos trabalhando com uma **linguagem de programação**, todos vão obter o mesmo resultado ao final do script.
+
+Acompanhe a série e veja como transformar dados brutos em visualizações incríveis!
+
+## #2 - Pirâmide etária indígena (Folha de São Paulo)
+
+Dessa vez vamos analisar um gráfico publicado pela **Folha de São Paulo** com dados do Censo 2022: [População indígena cresce no Norte, mas envelhece ao redor das cidades](https://www1.folha.uol.com.br/cotidiano/2024/05/populacao-indigena-cresce-no-norte-mas-envelhece-ao-redor-das-cidades.shtml)
+
+![](./figures/grafico_folha.png)
+
+Eu particularmente acho muito legal visualizar pirâmides etárias, como essa que fiz com o pessoal da [Base dos Dados](https://medium.com/basedosdados/analisando-dados-de-vacinação-contra-covid-19-com-a-bd-49fe3db8c7f4). E o mais legal dessa vez é que vamos fazer a visualização completa!
+
+### Obtendo os dados
+
+Todos os dados do Censo 2022 estão disponíveis na aba de Downloads do portal: [https://censo2022.ibge.gov.br/panorama/downloads.html](https://censo2022.ibge.gov.br/panorama/downloads.html?localidade=BR). Lá vamos acessar os resultados [**Quilombolas e Indígenas, por sexo e idade, segundo recortes territoriais específicos - Resultados do universo**](https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html?edicao=39859&t=resultados) e então selecionamos [**População indígena, por localização do domicílio, grupos de idade e sexo**](https://sidra.ibge.gov.br/Tabela/8175).
+
+Logo nessa página vemos que os dados estão disponíveis através do **SIDRA** (Sistema IBGE de Recuperação Automática), que é basicamente uma plataforma que concentra **todos** os dados do IBGE! E o melhor: podemos acessar diretamente do R com o pacote [{sidrar}](https://github.com/rpradosiqueira/sidrar/)!
+
+Antes de tudo, vamos carregar os pacotes necessários
+
+```{r}
+library(sidrar) #baixar dados IBGE
+library(janitor) #limpeza dos dados
+library(dplyr) #manipulação dos dados
+library(stringr) #trabalhar com strings/texto
+# library(tidyr) #tratamento dos dados
+library(ggplot2) #gráficos
+```
+
+Agora só precisamos do número da tabela disponível no site (que é 8175) e rodar o código abaixo:
+
+```{r}
+#install.packages("sidrar")
+library(sidrar)
+
+pop_ind <- sidrar::get_sidra(8175)
+```
+
+Pronto, fácil assim já temos os dados do Censo para este gráfico!
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## Baixar direto do site -->
+<!-- NÃO FUNCIONA -->
+<!-- Se você achar mais fácil, também pode baixar os dados direto do [site](https://sidra.ibge.gov.br/Tabela/8175). Selecione a variável `Pessoas indígenas (Pessoas)`, selecione todas opções para `Idade`, `Sexo`, `Localização do domicílio`, o ano 2022 para `Ano` e Brasil para `Unidade Territorial`. Agora é só clicar em Download e salvar com o formato **CSV (US)** na pasta `data` no diretório de trabalho. -->
+
+<!-- Agora vamos importar os dados -->
+
+<!-- ```{r} -->
+<!-- library(readr) -->
+
+<!-- pop_ind <- readr::read_csv("./data/tabela8175.csv",skip = 1) -->
+<!-- ``` -->
+<!-- ::: -->
+
+### Trabalhando com os dados
+
+Pois é, nossos dados sempre têm os nomes das variáveis com letras maiúsculas, espaços e acentos. Vamos padronizar para `snake_case`com o pacote {janitor} e também selecionar apenas as variáveis necessárias para este gráficos. Vamos salvando cada passo em um novo objeto para ficar mais fácil de acompanhar.
+
+```{r}
+pop_ind2 <- pop_ind |> 
+  janitor::clean_names() |> 
+  dplyr::select(
+    variavel, 
+    ano, 
+    idade,
+    sexo, 
+    localizacao_do_domicilio,
+    valor
+    )
+```
+
+Mas veja que temos um valor **`Total`** em `idade`, `sexo` e `localizacao_do_domicilio`. Não vamos precisar dos totais, então podemso removê-los,
+
+```{r}
+pop_ind3 <- pop_ind2 |> 
+  dplyr::filter(
+    idade != "Total",
+    sexo != "Total",
+    localizacao_do_domicilio != "Total"
+  )
+```
+
+Nessa tabela, temos as idades individuais, ou agrupadas a cada 5 anos. Vamos selecionar apenas as linhas com as idades agrupadas.
+
+```{r}
+pop_ind4 <- pop_ind3 |> 
+  filter(
+      idade %in% c(
+        "0 a 4 anos",
+        "5 a 9 anos",
+        "10 a 14 anos",
+        "15 a 19 anos",
+        "20 a 24 anos",
+        "25 a 29 anos",
+        "30 a 34 anos",
+        "35 a 39 anos",
+        "40 a 44 anos",
+        "45 a 49 anos",
+        "50 a 54 anos",
+        "55 a 59 anos",
+        "60 a 64 anos",
+        "65 a 69 anos",
+        "70 a 74 anos",
+        "75 a 79 anos",
+        "80 a 84 anos",
+        "85 a 89 anos",
+        "90 a 94 anos",
+        "95 a 99 anos",
+        "100 anos ou mais"
+      )
+  )
+```
+
+::: {.callout-tip collapse="true"}
+## Preguiça de escrever tudo
+
+Se você não quer ficar digitando tudo (ou não quer pedir para o chatGPT escrever para você), é possível selecionar as linhas usando **expressões regulares**! Sim, elas parecem bruxaria, mas tem uma [colinha](https://rstudio.github.io/cheatsheets/translations/portuguese/strings_pt_br.pdf) que ajuda muito!
+
+O segredo é encontrar padrões! Veja que as categorias são basicamente **número+ a +número**, e o "100 anos ou mais" colocamos na mão. Vamos lá!
+
+```{r}
+pop_ind4 <- pop_ind3 |> 
+  filter(
+    stringr::str_detect( # <1>
+      idade, # <2>
+      "[:digit:] a [:digit:]|100 anos ou mais") # <3>
+    )
+```
+1. Detecta a ocorrência de expressões regulares
+2. Na variável `idade`
+3. E a expressão é: **[número] a [número] OU "100 anos ou mais"**
+
+Bem mais simples!
+:::
+
+Agora para deixar igualzinho ao gráfico, vamos remover as palavras " anos" e transformar "100 anos ou mais" em "100+"
+
+```{r}
+pop_ind5 <- pop_ind4 |> 
+  mutate(
+    idade2 = stringr::str_remove( # <1>
+      idade, # <2>
+      " anos.*" # <3>
+      ),
+    idade2 = ifelse(idade2 == 100, "100+", idade2) # <4>
+  )
+```
+1. Remove a ocorrência de expressões regulares
+2. Na variável `idade`
+3. E a expressão é: **[espaço]anos(e tudo que vier depois)**
+4. Se `idade2` for igual a 100, transformar em "100+", se não for ignora
+
+```{r}
+pop_ind6 <- pop_ind5 |> 
+  group_by(localizacao_do_domicilio) |> 
+  add_count(name = "total", wt = valor) |> 
+  ungroup() |> 
+  mutate(prop = valor/total)
+```
+
+Agora vamos fazer um truque e multiplicar os prop para homens por -1, assim eles ficam do lado esquerdo da pirâmide.
+
+```{r}
+pop_ind7 <- pop_ind6 |> 
+  mutate(
+    prop = ifelse(sexo == "Homens", prop*-1, prop)
+  )
+```
+
+Vamos ver se os dados estão prontos?
+
+```{r}
+pop_ind7 |> 
+  ggplot(aes(x = prop, y = idade2, fill = sexo))+
+  geom_col()
+```
+
+Veja que as categoias de idade estão seguindo uma ordem alfabética, mas queremos que sigam a ordem da pirâmide etária. Vamos ordenar a variável `idade2` de acordo com a ordem que queremos.
+
+```{r}
+pop_ind8 <- pop_ind7 |> 
+  mutate(idade2 = forcats::fct_inorder(idade2))
+```
+
+```{r}
+pop_ind8 |> 
+  ggplot(aes(x = prop, y = idade2, fill = sexo))+
+  geom_col()
+```
+
+Pronto! Temos os dados prontos para o gráfico! Agora vamos para a parte mais legal!
+
+### Criando o gráfico
+
+```{r}
+pop_ind8 |> 
+  ggplot(aes(x = prop, y = idade2, fill = sexo))+
+  geom_col(
+    data = ~filter(., 
+                   localizacao_do_domicilio == "Em terras indígenas"))+
+  geom_col(
+    data = ~filter(., 
+                   localizacao_do_domicilio == "Fora de terras indígenas"),
+    fill = NA,
+    color = "black")
+```
+
+```{r}
+pop_ind8 |> 
+  ggplot(aes(x = prop, y = idade2, fill = sexo, color = sexo))+
+  geom_col(
+    data = ~filter(., 
+                   localizacao_do_domicilio == "Em terras indígenas"),
+    show.legend = FALSE,
+    # alpha = 0.3,
+    color = NA)+
+  geom_col(
+    data = ~filter(., 
+                   localizacao_do_domicilio == "Fora de terras indígenas"),
+    show.legend = FALSE,
+    fill = NA)+
+  scale_x_continuous(
+    breaks = seq(-0.08,0.08,0.02),
+    labels = c("8%","6","4","2","0","2","4","6","8%")
+  )+
+  scale_fill_manual(
+    values = c(
+      "Mulheres" = "#b3abce",
+      "Homens" = "#a5d4cf"
+    )
+  )+
+  scale_color_manual(
+    values = c(
+      "Mulheres" = "#420e44",
+      "Homens" = "#076e56"
+    )
+  )+
+  theme_minimal()+
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    axis.title = element_blank(),
+    axis.text = element_text(color = "black"),
+    axis.ticks.x = element_line(color = "#ebebeb")
+  )+
+  coord_cartesian(
+    xlim = c(-0.08,0.08)
+  )
+```
+
+<!-- Mas veja que precisamos quebrar a coluna `seasons` para cada valor ficar em uma linha, obtendo um formato **tidy**, que utilizaremos no **ggplot2** mais pra frente. Para isso vamos usar a função `tidyr::separate_longer_delim()` que nos permite separar uma string por algum delimitador (nesse caso `, `). E vamos também remover os colchetes `[` ou `]` que ficarem perdidos utilizando o pacote {stringr} e transformar essa variável em numérica. -->
+
+<!-- ```{r} -->
+<!-- pilotos_br4 <- pilotos_br3 |>  -->
+<!--   tidyr::separate_longer_delim( # <1> -->
+<!--     cols = c(seasons), # <1> -->
+<!--     delim = ", ") |>  # <1> -->
+<!--   dplyr::mutate( # <2> -->
+<!--     seasons = stringr::str_remove_all(seasons, "\\[|\\]"), # <2> -->
+<!--     seasons = as.numeric(seasons) # <2> -->
+<!--     )  # <2> -->
+<!-- ``` -->
+<!-- 1. Separa os valores na coluna `seasons` em múltiplas linhas, usando a vírgula seguida de espaço como delimitador. -->
+<!-- 2. Remove os colchetes `[` ou `]` e transforma a variável `seasons` em numérica. -->
+
+<!-- Agora vamos utilizar este dataset para criar o `pilotos_campeoes`. Vamos usar novamente o `tidyr::separate_longer_delim()`, mas dessa vez com a variável `championship_years`. -->
+<!-- Isso vai gerar linhas duplicadas, pois a função busca criar todas combinações entre as linhas. Como aqui queremos apenas os campeões nos respectivos anos, vamos filtrar as temporadas (`seasons`) que são iguais às temporadas vitoriosas (`championship_years`). -->
+<!-- Por fim, vamos criar uma coluna dizendo que eles foram campeões neste ano -->
+
+<!-- ```{r} -->
+<!-- pilotos_campeoes <- pilotos_br4 |> -->
+<!--   tidyr::separate_longer_delim( # <1> -->
+<!--     cols = c(championship_years), # <1> -->
+<!--     delim = ", ") |> # <1> -->
+<!--   dplyr::mutate( # <2> -->
+<!--     championship_years = stringr::str_remove_all( # <2> -->
+<!--       championship_years, # <2> -->
+<!--       "\\[|\\]")) |> # <2> -->
+<!--   filter(seasons == championship_years) |>  # <3> -->
+<!--   mutate( # <4> -->
+<!--     campeao = TRUE # <4> -->
+<!--   ) # <4> -->
+<!-- ``` -->
+<!-- 1. Separa os valores na coluna `championship_years` em múltiplas linhas, usando a vírgula seguida de espaço como delimitador. -->
+<!-- 2. Remove os colchetes `[` ou `]` e transforma a variável `seasons` em numérica. -->
+<!-- 3. Filtra `seasons` iguais à `championship_years`. -->
+<!-- 4. Cria uma coluna `campeao` com valor `TRUE` para estes pilotos. -->
+
+<!-- Agora só precisamos combinar o dataset `pilotos_campeoes` com o `pilotos_br4` utilizando o `left_join()`. Aqui vamos falar para utilizar as colunas `driver` e `seasons` como guias do **join** -->
+
+<!-- ```{r} -->
+<!-- pilotos_br5 <- pilotos_br4 |>  -->
+<!--   dplyr::left_join( -->
+<!--     pilotos_campeoes, -->
+<!--     by = c("driver", "seasons") # <2> -->
+<!--     ) -->
+<!-- ``` -->
+<!-- 1. Define quais variávels serão combinadas de ambos os datasets. -->
+
+<!-- Pronto! Temos toda a informação que precisamos. Vamos aos gráficos! -->
+
+<!-- ### Criando o gráfico -->
+
+<!-- Logo de cara, vemos que o gráfico do **Nexo** é um *tile plot*, em que utilizamos a função `geom_tile()`. -->
+
+<!-- Para isso, precisamos contar o número de pilotos em cada ano, já que o eixo Y apresenta a soma de pilotos. Para isso podemos agrupar nosso dataset por temporada (`group_by()`) e contar o numero de linhas/pilotos (`row_number()`) -->
+
+<!-- ```{r} -->
+<!-- soma_pilotos <- pilotos_br5 |>  -->
+<!--   dplyr::group_by(seasons) |> # <1> -->
+<!--   dplyr::mutate(soma = dplyr::row_number()) # <2> -->
+<!-- ``` -->
+<!-- 1. Agrupa os dados por temporada (`seasons`)  -->
+<!-- 2. Conta o número de linhas (nesse caso, pilotos) em cada grupo -->
+
+<!-- Agora vamos plotar! Lembre-se que precisamos utilizar cores de preenchimento diferentes para campeões e também para a temporada atual! -->
+
+<!-- ```{r} -->
+<!-- soma_pilotos |>                            # <1> -->
+<!--   ggplot(aes(x = seasons, y = soma))+      # <2> -->
+<!--   geom_tile(                                # <3> -->
+<!--     aes(fill = dplyr::case_when(            # <4> -->
+<!--       campeao == TRUE ~ "campeão",          # <4> -->
+<!--       seasons == 2025 ~ "atual",            # <4> -->
+<!--       TRUE ~ "normal"                        # <4> -->
+<!--     ))                                      # <4> -->
+<!--   )+                                        # <3> -->
+<!--   theme(                                     # <5> -->
+<!--     legend.position = "none"                 # <5> -->
+<!--   )                                          # <5> -->
+
+<!-- ``` -->
+<!-- 1. Pegamos `soma_pilotos` e passamos adiante com o pipe. -->
+<!-- 2. Criamos um gráfico com `ggplot()`, onde `seasons` define o eixo X e `soma` define o eixo Y. -->
+<!-- 3. Adicionamos `geom_tile()`, que cria um mosaico de retângulos para representar os valores. -->
+<!-- 4. Definimos a cor de preenchimento com `case_when()`, categorizando os tiles como "campeão", "atual" ou "normal". -->
+<!-- 5. Ajustamos o tema para remover a legenda `(legend.position = "none")`, deixando o gráfico mais limpo. -->
+
+<!-- Quase! Veja que os campeões não estão na base, como na figura original. Para isso precisamos ordenar (`arrange()`) o dataset para que os campeões apareçam primeiro na contagem de linhas. Vamos tentar novamente! -->
+
+
+<!-- ```{r} -->
+<!-- soma_pilotos <- pilotos_br5 |>  -->
+<!--   dplyr::group_by(seasons) |>  -->
+<!--   dplyr::arrange(campeao) |> # <1> -->
+<!--   mutate(soma = dplyr::row_number()) -->
+<!-- ``` -->
+<!-- 1. Ordena a coluna `campeao`. Assim, valores `TRUE` aparecem primeiro -->
+
+<!-- Agora vamos plotar! -->
+
+<!-- ```{r} -->
+<!-- soma_pilotos |>  -->
+<!--   ggplot(aes(x = seasons, y = soma))+ -->
+<!--   geom_tile( -->
+<!--     aes(fill = dplyr::case_when(campeao == TRUE ~ "campeão", -->
+<!--                                 seasons == 2025 ~ "atual", -->
+<!--                                 TRUE ~ "normal")) -->
+<!--   )+ -->
+<!--   theme( -->
+<!--     legend.position = "none" -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- Perfeito! Agora vem a parte mais legal. Deixar o gráfico bonito! -->
+
+<!-- Vamos fazer uma checklist e ajustar tudo! -->
+
+<!-- - [ ] Gráfico clean (fundo branco, apenas eixo x, etc) -->
+<!-- - [ ] Eixo x de 10 em 10 anos -->
+<!-- - [ ] Sem espaço entre o gráfico e eixo x -->
+<!-- - [ ] Tamanho e cores dos retângulos -->
+<!-- - [ ] Gabriel Bortoleto destacado -->
+
+<!-- Começando pelo tema -->
+
+<!-- ```{r} -->
+<!-- soma_pilotos |>  -->
+<!--   ggplot(aes(x = seasons, y = soma))+ -->
+<!--   geom_tile( -->
+<!--     aes(fill = dplyr::case_when(campeao == TRUE ~ "campeão", -->
+<!--                                 seasons == 2025 ~ "atual", -->
+<!--                                 TRUE ~ "normal")) -->
+<!--   )+ -->
+<!--   theme_classic()+  # <1> -->
+<!--   theme( -->
+<!--     legend.position = "none",       # <2> -->
+<!--     axis.line.y = element_blank(),  # <3> -->
+<!--     axis.ticks.x = element_line(    # <4> -->
+<!--       lineend = "round",            # <4> -->
+<!--       color = "black"               # <4> -->
+<!--     ), -->
+<!--     axis.ticks.y = element_blank(), # <5> -->
+<!--     axis.title = element_blank(),   # <6> -->
+<!--     axis.text.y = element_blank(),  # <7> -->
+<!--     axis.text.x = element_text(     # <8> -->
+<!--       face = "bold",                # <8> -->
+<!--       color = "black"               # <8> -->
+<!--     ) -->
+<!--   ) -->
+<!-- ``` -->
+<!-- 1. `theme_classic()`: Remove as grades de fundo e simplifica o visual do gráfico. -->
+<!-- 2. `legend.position = "none"`: Esconde a legenda do gráfico. -->
+<!-- 3. `axis.line.y = element_blank()`: Remove a linha do eixo Y. -->
+<!-- 4. `axis.ticks.x`: Personaliza os ticks (marcas) do eixo X, deixando-os arredondados e pretos. -->
+<!-- 5. `axis.ticks.y = element_blank()`: Remove os ticks do eixo Y. -->
+<!-- 6. `axis.title = element_blank()`: Remove os títulos dos eixos. -->
+<!-- 7. `axis.text.y = element_blank()`: Esconde os rótulos do eixo Y. -->
+<!-- 8. `axis.text.x`: Deixa os rótulos do eixo X em negrito e pretos. -->
+
+<!-- ✅ Gráfico clean (fundo branco, apenas eixo x, etc) -->
+
+<!-- Agora os eixos -->
+
+<!-- ```{r} -->
+<!-- soma_pilotos |>  -->
+<!--   ggplot(aes(x = seasons, y = soma))+ -->
+<!--   geom_tile( -->
+<!--     aes(fill = dplyr::case_when(campeao == TRUE ~ "campeão", -->
+<!--                                 seasons == 2025 ~ "atual", -->
+<!--                                 TRUE ~ "normal")) -->
+<!--   )+ -->
+<!--   scale_x_continuous(             # <1> -->
+<!--     breaks = seq(1950, 2020, 10)  # <1> -->
+<!--   )+ -->
+<!--   scale_y_continuous(             # <2> -->
+<!--     expand = expansion(mult = c(0, 0.05))  # <2> -->
+<!--   )+ -->
+<!--   theme_classic()+ -->
+<!--   theme( -->
+<!--     legend.position = "none", -->
+<!--     axis.line.y = element_blank(), -->
+<!--     axis.ticks.x = element_line(lineend = "round", color = "black"), -->
+<!--     axis.ticks.y = element_blank(), -->
+<!--     axis.title = element_blank(), -->
+<!--     axis.text.y = element_blank(), -->
+<!--     axis.text.x = element_text(face = "bold", color = "black") -->
+<!--   ) -->
+<!-- ``` -->
+<!-- 1. Define os pontos de quebra (ticks) do eixo X a cada 10 anos, de 1950 a 2020. Isso deixa o eixo X mais organizado. -->
+<!-- 2. Ajusta o espaçamento do eixo Y a partir de uma multiplicação. O primeiro valor (0) remove espaço na parte inferior. O segundo valor (0.05) adiciona um pequeno espaço na parte superior (5%), evitando que os retângulos (*tiles*) fiquem colados à borda superior. -->
+
+<!-- ✅ Eixo x de 10 em 10 anos -->
+
+<!-- ✅ Sem espaço entre o gráfico e eixo x -->
+
+<!-- Falta ainda ajustarmos os retângulos -->
+
+<!-- ```{r} -->
+<!-- soma_pilotos |>  -->
+<!--   ggplot(aes(x = seasons, y = soma))+ -->
+<!--   geom_tile( -->
+<!--     aes(fill = dplyr::case_when(campeao == TRUE ~ "campeão", -->
+<!--                                 seasons == 2025 ~ "atual", -->
+<!--                                 TRUE ~ "normal"), -->
+<!--         linewidth = ifelse(driver == "Gabriel Bortoleto", 0.3, NA) # <1> -->
+<!--     ), -->
+<!--     color = "black",     # <2> -->
+<!--     width = 0.8,         # <3> -->
+<!--     height = 0.8         # <3> -->
+<!--   )+ -->
+<!--   scale_x_continuous( -->
+<!--     breaks = seq(1950, 2020, 10) -->
+<!--   )+ -->
+<!--   scale_y_continuous( -->
+<!--     expand = expansion(mult = c(0, 0.05)) -->
+<!--   )+ -->
+<!--   scale_linewidth_identity() + # <4> -->
+<!--   scale_fill_manual(           # <5> -->
+<!--     values = c( -->
+<!--       "campeão" = "#ffce2e", -->
+<!--       "normal" = "#ff7b80", -->
+<!--       "atual" = "#a8a8a8" -->
+<!--     ) -->
+<!--   )+ -->
+<!--   theme_classic()+ -->
+<!--   theme( -->
+<!--     legend.position = "none", -->
+<!--     axis.line.y = element_blank(), -->
+<!--     axis.ticks.x = element_line(lineend = "round", color = "black"), -->
+<!--     axis.ticks.y = element_blank(), -->
+<!--     axis.title = element_blank(), -->
+<!--     axis.text.y = element_blank(), -->
+<!--     axis.text.x = element_text(face = "bold", color = "black"), -->
+<!--     plot.background = element_rect(fill = NA, color = NA), -->
+<!--     panel.background = element_rect(fill = NA, color = NA) -->
+<!--   ) -->
+<!-- ``` -->
+<!-- 1. Define `linewidth`, para que o retângulo (*tile*) do Gabriel Bortoleto tenha uma borda mais espessa (0.3), enquanto os demais têm borda invisível (NA). -->
+<!-- 2. Define `color = "black"` para que as bordas dos tiles fiquem pretas (quando hourve borda). -->
+<!-- 3. Controla o tamanho dos tiles com `width = 0.8`, `height = 0.8`, reduzindo ligeiramente o tamanho para criar uma separação entre os blocos. -->
+<!-- 4. Usa `scale_linewidth_identity()` para interpretar os valores de *linewidth* diretamente, sem precisar de uma escala mapeada. -->
+<!-- 5. Define `scale_fill_manual(values = c(...))` para atribuir cores personalizadas aos tiles: campeões em amarelo, normais em vermelho e a temporada atual em cinza. -->
+
+<!-- Agora sim! Aprendemos como uma equipe de jornal chegou até este gráfico! -->
+
+<!-- Espero que este post tenha sido útil para você! Se tiver alguma dúvida, sugestão ou crítica, [mande um e-mail](mailto:bhmstabile@gmail.com)! -->

@@ -1,0 +1,547 @@
+---
+title: "Portfolio"
+cap-location: margin
+format: 
+  html:
+    code-fold: true
+    code-summary: "**Click to view the code**"
+---
+
+```{=html}
+<style>
+.image-card {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: white;
+    text-align: center;
+    margin: 20px auto;
+    text-decoration: none; /* Remove sublinhado do link */
+    display: block;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-image {
+    width: 100%;
+    display: block;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    background: #f8f9fa;
+    color: black; /* Garante legibilidade */
+}
+
+</style>
+```
+
+```{=html}
+<style>
+    .card-container {
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 20px; /* Espaço entre os cards */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    
+    .card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .top-bar {
+        height: 5rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .hex-logo {
+        width: 90px;
+        height: 104px;
+        position: absolute;
+        top: 5rem;
+        left: 1.5rem;
+        transform: translateY(-50%);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        color: #555;
+        font-weight: 600;
+        z-index: 10;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    .hex-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .content-section {
+        padding-left: 8rem;
+        padding-right: 1.5rem;
+        padding-top: 0.2rem;
+        padding-bottom: 1rem;
+    }
+
+    .package-description {
+        color: #4b5567;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+</style>
+```
+
+```{=html}
+<style>
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.see-more-button {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #40609f;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.see-more-button:hover {
+    background-color: #0056b3;
+}
+</style>
+```
+
+```{=html}
+<style>
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.skill-name {
+    flex: 1;
+    text-align: left;
+}
+
+.dots {
+    font-size: 20px;
+    color: #015500; /* Cor das bolinhas preenchidas */
+}
+
+.dots::after {
+    content: "○○○○○"; /* Bolinhas vazias padrão */
+    color: #d1d5db; /* Cor das bolinhas vazias */
+    position: absolute;
+    margin-left: -100px; /* Ajuste fino para sobrepor */
+}
+</style>
+```
+
+```{=html}
+<!-- <div class="skills"> -->
+<!--     <div class="skill"> -->
+<!--         <span class="skill-name">R</span> -->
+<!--         <span class="dots">●●●●●</span> -->
+<!--     </div> -->
+<!--     <div class="skill"> -->
+<!--         <span class="skill-name">Python</span> -->
+<!--         <span class="dots">●●●○○</span> -->
+<!--     </div> -->
+<!--     <div class="skill"> -->
+<!--         <span class="skill-name">Datawrapper</span> -->
+<!--         <span class="dots">●●●●○</span> -->
+<!--     </div> -->
+<!-- </div> -->
+```
+
+Here are some of the things I created in the past years
+
+## Tutorials
+
+:::::: columns
+::: {.column width="45%"}
+<!-- intro ggplot2 -->
+
+```{=html}
+<a href="https://www.brunomioto.com/posts/intro_ggplot2/en/" target="_blank" class="image-card">
+    <img src="https://www.brunomioto.com/posts/intro_ggplot2/en/cover.png" class="card-image">
+    <div class="card-title">ggplot2 101</div>
+</a>
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<!-- waterlines -->
+
+```{=html}
+<a href="https://www.brunomioto.com/posts/waterlines/en/" class="image-card" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.brunomioto.com/posts/waterlines/en/post_waterline.png" class="card-image">
+    <div class="card-title">Waterlines with ggplot2</div>
+</a>
+```
+:::
+::::::
+
+:::::: columns
+::: {.column width="45%"}
+<!-- decifrando graficos -->
+
+```{=html}
+<a href="https://www.brunomioto.com/posts/decifrando_graficos/1_nexo/" class="image-card" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.brunomioto.com/posts/decifrando_graficos/1_nexo/cover.png" class="card-image">
+    <div class="card-title">Decifrando gráficos #1</div>
+</a>
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<!-- waterlines -->
+
+```{=html}
+<a href="https://www.brunomioto.com/posts/arlequin/en/" target="_blank" class="image-card" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.brunomioto.com/posts/arlequin/en/post_arlequin.png" class="card-image">
+    <div class="card-title">Arlequin Files with R</div>
+</a>
+```
+:::
+::::::
+
+## R packages
+
+:::::: columns
+::: {.column width="45%"}
+<!-- reservatoriosBR -->
+
+```{=html}
+<a href="https://brunomioto.github.io/reservatoriosBR/" class="card-container" style="margin-bottom: 30px;" target="_blank" rel="noopener noreferrer">
+    <div class="top-bar" style="background-color: #1b75bc; color: white;">
+        reservatoriosBR
+    </div>
+    <div class="hex-logo">
+        <img src="./figures/hex-reservatoriosBR.png" alt="Logo do Pacote">
+    </div>
+    <div class="content-section">
+        <p class="package-description">
+            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!
+        </p>
+    </div>
+</a>
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<!-- futebolplotR -->
+
+```{=html}
+<a href="https://brunomioto.github.io/futebolplotR/" class="card-container" style="margin-bottom: 30px;" target="_blank" rel="noopener noreferrer">
+    <div class="top-bar" style="background-color: #015500; color: white;">
+        futebolplotR
+    </div>
+    <div class="hex-logo">
+        <img src="./figures/hex-futebolplotR.png" alt="Logo do Pacote">
+    </div>
+    <div class="content-section">
+        <p class="package-description">
+            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.
+        </p>
+    </div>
+</a>
+```
+:::
+::::::
+
+:::::: columns
+::: {.column width="45%"}
+<!-- ggimprensa -->
+
+```{=html}
+<a href="https://brunomioto.github.io/ggimprensa/" class="card-container" style="margin-bottom: 30px;" target="_blank" rel="noopener noreferrer">
+    <div class="top-bar" style="background-color: #a3b0c3; color: white;">
+        ggimprensa
+    </div>
+    <div class="hex-logo">
+        <img src="./figures/hex-ggimprensa.png" alt="Logo do Pacote">
+    </div>
+    <div class="content-section">
+        <p class="package-description">
+            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.
+        </p>
+    </div>
+</a>
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<!-- feowR-->
+
+```{=html}
+<a href="https://brunomioto.github.io/feowR/" class="card-container" style="margin-bottom: 30px;" target="_blank" rel="noopener noreferrer">
+    <div class="top-bar" style="background-color: #3f858c; color: white;">
+        feowR
+    </div>
+    <div class="hex-logo">
+        <img src="./figures/hex-feowR.png" alt="Logo do Pacote">
+    </div>
+    <div class="content-section">
+        <p class="package-description">
+            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).
+        </p>
+    </div>
+</a>
+```
+:::
+::::::
+
+```{=html}
+<div class="button-container">
+    <a href="https://www.brunomioto.com/r-packages.html" class="see-more-button" target="_blank" rel="noopener noreferrer">
+        See more R packages!
+    </a>
+</div>
+```
+
+## Scripts
+
+I love to share my scripts, so anyone can learn the same way I did!
+
+Here is an example
+
+### *Boa constrictor* 🐍
+
+![](figures/charts/elephant.png){.lightbox group="my-gallery"}
+
+```{r}
+#| eval: false
+
+# packages ----------------------------------------------------------------
+
+library(dplyr)
+library(ggplot2)
+library(geomtextpath)
+
+# data --------------------------------------------------------------------
+
+data <- data.frame(a = c(2.8,2.8,3.8,2.9,2.8,3,4.5,5.6,5.7,4.4,5.8))
+
+quote <- "'My drawing was not a picture of a hat. It was a picture of a <i>Boa constrictor</i> digesting an elephant.'"
+
+scatter = data.frame(
+  x = runif(10000,-5,18),
+  y = runif(10000,-1,1)
+)
+
+# plot --------------------------------------------------------------------
+
+data %>% 
+  ggplot(aes(x = a))+
+  geom_density(adjust = 1,
+               fill = "#784707",
+               color = "#462e0a",
+               size = 3)+
+  geom_textdensity(size = 5, fontface = 2, spacing = 30,
+                   vjust = -0.35, hjust = 0.2,
+                   label = quote,
+                   color = "#462e0a",
+                   rich = TRUE)+
+  geom_segment(x = -2.5, xend = 12, y = 0, yend = 0,
+               size = 3, color = "#462e0a",lineend = "round")+
+  geom_point(x = 11.95, y = 0.002, size = 0.5)+
+  annotate("text", x = 12, y = 0, label = "- The Little Prince by\nAntoine de Saint-Exupéry\nBruno Mioto - @BrunoHMioto",
+           hjust = 1, vjust = 1.2, fontface = "bold",
+           color = "#462e0a")+
+  scale_y_continuous(expand = c(0,0))+
+  scale_x_continuous(limits = c(-2.5,12))+
+  theme_void()+
+  theme(
+    panel.background = element_rect(fill = "#f7f8f8", color = NA)
+  )+
+  coord_cartesian(ylim = c(-.4,0.8), xlim = c(-4,13))
+
+
+ggsave("elephant.png", width = 10, height = 6)
+```
+
+```{=html}
+<div class="button-container">
+    <a href="https://www.brunomioto.com/scripts.html" class="see-more-button" target="_blank" rel="noopener noreferrer">
+        See more Scripts!
+    </a>
+</div>
+```
+
+## Datawrapper
+
+::: column-page
+```{=html}
+<div style="display: flex; justify-content: space-between;">
+  <div style="width: 48%;">
+    <div style="min-height: 720px;" id="datawrapper-vis-LwHxa">
+      <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/LwHxa/embed.js" charset="utf-8" data-target="#datawrapper-vis-LwHxa"></script>
+      <noscript><img src="https://datawrapper.dwcdn.net/LwHxa/full.png" alt="" /></noscript>
+    </div>
+  </div>
+  <div style="width: 48%;">
+    <div style="min-height: 622px;" id="datawrapper-vis-cZnaX">
+      <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/cZnaX/embed.js" charset="utf-8" data-target="#datawrapper-vis-cZnaX"></script>
+      <noscript><img src="https://datawrapper.dwcdn.net/cZnaX/full.png" alt="" /></noscript>
+    </div>
+  </div>
+</div>
+```
+:::
+
+::: column-body
+```{=html}
+<br>
+<div style="max-height:200px" id="datawrapper-vis-i26yy"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/i26yy/embed.js" charset="utf-8" data-target="#datawrapper-vis-i26yy"></script><noscript><img src="https://datawrapper.dwcdn.net/i26yy/full.png" alt="" /></noscript></div>
+<br>
+```
+:::
+
+::: column-body
+```{=html}
+<div style="min-height:495px" id="datawrapper-vis-J3yG5"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/J3yG5/embed.js" charset="utf-8" data-target="#datawrapper-vis-J3yG5"></script><noscript><img src="https://datawrapper.dwcdn.net/J3yG5/full.png" alt="" /></noscript>
+</div>
+```
+:::
+
+## Published charts
+
+These are some charts published in scientific papers.
+
+![[Kieling *et al*. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study](https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2814639)](figures/charts/charts_jama.png)
+
+![[Martins *et al*. (2024) - Iterative taxonomy reveals a new species of *Cambeva* (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil](https://www.scielo.br/j/ni/a/CCGbxJbhKRs74jjnL7Rn8hN/)](figures/charts/charts_cambevaperobana.png)
+
+## Original charts
+
+All the following charts and maps were made entirely using **ggplot2/R**.<br>You can click on each plot to see each detail.
+
+```{=html}
+<style>
+  .quarto-figure {
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+</style>
+```
+
+[This is a play animation made for BigDataBowl '24 Competition, the NFL Big Data competition!]{.aside}
+
+![](figures/charts/animation_kaggle_small_size.gif){.lightbox group="my-gallery"}
+
+![](figures/charts/black_qbs.png){.lightbox group="my-gallery"}
+
+[Severance is an awesome series]{.aside}
+
+![](figures/charts/severance.png){.lightbox group="my-gallery"}
+
+::: {layout-ncol="2"}
+![](figures/charts/scatter-nfl.png){.lightbox group="my-gallery"}
+
+![](figures/charts/map_rj.png){.lightbox group="my-gallery"}
+
+![](figures/charts/avocado.png){.lightbox group="my-gallery"}
+
+![](figures/charts/rnd-players-nfl.png){.lightbox group="my-gallery"}
+
+![](figures/charts/density-nfl.png){.lightbox group="my-gallery"}
+
+![](figures/charts/elephant.png){.lightbox group="my-gallery"}
+
+![](figures/charts/temp_max_mga.png){.lightbox group="my-gallery"}
+
+![](figures/charts/pfizer_trial.png){.lightbox group="my-gallery"}
+
+![](figures/charts/ttt-nfl.png){.lightbox group="my-gallery"}
+
+![](figures/charts/dna_matrix.png){.lightbox group="my-gallery"}
+
+![](figures/charts/drink-owid.png){.lightbox group="my-gallery"}
+
+![](figures/charts/mahomes_scale.png){.lightbox group="my-gallery"}
+
+![](figures/charts/pokemon.png){.lightbox group="my-gallery"}
+
+![](figures/charts/us_nuclear_tests.png){.lightbox group="my-gallery"}
+
+![](figures/charts/election-star.png){.lightbox group="my-gallery"}
+
+![](figures/charts/spider.png){.lightbox group="my-gallery"}
+
+![](figures/charts/epa-career-nfl.png){.lightbox group="my-gallery"}
+
+![](figures/charts/slope-nfl.png){.lightbox group="my-gallery"}
+
+![](figures/charts/icmbio.png){.lightbox group="my-gallery"}
+
+![](figures/charts/omega_paper.png){.lightbox group="my-gallery"}
+
+![](figures/charts/copacabana.png){.lightbox group="my-gallery"}
+
+![](figures/charts/eye.png){.lightbox group="my-gallery"}
+:::
+
+![](figures/charts/starwars.png){.lightbox group="my-gallery2"}
+
+![](figures/charts/github_deaths_covid_br.png){.lightbox group="my-gallery2"}
+
+![](figures/charts/color.png){.lightbox group="my-gallery2"}
+
+![](figures/charts/punt_J.Hekker_18.png){.lightbox group="my-gallery2"}

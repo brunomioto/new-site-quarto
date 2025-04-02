@@ -200,7 +200,7 @@
     "href": "index.html#decifrando-gráficos",
     "title": "Bruno Mioto",
     "section": "Decifrando Gráficos",
-    "text": "Decifrando Gráficos\n\n\n\n\n\n\n\n\n\n\nDecifrando gráficos #1\n\n\n\n\n\n\ntutorial\n\n\ndataviz\n\n\nggplot2\n\n\n\n\n\n\nMar 17, 2025\n\n\nBruno Mioto\n\n\n14 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Decifrando Gráficos\n\n\n\n\n\n\n\n\n\n\nDecifrando gráficos #1\n\n\n\n\n\n\ntutorial\n\n\ndataviz\n\n\nggplot2\n\n\n\n\n\n\nMar 17, 2025\n\n\nBruno Mioto\n\n\n14 min\n\n\n\n\n\n\n\n\n\n\n\n\nDecifrando gráficos #2\n\n\n\n\n\n\ntutorial\n\n\ndataviz\n\n\nggplot2\n\n\n\n\n\n\nMar 17, 2025\n\n\nBruno Mioto\n\n\n22 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "charts.html",
@@ -656,5 +656,96 @@
     "title": "curriculum",
     "section": "",
     "text": "Hello World! Please read my Closeread story below.\n\n\n\n\nCloseread enables scrollytelling.\n\n\n\n\nDraw your readers attention with focus effects.\n\n\n\n\nWhen this paragraph scrolls into view it will reveal a histogram.\n\n\n\n\n\n\n\nHighlighting\nZooming\nPanning"
+  },
+  {
+    "objectID": "portfolio.html",
+    "href": "portfolio.html",
+    "title": "Portfolio",
+    "section": "",
+    "text": "Here are some of the things I created in the past years"
+  },
+  {
+    "objectID": "portfolio.html#tutorials",
+    "href": "portfolio.html#tutorials",
+    "title": "Portfolio",
+    "section": "Tutorials",
+    "text": "Tutorials\n\n\n\n\n    \n    ggplot2 101\n\n\n\n\n\n\n    \n    Waterlines with ggplot2\n\n\n\n\n\n\n\n    \n    Decifrando gráficos #1\n\n\n\n\n\n\n    \n    Arlequin Files with R"
+  },
+  {
+    "objectID": "portfolio.html#decifrando-gráficos",
+    "href": "portfolio.html#decifrando-gráficos",
+    "title": "Portfolio",
+    "section": "Decifrando Gráficos",
+    "text": "Decifrando Gráficos"
+  },
+  {
+    "objectID": "portfolio.html#posts-in-english",
+    "href": "portfolio.html#posts-in-english",
+    "title": "Portfolio",
+    "section": "Posts in English",
+    "text": "Posts in English"
+  },
+  {
+    "objectID": "portfolio.html#posts-em-português",
+    "href": "portfolio.html#posts-em-português",
+    "title": "Portfolio",
+    "section": "Posts em Português",
+    "text": "Posts em Português"
+  },
+  {
+    "objectID": "portfolio.html#charts-with-ggplot2",
+    "href": "portfolio.html#charts-with-ggplot2",
+    "title": "Portfolio",
+    "section": "Charts with ggplot2",
+    "text": "Charts with ggplot2"
+  },
+  {
+    "objectID": "portfolio.html#r-packages",
+    "href": "portfolio.html#r-packages",
+    "title": "Portfolio",
+    "section": "R packages",
+    "text": "R packages\n\n\n\n\n    \n        reservatoriosBR\n    \n    \n        \n    \n    \n        \n            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\n        \n    \n\n\n\n\n\n\n    \n        futebolplotR\n    \n    \n        \n    \n    \n        \n            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.\n        \n    \n\n\n\n\n\n\n\n    \n        ggimprensa\n    \n    \n        \n    \n    \n        \n            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.\n        \n    \n\n\n\n\n\n\n    \n        feowR\n    \n    \n        \n    \n    \n        \n            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).\n        \n    \n\n\n\n\n    \n        See more R packages!"
+  },
+  {
+    "objectID": "portfolio.html#datawrapper",
+    "href": "portfolio.html#datawrapper",
+    "title": "Portfolio",
+    "section": "Datawrapper",
+    "text": "Datawrapper"
+  },
+  {
+    "objectID": "posts/decifrando_graficos/2_folha/index.html#como-isso-foi-feito",
+    "href": "posts/decifrando_graficos/2_folha/index.html#como-isso-foi-feito",
+    "title": "Decifrando gráficos #2",
+    "section": "Como isso foi feito?",
+    "text": "Como isso foi feito?\nTodo dia vemos gráficos nos jornais, mas nem sempre sabemos como eles foram feitos. De onde vieram os dados? Como foram tratados? E será que dá para recriá-los usando o R?\nNesta série, pegamos gráficos publicados nos principais jornais e recriamos do zero usando R, tidyverse e ggplot2. Vou mostrar como encontrar os dados, organizá-los e gerar visualizações que chegam o mais próximo possível do original – tudo de forma transparente e didática. Sim! Vamos fazer e aprender juntos!\nE tem mais: todo o código e dados utilizados estarão disponíveis e comentados (clique nos números abaixo de cada conjunto de código!). E por estarmos trabalhando com uma linguagem de programação, todos vão obter o mesmo resultado ao final do script.\nAcompanhe a série e veja como transformar dados brutos em visualizações incríveis!"
+  },
+  {
+    "objectID": "posts/decifrando_graficos/2_folha/index.html#pirâmide-etária-indígena-folha-de-são-paulo",
+    "href": "posts/decifrando_graficos/2_folha/index.html#pirâmide-etária-indígena-folha-de-são-paulo",
+    "title": "Decifrando gráficos #2",
+    "section": "#2 - Pirâmide etária indígena (Folha de São Paulo)",
+    "text": "#2 - Pirâmide etária indígena (Folha de São Paulo)\nDessa vez vamos analisar um gráfico publicado pela Folha de São Paulo com dados do Censo 2022: População indígena cresce no Norte, mas envelhece ao redor das cidades\n\nEu particularmente acho muito legal visualizar pirâmides etárias, como essa que fiz com o pessoal da Base dos Dados. E o mais legal dessa vez é que vamos fazer a visualização completa!\n\nObtendo os dados\nTodos os dados do Censo 2022 estão disponíveis na aba de Downloads do portal: https://censo2022.ibge.gov.br/panorama/downloads.html. Lá vamos acessar os resultados Quilombolas e Indígenas, por sexo e idade, segundo recortes territoriais específicos - Resultados do universo e então selecionamos População indígena, por localização do domicílio, grupos de idade e sexo.\nLogo nessa página vemos que os dados estão disponíveis através do SIDRA (Sistema IBGE de Recuperação Automática), que é basicamente uma plataforma que concentra todos os dados do IBGE! E o melhor: podemos acessar diretamente do R com o pacote {sidrar}!\nAntes de tudo, vamos carregar os pacotes necessários\n\nlibrary(sidrar) #baixar dados IBGE\nlibrary(janitor) #limpeza dos dados\nlibrary(dplyr) #manipulação dos dados\nlibrary(stringr) #trabalhar com strings/texto\n# library(tidyr) #tratamento dos dados\nlibrary(ggplot2) #gráficos\n\nAgora só precisamos do número da tabela disponível no site (que é 8175) e rodar o código abaixo:\n\n#install.packages(\"sidrar\")\nlibrary(sidrar)\n\npop_ind &lt;- sidrar::get_sidra(8175)\n\nPronto, fácil assim já temos os dados do Censo para este gráfico!\n\n\n\n\n\n\n\n\n\n\n\n\nTrabalhando com os dados\nPois é, nossos dados sempre têm os nomes das variáveis com letras maiúsculas, espaços e acentos. Vamos padronizar para snake_casecom o pacote {janitor} e também selecionar apenas as variáveis necessárias para este gráficos. Vamos salvando cada passo em um novo objeto para ficar mais fácil de acompanhar.\n\npop_ind2 &lt;- pop_ind |&gt; \n  janitor::clean_names() |&gt; \n  dplyr::select(\n    variavel, \n    ano, \n    idade,\n    sexo, \n    localizacao_do_domicilio,\n    valor\n    )\n\nMas veja que temos um valor Total em idade, sexo e localizacao_do_domicilio. Não vamos precisar dos totais, então podemso removê-los,\n\npop_ind3 &lt;- pop_ind2 |&gt; \n  dplyr::filter(\n    idade != \"Total\",\n    sexo != \"Total\",\n    localizacao_do_domicilio != \"Total\"\n  )\n\nNessa tabela, temos as idades individuais, ou agrupadas a cada 5 anos. Vamos selecionar apenas as linhas com as idades agrupadas.\n\npop_ind4 &lt;- pop_ind3 |&gt; \n  filter(\n      idade %in% c(\n        \"0 a 4 anos\",\n        \"5 a 9 anos\",\n        \"10 a 14 anos\",\n        \"15 a 19 anos\",\n        \"20 a 24 anos\",\n        \"25 a 29 anos\",\n        \"30 a 34 anos\",\n        \"35 a 39 anos\",\n        \"40 a 44 anos\",\n        \"45 a 49 anos\",\n        \"50 a 54 anos\",\n        \"55 a 59 anos\",\n        \"60 a 64 anos\",\n        \"65 a 69 anos\",\n        \"70 a 74 anos\",\n        \"75 a 79 anos\",\n        \"80 a 84 anos\",\n        \"85 a 89 anos\",\n        \"90 a 94 anos\",\n        \"95 a 99 anos\",\n        \"100 anos ou mais\"\n      )\n  )\n\n\n\n\n\n\n\nPreguiça de escrever tudo\n\n\n\n\n\nSe você não quer ficar digitando tudo (ou não quer pedir para o chatGPT escrever para você), é possível selecionar as linhas usando expressões regulares! Sim, elas parecem bruxaria, mas tem uma colinha que ajuda muito!\nO segredo é encontrar padrões! Veja que as categorias são basicamente número+ a +número, e o “100 anos ou mais” colocamos na mão. Vamos lá!\n\npop_ind4 &lt;- pop_ind3 |&gt; \n  filter(\n1    stringr::str_detect(\n2      idade,\n3      \"[:digit:] a [:digit:]|100 anos ou mais\")\n    )\n\n\n1\n\nDetecta a ocorrência de expressões regulares\n\n2\n\nNa variável idade\n\n3\n\nE a expressão é: [número] a [número] OU “100 anos ou mais”\n\n\n\n\nBem mais simples!\n\n\n\nAgora para deixar igualzinho ao gráfico, vamos remover as palavras ” anos” e transformar “100 anos ou mais” em “100+”\n\npop_ind5 &lt;- pop_ind4 |&gt; \n  mutate(\n1    idade2 = stringr::str_remove(\n2      idade,\n3      \" anos.*\"\n      ),\n4    idade2 = ifelse(idade2 == 100, \"100+\", idade2)\n  )\n\n\n1\n\nRemove a ocorrência de expressões regulares\n\n2\n\nNa variável idade\n\n3\n\nE a expressão é: [espaço]anos(e tudo que vier depois)\n\n4\n\nSe idade2 for igual a 100, transformar em “100+”, se não for ignora\n\n\n\n\n\npop_ind6 &lt;- pop_ind5 |&gt; \n  group_by(localizacao_do_domicilio) |&gt; \n  add_count(name = \"total\", wt = valor) |&gt; \n  ungroup() |&gt; \n  mutate(prop = valor/total)\n\nAgora vamos fazer um truque e multiplicar os prop para homens por -1, assim eles ficam do lado esquerdo da pirâmide.\n\npop_ind7 &lt;- pop_ind6 |&gt; \n  mutate(\n    prop = ifelse(sexo == \"Homens\", prop*-1, prop)\n  )\n\nVamos ver se os dados estão prontos?\n\npop_ind7 |&gt; \n  ggplot(aes(x = prop, y = idade2, fill = sexo))+\n  geom_col()\n\n\n\n\n\n\n\n\nVeja que as categoias de idade estão seguindo uma ordem alfabética, mas queremos que sigam a ordem da pirâmide etária. Vamos ordenar a variável idade2 de acordo com a ordem que queremos.\n\npop_ind8 &lt;- pop_ind7 |&gt; \n  mutate(idade2 = forcats::fct_inorder(idade2))\n\n\npop_ind8 |&gt; \n  ggplot(aes(x = prop, y = idade2, fill = sexo))+\n  geom_col()\n\n\n\n\n\n\n\n\nPronto! Temos os dados prontos para o gráfico! Agora vamos para a parte mais legal!\n\n\nCriando o gráfico\n\npop_ind8 |&gt; \n  ggplot(aes(x = prop, y = idade2, fill = sexo))+\n  geom_col(\n    data = ~filter(., \n                   localizacao_do_domicilio == \"Em terras indígenas\"))+\n  geom_col(\n    data = ~filter(., \n                   localizacao_do_domicilio == \"Fora de terras indígenas\"),\n    fill = NA,\n    color = \"black\")\n\n\n\n\n\n\n\n\n\npop_ind8 |&gt; \n  ggplot(aes(x = prop, y = idade2, fill = sexo, color = sexo))+\n  geom_col(\n    data = ~filter(., \n                   localizacao_do_domicilio == \"Em terras indígenas\"),\n    show.legend = FALSE,\n    # alpha = 0.3,\n    color = NA)+\n  geom_col(\n    data = ~filter(., \n                   localizacao_do_domicilio == \"Fora de terras indígenas\"),\n    show.legend = FALSE,\n    fill = NA)+\n  scale_x_continuous(\n    breaks = seq(-0.08,0.08,0.02),\n    labels = c(\"8%\",\"6\",\"4\",\"2\",\"0\",\"2\",\"4\",\"6\",\"8%\")\n  )+\n  scale_fill_manual(\n    values = c(\n      \"Mulheres\" = \"#b3abce\",\n      \"Homens\" = \"#a5d4cf\"\n    )\n  )+\n  scale_color_manual(\n    values = c(\n      \"Mulheres\" = \"#420e44\",\n      \"Homens\" = \"#076e56\"\n    )\n  )+\n  theme_minimal()+\n  theme(\n    panel.grid.major.x = element_blank(),\n    panel.grid.minor.x = element_blank(),\n    axis.title = element_blank(),\n    axis.text = element_text(color = \"black\"),\n    axis.ticks.x = element_line(color = \"#ebebeb\")\n  )+\n  coord_cartesian(\n    xlim = c(-0.08,0.08)\n  )"
+  },
+  {
+    "objectID": "portfolio.html#published-charts",
+    "href": "portfolio.html#published-charts",
+    "title": "Portfolio",
+    "section": "Published charts",
+    "text": "Published charts\nThese are some charts published in scientific papers.\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study\n\n\n\n\n\nMartins et al. (2024) - Iterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil"
+  },
+  {
+    "objectID": "portfolio.html#original-charts",
+    "href": "portfolio.html#original-charts",
+    "title": "Portfolio",
+    "section": "Original charts",
+    "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\nThis is a play animation made for BigDataBowl ’24 Competition, the NFL Big Data competition!\n\n\nSeverance is an awesome series"
+  },
+  {
+    "objectID": "portfolio.html#scripts",
+    "href": "portfolio.html#scripts",
+    "title": "Portfolio",
+    "section": "Scripts",
+    "text": "Scripts\nI love to share my scripts, so anyone can learn the same way I did!\nHere is an example\n\nBoa constrictor 🐍\n\n\n\nClick to view the code\n# packages ----------------------------------------------------------------\n\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(geomtextpath)\n\n# data --------------------------------------------------------------------\n\ndata &lt;- data.frame(a = c(2.8,2.8,3.8,2.9,2.8,3,4.5,5.6,5.7,4.4,5.8))\n\nquote &lt;- \"'My drawing was not a picture of a hat. It was a picture of a &lt;i&gt;Boa constrictor&lt;/i&gt; digesting an elephant.'\"\n\nscatter = data.frame(\n  x = runif(10000,-5,18),\n  y = runif(10000,-1,1)\n)\n\n# plot --------------------------------------------------------------------\n\ndata %&gt;% \n  ggplot(aes(x = a))+\n  geom_density(adjust = 1,\n               fill = \"#784707\",\n               color = \"#462e0a\",\n               size = 3)+\n  geom_textdensity(size = 5, fontface = 2, spacing = 30,\n                   vjust = -0.35, hjust = 0.2,\n                   label = quote,\n                   color = \"#462e0a\",\n                   rich = TRUE)+\n  geom_segment(x = -2.5, xend = 12, y = 0, yend = 0,\n               size = 3, color = \"#462e0a\",lineend = \"round\")+\n  geom_point(x = 11.95, y = 0.002, size = 0.5)+\n  annotate(\"text\", x = 12, y = 0, label = \"- The Little Prince by\\nAntoine de Saint-Exupéry\\nBruno Mioto - @BrunoHMioto\",\n           hjust = 1, vjust = 1.2, fontface = \"bold\",\n           color = \"#462e0a\")+\n  scale_y_continuous(expand = c(0,0))+\n  scale_x_continuous(limits = c(-2.5,12))+\n  theme_void()+\n  theme(\n    panel.background = element_rect(fill = \"#f7f8f8\", color = NA)\n  )+\n  coord_cartesian(ylim = c(-.4,0.8), xlim = c(-4,13))\n\n\nggsave(\"elephant.png\", width = 10, height = 6)\n\n\n\n    \n        See more Scripts!"
   }
 ]

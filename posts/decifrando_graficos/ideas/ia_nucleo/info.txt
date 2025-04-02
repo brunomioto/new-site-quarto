@@ -1,0 +1,8 @@
+site:
+https://nucleo.jor.br/especiais/2025-03-20-incidentes-ia/
+
+dados:
+https://docs.google.com/spreadsheets/d/1Bn55B4xz21-_Rgdr8BBb2lt0n_4rzLGxFADMlVW0PYI/edit?ref=nucleo.jor.br&gid=888071280#gid=888071280
+
+script (muito complexo): 
+https://gist.github.com/rodolfoalmeida01/560d9d5d6a04650c92f5a7dd8552cc6e?ref=nucleo.jor.br
