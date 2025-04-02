@@ -207,14 +207,14 @@
     "href": "portfolio.html#tutorials",
     "title": "Portfolio",
     "section": "Tutorials",
-    "text": "Tutorials\n\n\n\n\n    \n    ggplot2 101\n\n\n\n\n\n\n    \n    Waterlines with ggplot2\n\n\n\n\n\n\n\n    \n    Decifrando gráficos #1\n\n\n\n\n\n\n    \n    Arlequin Files with R"
+    "text": "Tutorials\n\n  \n    \n    ggplot2 101\n  \n\n  \n    \n    Waterlines with ggplot2\n  \n\n  \n    \n    Decifrando gráficos #1\n  \n\n  \n    \n    Arlequin Files with R"
   },
   {
     "objectID": "portfolio.html#r-packages",
     "href": "portfolio.html#r-packages",
     "title": "Portfolio",
     "section": "R packages",
-    "text": "R packages\n\n\n\n\n    \n        reservatoriosBR\n    \n    \n        \n    \n    \n        \n            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\n        \n    \n\n\n\n\n\n\n    \n        futebolplotR\n    \n    \n        \n    \n    \n        \n            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.\n        \n    \n\n\n\n\n\n\n\n    \n        ggimprensa\n    \n    \n        \n    \n    \n        \n            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.\n        \n    \n\n\n\n\n\n\n    \n        feowR\n    \n    \n        \n    \n    \n        \n            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).\n        \n    \n\n\n\n\n    \n        See more R packages!"
+    "text": "R packages\n\n    \n        reservatoriosBR\n        \n            \n        \n        \n            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\n        \n    \n\n    \n        futebolplotR\n        \n            \n        \n        \n            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.\n        \n    \n\n    \n        ggimprensa\n        \n            \n        \n        \n            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.\n        \n    \n\n    \n        feowR\n        \n            \n        \n        \n            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).\n        \n    \n\n\n    \n        See more R packages!"
   },
   {
     "objectID": "portfolio.html#scripts",
@@ -235,7 +235,7 @@
     "href": "portfolio.html#published-charts",
     "title": "Portfolio",
     "section": "Published charts",
-    "text": "Published charts\nThese are some charts published in scientific papers.\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study\n\n\n\n\n\nMartins et al. (2024) - Iterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil"
+    "text": "Published charts\nThese are some charts published in scientific papers.\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNakamura et al. (preprint) - The macroecology of knowledge: Spatio-temporal patterns of name-bearing types in biodiversity science\n\n\n\n\n\n\n\n\nMartins et al. (2024) - Iterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil"
   },
   {
     "objectID": "portfolio.html#original-charts",
@@ -243,6 +243,13 @@
     "title": "Portfolio",
     "section": "Original charts",
     "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\nThis is a play animation made for BigDataBowl ’24 Competition, the NFL Big Data competition!\n\n\nSeverance is an awesome series"
+  },
+  {
+    "objectID": "portfolio.html#species-described",
+    "href": "portfolio.html#species-described",
+    "title": "Portfolio",
+    "section": "Species described! 🐟",
+    "text": "Species described! 🐟\nEven though it’s not data-related, I’m very proud to have described 2 species of fish (so far)! And yes, I’m “Stabile”, not “Mioto” in my scientific papers\n\nCambeva perobana Martins, dos Reis, Stabile & da Graça 2024\n\n\n\nCharacidium itarare Stabile, dos Reis, Frota, da Graça & Oliveira 2024"
   },
   {
     "objectID": "r-packages.html",

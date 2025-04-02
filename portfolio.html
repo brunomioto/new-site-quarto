@@ -213,6 +213,11 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
   <li><a href="#datawrapper" id="toc-datawrapper" class="nav-link" data-scroll-target="#datawrapper">Datawrapper</a></li>
   <li><a href="#published-charts" id="toc-published-charts" class="nav-link" data-scroll-target="#published-charts">Published charts</a></li>
   <li><a href="#original-charts" id="toc-original-charts" class="nav-link" data-scroll-target="#original-charts">Original charts</a></li>
+  <li><a href="#species-described" id="toc-species-described" class="nav-link" data-scroll-target="#species-described">Species described! 🐟</a>
+  <ul class="collapse">
+  <li><a href="#cambeva-perobana-martins-dos-reis-stabile-da-graça-2024" id="toc-cambeva-perobana-martins-dos-reis-stabile-da-graça-2024" class="nav-link" data-scroll-target="#cambeva-perobana-martins-dos-reis-stabile-da-graça-2024"><strong><em>Cambeva perobana</em></strong> Martins, dos Reis, Stabile &amp; da Graça 2024</a></li>
+  <li><a href="#characidium-itarare-stabile-dos-reis-frota-da-graça-oliveira-2024" id="toc-characidium-itarare-stabile-dos-reis-frota-da-graça-oliveira-2024" class="nav-link" data-scroll-target="#characidium-itarare-stabile-dos-reis-frota-da-graça-oliveira-2024"><strong><em>Characidium itarare</em></strong> Stabile, dos Reis, Frota, da Graça &amp; Oliveira 2024</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -273,8 +278,16 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 
 </style>
 <style>
+    .cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
     .card-container {
         width: 100%;
+        max-width: 500px;
         background-color: #ffffff;
         border-radius: 0.75rem;
         box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -283,13 +296,12 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
         cursor: pointer;
         text-decoration: none;
         display: block;
-        margin-bottom: 20px; /* Espaço entre os cards */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
-    
+
     .card-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
     .top-bar {
@@ -340,6 +352,12 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
         line-height: 1.25rem;
         margin-top: 0;
         margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+        .card-container {
+            width: calc(50% - 20px);
+        }
     }
 </style>
 <style>
@@ -416,112 +434,106 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>Here are some of the things I created in the past years</p>
 <section id="tutorials" class="level2">
 <h2 class="anchored" data-anchor-id="tutorials">Tutorials</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<!-- intro ggplot2 -->
-<a href="https://www.brunomioto.com/posts/intro_ggplot2/en/" target="_blank" class="image-card">
+<div class="card-grid">
+  <a href="https://www.brunomioto.com/posts/intro_ggplot2/en/" target="_blank" class="image-card">
     <img src="https://www.brunomioto.com/posts/intro_ggplot2/en/cover.png" class="card-image">
     <div class="card-title">ggplot2 101</div>
-</a>
-</div><div class="column" style="width:5%;">
+  </a>
 
-</div><div class="column" style="width:45%;">
-<!-- waterlines -->
-<a href="https://www.brunomioto.com/posts/waterlines/en/" class="image-card" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.brunomioto.com/posts/waterlines/en/" class="image-card" target="_blank" rel="noopener noreferrer">
     <img src="https://www.brunomioto.com/posts/waterlines/en/post_waterline.png" class="card-image">
     <div class="card-title">Waterlines with ggplot2</div>
-</a>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:45%;">
-<!-- decifrando graficos -->
-<a href="https://www.brunomioto.com/posts/decifrando_graficos/1_nexo/" class="image-card" target="_blank" rel="noopener noreferrer">
+  </a>
+
+  <a href="https://www.brunomioto.com/posts/decifrando_graficos/1_nexo/" class="image-card" target="_blank" rel="noopener noreferrer">
     <img src="https://www.brunomioto.com/posts/decifrando_graficos/1_nexo/cover.png" class="card-image">
     <div class="card-title">Decifrando gráficos #1</div>
-</a>
-</div><div class="column" style="width:5%;">
+  </a>
 
-</div><div class="column" style="width:45%;">
-<!-- waterlines -->
-<a href="https://www.brunomioto.com/posts/arlequin/en/" target="_blank" class="image-card" rel="noopener noreferrer">
+  <a href="https://www.brunomioto.com/posts/arlequin/en/" target="_blank" class="image-card" rel="noopener noreferrer">
     <img src="https://www.brunomioto.com/posts/arlequin/en/post_arlequin.png" class="card-image">
     <div class="card-title">Arlequin Files with R</div>
-</a>
+  </a>
 </div>
-</div>
+
+<style>
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas no desktop */
+  gap: 20px; /* Espaço entre os cards */
+}
+
+.image-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: black; /* ou qualquer outra cor */
+  border: 1px solid #ddd; /* Borda opcional */
+  border-radius: 5px; /* Borda arredondada opcional */
+  overflow: hidden; /* Garante que a imagem não vaze do card */
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-title {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* 1 coluna no celular */
+  }
+}
+</style>
 </section>
 <section id="r-packages" class="level2">
 <h2 class="anchored" data-anchor-id="r-packages">R packages</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<!-- reservatoriosBR -->
-<a href="https://brunomioto.github.io/reservatoriosBR/" class="card-container" style="margin-bottom: 30px;" target="_blank" rel="noopener noreferrer">
-    <div class="top-bar" style="background-color: #1b75bc; color: white;">
-        reservatoriosBR
-    </div>
-    <div class="hex-logo">
-        <img src="./figures/hex-reservatoriosBR.png" alt="Logo do Pacote">
-    </div>
-    <div class="content-section">
-        <p class="package-description">
-            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!
-        </p>
-    </div>
-</a>
-</div><div class="column" style="width:5%;">
+<div class="cards-wrapper">
+    <a href="https://brunomioto.github.io/reservatoriosBR/" class="card-container" target="_blank" rel="noopener noreferrer">
+        <div class="top-bar" style="background-color: #1b75bc; color: white;">reservatoriosBR</div>
+        <div class="hex-logo">
+            <img src="./figures/hex-reservatoriosBR.png" alt="Logo do Pacote">
+        </div>
+        <div class="content-section">
+            <p class="package-description">Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!</p>
+        </div>
+    </a>
 
-</div><div class="column" style="width:45%;">
-<!-- futebolplotR -->
-<a href="https://brunomioto.github.io/futebolplotR/" class="card-container" style="margin-bottom: 30px;" target="_blank" rel="noopener noreferrer">
-    <div class="top-bar" style="background-color: #015500; color: white;">
-        futebolplotR
-    </div>
-    <div class="hex-logo">
-        <img src="./figures/hex-futebolplotR.png" alt="Logo do Pacote">
-    </div>
-    <div class="content-section">
-        <p class="package-description">
-            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.
-        </p>
-    </div>
-</a>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:45%;">
-<!-- ggimprensa -->
-<a href="https://brunomioto.github.io/ggimprensa/" class="card-container" style="margin-bottom: 30px;" target="_blank" rel="noopener noreferrer">
-    <div class="top-bar" style="background-color: #a3b0c3; color: white;">
-        ggimprensa
-    </div>
-    <div class="hex-logo">
-        <img src="./figures/hex-ggimprensa.png" alt="Logo do Pacote">
-    </div>
-    <div class="content-section">
-        <p class="package-description">
-            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.
-        </p>
-    </div>
-</a>
-</div><div class="column" style="width:5%;">
+    <a href="https://brunomioto.github.io/futebolplotR/" class="card-container" target="_blank" rel="noopener noreferrer">
+        <div class="top-bar" style="background-color: #015500; color: white;">futebolplotR</div>
+        <div class="hex-logo">
+            <img src="./figures/hex-futebolplotR.png" alt="Logo do Pacote">
+        </div>
+        <div class="content-section">
+            <p class="package-description">The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.</p>
+        </div>
+    </a>
 
-</div><div class="column" style="width:45%;">
-<!-- feowR-->
-<a href="https://brunomioto.github.io/feowR/" class="card-container" style="margin-bottom: 30px;" target="_blank" rel="noopener noreferrer">
-    <div class="top-bar" style="background-color: #3f858c; color: white;">
-        feowR
-    </div>
-    <div class="hex-logo">
-        <img src="./figures/hex-feowR.png" alt="Logo do Pacote">
-    </div>
-    <div class="content-section">
-        <p class="package-description">
-            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).
-        </p>
-    </div>
-</a>
-</div>
+    <a href="https://brunomioto.github.io/ggimprensa/" class="card-container" target="_blank" rel="noopener noreferrer">
+        <div class="top-bar" style="background-color: #a3b0c3; color: white;">ggimprensa</div>
+        <div class="hex-logo">
+            <img src="./figures/hex-ggimprensa.png" alt="Logo do Pacote">
+        </div>
+        <div class="content-section">
+            <p class="package-description">ggimprensa brings themes from the main Brazilian newspapers for ggplot2.</p>
+        </div>
+    </a>
+
+    <a href="https://brunomioto.github.io/feowR/" class="card-container" target="_blank" rel="noopener noreferrer">
+        <div class="top-bar" style="background-color: #3f858c; color: white;">feowR</div>
+        <div class="hex-logo">
+            <img src="./figures/hex-feowR.png" alt="Logo do Pacote">
+        </div>
+        <div class="content-section">
+            <p class="package-description">feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).</p>
+        </div>
+    </a>
 </div>
 <div class="button-container">
     <a href="https://www.brunomioto.com/r-packages.html" class="see-more-button" target="_blank" rel="noopener noreferrer">
@@ -597,44 +609,67 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <section id="datawrapper" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="datawrapper">Datawrapper</h2>
 <div class="column-page">
-<div style="display: flex; justify-content: space-between;">
-  <div style="width: 48%;">
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+  <div style="width: 48%; margin-bottom: 20px;">
     <div style="min-height: 720px;" id="datawrapper-vis-LwHxa">
       <script type="text/javascript" defer="" src="https://datawrapper.dwcdn.net/LwHxa/embed.js" charset="utf-8" data-target="#datawrapper-vis-LwHxa"></script>
       <noscript><img src="https://datawrapper.dwcdn.net/LwHxa/full.png" alt=""></noscript>
     </div>
   </div>
-  <div style="width: 48%;">
+  <div style="width: 48%; margin-bottom: 20px;">
     <div style="min-height: 622px;" id="datawrapper-vis-cZnaX">
       <script type="text/javascript" defer="" src="https://datawrapper.dwcdn.net/cZnaX/embed.js" charset="utf-8" data-target="#datawrapper-vis-cZnaX"></script>
       <noscript><img src="https://datawrapper.dwcdn.net/cZnaX/full.png" alt=""></noscript>
     </div>
   </div>
+  <style>
+    @media (max-width: 768px) { /* Ajuste o valor 768px conforme necessário */
+      div[style*="display: flex;"] > div {
+        width: 100% !important;
+      }
+    }
+  </style>
 </div>
-</div>
-<div class="column-body">
-<br>
-<div style="max-height:200px" id="datawrapper-vis-i26yy"><script type="text/javascript" defer="" src="https://datawrapper.dwcdn.net/i26yy/embed.js" charset="utf-8" data-target="#datawrapper-vis-i26yy"></script><noscript><img src="https://datawrapper.dwcdn.net/i26yy/full.png" alt=""></noscript></div>
-<br>
 </div>
 <div class="column-body">
 <div style="min-height:495px" id="datawrapper-vis-J3yG5"><script type="text/javascript" defer="" src="https://datawrapper.dwcdn.net/J3yG5/embed.js" charset="utf-8" data-target="#datawrapper-vis-J3yG5"></script><noscript><img src="https://datawrapper.dwcdn.net/J3yG5/full.png" alt=""></noscript>
 </div>
 </div>
 </section>
-<section id="published-charts" class="level2 page-columns page-full">
+<section id="published-charts" class="level2">
 <h2 class="anchored" data-anchor-id="published-charts">Published charts</h2>
 <p>These are some charts published in scientific papers.</p>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="figures/charts/charts_jama.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption"><a href="https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2814639">Kieling <em>et al</em>. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study</a></figcaption>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="figures/charts/charts_jama.png" class="lightbox" data-gallery="my-gallery" title="Kieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study"><img src="figures/charts/charts_jama.png" class="img-fluid figure-img" alt="Kieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study"></a></p>
+<figcaption><a href="https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2814639">Kieling <em>et al</em>. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study</a></figcaption>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="figures/charts/charts_cambevaperobana.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption"><a href="https://www.scielo.br/j/ni/a/CCGbxJbhKRs74jjnL7Rn8hN/">Martins <em>et al</em>. (2024) - Iterative taxonomy reveals a new species of <em>Cambeva</em> (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil</a></figcaption>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><a href="figures/NBTs1.jpg" class="lightbox" data-gallery="my-gallery"><img src="figures/NBTs1.jpg" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><a href="figures/NBTs2.jpg" class="lightbox" data-gallery="my-gallery"><img src="figures/NBTs2.jpg" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="figures/NBTs3.jpg" class="lightbox" data-gallery="my-gallery" title="Nakamura et al. (preprint) - The macroecology of knowledge: Spatio-temporal patterns of name-bearing types in biodiversity science"><img src="figures/NBTs3.jpg" class="img-fluid figure-img" alt="Nakamura et al. (preprint) - The macroecology of knowledge: Spatio-temporal patterns of name-bearing types in biodiversity science"></a></p>
+<figcaption><a href="https://www.researchgate.net/publication/383057983_The_macroecology_of_knowledge_Spatio-temporal_patterns_of_name-bearing_types_in_biodiversity_science">Nakamura <em>et al</em>. (preprint) - The macroecology of knowledge: Spatio-temporal patterns of name-bearing types in biodiversity science</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="figures/charts/charts_cambevaperobana.png" class="lightbox" data-gallery="my-gallery" title="Martins et al. (2024) - Iterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil"><img src="figures/charts/charts_cambevaperobana.png" class="img-fluid figure-img" alt="Martins et al. (2024) - Iterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil"></a></p>
+<figcaption><a href="https://www.scielo.br/j/ni/a/CCGbxJbhKRs74jjnL7Rn8hN/">Martins <em>et al</em>. (2024) - Iterative taxonomy reveals a new species of <em>Cambeva</em> (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil</a></figcaption>
 </figure>
 </div>
 </section>
@@ -750,8 +785,20 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p><a href="figures/charts/github_deaths_covid_br.png" class="lightbox" data-gallery="my-gallery2"><img src="figures/charts/github_deaths_covid_br.png" class="img-fluid"></a></p>
 <p><a href="figures/charts/color.png" class="lightbox" data-gallery="my-gallery2"><img src="figures/charts/color.png" class="img-fluid"></a></p>
 <p><a href="figures/charts/punt_J.Hekker_18.png" class="lightbox" data-gallery="my-gallery2"><img src="figures/charts/punt_J.Hekker_18.png" class="img-fluid"></a></p>
+</section>
+<section id="species-described" class="level2">
+<h2 class="anchored" data-anchor-id="species-described">Species described! 🐟</h2>
+<p>Even though it’s not data-related, I’m very proud to have described 2 species of fish (so far)! And yes, I’m “Stabile”, not “Mioto” in my scientific papers</p>
+<section id="cambeva-perobana-martins-dos-reis-stabile-da-graça-2024" class="level3">
+<h3 class="anchored" data-anchor-id="cambeva-perobana-martins-dos-reis-stabile-da-graça-2024"><strong><em>Cambeva perobana</em></strong> Martins, dos Reis, Stabile &amp; da Graça 2024</h3>
+<p><img src="figures/cambeva_perobana.png" class="img-fluid"></p>
+</section>
+<section id="characidium-itarare-stabile-dos-reis-frota-da-graça-oliveira-2024" class="level3">
+<h3 class="anchored" data-anchor-id="characidium-itarare-stabile-dos-reis-frota-da-graça-oliveira-2024"><strong><em>Characidium itarare</em></strong> Stabile, dos Reis, Frota, da Graça &amp; Oliveira 2024</h3>
+<p><img src="figures/characidium_itarare.png" class="img-fluid"></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
