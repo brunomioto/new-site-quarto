@@ -210,9 +210,79 @@ format:
 <!-- </div> -->
 ```
 
-Here are some of the things I created in the past years
+During all these years adventuring with data, science and deisgn, I've been able to turn my ideas into reality. Follow me on my social networks and see what I've been up to over the last few years!
+
+```{=html}
+<style>
+    .social-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .social-card {
+        width: 120px;
+        background-color: #ffffff;
+        border-radius: 0.75rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .social-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-top-bar {
+        height: 40px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    .social-logo {
+        width: 50px;
+        height: 50px;
+        margin: 10px auto;
+    }
+
+    .social-name {
+        padding: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333;
+    }
+</style>
+
+<div class="social-container">
+    <a href="https://github.com/brunomioto" class="social-card" target="_blank" rel="noopener noreferrer">
+        <div class="social-top-bar" style="background-color: #333;">GitHub</div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="social-logo" alt="GitHub">
+        <div class="social-name">GitHub</div>
+    </a>
+
+    <a href="https://www.linkedin.com/in/brunomioto/" class="social-card" target="_blank" rel="noopener noreferrer">
+        <div class="social-top-bar" style="background-color: #0077b5;">LinkedIn</div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="social-logo" alt="LinkedIn">
+        <div class="social-name">LinkedIn</div>
+    </a>
+</div>
+```
 
 ## Tutorials
+
+Almost everything I know today about programming I learned from tutorials, so I really enjoy **passing on this knowledge to people**, teaching them about the process of **creating** charts and other tools.
 
 ```{=html}
 <div class="card-grid">
@@ -274,9 +344,9 @@ Here are some of the things I created in the past years
 </style>
 ```
 
-
-
 ## R packages
+
+One of my hobbies is creating packages in R! I've made new friends and greatly improved my **code organization** and **git** experience.
 
 ```{=html}
 <div class="cards-wrapper">
@@ -332,7 +402,7 @@ Here are some of the things I created in the past years
 
 ## Scripts
 
-I love to share my scripts, so anyone can learn the same way I did!
+I love to **share** my scripts, so anyone can **learn** the same way I did!
 
 Here is an example
 
@@ -437,7 +507,7 @@ ggsave("elephant.png", width = 10, height = 6)
 
 ## Published charts
 
-These are some charts published in scientific papers.
+These are some charts published in **scientific papers**.
 
 ![[Kieling *et al*. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study](https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2814639)](figures/charts/charts_jama.png){.lightbox group="my-gallery"}
 
@@ -531,7 +601,7 @@ All the following charts and maps were made entirely using **ggplot2/R**.<br>You
 
 ## Species described! 🐟
 
-Even though it's not data-related, I'm very proud to have described 2 species of fish (so far)! And yes, I'm "Stabile", not "Mioto" in my scientific papers
+Even though it's not data-related, I'm very proud to have described 2 **species of fish** (so far)! And yes, I'm "Stabile", not "Mioto" in my scientific papers
 
 ### ***Cambeva perobana*** Martins, dos Reis, Stabile & da Graça 2024
 

@@ -179,7 +179,7 @@
     "href": "index.html",
     "title": "Bruno Mioto",
     "section": "",
-    "text": "Hello, this is my personal website!\nI’m a biologist and dataviz specialist! Here you’ll find pages about the Charts and R packages I made and some info about me.\nTake a look at my posts below!"
+    "text": "Hello, this is my personal website!\nI’m a Biologist with PhD in Ecology, Data Analyst and DataViz Specialist! Here you’ll find pages about the Charts and R packages I made and some info about me.\nMy Portfolio contains a summary of everything I’ve done!\nTake a look at my posts below!"
   },
   {
     "objectID": "index.html#posts-in-english",
@@ -662,14 +662,14 @@
     "href": "portfolio.html",
     "title": "Portfolio",
     "section": "",
-    "text": "Here are some of the things I created in the past years"
+    "text": "During all these years adventuring with data, science and deisgn, I’ve been able to turn my ideas into reality. Follow me on my social networks and see what I’ve been up to over the last few years!"
   },
   {
     "objectID": "portfolio.html#tutorials",
     "href": "portfolio.html#tutorials",
     "title": "Portfolio",
     "section": "Tutorials",
-    "text": "Tutorials\n\n  \n    \n    ggplot2 101\n  \n\n  \n    \n    Waterlines with ggplot2\n  \n\n  \n    \n    Decifrando gráficos #1\n  \n\n  \n    \n    Arlequin Files with R"
+    "text": "Tutorials\nAlmost everything I know today about programming I learned from tutorials, so I really enjoy passing on this knowledge to people, teaching them about the process of creating charts and other tools.\n\n  \n    \n    ggplot2 101\n  \n\n  \n    \n    Waterlines with ggplot2\n  \n\n  \n    \n    Decifrando gráficos #1\n  \n\n  \n    \n    Arlequin Files with R"
   },
   {
     "objectID": "portfolio.html#decifrando-gráficos",
@@ -704,7 +704,7 @@
     "href": "portfolio.html#r-packages",
     "title": "Portfolio",
     "section": "R packages",
-    "text": "R packages\n\n    \n        reservatoriosBR\n        \n            \n        \n        \n            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\n        \n    \n\n    \n        futebolplotR\n        \n            \n        \n        \n            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.\n        \n    \n\n    \n        ggimprensa\n        \n            \n        \n        \n            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.\n        \n    \n\n    \n        feowR\n        \n            \n        \n        \n            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).\n        \n    \n\n\n    \n        See more R packages!"
+    "text": "R packages\nOne of my hobbies is creating packages in R! I’ve made new friends and greatly improved my code organization and git experience.\n\n    \n        reservatoriosBR\n        \n            \n        \n        \n            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\n        \n    \n\n    \n        futebolplotR\n        \n            \n        \n        \n            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.\n        \n    \n\n    \n        ggimprensa\n        \n            \n        \n        \n            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.\n        \n    \n\n    \n        feowR\n        \n            \n        \n        \n            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).\n        \n    \n\n\n    \n        See more R packages!"
   },
   {
     "objectID": "portfolio.html#datawrapper",
