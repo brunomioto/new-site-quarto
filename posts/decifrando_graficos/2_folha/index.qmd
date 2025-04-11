@@ -35,6 +35,59 @@ E tem mais: **todo o código e dados utilizados estarão disponíveis e comentad
 
 Acompanhe a série e veja como transformar dados brutos em visualizações incríveis!
 
+## Post anterior
+
+Quer ver o post anterior? Acesse abaixo
+
+```{=html}
+<div class="card-grid">
+
+
+  <a href="https://www.brunomioto.com/posts/decifrando_graficos/1_nexo/" class="image-card" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.brunomioto.com/posts/decifrando_graficos/1_nexo/cover.png" class="card-image">
+    <div class="card-title">Decifrando gráficos #1</div>
+  </a>
+
+</div>
+
+<style>
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 2 colunas no desktop */
+  gap: 20px; /* Espaço entre os cards */
+}
+
+.image-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: black; /* ou qualquer outra cor */
+  border: 1px solid #ddd; /* Borda opcional */
+  border-radius: 5px; /* Borda arredondada opcional */
+  overflow: hidden; /* Garante que a imagem não vaze do card */
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-title {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* 1 coluna no celular */
+  }
+}
+</style>
+
+```
+
 ## #2 - Pirâmide etária indígena (Folha de São Paulo)
 
 Dessa vez vamos analisar um gráfico publicado pela **Folha de São Paulo** com dados do Censo 2022: [População indígena cresce no Norte, mas envelhece ao redor das cidades](https://www1.folha.uol.com.br/cotidiano/2024/05/populacao-indigena-cresce-no-norte-mas-envelhece-ao-redor-das-cidades.shtml)

@@ -179,7 +179,7 @@
     "href": "index.html",
     "title": "Bruno Mioto",
     "section": "",
-    "text": "Hello, this is my personal website!\nI’m a Biologist with PhD in Ecology, Data Analyst and DataViz Specialist! Here you’ll find pages about the Charts and R packages I made and some info about me.\nMy Portfolio contains a summary of everything I’ve done!\nTake a look at my posts below!"
+    "text": "Hello, this is my personal website!\nI’m a biologist and dataviz freelancer! Here you’ll find pages about the Charts and R packages I made and some info about me.\nIf you want to support my work, buy me a coffee!"
   },
   {
     "objectID": "index.html#posts-in-english",
@@ -656,89 +656,5 @@
     "title": "curriculum",
     "section": "",
     "text": "Hello World! Please read my Closeread story below.\n\n\n\n\nDraw your readers attention with focus effects.\n\n\n\n\nWhen this paragraph scrolls into view it will reveal a histogram.\n\n\n\n\nWhen this paragraph scrolls into view it will reveal a histogram.\n\n\n\n\npan-to=“0%, -50%” scale-by=“2”\n\n\n\n\npan-to=“0%, 0%” scale-by=“2”\n\n\n\n\npan-to=“0%, 0%” scale-by=“3”\n\n\n\n\npan-to=“0%, 0%” scale-by=“4”\n\n\n\n\npan-to=“0%, 0%” scale-by=“5”\n\n\n\n\npan-to=“0%, 0%” scale-by=“5”\n\n\n\n\ntexto texto\n\n\n\n\ntexto\n\n\n\n\ntexto\n\n\n\n\n\n\n\nHighlighting\nZooming\nPanning"
-  },
-  {
-    "objectID": "portfolio.html",
-    "href": "portfolio.html",
-    "title": "Portfolio",
-    "section": "",
-    "text": "During all these years adventuring with data, science and design, I’ve been able to turn my ideas into reality. Currently I’m looking for an opportunity to work as Data Analyst!\nFirst of all, this entire website was made by me using R, Quarto and HTML!\nFollow me on my social networks and see what I’ve been up to over the last few years!"
-  },
-  {
-    "objectID": "portfolio.html#tutorials",
-    "href": "portfolio.html#tutorials",
-    "title": "Portfolio",
-    "section": "Tutorials",
-    "text": "Tutorials\nAlmost everything I know today about programming I learned from tutorials, so I really enjoy passing on this knowledge to people, teaching them about the process of creating charts and other tools.\n\n  \n    \n    ggplot2 101\n  \n\n  \n    \n    Waterlines with ggplot2\n  \n\n  \n    \n    Decifrando gráficos #1\n  \n\n  \n    \n    Arlequin Files with R"
-  },
-  {
-    "objectID": "portfolio.html#decifrando-gráficos",
-    "href": "portfolio.html#decifrando-gráficos",
-    "title": "Portfolio",
-    "section": "Decifrando Gráficos",
-    "text": "Decifrando Gráficos"
-  },
-  {
-    "objectID": "portfolio.html#posts-in-english",
-    "href": "portfolio.html#posts-in-english",
-    "title": "Portfolio",
-    "section": "Posts in English",
-    "text": "Posts in English"
-  },
-  {
-    "objectID": "portfolio.html#posts-em-português",
-    "href": "portfolio.html#posts-em-português",
-    "title": "Portfolio",
-    "section": "Posts em Português",
-    "text": "Posts em Português"
-  },
-  {
-    "objectID": "portfolio.html#charts-with-ggplot2",
-    "href": "portfolio.html#charts-with-ggplot2",
-    "title": "Portfolio",
-    "section": "Charts with ggplot2",
-    "text": "Charts with ggplot2"
-  },
-  {
-    "objectID": "portfolio.html#r-packages",
-    "href": "portfolio.html#r-packages",
-    "title": "Portfolio",
-    "section": "R packages",
-    "text": "R packages\nOne of my hobbies is creating packages in R! I’ve made new friends and greatly improved my code organization and git experience.\n\n    \n        reservatoriosBR\n        \n            \n        \n        \n            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\n        \n    \n\n    \n        futebolplotR\n        \n            \n        \n        \n            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.\n        \n    \n\n    \n        ggimprensa\n        \n            \n        \n        \n            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.\n        \n    \n\n    \n        feowR\n        \n            \n        \n        \n            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).\n        \n    \n\n\n\n    \n        See more R packages!"
-  },
-  {
-    "objectID": "portfolio.html#datawrapper",
-    "href": "portfolio.html#datawrapper",
-    "title": "Portfolio",
-    "section": "Datawrapper",
-    "text": "Datawrapper"
-  },
-  {
-    "objectID": "portfolio.html#published-charts",
-    "href": "portfolio.html#published-charts",
-    "title": "Portfolio",
-    "section": "Published charts",
-    "text": "Published charts\nThese are some charts published in scientific papers.\n\n\n\nKieling et al. (2024) - Worldwide Prevalence and Disability From Mental Disorders Across Childhood and Adolescence Evidence From the Global Burden of Disease Study\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNakamura et al. (preprint) - The macroecology of knowledge: Spatio-temporal patterns of name-bearing types in biodiversity science\n\n\n\n\n\n\n\n\nMartins et al. (2024) - Iterative taxonomy reveals a new species of Cambeva (Siluriformes: Trichomycteridae) with intraspecific variation from the rio Piquiri and Ivaí basin, upper rio Paraná basin, Brazil"
-  },
-  {
-    "objectID": "portfolio.html#original-charts",
-    "href": "portfolio.html#original-charts",
-    "title": "Portfolio",
-    "section": "Original charts",
-    "text": "Original charts\nAll the following charts and maps were made entirely using ggplot2/R.You can click on each plot to see each detail.\n\nThis is a play animation made for BigDataBowl ’24 Competition, the NFL Big Data competition!\n\n\nSeverance is an awesome series"
-  },
-  {
-    "objectID": "portfolio.html#scripts",
-    "href": "portfolio.html#scripts",
-    "title": "Portfolio",
-    "section": "Scripts",
-    "text": "Scripts\nI love to share my scripts, so anyone can learn the same way I did!\nHere is an example\n\nBoa constrictor 🐍\n\n\n\nClick to view the code\n# packages ----------------------------------------------------------------\n\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(geomtextpath)\n\n# data --------------------------------------------------------------------\n\ndata &lt;- data.frame(a = c(2.8,2.8,3.8,2.9,2.8,3,4.5,5.6,5.7,4.4,5.8))\n\nquote &lt;- \"'My drawing was not a picture of a hat. It was a picture of a &lt;i&gt;Boa constrictor&lt;/i&gt; digesting an elephant.'\"\n\nscatter = data.frame(\n  x = runif(10000,-5,18),\n  y = runif(10000,-1,1)\n)\n\n# plot --------------------------------------------------------------------\n\ndata %&gt;% \n  ggplot(aes(x = a))+\n  geom_density(adjust = 1,\n               fill = \"#784707\",\n               color = \"#462e0a\",\n               size = 3)+\n  geom_textdensity(size = 5, fontface = 2, spacing = 30,\n                   vjust = -0.35, hjust = 0.2,\n                   label = quote,\n                   color = \"#462e0a\",\n                   rich = TRUE)+\n  geom_segment(x = -2.5, xend = 12, y = 0, yend = 0,\n               size = 3, color = \"#462e0a\",lineend = \"round\")+\n  geom_point(x = 11.95, y = 0.002, size = 0.5)+\n  annotate(\"text\", x = 12, y = 0, label = \"- The Little Prince by\\nAntoine de Saint-Exupéry\\nBruno Mioto - @BrunoHMioto\",\n           hjust = 1, vjust = 1.2, fontface = \"bold\",\n           color = \"#462e0a\")+\n  scale_y_continuous(expand = c(0,0))+\n  scale_x_continuous(limits = c(-2.5,12))+\n  theme_void()+\n  theme(\n    panel.background = element_rect(fill = \"#f7f8f8\", color = NA)\n  )+\n  coord_cartesian(ylim = c(-.4,0.8), xlim = c(-4,13))\n\n\nggsave(\"elephant.png\", width = 10, height = 6)\n\n\n\n    \n        See more Scripts!"
-  },
-  {
-    "objectID": "portfolio.html#species-described",
-    "href": "portfolio.html#species-described",
-    "title": "Portfolio",
-    "section": "Species described! 🐟",
-    "text": "Species described! 🐟\nEven though it’s not data-related, I’m very proud to have described 3 species of fish (so far)! And yes, I’m “Stabile”, not “Mioto” in my scientific papers\n\nCharacidium dumonti Stabile, dos Reis, de Oliveira & da Graça 2025\n\n\n\nCharacidium itarare Stabile, dos Reis, Frota, da Graça & de Oliveira 2024\n\n\n\nCambeva perobana Martins, dos Reis, Stabile & da Graça 2024"
   }
 ]

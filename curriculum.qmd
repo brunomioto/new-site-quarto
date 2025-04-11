@@ -1,14 +1,15 @@
 ---
 title: "curriculum"
-format: closeread-html
+format:
+  closeread-html:
+    cr-section:
+      layout: "overlay-center"
 ---
 
 
 Hello World! Please read my Closeread story below.
 
 :::{.cr-section}
-
-Closeread enables scrollytelling.
 
 Draw your readers attention with focus effects. @cr-features
 
@@ -18,13 +19,36 @@ Draw your readers attention with focus effects. @cr-features
 3. Panning
 :::
 
-When this paragraph scrolls into view it will reveal a histogram. [@cr-myplot]{pan-to="50%,50%" scale-by="1.5"}
+When this paragraph scrolls into view it will reveal a histogram. [@cr-myplot]
 
-:::{#cr-myplot}
-```{r}
-hist(rnorm(15))
-```
+When this paragraph scrolls into view it will reveal a histogram. [@cr-myplot]{scale-by="2"}
+
+pan-to="0%, -50%" scale-by="2" [@cr-myplot]{pan-to="0%, -50%" scale-by="2"}
+
+pan-to="0%, 0%" scale-by="2" [@cr-myplot]{pan-to="0%, 0%" scale-by="2"}
+
+pan-to="0%, 0%" scale-by="3" [@cr-myplot]{pan-to="0%, 0%" scale-by="3"}
+
+pan-to="0%, 0%" scale-by="4" [@cr-myplot]{pan-to="0%, 0%" scale-by="4"}
+
+pan-to="0%, 0%" scale-by="5" [@cr-myplot]{pan-to="0%, 0%" scale-by="5"}
+
+pan-to="0%, 0%" scale-by="5" [@cr-myplot2]{pan-to="0%, 0%" scale-by="5"}
+
+:::{#cr-myplot .scale-to-fill}
+![](figures/test_rect3.png)
 :::
 
+
+:::{#cr-myplot2}
+![](figures/test_rect5.png)
+:::
+
+texto texto
+
+
+texto
+
+texto
 
 :::

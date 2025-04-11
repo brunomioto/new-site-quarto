@@ -212,6 +212,8 @@ format:
 
 During all these years adventuring with **data**, **science** and **design**, I've been able to turn my **ideas** into **reality**. Currently I'm looking for an opportunity to work as **Data Analyst**!
 
+First of all, this entire website was made by me using **R**, **Quarto** and **HTML**!
+
 Follow me on my social networks and see what I've been up to over the last few years!
 
 ```{=html}
@@ -595,12 +597,16 @@ All the following charts and maps were made entirely using **ggplot2/R**.<br>You
 
 ## Species described! 🐟
 
-Even though it's not data-related, I'm very proud to have described 2 **species of fish** (so far)! And yes, I'm "Stabile", not "Mioto" in my scientific papers
+Even though it's not data-related, I'm very proud to have described 3 **species of fish** (so far)! And yes, I'm "Stabile", not "Mioto" in my scientific papers
+
+### ***Characidium dumonti*** Stabile, dos Reis, de Oliveira & da Graça 2025
+
+![](figures/characidium_dumonti.png)
+
+### ***Characidium itarare*** Stabile, dos Reis, Frota, da Graça & de Oliveira 2024
+
+![](figures/characidium_itarare.png)
 
 ### ***Cambeva perobana*** Martins, dos Reis, Stabile & da Graça 2024
 
 ![](figures/cambeva_perobana.png)
-
-### ***Characidium itarare*** Stabile, dos Reis, Frota, da Graça & Oliveira 2024
-
-![](figures/characidium_itarare.png)
