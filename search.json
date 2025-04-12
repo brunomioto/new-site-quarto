@@ -200,7 +200,7 @@
     "href": "portfolio.html",
     "title": "Portfolio",
     "section": "",
-    "text": "During all these years adventuring with data, science and design, I’ve been able to turn my ideas into reality. Currently I’m looking for an opportunity to work as Data Analyst!\nFollow me on my social networks and see what I’ve been up to over the last few years!"
+    "text": "During all these years adventuring with data, science and design, I’ve been able to turn my ideas into reality. Currently I’m looking for an opportunity to work as Data Analyst!\nFirst of all, this entire website was made by me using R, Quarto and HTML!\nFollow me on my social networks and see what I’ve been up to over the last few years!"
   },
   {
     "objectID": "portfolio.html#tutorials",
@@ -249,7 +249,7 @@
     "href": "portfolio.html#species-described",
     "title": "Portfolio",
     "section": "Species described! 🐟",
-    "text": "Species described! 🐟\nEven though it’s not data-related, I’m very proud to have described 2 species of fish (so far)! And yes, I’m “Stabile”, not “Mioto” in my scientific papers\n\nCambeva perobana Martins, dos Reis, Stabile & da Graça 2024\n\n\n\nCharacidium itarare Stabile, dos Reis, Frota, da Graça & Oliveira 2024"
+    "text": "Species described! 🐟\nEven though it’s not data-related, I’m very proud to have described 3 species of fish (so far)! And yes, I’m “Stabile”, not “Mioto” in my scientific papers\n\nCharacidium dumonti Stabile, dos Reis, de Oliveira & da Graça 2025\n\n\n\nCharacidium itarare Stabile, dos Reis, Frota, da Graça & de Oliveira 2024\n\n\n\nCambeva perobana Martins, dos Reis, Stabile & da Graça 2024"
   },
   {
     "objectID": "r-packages.html",
@@ -340,7 +340,7 @@
     "href": "curriculum.html",
     "title": "curriculum",
     "section": "",
-    "text": "Hello World! Please read my Closeread story below.\n\n\n\n\nCloseread enables scrollytelling.\n\n\n\n\nDraw your readers attention with focus effects.\n\n\n\n\nWhen this paragraph scrolls into view it will reveal a histogram.\n\n\n\n\n\n\n\nHighlighting\nZooming\nPanning"
+    "text": "Hello World! Please read my Closeread story below.\n\n\n\n\nDraw your readers attention with focus effects.\n\n\n\n\nWhen this paragraph scrolls into view it will reveal a histogram.\n\n\n\n\nWhen this paragraph scrolls into view it will reveal a histogram.\n\n\n\n\npan-to=“0%, -50%” scale-by=“2”\n\n\n\n\npan-to=“0%, 0%” scale-by=“2”\n\n\n\n\npan-to=“0%, 0%” scale-by=“3”\n\n\n\n\npan-to=“0%, 0%” scale-by=“4”\n\n\n\n\npan-to=“0%, 0%” scale-by=“5”\n\n\n\n\npan-to=“0%, 0%” scale-by=“5”\n\n\n\n\ntexto texto\n\n\n\n\ntexto\n\n\n\n\ntexto\n\n\n\n\n\n\n\nHighlighting\nZooming\nPanning"
   },
   {
     "objectID": "charts.html",
