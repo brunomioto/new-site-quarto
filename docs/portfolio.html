@@ -210,6 +210,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
   <ul class="collapse">
   <li><a href="#boa-constrictor" id="toc-boa-constrictor" class="nav-link" data-scroll-target="#boa-constrictor"><em>Boa constrictor</em> 🐍</a></li>
   </ul></li>
+  <li><a href="#power-bi" id="toc-power-bi" class="nav-link" data-scroll-target="#power-bi">Power BI</a></li>
   <li><a href="#datawrapper" id="toc-datawrapper" class="nav-link" data-scroll-target="#datawrapper">Datawrapper</a></li>
   <li><a href="#published-charts" id="toc-published-charts" class="nav-link" data-scroll-target="#published-charts">Published charts</a></li>
   <li><a href="#original-charts" id="toc-original-charts" class="nav-link" data-scroll-target="#original-charts">Original charts</a></li>
@@ -625,40 +626,35 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>quote <span class="ot">&lt;-</span> <span class="st">"'My drawing was not a picture of a hat. It was a picture of a &lt;i&gt;Boa constrictor&lt;/i&gt; digesting an elephant.'"</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>scatter <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">runif</span>(<span class="dv">10000</span>,<span class="sc">-</span><span class="dv">5</span>,<span class="dv">18</span>),</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">runif</span>(<span class="dv">10000</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># plot --------------------------------------------------------------------</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> a))<span class="sc">+</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">adjust =</span> <span class="dv">1</span>,</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> <span class="st">"#784707"</span>,</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">"#462e0a"</span>,</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_textdensity</span>(<span class="at">size =</span> <span class="dv">5</span>, <span class="at">fontface =</span> <span class="dv">2</span>, <span class="at">spacing =</span> <span class="dv">30</span>,</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                   <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.35</span>, <span class="at">hjust =</span> <span class="fl">0.2</span>,</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                   <span class="at">label =</span> quote,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                   <span class="at">color =</span> <span class="st">"#462e0a"</span>,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                   <span class="at">rich =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">x =</span> <span class="sc">-</span><span class="fl">2.5</span>, <span class="at">xend =</span> <span class="dv">12</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">0</span>,</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"#462e0a"</span>,<span class="at">lineend =</span> <span class="st">"round"</span>)<span class="sc">+</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">x =</span> <span class="fl">11.95</span>, <span class="at">y =</span> <span class="fl">0.002</span>, <span class="at">size =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">12</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="st">"- The Little Prince by</span><span class="sc">\n</span><span class="st">Antoine de Saint-Exupéry</span><span class="sc">\n</span><span class="st">Bruno Mioto - @BrunoHMioto"</span>,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>           <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="fl">1.2</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"#462e0a"</span>)<span class="sc">+</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>))<span class="sc">+</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.5</span>,<span class="dv">12</span>))<span class="sc">+</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()<span class="sc">+</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#f7f8f8"</span>, <span class="at">color =</span> <span class="cn">NA</span>)</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">4</span>,<span class="fl">0.8</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">13</span>))</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"elephant.png"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># plot --------------------------------------------------------------------</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> a))<span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">adjust =</span> <span class="dv">1</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> <span class="st">"#784707"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">"#462e0a"</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_textdensity</span>(<span class="at">size =</span> <span class="dv">5</span>, <span class="at">fontface =</span> <span class="dv">2</span>, <span class="at">spacing =</span> <span class="dv">30</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                   <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.35</span>, <span class="at">hjust =</span> <span class="fl">0.2</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                   <span class="at">label =</span> quote,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                   <span class="at">color =</span> <span class="st">"#462e0a"</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                   <span class="at">rich =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">x =</span> <span class="sc">-</span><span class="fl">2.5</span>, <span class="at">xend =</span> <span class="dv">12</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> <span class="dv">0</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"#462e0a"</span>,<span class="at">lineend =</span> <span class="st">"round"</span>)<span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">x =</span> <span class="fl">11.95</span>, <span class="at">y =</span> <span class="fl">0.002</span>, <span class="at">size =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">12</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="st">"- The Little Prince by</span><span class="sc">\n</span><span class="st">Antoine de Saint-Exupéry</span><span class="sc">\n</span><span class="st">Bruno Mioto - @BrunoHMioto"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>           <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="fl">1.2</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"#462e0a"</span>)<span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>))<span class="sc">+</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.5</span>,<span class="dv">12</span>))<span class="sc">+</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()<span class="sc">+</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#f7f8f8"</span>, <span class="at">color =</span> <span class="cn">NA</span>)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">4</span>,<span class="fl">0.8</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">13</span>))</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"elephant.png"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="button-container">
@@ -667,6 +663,12 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
     </a>
 </div>
 </section>
+</section>
+<section id="power-bi" class="level2">
+<h2 class="anchored" data-anchor-id="power-bi">Power BI</h2>
+<p>I made a dashboard for the 2020 Municipal Elections in my city using <strong>Power BI</strong>. (Unfortunately I no longer have the license and only have screenshots)</p>
+<p><a href="figures/powerbi_eleicoes2020_2.png" class="lightbox" data-gallery="my-gallery"><img src="figures/powerbi_eleicoes2020_2.png" class="img-fluid"></a></p>
+<p><a href="figures/powerbi_eleicoes2020.png" class="lightbox" data-gallery="my-gallery"><img src="figures/powerbi_eleicoes2020.png" class="img-fluid"></a></p>
 </section>
 <section id="datawrapper" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="datawrapper">Datawrapper</h2>

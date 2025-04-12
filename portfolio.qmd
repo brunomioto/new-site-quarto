@@ -421,11 +421,6 @@ data <- data.frame(a = c(2.8,2.8,3.8,2.9,2.8,3,4.5,5.6,5.7,4.4,5.8))
 
 quote <- "'My drawing was not a picture of a hat. It was a picture of a <i>Boa constrictor</i> digesting an elephant.'"
 
-scatter = data.frame(
-  x = runif(10000,-5,18),
-  y = runif(10000,-1,1)
-)
-
 # plot --------------------------------------------------------------------
 
 data %>% 
@@ -464,6 +459,14 @@ ggsave("elephant.png", width = 10, height = 6)
     </a>
 </div>
 ```
+
+## Power BI
+
+I made a dashboard for the 2020 Municipal Elections in my city using **Power BI**. (Unfortunately I no longer have the license and only have screenshots)
+
+![](figures/powerbi_eleicoes2020_2.png){.lightbox group="my-gallery"}
+
+![](figures/powerbi_eleicoes2020.png){.lightbox group="my-gallery"}
 
 ## Datawrapper
 
