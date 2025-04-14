@@ -156,7 +156,7 @@ Agora só precisamos combinar o dataset `pilotos_campeoes` com o `pilotos_br4` u
 pilotos_br5 <- pilotos_br4 |> 
   dplyr::left_join(
     pilotos_campeoes,
-    by = c("driver", "seasons") # <2>
+    by = c("driver", "seasons") # <1>
     )
 ```
 1. Define quais variávels serão combinadas de ambos os datasets.

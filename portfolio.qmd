@@ -157,58 +157,6 @@ format:
 </style>
 ```
 
-```{=html}
-<style>
-.skills {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-family: 'Inter', sans-serif;
-}
-
-.skill {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.skill-name {
-    flex: 1;
-    text-align: left;
-}
-
-.dots {
-    font-size: 20px;
-    color: #015500; /* Cor das bolinhas preenchidas */
-}
-
-.dots::after {
-    content: "○○○○○"; /* Bolinhas vazias padrão */
-    color: #d1d5db; /* Cor das bolinhas vazias */
-    position: absolute;
-    margin-left: -100px; /* Ajuste fino para sobrepor */
-}
-</style>
-```
-
-```{=html}
-<!-- <div class="skills"> -->
-<!--     <div class="skill"> -->
-<!--         <span class="skill-name">R</span> -->
-<!--         <span class="dots">●●●●●</span> -->
-<!--     </div> -->
-<!--     <div class="skill"> -->
-<!--         <span class="skill-name">Python</span> -->
-<!--         <span class="dots">●●●○○</span> -->
-<!--     </div> -->
-<!--     <div class="skill"> -->
-<!--         <span class="skill-name">Datawrapper</span> -->
-<!--         <span class="dots">●●●●○</span> -->
-<!--     </div> -->
-<!-- </div> -->
-```
 
 During all these years adventuring with **data**, **science** and **design**, I've been able to turn my **ideas** into **reality**. Currently I'm looking for an opportunity to work as **Data Analyst**!
 
