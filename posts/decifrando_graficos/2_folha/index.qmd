@@ -373,7 +373,7 @@ Veja que as categorias de idade estão seguindo uma ordem alfabética, mas quere
 
 ```{r}
 pop_ind8 <- pop_ind7 |> 
-  mutate(idade2 = forcats::fct_inorder(idade2))
+  mutate(idade2 = forcats::fct_inorder(idade2)) # <1>
 ```
 1. Converte a variável `idade2` em fator e preserva a ordem atual dos valores, garantindo que as faixas etárias apareçam na ordem do dataset no gráfico.
 

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 27.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1"
-	 id="svg1" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:svg="http://www.w3.org/2000/svg" inkscape:export-filename="cover.png" inkscape:export-ydpi="96" sodipodi:docname="cover.svg"
+	 id="svg1" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" inkscape:export-filename="cover.png" inkscape:export-ydpi="96" sodipodi:docname="cover.svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4741.2 1701.4"
 	 style="enable-background:new 0 0 4741.2 1701.4;" xml:space="preserve">
 <style type="text/css">
-	.st0{font-family:'FiraCodeiScript-Regular';}
+	.st0{font-family:'FiraCode-SemiBold';}
 	.st1{font-size:354.5669px;}
 </style>
-<image style="overflow:visible;" width="814" height="726" xlink:href="figures/grafico_folha.png"  transform="matrix(2.3305 0 0 2.3305 2781.2122 0)">
+<image style="overflow:visible;enable-background:new    ;" width="814" height="726" xlink:href="figures/grafico_folha.png"  transform="matrix(2.3305 0 0 2.3305 2781.2122 -1.464844e-05)">
 </image>
-<image style="overflow:visible;opacity:0.29;" width="749" height="604" xlink:href="30276A4E.jpg"  transform="matrix(3.7201 0 0 3.7201 0 24.2424)">
+<image style="overflow:visible;opacity:0.29;enable-background:new    ;" width="736" height="594" xlink:href="30276A4E.jpg"  transform="matrix(3.7846 0 0 3.7846 0.447 23.6883)">
 </image>
 <sodipodi:namedview  bordercolor="#000000" borderopacity="0.25" id="namedview1" inkscape:current-layer="g1" inkscape:cx="7860.8852" inkscape:cy="2722.897" inkscape:deskcolor="#d1d1d1" inkscape:export-bgcolor="#ffffffff" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:showpageshadow="2" inkscape:window-height="1009" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:zoom="0.063351644" pagecolor="#ffffff">
 	</sodipodi:namedview>
-<image style="overflow:visible;" width="938" height="218" xlink:href="30276A49.jpg"  transform="matrix(1.0206 0 0 1.0206 1766.108 900.9708)">
+<image style="overflow:visible;enable-background:new    ;" width="945" height="221" xlink:href="30276A49.jpg"  transform="matrix(1.0127 0 0 1.0127 1766.2618 900.3113)">
 </image>
-<image style="overflow:visible;" width="2400" height="1500" xlink:href="figures/final_plot_folha.png"  transform="matrix(0.9138 0 0 0.9138 12.3392 305.9236)">
+<image style="overflow:visible;enable-background:new    ;" width="2400" height="1500" xlink:href="figures/final_plot_folha.png"  transform="matrix(0.9138 0 0 0.9138 12.3392 305.9236)">
 </image>
 <text transform="matrix(1 0 0 1 54.292 356.2487)" class="st0 st1">Decifrando</text>
 <text transform="matrix(1 0 0 1 54.292 710.816)" class="st0 st1">gráficos #2</text>

@@ -119,14 +119,14 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <meta property="og:description" content="Do Jornal para o R">
 <meta property="og:image" content="https://brunomioto.com/posts/decifrando_graficos/2_folha/cover.png">
 <meta property="og:site_name" content="Bruno Mioto">
-<meta property="og:image:height" content="7089">
+<meta property="og:image:height" content="7090">
 <meta property="og:image:width" content="19755">
 <meta name="twitter:title" content="Bruno Mioto">
 <meta name="twitter:description" content="Do Jornal para o R">
 <meta name="twitter:image" content="https://brunomioto.com/posts/decifrando_graficos/2_folha/cover.png">
 <meta name="twitter:creator" content="@BrunoHMioto">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image-height" content="7089">
+<meta name="twitter:image-height" content="7090">
 <meta name="twitter:image-width" content="19755">
 </head>
 
@@ -649,17 +649,22 @@ Preguiça de escrever tudo
 </div>
 <p>Veja que as categorias de idade estão seguindo uma ordem alfabética, mas queremos que sigam a ordem da pirâmide etária. Vamos ordenar a variável <code>idade2</code> de acordo com a ordem que queremos. Para isso vamos transformar ela em um <strong>fator</strong> usando a função <code>fct_inorder()</code> do pacote {forcats} (é um anagrama para factors!)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="ot">&lt;-</span> pop_ind7 <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">idade2 =</span> forcats<span class="sc">::</span><span class="fu">fct_inorder</span>(idade2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="ot">&lt;-</span> pop_ind7 <span class="sc">|&gt;</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-10-2" class="code-annotation-target"><a href="#annotated-cell-10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">idade2 =</span> forcats<span class="sc">::</span><span class="fu">fct_inorder</span>(idade2))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="2" data-code-annotation="1">Converte a variável <code>idade2</code> em fator e preserva a ordem atual dos valores, garantindo que as faixas etárias apareçam na ordem do dataset no gráfico.</span>
+</dd>
+</dl>
 </div>
-<ol type="1">
-<li>Converte a variável <code>idade2</code> em fator e preserva a ordem atual dos valores, garantindo que as faixas etárias apareçam na ordem do dataset no gráfico.</li>
-</ol>
+</div>
 <p>Agora tudo está ordenado!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> prop, <span class="at">y =</span> idade2, <span class="at">fill =</span> sexo))<span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> prop, <span class="at">y =</span> idade2, <span class="at">fill =</span> sexo))<span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
