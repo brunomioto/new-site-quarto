@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://brunomioto.com/about-pt.html</loc>
-    <lastmod>2025-04-14T12:49:33.476Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/hexout.html</loc>
-    <lastmod>2025-04-14T12:49:33.893Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/scripts.html</loc>
-    <lastmod>2025-04-14T12:49:34.929Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/appendix/pt/index.html</loc>
-    <lastmod>2025-04-14T12:49:34.270Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/intro_ggplot2/pt/index.html</loc>
-    <lastmod>2025-04-14T12:49:34.783Z</lastmod>
+    <loc>https://brunomioto.com/portfolio.html</loc>
+    <lastmod>2025-07-19T16:16:18.078Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/posts/en.html</loc>
-    <lastmod>2025-04-14T12:49:34.769Z</lastmod>
+    <lastmod>2025-07-19T16:16:18.943Z</lastmod>
   </url>
   <url>
-    <loc>https://brunomioto.com/posts/arlequin/en/index.html</loc>
-    <lastmod>2025-04-14T12:49:34.273Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/waterlines/en/index.html</loc>
-    <lastmod>2025-04-14T12:49:34.925Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/decifrando_graficos/1_nexo/index.html</loc>
-    <lastmod>2025-04-14T12:49:34.283Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/twitter-bots.html</loc>
-    <lastmod>2025-04-14T12:49:34.929Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/portfolio.html</loc>
-    <lastmod>2025-04-14T12:49:33.896Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/r-packages.html</loc>
-    <lastmod>2025-04-14T12:49:34.929Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/index.html</loc>
-    <lastmod>2025-04-14T12:49:33.896Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/curriculum.html</loc>
-    <lastmod>2025-04-14T12:49:33.476Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/charts.html</loc>
-    <lastmod>2025-04-14T12:49:33.476Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/decifrando_graficos/2_folha/index.html</loc>
-    <lastmod>2025-04-14T12:49:34.292Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brunomioto.com/posts/trees_mga/pt/index.html</loc>
-    <lastmod>2025-04-14T12:49:34.923Z</lastmod>
+    <loc>https://brunomioto.com/posts/appendix/pt/index.html</loc>
+    <lastmod>2025-07-19T16:16:18.458Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/posts/arlequin/pt/index.html</loc>
-    <lastmod>2025-04-14T12:49:34.274Z</lastmod>
+    <lastmod>2025-07-19T16:16:18.462Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/posts/eleicao_mga_2024/pt/index.html</loc>
-    <lastmod>2025-04-14T12:49:34.769Z</lastmod>
+    <lastmod>2025-07-19T16:16:18.943Z</lastmod>
   </url>
   <url>
-    <loc>https://brunomioto.com/posts/pt.html</loc>
-    <lastmod>2025-04-14T12:49:34.783Z</lastmod>
+    <loc>https://brunomioto.com/posts/decifrando_graficos/1_nexo/index.html</loc>
+    <lastmod>2025-07-19T16:16:18.471Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/posts/intro_ggplot2/en/index.html</loc>
-    <lastmod>2025-04-14T12:49:34.779Z</lastmod>
+    <lastmod>2025-07-19T16:16:18.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/curriculum.html</loc>
+    <lastmod>2025-07-19T16:16:17.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/index.html</loc>
+    <lastmod>2025-07-19T16:16:18.078Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/about-en.html</loc>
-    <lastmod>2025-04-14T12:49:33.476Z</lastmod>
+    <lastmod>2025-07-19T16:16:17.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/about-pt.html</loc>
+    <lastmod>2025-07-19T16:16:17.677Z</lastmod>
   </url>
   <url>
     <loc>https://brunomioto.com/intro-ggplot2.html</loc>
-    <lastmod>2025-04-14T12:49:33.896Z</lastmod>
+    <lastmod>2025-07-19T16:16:18.078Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/twitter-bots.html</loc>
+    <lastmod>2025-07-19T16:16:19.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/r-packages.html</loc>
+    <lastmod>2025-07-19T16:16:19.102Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/charts.html</loc>
+    <lastmod>2025-07-19T16:16:17.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/scripts.html</loc>
+    <lastmod>2025-07-19T16:16:19.102Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/intro_ggplot2/pt/index.html</loc>
+    <lastmod>2025-07-19T16:16:18.957Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/decifrando_graficos/2_folha/index.html</loc>
+    <lastmod>2025-07-19T16:16:18.481Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/arlequin/en/index.html</loc>
+    <lastmod>2025-07-19T16:16:18.462Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/trees_mga/pt/index.html</loc>
+    <lastmod>2025-07-19T16:16:19.097Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/waterlines/en/index.html</loc>
+    <lastmod>2025-07-19T16:16:19.099Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/posts/pt.html</loc>
+    <lastmod>2025-07-19T16:16:18.957Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brunomioto.com/hexout.html</loc>
+    <lastmod>2025-07-19T16:16:18.075Z</lastmod>
   </url>
 </urlset>
