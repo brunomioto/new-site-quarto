@@ -38,11 +38,11 @@ listing:
 toc: false
 ---
 
-<img src="/figures/bruno.png" align="right" height="180"/>
+<img src="/figures/foto_BM_circle.png" align="right" height="180"/>
 
 Hello, this is my personal website!
 
-I'm a **Biologist** with PhD in Ecology, **Data Analyst** and **DataViz Specialist**! 
+I'm a **Data Analyst** and **DataViz Specialist** with PhD in Ecology! 
 Here you'll find pages about the [**Charts**](charts.qmd) and [**R packages**](r-packages.qmd) I made and some info [about me](about-en.qmd).
 
 My [**Portfolio**](portfolio.qmd) contains a summary of everything I've done!

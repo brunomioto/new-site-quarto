@@ -31,20 +31,5 @@
       "/posts/intro_ggplot2/pt/index.html",
       "/posts/trees_mga/pt/index.html"
     ]
-  },
-  {
-    "listing": "/portfolio.html",
-    "items": [
-      "/posts/decifrando_graficos/1_nexo/index.html",
-      "/posts/decifrando_graficos/2_folha/index.html",
-      "/posts/arlequin/en/index.html",
-      "/posts/intro_ggplot2/en/index.html",
-      "/posts/waterlines/en/index.html",
-      "/posts/arlequin/pt/index.html",
-      "/posts/eleicao_mga_2024/pt/index.html",
-      "/posts/appendix/pt/index.html",
-      "/posts/intro_ggplot2/pt/index.html",
-      "/posts/trees_mga/pt/index.html"
-    ]
   }
 ]
