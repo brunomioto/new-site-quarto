@@ -104,8 +104,7 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
-</script><script src="../../../site_libs/bslib-component-js-0.6.1/components.min.js"></script><script src="../../../site_libs/bslib-component-js-0.6.1/web-components.min.js" type="module"></script><link href="../../../site_libs/bslib-component-css-0.6.1/components.css" rel="stylesheet">
-<script src="../../../site_libs/bslib-tag-require-0.6.1/tag-require.js"></script>
+</script><script src="../../../site_libs/bslib-webComponents-js-0.5.1/webComponents.min.js" type="module"></script><script src="../../../site_libs/bslib-tag-require-0.5.1/tag-require.js"></script>
 <meta property="og:title" content="ggplot2 101 – Bruno Mioto">
 <meta property="og:description" content="Getting started with data visualization">
 <meta property="og:image" content="https://brunomioto.com/posts/intro_ggplot2/en/cover.png">
@@ -245,7 +244,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
   
 
 
-</header><p><img src="cover.png" class="img-fluid"></p>
+</header><p><img src="cover.webp" class="img-fluid"></p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -438,7 +437,7 @@ Before we start…
 </div>
 </div>
 </div>
-<p>Let’s make a boxplot (using the <code>geom_boxplot</code> geometry) of the type of pokemon by height</p>
+<p>Let’s make a boxplot (using the <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code> geometry) of the type of pokemon by height</p>
 <div class="cell">
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pokemon_df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">type_1</span>, y <span class="op">=</span> <span class="va">height</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>

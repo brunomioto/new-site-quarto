@@ -17,7 +17,7 @@ format:
     code-link: true
 ---
 
-![](post_waterline.png)
+![](post_waterline.webp)
 
 ## Motivation
 

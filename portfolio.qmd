@@ -158,7 +158,7 @@ format:
 ```
 
 
-During all these years adventuring with **data**, **science** and **design**, I've been able to turn my **ideas** into **reality**. Currently I'm looking for an opportunity to work as **Data Analyst**!
+During all these years adventuring with **data**, **science** and **design**, I've been able to turn my **ideas** into **reality**. Currently I'm work as **Data Analyst** at Vitru Education!
 
 First of all, this entire website was made by me using **R**, **Quarto** and **HTML**!
 
@@ -410,9 +410,14 @@ ggsave("elephant.png", width = 10, height = 6)
 
 ## Power BI
 
+
+<img src="/figures/microsoft-certified-associate-badge.svg" align="right" height="160"/>
+
+I'm a **Power BI Data Analyst Associate (PL-300)** certified by [**Microsoft**](https://learn.microsoft.com/api/credentials/share/pt-br/BrunoMioto/A8DAC6423178868?sharingId=5EA64815F4FDBC0). I use Power BI daily at work to create dashboards for the logistics sector and understand KPIs for transportation, production, and much more!
+
 Here's a dashboard I made for the [Power BI 10 Year Anniversary Contest](https://community.fabric.microsoft.com/t5/Contests-Gallery/Years-of-Change/td-p/4766098)!
 
-![](figures/powerbi_10YearContest.png){.lightbox group="my-gallery"}
+![](figures/powerbi_10YearContest.webp){.lightbox group="my-gallery"}
 
 You can use the interactive version below
 

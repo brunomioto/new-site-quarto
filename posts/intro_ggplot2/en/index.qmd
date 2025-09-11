@@ -24,7 +24,7 @@ execute:
   freeze: auto
 ---
 
-![](cover.png)
+![](cover.webp)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,

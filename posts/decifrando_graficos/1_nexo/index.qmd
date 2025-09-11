@@ -22,7 +22,7 @@ execute:
   warning: false
 ---
 
-![](cover.png)
+![](cover.webp)
 
 ## Como isso foi feito?
 

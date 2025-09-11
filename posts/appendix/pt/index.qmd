@@ -20,7 +20,7 @@ execute:
   freeze: true
 ---
 
-![](cover.png){.preview-image}
+![](cover.webp){.preview-image}
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
