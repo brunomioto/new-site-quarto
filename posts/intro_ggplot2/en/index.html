@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -75,10 +75,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-6eeeff7c51931d4e30e13f7b02054981.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-7651a607d8fcd7686d2bdccdf4a71390.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,10 +115,8 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 </script>
-<script src="../../../site_libs/bslib-component-js-0.6.1/components.min.js"></script>
-<script src="../../../site_libs/bslib-component-js-0.6.1/web-components.min.js" type="module"></script>
-<link href="../../../site_libs/bslib-component-css-0.6.1/components.css" rel="stylesheet">
-<script src="../../../site_libs/bslib-tag-require-0.6.1/tag-require.js"></script>
+<script src="../../../site_libs/bslib-webComponents-js-0.5.1/webComponents.min.js" type="module"></script>
+<script src="../../../site_libs/bslib-tag-require-0.5.1/tag-require.js"></script>
 
 
 <meta property="og:title" content="ggplot2 101 – Bruno Mioto">
@@ -271,7 +269,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 </header>
 
 
-<p><img src="cover.png" class="img-fluid"></p>
+<p><img src="cover.webp" class="img-fluid"></p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -484,7 +482,7 @@ Before we start…
 </div>
 </div>
 </div>
-<p>Let’s make a boxplot (using the <code>geom_boxplot</code> geometry) of the type of pokemon by height</p>
+<p>Let’s make a boxplot (using the <code>geom_boxplot()</code> geometry) of the type of pokemon by height</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pokemon_df <span class="sc">%&gt;%</span> </span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> type_1, <span class="at">y =</span> height))<span class="sc">+</span></span>
