@@ -158,7 +158,7 @@ format:
 ```
 
 
-During all these years adventuring with **data**, **science** and **design**, I've been able to turn my **ideas** into **reality**. Currently I'm work as **Data Analyst** at Vitru Education!
+During all these years adventuring with **data**, **science** and **design**, I've been able to turn my **ideas** into **reality**. Currently I work as a **Data Analyst** at Vitru Education!
 
 First of all, this entire website was made by me using **R**, **Quarto** and **HTML**!
 
