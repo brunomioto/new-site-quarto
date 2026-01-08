@@ -1,10 +1,12 @@
 [
   {
-    "listing": "/posts/en.html",
+    "listing": "/posts/pt.html",
     "items": [
-      "/posts/arlequin/en/index.html",
-      "/posts/intro_ggplot2/en/index.html",
-      "/posts/waterlines/en/index.html"
+      "/posts/arlequin/pt/index.html",
+      "/posts/eleicao_mga_2024/pt/index.html",
+      "/posts/appendix/pt/index.html",
+      "/posts/intro_ggplot2/pt/index.html",
+      "/posts/trees_mga/pt/index.html"
     ]
   },
   {
@@ -23,13 +25,11 @@
     ]
   },
   {
-    "listing": "/posts/pt.html",
+    "listing": "/posts/en.html",
     "items": [
-      "/posts/arlequin/pt/index.html",
-      "/posts/eleicao_mga_2024/pt/index.html",
-      "/posts/appendix/pt/index.html",
-      "/posts/intro_ggplot2/pt/index.html",
-      "/posts/trees_mga/pt/index.html"
+      "/posts/arlequin/en/index.html",
+      "/posts/intro_ggplot2/en/index.html",
+      "/posts/waterlines/en/index.html"
     ]
   }
 ]
