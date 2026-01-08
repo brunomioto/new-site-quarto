@@ -10,14 +10,6 @@
     ]
   },
   {
-    "listing": "/posts/en.html",
-    "items": [
-      "/posts/arlequin/en/index.html",
-      "/posts/intro_ggplot2/en/index.html",
-      "/posts/waterlines/en/index.html"
-    ]
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/posts/decifrando_graficos/2_folha/index.html",
@@ -30,6 +22,14 @@
       "/posts/appendix/pt/index.html",
       "/posts/intro_ggplot2/pt/index.html",
       "/posts/trees_mga/pt/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/en.html",
+    "items": [
+      "/posts/arlequin/en/index.html",
+      "/posts/intro_ggplot2/en/index.html",
+      "/posts/waterlines/en/index.html"
     ]
   }
 ]

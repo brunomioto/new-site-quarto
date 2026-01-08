@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,14 +71,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../..//figures/eye_website.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-7651a607d8fcd7686d2bdccdf4a71390.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-ad7b1c7aab1d3d0ae46dda6b4682b281.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -140,7 +141,8 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo">
+    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo light-content">
+    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Bruno Mioto</span>
@@ -440,18 +442,18 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>Logo nessa página vemos que os dados estão disponíveis através do <strong>SIDRA</strong> (Sistema IBGE de Recuperação Automática), que é basicamente uma plataforma que concentra <strong>todos</strong> os dados do IBGE! E o melhor: podemos acessar diretamente do R com o pacote <a href="https://github.com/rpradosiqueira/sidrar/">{sidrar}</a>!</p>
 <p>Antes de tudo, vamos carregar os pacotes necessários</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sidrar) <span class="co">#baixar dados IBGE</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sidrar) <span class="co">#baixar dados IBGE</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co">#limpeza dos dados</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co">#manipulação dos dados</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr) <span class="co">#trabalhar com strings/texto</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#gráficos</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#gráficos</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Agora só precisamos do número da tabela disponível no site (que é 8175) e rodar o código abaixo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("sidrar")</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("sidrar")</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sidrar)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pop_ind <span class="ot">&lt;-</span> sidrar<span class="sc">::</span><span class="fu">get_sidra</span>(<span class="dv">8175</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pop_ind <span class="ot">&lt;-</span> sidrar<span class="sc">::</span><span class="fu">get_sidra</span>(<span class="dv">8175</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Pronto, fácil assim já temos os dados do Censo para este gráfico!</p>
 </section>
@@ -459,7 +461,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="trabalhando-com-os-dados">Trabalhando com os dados</h3>
 <p>Pois é, nossos dados sempre têm os nomes das variáveis com letras maiúsculas, espaços e acentos. Vamos padronizar para <code>snake_case</code>com o pacote {janitor} e também selecionar apenas as variáveis necessárias para este gráfico. Vamos salvando cada passo em um novo objeto para ficar mais fácil de acompanhar.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pop_ind2 <span class="ot">&lt;-</span> pop_ind <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pop_ind2 <span class="ot">&lt;-</span> pop_ind <span class="sc">|&gt;</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    variavel, </span>
@@ -468,20 +470,20 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    sexo, </span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    localizacao_do_domicilio,</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    valor</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Mas veja que temos um valor <strong><code>Total</code></strong> em <code>idade</code>, <code>sexo</code> e <code>localizacao_do_domicilio</code>. Não vamos precisar dos totais, então podemos removê-los.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pop_ind3 <span class="ot">&lt;-</span> pop_ind2 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pop_ind3 <span class="ot">&lt;-</span> pop_ind2 <span class="sc">|&gt;</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    idade <span class="sc">!=</span> <span class="st">"Total"</span>,</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    sexo <span class="sc">!=</span> <span class="st">"Total"</span>,</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    localizacao_do_domicilio <span class="sc">!=</span> <span class="st">"Total"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Nessa tabela, temos as idades individuais, ou agrupadas a cada 5 anos. Vamos selecionar apenas as linhas com as idades agrupadas.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pop_ind4 <span class="ot">&lt;-</span> pop_ind3 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pop_ind4 <span class="ot">&lt;-</span> pop_ind3 <span class="sc">|&gt;</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>      idade <span class="sc">%in%</span> <span class="fu">c</span>(</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"0 a 4 anos"</span>,</span>
@@ -506,15 +508,15 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"95 a 99 anos"</span>,</span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"100 anos ou mais"</span></span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Preguiça de escrever tudo
+<span class="screen-reader-only">Tip</span>Preguiça de escrever tudo
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -523,12 +525,12 @@ Preguiça de escrever tudo
 <p>Se você não quer ficar digitando tudo (ou não quer pedir para o chatGPT escrever para você), é possível selecionar as linhas usando <strong>expressões regulares</strong>! Sim, elas parecem bruxaria, mas tem uma <a href="https://rstudio.github.io/cheatsheets/translations/portuguese/strings_pt_br.pdf">colinha</a> que ajuda muito!</p>
 <p>O segredo é encontrar padrões! Veja que as categorias são basicamente <strong>número+ a +número</strong>, e o “100 anos ou mais” colocamos na mão. Vamos lá!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-15"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-15-1"><a href="#annotated-cell-15-1" aria-hidden="true" tabindex="-1"></a>pop_ind4 <span class="ot">&lt;-</span> pop_ind3 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-15"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-15-1"><a href="#annotated-cell-15-1" aria-hidden="true" tabindex="-1"></a>pop_ind4 <span class="ot">&lt;-</span> pop_ind3 <span class="sc">|&gt;</span> </span>
 <span id="annotated-cell-15-2"><a href="#annotated-cell-15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-15-3" class="code-annotation-target"><a href="#annotated-cell-15-3" aria-hidden="true" tabindex="-1"></a>    stringr<span class="sc">::</span><span class="fu">str_detect</span>(</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-15-4" class="code-annotation-target"><a href="#annotated-cell-15-4" aria-hidden="true" tabindex="-1"></a>      idade,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-15-5" class="code-annotation-target"><a href="#annotated-cell-15-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">"[:digit:] a [:digit:]|100 anos ou mais"</span>)</span>
-<span id="annotated-cell-15-6"><a href="#annotated-cell-15-6" aria-hidden="true" tabindex="-1"></a>    )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-15-6"><a href="#annotated-cell-15-6" aria-hidden="true" tabindex="-1"></a>    )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-15" data-target-annotation="1">1</dt>
@@ -552,14 +554,14 @@ Preguiça de escrever tudo
 </div>
 <p>Agora para deixar igualzinho ao gráfico, vamos remover as palavras ” anos” e transformar “100 anos ou mais” em “100+”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>pop_ind5 <span class="ot">&lt;-</span> pop_ind4 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>pop_ind5 <span class="ot">&lt;-</span> pop_ind4 <span class="sc">|&gt;</span> </span>
 <span id="annotated-cell-6-2"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">idade2 =</span> stringr<span class="sc">::</span><span class="fu">str_remove</span>(</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>      idade,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">" anos.*"</span></span>
 <span id="annotated-cell-6-6"><a href="#annotated-cell-6-6" aria-hidden="true" tabindex="-1"></a>      ),</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-6-7" class="code-annotation-target"><a href="#annotated-cell-6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">idade2 =</span> <span class="fu">ifelse</span>(idade2 <span class="sc">==</span> <span class="dv">100</span>, <span class="st">"100+"</span>, idade2)</span>
-<span id="annotated-cell-6-8"><a href="#annotated-cell-6-8" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-6-8"><a href="#annotated-cell-6-8" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
@@ -583,11 +585,11 @@ Preguiça de escrever tudo
 </div>
 <p>Ótimo, já temos a variável pronta, vamos calcular as proporções agrupadas pela localização do domicílio.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a>pop_ind6 <span class="ot">&lt;-</span> pop_ind5 <span class="sc">|&gt;</span>                                 </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a>pop_ind6 <span class="ot">&lt;-</span> pop_ind5 <span class="sc">|&gt;</span>                                 </span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(localizacao_do_domicilio) <span class="sc">|&gt;</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-3" class="code-annotation-target"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_count</span>(<span class="at">name =</span> <span class="st">"total"</span>, <span class="at">wt =</span> valor) <span class="sc">|&gt;</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-7-5" class="code-annotation-target"><a href="#annotated-cell-7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> valor <span class="sc">/</span> total)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-7-5" class="code-annotation-target"><a href="#annotated-cell-7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> valor <span class="sc">/</span> total)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
@@ -611,10 +613,10 @@ Preguiça de escrever tudo
 </div>
 <p>Agora vamos fazer um truque e multiplicar os prop para homens por -1, assim eles ficam do lado esquerdo da pirâmide.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a>pop_ind7 <span class="ot">&lt;-</span> pop_ind6 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a>pop_ind7 <span class="ot">&lt;-</span> pop_ind6 <span class="sc">|&gt;</span> </span>
 <span id="annotated-cell-8-2"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-8-3" class="code-annotation-target"><a href="#annotated-cell-8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop =</span> <span class="fu">ifelse</span>(sexo <span class="sc">==</span> <span class="st">"Homens"</span>, prop<span class="sc">*-</span><span class="dv">1</span>, prop)</span>
-<span id="annotated-cell-8-4"><a href="#annotated-cell-8-4" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-8-4"><a href="#annotated-cell-8-4" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
@@ -626,9 +628,9 @@ Preguiça de escrever tudo
 </div>
 <p>Vamos ver se os dados estão prontos?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a>pop_ind7 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a>pop_ind7 <span class="sc">|&gt;</span> </span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-9-2" class="code-annotation-target"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> prop, <span class="at">y =</span> idade2, <span class="at">fill =</span> sexo)) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
@@ -651,8 +653,8 @@ Preguiça de escrever tudo
 </div>
 <p>Veja que as categorias de idade estão seguindo uma ordem alfabética, mas queremos que sigam a ordem da pirâmide etária. Vamos ordenar a variável <code>idade2</code> de acordo com a ordem que queremos. Para isso vamos transformar ela em um <strong>fator</strong> usando a função <code>fct_inorder()</code> do pacote {forcats} (é um anagrama para factors!)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="ot">&lt;-</span> pop_ind7 <span class="sc">|&gt;</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-10-2" class="code-annotation-target"><a href="#annotated-cell-10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">idade2 =</span> forcats<span class="sc">::</span><span class="fu">fct_inorder</span>(idade2))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="ot">&lt;-</span> pop_ind7 <span class="sc">|&gt;</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-10-2" class="code-annotation-target"><a href="#annotated-cell-10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">idade2 =</span> forcats<span class="sc">::</span><span class="fu">fct_inorder</span>(idade2))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
@@ -664,9 +666,9 @@ Preguiça de escrever tudo
 </div>
 <p>Agora tudo está ordenado!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="sc">|&gt;</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> prop, <span class="at">y =</span> idade2, <span class="at">fill =</span> sexo))<span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -682,7 +684,7 @@ Preguiça de escrever tudo
 <p>Primeiro vamos dividir os dados em dois grupos: os que estão <strong>dentro</strong> das terras indígenas e os que estão <strong>fora</strong>. Para isso, vamos usar a função <code>filter()</code> dentro de cada geometria do <code>geom_col()</code>.</p>
 <p>Lembre-se que o grupo <strong>“Em terras indígenas”</strong> deve ser um retângulo preenchido e o grupo <strong>“Fora de terras indígenas”</strong> deve ser apenas contornado. Para isso, vamos usar o argumento <code>fill = NA</code> para criar uma geometria apenas com o contorno. Como o contorno está da mesma cor do preenchimento, vamos usar o <code>color = "black"</code> apenas para visualizar.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-12"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-12-1"><a href="#annotated-cell-12-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-12"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-12-1"><a href="#annotated-cell-12-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="sc">|&gt;</span> </span>
 <span id="annotated-cell-12-2"><a href="#annotated-cell-12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> prop, <span class="at">y =</span> idade2, </span>
 <span id="annotated-cell-12-3"><a href="#annotated-cell-12-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> sexo))<span class="sc">+</span></span>
 <span id="annotated-cell-12-4"><a href="#annotated-cell-12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
@@ -695,7 +697,7 @@ Preguiça de escrever tudo
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-12-11" class="code-annotation-target"><a href="#annotated-cell-12-11" aria-hidden="true" tabindex="-1"></a>                   localizacao_do_domicilio <span class="sc">==</span> <span class="st">"Fora de terras indígenas"</span>),</span>
 <span id="annotated-cell-12-12"><a href="#annotated-cell-12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="cn">NA</span>, </span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-12-13" class="code-annotation-target"><a href="#annotated-cell-12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
-<span id="annotated-cell-12-14"><a href="#annotated-cell-12-14" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-12-14"><a href="#annotated-cell-12-14" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
@@ -726,7 +728,7 @@ Preguiça de escrever tudo
 </div>
 <p>Faltam as cores! Vamos utilizar o argumento <code>color</code> também. E definir as cores utilizando <code>scale_color_manual()</code> e <code>scale_fill_manual()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-13-1"><a href="#annotated-cell-13-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-13-1"><a href="#annotated-cell-13-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="sc">|&gt;</span> </span>
 <span id="annotated-cell-13-2"><a href="#annotated-cell-13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> prop, <span class="at">y =</span> idade2,</span>
 <span id="annotated-cell-13-3"><a href="#annotated-cell-13-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> sexo, <span class="at">color =</span> sexo))<span class="sc">+</span></span>
 <span id="annotated-cell-13-4"><a href="#annotated-cell-13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
@@ -748,7 +750,7 @@ Preguiça de escrever tudo
 <span id="annotated-cell-13-20"><a href="#annotated-cell-13-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Mulheres"</span> <span class="ot">=</span> <span class="st">"#b3abce"</span>,</span>
 <span id="annotated-cell-13-21"><a href="#annotated-cell-13-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Homens"</span> <span class="ot">=</span> <span class="st">"#a5d4cf"</span></span>
 <span id="annotated-cell-13-22"><a href="#annotated-cell-13-22" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="annotated-cell-13-23"><a href="#annotated-cell-13-23" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-13-23"><a href="#annotated-cell-13-23" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-13" data-target-annotation="1">1</dt>
@@ -771,7 +773,7 @@ Preguiça de escrever tudo
 </div>
 <p>Agora o gráfico já está quase igual! Só precisamos mexer no <strong>Tema</strong> com a função <code>theme()</code>. Vamos deixar o fundo branco, tirar as grades, deixar os eixos mais bonitos e remover as legendas.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a>pop_ind8 <span class="sc">|&gt;</span> </span>
 <span id="annotated-cell-14-2"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> prop, <span class="at">y =</span> idade2, </span>
 <span id="annotated-cell-14-3"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> sexo,</span>
 <span id="annotated-cell-14-4"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sexo))<span class="sc">+</span></span>
@@ -811,7 +813,7 @@ Preguiça de escrever tudo
 <span id="annotated-cell-14-38"><a href="#annotated-cell-14-38" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-14-39" class="code-annotation-target"><a href="#annotated-cell-14-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(</span>
 <span id="annotated-cell-14-40"><a href="#annotated-cell-14-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.08</span>,<span class="fl">0.08</span>)</span>
-<span id="annotated-cell-14-41"><a href="#annotated-cell-14-41" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-14-41"><a href="#annotated-cell-14-41" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
@@ -901,13 +903,14 @@ Preguiça de escrever tudo
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href=".//figures/eye_website.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0e2b923539929b26c41a553e6ffa70c6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ac8f4b13445b828c7230c9f312fe8360.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/intersection-observer-polyfill-1.0.0/intersection-observer.js"></script>
 <script src="site_libs/quarto-contrib/scrollama-3.2.0/scrollama.min.js"></script>
 <script src="site_libs/quarto-contrib/closeread-0.1.0/closeread.js"></script>
@@ -108,7 +109,8 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./figures/eye_website.png" alt="" class="navbar-logo">
+    <img src="./figures/eye_website.png" alt="" class="navbar-logo light-content">
+    <img src="./figures/eye_website.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Bruno Mioto</span>
@@ -210,32 +212,32 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>When this paragraph scrolls into view it will reveal a histogram.</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-focus-on="cr-myplot" data-scale-by="2" data-pan-to="0%, -50%">
+<div class="trigger new-trigger" data-pan-to="0%, -50%" data-focus-on="cr-myplot" data-scale-by="2">
 <div class="narrative">
 <p>pan-to=“0%, -50%” scale-by=“2”</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-focus-on="cr-myplot" data-scale-by="2" data-pan-to="0%, 0%">
+<div class="trigger new-trigger" data-pan-to="0%, 0%" data-focus-on="cr-myplot" data-scale-by="2">
 <div class="narrative">
 <p>pan-to=“0%, 0%” scale-by=“2”</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-focus-on="cr-myplot" data-scale-by="3" data-pan-to="0%, 0%">
+<div class="trigger new-trigger" data-pan-to="0%, 0%" data-focus-on="cr-myplot" data-scale-by="3">
 <div class="narrative">
 <p>pan-to=“0%, 0%” scale-by=“3”</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-focus-on="cr-myplot" data-scale-by="4" data-pan-to="0%, 0%">
+<div class="trigger new-trigger" data-pan-to="0%, 0%" data-focus-on="cr-myplot" data-scale-by="4">
 <div class="narrative">
 <p>pan-to=“0%, 0%” scale-by=“4”</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-focus-on="cr-myplot" data-scale-by="5" data-pan-to="0%, 0%">
+<div class="trigger new-trigger" data-pan-to="0%, 0%" data-focus-on="cr-myplot" data-scale-by="5">
 <div class="narrative">
 <p>pan-to=“0%, 0%” scale-by=“5”</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-focus-on="cr-myplot2" data-scale-by="5" data-pan-to="0%, 0%">
+<div class="trigger new-trigger" data-pan-to="0%, 0%" data-focus-on="cr-myplot2" data-scale-by="5">
 <div class="narrative">
 <p>pan-to=“0%, 0%” scale-by=“5”</p>
 </div>
@@ -329,13 +331,14 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
