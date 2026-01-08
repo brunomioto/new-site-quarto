@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,14 +71,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../..//figures/eye_website.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-5193f6bfcd27a093b86b662600534bfd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-a7b802375fd349778b21d0de98fc2793.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -140,7 +141,8 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo">
+    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo light-content">
+    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Bruno Mioto</span>
@@ -277,20 +279,20 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>Esta função está disponível no pacote que fiz para meu laboratório, o Nupgen! <strong>Este é um pacote bem experimental e com funções extremamente específicas</strong>, então não se preocupe com essas outras.</p>
 <p>Para instalar o pacote é bem fácil, abra o R e rode</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)){</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)){</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"brunomioto/nupgen"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"brunomioto/nupgen"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Pronto! Agora vamos criar o arquivo <strong>.arp</strong> que precisamos. Antes de tudo, vamos carregar os pacotes que precisamos. Utilizaremos o pacote <strong>ape</strong> para importar as sequências e o <strong>nupgen</strong> para criar o arquivo.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ape)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nupgen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ape)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nupgen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Agora vamos carregar um alinhamento em FASTA e um arquivo de grupos. Utilizaremos aqui os arquivos de exemplo utilizados pelo Josh Banta no tutorial dele, mas você pode utilizar os seus também!</p>
 <p>O <strong>arquivo FASTA</strong> é um alinhamento comum, com as pontas cortadas em algum software tipo <a href="https://www.megasoftware.net">MEGA</a>, mas que seguem essa estrutura:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>C1NFaBCy  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>C1NFaBCy  </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>AATCATCCCCCACATAACCTCCACACTTATCACATACCTTCTAATCTTATTAGGCGTAGC</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ATTCTTTACCCTTCTTGAACGCAAAGCTTTAGGGTACTTTCAAATCCGAAAAGGCCCAAA</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>CAAAGTTGGAATTATAGGAATCCCACAACCACTAGCAGACGCCCTAAAACTTTTTGTGAA</span>
@@ -313,11 +315,11 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>AACCATCTCATATGAGGTAACAATAACACTAATTATCATCTTCTACCTATTCTTAATTAT</span>
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>ACAAATAGACATAGTAACAATCCGCTCAGTTAACACCTCTATACCAACCTTTGCCCTCTC</span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>CGCACCATTAGCTATTATATGAACTGTTGTTATCTTAGCAGAAACAAACCGAGCCCCATT</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>TGACTTT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>TGACTTT</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Enquanto isso, o <strong>arquivo de grupos</strong> é um arquivo .csv com duas colunas, <code>group</code> (com o nome dos grupos) e <code>name</code> (com nome das sequências), seguindo este exemplo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>group,name</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>group,name</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,C1NFaBCy  </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,C2NPrBCy  </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,C3NPrBCy  </span>
@@ -332,18 +334,18 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>,C12NPrNec </span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>,C13NPrNec </span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>,C14NPrSab </span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>,C15NPrSab </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>,C15NPrSab </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Caso queira, você pode criar este arquivo usando o <strong>Excel</strong> e exportar em .csv, mas confira se o separador é vírgula (,) ao invés de ponto e vírgula (;)</p>
 <p>Perceba que meus arquivos estão dentro da pasta <code>data</code>, então coloco isso também no caminho do arquivo</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alinhamento <span class="ot">&lt;-</span> <span class="fu">read.dna</span>(<span class="st">"data/arquivo_fasta.fas"</span>, <span class="at">format =</span> <span class="st">"fasta"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alinhamento <span class="ot">&lt;-</span> <span class="fu">read.dna</span>(<span class="st">"data/arquivo_fasta.fas"</span>, <span class="at">format =</span> <span class="st">"fasta"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>grupos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/arquivo_grupos.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>grupos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/arquivo_grupos.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Agora que temos os arquivos carregados, é só rodar a função. Perceba que, além dos argumentos do alinhamento e grupos, temos um chamado <code>output.dir</code>, este argumento define qual diretório você deseja salvar o arquivo <strong>output.arp</strong>. O padrão é o diretório atual (“.”), mas aqui vou salvar na pasta <code>data</code>, junto com os outros arquivos.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nupgen<span class="sc">::</span><span class="fu">create_arlequin</span>(<span class="at">fasta =</span> alinhamento, <span class="at">groups =</span> grupos, <span class="at">output.dir =</span> <span class="st">"./data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nupgen<span class="sc">::</span><span class="fu">create_arlequin</span>(<span class="at">fasta =</span> alinhamento, <span class="at">groups =</span> grupos, <span class="at">output.dir =</span> <span class="st">"./data"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>ℹ Creating .arp file</code></pre>
 </div>
@@ -354,7 +356,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>Pronto! Agora você já tem um arquivo <strong>output.arp</strong> com os dados prontos para utilizar no <strong>Arlequin</strong>!</p>
 <p>Vale a pena conferir se seus dados estão corretos, o arquivo tem mais ou menos essa cara aqui:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>[Profile] </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>[Profile] </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -389,7 +391,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>c2nprbcy   <span class="dv">1</span> A A T C A T C C C C C A C A T A A C C T C C A C A C T T A T C A C A T A C C T T C T A A T C T T A T T A G G C G T A G C A T T C T T T A C C C T T C T T G A A C G C A A A G C T T T A G G G T A C T T T C A A A T C C G A A A A G G C C C A A A C A A A G T T G G A A T T A T A G G A A T C C C A C A A C C A C T A G C A G A C G C C C T A A A A C T T T T T G T G A A A G A A T G A G T A A T G C C C A C A T C T T C A A A C T A C T T A C C A T T T A T T T T A A C C C C A A C A A T C A T A T T A A T T T T A G C A C T T A G A C T A T G A C A A C T A T T T C C A T C C T T T A T A C T C T C A T T T C A A A T A G C C C T A G G A A T A C T C T T A T T C T T A T G T A T T T C T T C C T T A A C C G T C T A T A C A A C C T T A A T A G C A G G T T G G G C C T C A A A C T C G A A G T A T G C T C T A C T A G G G G C C A T T C G A G C C A T G G C C C A A A C C A T C T C A T A T G A G G T A A C A A T A A C A C T A A T T A T C A T C T T C T A C C T A T T C T T A A T T A T A C A A A T A G A C A T A G T A A C A A T C C G C T C A G T T A A C A C C T C T A T A C C A A C C T T T G C C C T C T C C G C A C C A T T A G C T A T T A T A T G A A C T G T T G T T A T C T T A G C A G A A A C A A A C C G A G C C C C A T T T G A C T T T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>c2nprbcy   <span class="dv">1</span> A A T C A T C C C C C A C A T A A C C T C C A C A C T T A T C A C A T A C C T T C T A A T C T T A T T A G G C G T A G C A T T C T T T A C C C T T C T T G A A C G C A A A G C T T T A G G G T A C T T T C A A A T C C G A A A A G G C C C A A A C A A A G T T G G A A T T A T A G G A A T C C C A C A A C C A C T A G C A G A C G C C C T A A A A C T T T T T G T G A A A G A A T G A G T A A T G C C C A C A T C T T C A A A C T A C T T A C C A T T T A T T T T A A C C C C A A C A A T C A T A T T A A T T T T A G C A C T T A G A C T A T G A C A A C T A T T T C C A T C C T T T A T A C T C T C A T T T C A A A T A G C C C T A G G A A T A C T C T T A T T C T T A T G T A T T T C T T C C T T A A C C G T C T A T A C A A C C T T A A T A G C A G G T T G G G C C T C A A A C T C G A A G T A T G C T C T A C T A G G G G C C A T T C G A G C C A T G G C C C A A A C C A T C T C A T A T G A G G T A A C A A T A A C A C T A A T T A T C A T C T T C T A C C T A T T C T T A A T T A T A C A A A T A G A C A T A G T A A C A A T C C G C T C A G T T A A C A C C T C T A T A C C A A C C T T T G C C C T C T C C G C A C C A T T A G C T A T T A T A T G A A C T G T T G T T A T C T T A G C A G A A A C A A A C C G A G C C C C A T T T G A C T T T</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Espero que este post tenha sido útil para você! Se tiver alguma dúvida, sugestão ou crítica, <a href="mailto:bhmstabile@gmail.com">mande um e-mail</a>!</p>
 
@@ -448,13 +450,14 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

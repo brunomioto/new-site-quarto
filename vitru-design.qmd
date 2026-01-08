@@ -2,6 +2,21 @@
 title: "Vitru Design"
 ---
 
+## Logo
+
+```{=html}
+<!-- ========================= JS único (cole uma vez no site) ========================= --> <script> async function copySvgFileAsImage(svgUrl, el) { if (!navigator.clipboard || !window.ClipboardItem) { alert("Clipboard API não suportada neste navegador."); return; } try { const response = await fetch(svgUrl); if (!response.ok) throw new Error("Erro ao carregar SVG"); const svgText = await response.text(); const blob = new Blob([svgText], { type: "image/svg+xml" }); await navigator.clipboard.write([ new ClipboardItem({ "image/svg+xml": blob }) ]); el.classList.add("copied"); setTimeout(() => el.classList.remove("copied"), 700); } catch (e) { alert("Não foi possível copiar o SVG."); } } </script>
+
+<!-- ========================= CSS único (cole uma vez no site) ========================= --> <style> .logo-copy { display: inline-block; cursor: pointer; position: relative; } .logo-copy img { display: block; } .logo-copy.copied::after { content: "copiado"; position: absolute; top: -8px; right: -8px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.7rem; padding: 4px 6px; border-radius: 6px; } </style> 
+
+<!-- ========================= USO — vitru ========================= --> <div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_vitru.svg', this)"> <img src="/figures/logo_vitru.svg" alt="Logo Vitru" width="220"> </div> 
+
+<!-- ========================= USO — uniasselvi ========================= --> <div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_uniasselvi.svg', this)"> <img src="/figures/logo_uniasselvi.svg" alt="Logo Uniasselvi" width="220"> </div> 
+
+<!-- ========================= USO — unicesumar ========================= --> <div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_unicesumar.svg', this)"> <img src="/figures/logo_unicesumar.svg" alt="Logo UniCesumar" width="220"> </div>
+
+```
+
 
 ```{=html}
 <style>
@@ -662,6 +677,189 @@ function copyHex(el, hex) {
     </div>
 
     
+
+  </div>
+</div>
+
+```
+
+### Gradiente azul
+
+```{=html}
+<div class="palette-wrapper">
+
+  <div class="palette-grid">
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#005284"
+           onclick="copyHex(this, '#005284')"></div>
+      <div class="palette-name">Azul 900</div>
+      <div class="palette-hex">#005284</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#195F92"
+           onclick="copyHex(this, '#195F92')"></div>
+      <div class="palette-name">Azul 800</div>
+      <div class="palette-hex">#195F92</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#2F6D9F"
+           onclick="copyHex(this, '#2F6D9F')"></div>
+      <div class="palette-name">Azul 700</div>
+      <div class="palette-hex">#2F6D9F</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#427AAB"
+           onclick="copyHex(this, '#427AAB')"></div>
+      <div class="palette-name">Azul 600</div>
+      <div class="palette-hex">#427AAB</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#5488B7"
+           onclick="copyHex(this, '#5488B7')"></div>
+      <div class="palette-name">Azul 500</div>
+      <div class="palette-hex">#5488B7</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#6696C2"
+           onclick="copyHex(this, '#6696C2')"></div>
+      <div class="palette-name">Azul 400</div>
+      <div class="palette-hex">#6696C2</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#77A5CE"
+           onclick="copyHex(this, '#77A5CE')"></div>
+      <div class="palette-name">Azul 300</div>
+      <div class="palette-hex">#77A5CE</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#88B3D9"
+           onclick="copyHex(this, '#88B3D9')"></div>
+      <div class="palette-name">Azul 200</div>
+      <div class="palette-hex">#88B3D9</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#99C2E5"
+           onclick="copyHex(this, '#99C2E5')"></div>
+      <div class="palette-name">Azul 100</div>
+      <div class="palette-hex">#99C2E5</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#AAD1F0"
+           onclick="copyHex(this, '#AAD1F0')"></div>
+      <div class="palette-name">Azul 50</div>
+      <div class="palette-hex">#AAD1F0</div>
+    </div>
+
+  </div>
+</div>
+```
+
+### Gradiente Cinza
+
+```{=html}
+<div class="palette-wrapper">
+
+  <div class="palette-grid">
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#2E2E31"
+           onclick="copyHex(this, '#2E2E31')"></div>
+      <div class="palette-name">Cinza 900</div>
+      <div class="palette-hex">#2E2E31</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#3F3F43"
+           onclick="copyHex(this, '#3F3F43')"></div>
+      <div class="palette-name">Cinza 800</div>
+      <div class="palette-hex">#3F3F43</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#525258"
+           onclick="copyHex(this, '#525258')"></div>
+      <div class="palette-name">Cinza 700</div>
+      <div class="palette-hex">#525258</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#6A6A70"
+           onclick="copyHex(this, '#6A6A70')"></div>
+      <div class="palette-name">Cinza 600</div>
+      <div class="palette-hex">#6A6A70</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#87868B"
+           onclick="copyHex(this, '#87868B')"></div>
+      <div class="palette-name">Cinza 500</div>
+      <div class="palette-hex">#87868B</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#9C9BA0"
+           onclick="copyHex(this, '#9C9BA0')"></div>
+      <div class="palette-name">Cinza 400</div>
+      <div class="palette-hex">#9C9BA0</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#B3B2B7"
+           onclick="copyHex(this, '#B3B2B7')"></div>
+      <div class="palette-name">Cinza 300</div>
+      <div class="palette-hex">#B3B2B7</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#CAC9CE"
+           onclick="copyHex(this, '#CAC9CE')"></div>
+      <div class="palette-name">Cinza 200</div>
+      <div class="palette-hex">#CAC9CE</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#E1E1E4"
+           onclick="copyHex(this, '#E1E1E4')"></div>
+      <div class="palette-name">Cinza 100</div>
+      <div class="palette-hex">#E1E1E4</div>
+    </div>
+
+    <div class="palette-item">
+      <div class="palette-color"
+           style="background:#F4F4F6"
+           onclick="copyHex(this, '#F4F4F6')"></div>
+      <div class="palette-name">Cinza 50</div>
+      <div class="palette-hex">#F4F4F6</div>
+    </div>
 
   </div>
 </div>
