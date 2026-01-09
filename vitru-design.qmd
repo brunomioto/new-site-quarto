@@ -7,20 +7,44 @@ title: "Vitru Design"
 ```{=html}
 <!-- ========================= JS único (cole uma vez no site) ========================= --> <script> async function copySvgFileAsImage(svgUrl, el) { if (!navigator.clipboard || !window.ClipboardItem) { alert("Clipboard API não suportada neste navegador."); return; } try { const response = await fetch(svgUrl); if (!response.ok) throw new Error("Erro ao carregar SVG"); const svgText = await response.text(); const blob = new Blob([svgText], { type: "image/svg+xml" }); await navigator.clipboard.write([ new ClipboardItem({ "image/svg+xml": blob }) ]); el.classList.add("copied"); setTimeout(() => el.classList.remove("copied"), 700); } catch (e) { alert("Não foi possível copiar o SVG."); } } </script>
 
-<!-- ========================= CSS único (cole uma vez no site) ========================= --> <style> .logo-copy { display: inline-block; cursor: pointer; position: relative; } .logo-copy img { display: block; } .logo-copy.copied::after { content: "copiado"; position: absolute; top: -8px; right: -8px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.7rem; padding: 4px 6px; border-radius: 6px; } </style> 
+<!-- ========================= CSS — grid + card de logos ========================= --> 
+<style> .logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; } .logo-copy { display: flex; align-items: center; justify-content: center; padding: 16px; height: 120px; border-radius: 14px; background: #f1f1f1; box-shadow: 0 4px 12px rgba(0,0,0,0.12); cursor: pointer; position: relative; transition: transform 0.12s ease, box-shadow 0.12s ease; } .logo-copy:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.18); } .logo-copy img { max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; } .logo-copy.copied::after { content: "copiado"; position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.7); color: #fff; font-size: 0.7rem; padding: 4px 6px; border-radius: 6px; } </style>
 
-<!-- ========================= USO — vitru ========================= -->
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_vitru.svg', this)"> <img src="/figures/logo_vitru.svg" alt="Logo Vitru" height="100"> </div> 
+<!-- ========================= GRID DE LOGOS ========================= --> 
 
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_vitru_white.svg', this)"> <img src="/figures/logo_vitru_white.svg" alt="Logo Vitru Branca" height="100"> </div> 
+<div class="logo-grid"> <div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_vitru.svg', this)"> <img src="/figures/logo_vitru.svg" alt="Logo Vitru"> 
+</div>
 
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_vitru2.svg', this)"> <img src="/figures/logo_vitru2.svg" alt="Logo Vitru 2" height="100"> </div> 
+<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_vitru_white.svg', this)"> <img src="/figures/logo_vitru_white.svg" alt="Logo Vitru branca"> 
+</div> 
+
+<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_vitru2.svg', this)"> <img src="/figures/logo_vitru2.svg" alt="Logo Vitru 2"> 
+</div> 
+
 <br>
+
+<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_simbolo.svg', this)"> <img src="/figures/logo_uniasselvi_simbolo.svg" alt="Logo Uniasselvi"> 
+</div> 
+
+<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_horizontal.svg', this)"> <img src="/figures/logo_uniasselvi_horizontal.svg" alt="Logo Uniasselvi"> 
+</div> 
+
+<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_vertical.svg', this)"> <img src="/figures/logo_uniasselvi_vertical.svg" alt="Logo Uniasselvi"> 
+</div> 
+
 <br>
-<!-- ========================= USO — uniasselvi ========================= --> <div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_uniasselvi.svg', this)"> <img src="/figures/logo_uniasselvi.svg" alt="Logo Uniasselvi" height="100"> </div> 
-<br>
-<br>
-<!-- ========================= USO — unicesumar ========================= --> <div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_unicesumar.svg', this)"> <img src="/figures/logo_unicesumar.svg" alt="Logo UniCesumar" height="100"> </div>
+
+<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_unicesumar_simbolo.svg', this)"> <img src="/figures/logo_unicesumar_simbolo.svg" alt="Logo UniCesumar"> 
+</div> 
+
+<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_unicesumar_sem_tagline_horizontal.svg', this)"> <img src="/figures/logo_unicesumar_sem_tagline_horizontal.svg" alt="Logo UniCesumar"> 
+</div> 
+
+<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_unicesumar_sem_tagline_vertical.svg', this)"> <img src="/figures/logo_unicesumar_sem_tagline_vertical.svg" alt="Logo UniCesumar"> 
+</div> 
+
+
+</div>
 
 ```
 
