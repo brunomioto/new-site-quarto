@@ -269,13 +269,29 @@ async function copySvgFileAsText(svgUrl, el) {
 
 .logo-copy:hover .logo-actions { opacity: 1; } 
 
-.logo-action { display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; cursor: pointer; } 
+.logo-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px 32px;
+}
 
-.logo-action.ppt { background: rgba(209, 72, 54, 0.85); color: #fff; }
+.logo-action.ppt {
+  background-color: rgba(181, 37, 44, 0.85);
+  background-image: url("./figures/ppt_logo.svg");
+}
 
-.logo-action.figma { background: rgba(26, 26, 26, 0.85); color: #fff; }
+.logo-action.figma {
+  background-color: rgba(43, 43, 43, 0.85);
+  background-image: url("./figures/figma_logo.svg");
+}
 
-.logo-action:hover { filter: brightness(1.1); } 
+.logo-action:hover {
+  filter: brightness(1.1);
+}
 
 .logo-copy.copied-ppt::after {
   content: "copiado";
@@ -309,49 +325,49 @@ async function copySvgFileAsText(svgUrl, el) {
 
 <!-- Vitru -->
 
-<div class="logo-copy"> <img src="./figures/logo_vitru.svg" alt="Logo Vitru"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_vitru.svg', this.parentElement.parentElement)"> PPT </div> 
+<div class="logo-copy"> <img src="./figures/logo_vitru.svg" alt="Logo Vitru"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_vitru.svg', this.parentElement.parentElement)"> </div> 
 
-<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_vitru.svg', this.parentElement.parentElement)"> Figma </div> </div> </div> 
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_vitru.svg', this.parentElement.parentElement)"> </div> </div> </div> 
 
-<div class="logo-copy"> <img src="./figures/logo_vitru_white.svg" alt="Logo Vitru branca"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_vitru_white.svg', this.parentElement.parentElement)"> PPT </div> 
+<div class="logo-copy"> <img src="./figures/logo_vitru_white.svg" alt="Logo Vitru branca"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_vitru_white.svg', this.parentElement.parentElement)"> </div> 
 
-<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_vitru_white.svg', this.parentElement.parentElement)"> Figma </div> </div> </div> 
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_vitru_white.svg', this.parentElement.parentElement)"> </div> </div> </div> 
 
-<div class="logo-copy"> <img src="./figures/logo_vitru2.svg" alt="Logo Vitru 2"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_vitru2.svg', this.parentElement.parentElement)"> PPT </div> 
+<div class="logo-copy"> <img src="./figures/logo_vitru2.svg" alt="Logo Vitru 2"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_vitru2.svg', this.parentElement.parentElement)"> </div> 
 
-<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_vitru2.svg', this.parentElement.parentElement)"> Figma </div> </div> </div>
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_vitru2.svg', this.parentElement.parentElement)"> </div> </div> </div>
 
 <br> 
 
 <!-- Uniasselvi --> 
 
-<div class="logo-copy"> <img src="./figures/logo_uniasselvi_simbolo.svg" alt="Logo Uniasselvi símbolo"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_simbolo.svg', this.parentElement.parentElement)"> PPT </div> 
+<div class="logo-copy"> <img src="./figures/logo_uniasselvi_simbolo.svg" alt="Logo Uniasselvi símbolo"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_simbolo.svg', this.parentElement.parentElement)"> </div> 
 
-<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_uniasselvi_simbolo.svg', this.parentElement.parentElement)"> Figma </div> </div> </div>
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_uniasselvi_simbolo.svg', this.parentElement.parentElement)"> </div> </div> </div>
 
-<div class="logo-copy"> <img src="./figures/logo_uniasselvi_horizontal.svg" alt="Logo Uniasselvi horizontal"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_horizontal.svg', this.parentElement.parentElement)"> PPT </div>
+<div class="logo-copy"> <img src="./figures/logo_uniasselvi_horizontal.svg" alt="Logo Uniasselvi horizontal"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_horizontal.svg', this.parentElement.parentElement)"> </div>
 
-<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_uniasselvi_horizontal.svg', this.parentElement.parentElement)"> Figma </div> </div> </div>
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_uniasselvi_horizontal.svg', this.parentElement.parentElement)"> </div> </div> </div>
 
-<div class="logo-copy"> <img src="./figures/logo_uniasselvi_vertical.svg" alt="Logo Uniasselvi vertical"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_vertical.svg', this.parentElement.parentElement)"> PPT </div> 
+<div class="logo-copy"> <img src="./figures/logo_uniasselvi_vertical.svg" alt="Logo Uniasselvi vertical"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_vertical.svg', this.parentElement.parentElement)"> </div> 
 
-<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_uniasselvi_vertical.svg', this.parentElement.parentElement)"> Figma </div> </div> </div> 
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_uniasselvi_vertical.svg', this.parentElement.parentElement)"> </div> </div> </div> 
 
 <br>
 
 <!-- UniCesumar --> 
 
-<div class="logo-copy"> <img src="./figures/logo_unicesumar_simbolo.svg" alt="Logo UniCesumar símbolo"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_unicesumar_simbolo.svg', this.parentElement.parentElement)"> PPT </div> 
+<div class="logo-copy"> <img src="./figures/logo_unicesumar_simbolo.svg" alt="Logo UniCesumar símbolo"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_unicesumar_simbolo.svg', this.parentElement.parentElement)"> </div> 
 
-<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_unicesumar_simbolo.svg', this.parentElement.parentElement)"> Figma </div> </div> </div>
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_unicesumar_simbolo.svg', this.parentElement.parentElement)"> </div> </div> </div>
 
-<div class="logo-copy"> <img src="./figures/logo_unicesumar_sem_tagline_horizontal.svg" alt="Logo UniCesumar horizontal"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_unicesumar_sem_tagline_horizontal.svg', this.parentElement.parentElement)"> PPT </div> 
+<div class="logo-copy"> <img src="./figures/logo_unicesumar_sem_tagline_horizontal.svg" alt="Logo UniCesumar horizontal"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_unicesumar_sem_tagline_horizontal.svg', this.parentElement.parentElement)"> </div> 
 
-<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_unicesumar_sem_tagline_horizontal.svg', this.parentElement.parentElement)"> Figma </div> </div> </div>
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_unicesumar_sem_tagline_horizontal.svg', this.parentElement.parentElement)"> </div> </div> </div>
 
-<div class="logo-copy"> <img src="./figures/logo_unicesumar_sem_tagline_vertical.svg" alt="Logo UniCesumar vertical"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_unicesumar_sem_tagline_vertical.svg', this.parentElement.parentElement)"> PPT </div> 
+<div class="logo-copy"> <img src="./figures/logo_unicesumar_sem_tagline_vertical.svg" alt="Logo UniCesumar vertical"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_unicesumar_sem_tagline_vertical.svg', this.parentElement.parentElement)"> </div> 
 
-<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_unicesumar_sem_tagline_vertical.svg', this.parentElement.parentElement)"> Figma </div> </div> </div> </div>
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_unicesumar_sem_tagline_vertical.svg', this.parentElement.parentElement)"> </div> </div> </div> </div>
 
 </section>
 <section id="cores" class="level1">
