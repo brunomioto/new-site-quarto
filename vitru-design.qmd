@@ -5,46 +5,138 @@ title: "Vitru Design"
 # Logos
 
 ```{=html}
-<!-- ========================= JS único (cole uma vez no site) ========================= --> <script> async function copySvgFileAsImage(svgUrl, el) { if (!navigator.clipboard || !window.ClipboardItem) { alert("Clipboard API não suportada neste navegador."); return; } try { const response = await fetch(svgUrl); if (!response.ok) throw new Error("Erro ao carregar SVG"); const svgText = await response.text(); const blob = new Blob([svgText], { type: "image/svg+xml" }); await navigator.clipboard.write([ new ClipboardItem({ "image/svg+xml": blob }) ]); el.classList.add("copied"); setTimeout(() => el.classList.remove("copied"), 700); } catch (e) { alert("Não foi possível copiar o SVG."); } } </script>
+<!-- ===================== JS — copiar SVG ====================== --> <script>
+async function copySvgFileAsImage(svgUrl, el) {
+  try {
+    const response = await fetch(svgUrl);
+    const svgText = await response.text();
+    const blob = new Blob([svgText], { type: "image/svg+xml" });
 
-<!-- ========================= CSS — grid + card de logos ========================= --> 
-<style> .logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; } .logo-copy { display: flex; align-items: center; justify-content: center; padding: 16px; height: 120px; border-radius: 14px; background: #f1f1f1; box-shadow: 0 4px 12px rgba(0,0,0,0.12); cursor: pointer; position: relative; transition: transform 0.12s ease, box-shadow 0.12s ease; } .logo-copy:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.18); } .logo-copy img { max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; } .logo-copy.copied::after { content: "copiado"; position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.7); color: #fff; font-size: 0.7rem; padding: 4px 6px; border-radius: 6px; } </style>
+    await navigator.clipboard.write([
+      new ClipboardItem({ "image/svg+xml": blob })
+    ]);
 
-<!-- ========================= GRID DE LOGOS ========================= --> 
+    el.classList.remove("copied-figma");
+    el.classList.add("copied-ppt");
+    setTimeout(() => el.classList.remove("copied-ppt"), 700);
+  } catch {
+    alert("Falha ao copiar SVG para imagem.");
+  }
+}
 
-<div class="logo-grid"> <div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_vitru.svg', this)"> <img src="/figures/logo_vitru.svg" alt="Logo Vitru"> 
-</div>
+async function copySvgFileAsText(svgUrl, el) {
+  try {
+    const response = await fetch(svgUrl);
+    const svgText = await response.text();
 
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_vitru_white.svg', this)"> <img src="/figures/logo_vitru_white.svg" alt="Logo Vitru branca"> 
-</div> 
+    await navigator.clipboard.writeText(svgText);
 
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_vitru2.svg', this)"> <img src="/figures/logo_vitru2.svg" alt="Logo Vitru 2"> 
-</div> 
+    el.classList.remove("copied-ppt");
+    el.classList.add("copied-figma");
+    setTimeout(() => el.classList.remove("copied-figma"), 700);
+  } catch {
+    alert("Falha ao copiar código SVG.");
+  }
+}
+</script>
+
+<!-- ==================== CSS — card + overlay ===================== --> 
+
+<style> 
+
+.logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; } 
+
+.logo-copy { position: relative; height: 120px; padding: 16px; border-radius: 14px; background: #f1f1f1; box-shadow: 0 4px 12px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center; cursor: default; z-index: 0; } 
+
+.logo-copy img { max-width: 100%; max-height: 100%; z-index: 1; } 
+
+.logo-actions { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; opacity: 0; border-radius: 14px; overflow: hidden; transition: opacity 0.12s ease; z-index: 2; } 
+
+.logo-copy:hover .logo-actions { opacity: 1; } 
+
+.logo-action { display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; cursor: pointer; } 
+
+.logo-action.ppt { background: rgba(209, 72, 54, 0.85); color: #fff; }
+
+.logo-action.figma { background: rgba(26, 26, 26, 0.85); color: #fff; }
+
+.logo-action:hover { filter: brightness(1.1); } 
+
+.logo-copy.copied-ppt::after {
+  content: "copiado";
+  position: absolute;
+  top: 8px;
+  left: 8px;     /* lado esquerdo */
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 6px;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+.logo-copy.copied-figma::after {
+  content: "copiado";
+  position: absolute;
+  top: 8px;
+  right: 8px;    /* lado direito */
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 6px;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+</style> 
+
+<!-- ========================= GRID DE LOGOS ========================= --> <div class="logo-grid"> 
+
+<!-- Vitru -->
+
+<div class="logo-copy"> <img src="/figures/logo_vitru.svg" alt="Logo Vitru"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_vitru.svg', this.parentElement.parentElement)"> PPT </div> 
+
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_vitru.svg', this.parentElement.parentElement)"> Figma </div> </div> </div> 
+
+<div class="logo-copy"> <img src="/figures/logo_vitru_white.svg" alt="Logo Vitru branca"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_vitru_white.svg', this.parentElement.parentElement)"> PPT </div> 
+
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_vitru_white.svg', this.parentElement.parentElement)"> Figma </div> </div> </div> 
+
+<div class="logo-copy"> <img src="/figures/logo_vitru2.svg" alt="Logo Vitru 2"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_vitru2.svg', this.parentElement.parentElement)"> PPT </div> 
+
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_vitru2.svg', this.parentElement.parentElement)"> Figma </div> </div> </div>
+
+<br> 
+
+<!-- Uniasselvi --> 
+
+<div class="logo-copy"> <img src="/figures/logo_uniasselvi_simbolo.svg" alt="Logo Uniasselvi símbolo"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_simbolo.svg', this.parentElement.parentElement)"> PPT </div> 
+
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_uniasselvi_simbolo.svg', this.parentElement.parentElement)"> Figma </div> </div> </div>
+
+<div class="logo-copy"> <img src="/figures/logo_uniasselvi_horizontal.svg" alt="Logo Uniasselvi horizontal"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_horizontal.svg', this.parentElement.parentElement)"> PPT </div>
+
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_uniasselvi_horizontal.svg', this.parentElement.parentElement)"> Figma </div> </div> </div>
+
+<div class="logo-copy"> <img src="/figures/logo_uniasselvi_vertical.svg" alt="Logo Uniasselvi vertical"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_vertical.svg', this.parentElement.parentElement)"> PPT </div> 
+
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_uniasselvi_vertical.svg', this.parentElement.parentElement)"> Figma </div> </div> </div> 
 
 <br>
 
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_simbolo.svg', this)"> <img src="/figures/logo_uniasselvi_simbolo.svg" alt="Logo Uniasselvi"> 
-</div> 
+<!-- UniCesumar --> 
 
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_horizontal.svg', this)"> <img src="/figures/logo_uniasselvi_horizontal.svg" alt="Logo Uniasselvi"> 
-</div> 
+<div class="logo-copy"> <img src="/figures/logo_unicesumar_simbolo.svg" alt="Logo UniCesumar símbolo"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_unicesumar_simbolo.svg', this.parentElement.parentElement)"> PPT </div> 
 
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_uniasselvi_vertical.svg', this)"> <img src="/figures/logo_uniasselvi_vertical.svg" alt="Logo Uniasselvi"> 
-</div> 
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_unicesumar_simbolo.svg', this.parentElement.parentElement)"> Figma </div> </div> </div>
 
-<br>
+<div class="logo-copy"> <img src="/figures/logo_unicesumar_sem_tagline_horizontal.svg" alt="Logo UniCesumar horizontal"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_unicesumar_sem_tagline_horizontal.svg', this.parentElement.parentElement)"> PPT </div> 
 
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_unicesumar_simbolo.svg', this)"> <img src="/figures/logo_unicesumar_simbolo.svg" alt="Logo UniCesumar"> 
-</div> 
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_unicesumar_sem_tagline_horizontal.svg', this.parentElement.parentElement)"> Figma </div> </div> </div>
 
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_unicesumar_sem_tagline_horizontal.svg', this)"> <img src="/figures/logo_unicesumar_sem_tagline_horizontal.svg" alt="Logo UniCesumar"> 
-</div> 
+<div class="logo-copy"> <img src="/figures/logo_unicesumar_sem_tagline_vertical.svg" alt="Logo UniCesumar vertical"> <div class="logo-actions"> <div class="logo-action ppt" onclick="copySvgFileAsImage('/figures/logo_unicesumar_sem_tagline_vertical.svg', this.parentElement.parentElement)"> PPT </div> 
 
-<div class="logo-copy" onclick="copySvgFileAsImage('/figures/logo_unicesumar_sem_tagline_vertical.svg', this)"> <img src="/figures/logo_unicesumar_sem_tagline_vertical.svg" alt="Logo UniCesumar"> 
-</div> 
-
-
-</div>
+<div class="logo-action figma" onclick="copySvgFileAsText('/figures/logo_unicesumar_sem_tagline_vertical.svg', this.parentElement.parentElement)"> Figma </div> </div> </div> </div>
 
 ```
 
