@@ -1,1 +1,2 @@
-Sitemap: https://brunomioto.com/sitemap.xml
+User-Agent: *
+Allow: /
