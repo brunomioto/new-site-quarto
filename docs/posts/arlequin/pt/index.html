@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Bruno Mioto">
 <meta name="dcterms.date" content="2025-03-10">
 <meta name="description" content="Veja como gerar um arquivo .arp diretamente no R para o Arlequin">
-
 <title>Facilitando a criação de arquivos Arlequin (.arp) com R – Bruno Mioto</title>
 <style>
 code{white-space: pre-wrap;}
@@ -60,7 +57,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
@@ -79,8 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-a7b802375fd349778b21d0de98fc2793.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../../site_libs/bootstrap/bootstrap-a7b802375fd349778b21d0de98fc2793.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,18 +101,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XTWGVVSED5"></script>
-
-<script type="text/javascript">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XTWGVVSED5"></script><script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 </script>
-
-
 <meta property="og:title" content="Facilitando a criação de arquivos Arlequin (.arp) com R – Bruno Mioto">
 <meta property="og:description" content="Veja como gerar um arquivo .arp diretamente no R para o Arlequin">
 <meta property="og:image" content="https://brunomioto.com/posts/arlequin/pt/post_arlequin.png">
@@ -132,18 +122,13 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <meta name="twitter:image-height" content="223">
 <meta name="twitter:image-width" content="728">
 </head>
-
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo light-content">
-    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo light-content"><img src="../../../figures/eye_website.png" alt="" class="navbar-logo dark-content"></a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Bruno Mioto</span>
     </a>
@@ -154,7 +139,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -170,8 +155,8 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">R</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-r">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-r">
+<li>
     <a class="dropdown-item" href="../../../r-packages.html"><i class="bi bi-box-seam" role="img">
 </i> 
  <span class="dropdown-text">R packages</span></a>
@@ -187,38 +172,30 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
  <span class="dropdown-text">Twitter bots</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="../../../about-en.html"> 
 <span class="menu-text">About me</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#o-problema" id="toc-o-problema" class="nav-link active" data-scroll-target="#o-problema">O problema</a></li>
+<li><a href="#o-problema" id="toc-o-problema" class="nav-link active" data-scroll-target="#o-problema">O problema</a></li>
   <li><a href="#tutoriais" id="toc-tutoriais" class="nav-link" data-scroll-target="#tutoriais">Tutoriais</a></li>
   <li><a href="#uma-abordagem-mais-simples" id="toc-uma-abordagem-mais-simples" class="nav-link" data-scroll-target="#uma-abordagem-mais-simples">Uma abordagem mais simples</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Facilitando a criação de arquivos Arlequin (.arp) com R</h1>
   <div class="quarto-categories">
     <div class="quarto-category">genetics</div>
@@ -254,40 +231,32 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
   
 
 
-</header>
-
-
-<p><img src="post_arlequin.png" class="img-fluid"></p>
-<section id="o-problema" class="level2">
-<h2 class="anchored" data-anchor-id="o-problema">O problema</h2>
+</header><p><img src="post_arlequin.png" class="img-fluid"></p>
+<section id="o-problema" class="level2"><h2 class="anchored" data-anchor-id="o-problema">O problema</h2>
 <p>Este é um post <strong>bem</strong> específico, mas pode ser útil para quem realiza análises populacionais com dados genéticos. Então resolvi escrever um post simples para ajudar neste processo.</p>
 <p>Durante minha tese, precisei realizar análises populacionais (AMOVA, FST, etc), mas eu não sou muito dessa área, então nunca havia utilizado o software <strong>Arlequin</strong>, um software bem antigo (desde 1995) mas ainda muito utilizado para trabalhos científicos.</p>
 <p>O problema aparece quando precisamos criar um arquivo de entrada <strong>.arp</strong> para utilizar no Arlequin. Alguns programas (como o DNAsp) até salvam um arquivo .arp, mas ele não funciona muito bem e na maioria das vezes necessita de edição manual.</p>
-</section>
-<section id="tutoriais" class="level2">
-<h2 class="anchored" data-anchor-id="tutoriais">Tutoriais</h2>
+</section><section id="tutoriais" class="level2"><h2 class="anchored" data-anchor-id="tutoriais">Tutoriais</h2>
 <p>Ao buscar por ajuda, cheguei até este tutorial completo da <a href="https://www.youtube.com/@entendagenetica">Natália E. de Lima</a>.</p>
 <p>A Natália claramente entende mais deste assunto do que eu, então edita <em>manualmente</em> os arquivos de dados populacionais para utilizar no Arlequin.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/wdkzF0lnRCc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p>Como eu tenho mais facilidade com <strong>R</strong> do que genética de populações, busquei outros tutoriais, dessa vez usando o R, e cheguei neste vídeo do <a href="https://www.youtube.com/@DrJBanta">Josh Banta</a></p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/z9dpRrLajCs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p>Aqui ele ensina a transformar um arquivo <strong>FASTA</strong> em um arquivo <strong>.arp</strong>, mas também nos ajuda a adicionar grupamentos aos nossos dados. Tudo isso utilizando um script em R. Estes dados estão todos disponíveis no vídeo acima.</p>
-</section>
-<section id="uma-abordagem-mais-simples" class="level2">
-<h2 class="anchored" data-anchor-id="uma-abordagem-mais-simples">Uma abordagem mais simples</h2>
+</section><section id="uma-abordagem-mais-simples" class="level2"><h2 class="anchored" data-anchor-id="uma-abordagem-mais-simples">Uma abordagem mais simples</h2>
 <p>No entanto o script para essa tarefa é bem confuso e pode ser desafiador para quem não é muito proficiente em R. CPensando nisso, e para facilitar o trabalho de colegas no futuro (e o meu também), adaptei este código para uma <strong>função simples em R</strong>, chamada <code>create_arlequin()</code>.</p>
 <p>Esta função está disponível no pacote que fiz para meu laboratório, o Nupgen! <strong>Este é um pacote bem experimental e com funções extremamente específicas</strong>, então não se preocupe com essas outras.</p>
 <p>Para instalar o pacote é bem fácil, abra o R e rode</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)){</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"brunomioto/nupgen"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">"remotes"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"brunomioto/nupgen"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Pronto! Agora vamos criar o arquivo <strong>.arp</strong> que precisamos. Antes de tudo, vamos carregar os pacotes que precisamos. Utilizaremos o pacote <strong>ape</strong> para importar as sequências e o <strong>nupgen</strong> para criar o arquivo.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ape)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nupgen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/emmanuelparadis/ape">ape</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">nupgen</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Agora vamos carregar um alinhamento em FASTA e um arquivo de grupos. Utilizaremos aqui os arquivos de exemplo utilizados pelo Josh Banta no tutorial dele, mas você pode utilizar os seus também!</p>
 <p>O <strong>arquivo FASTA</strong> é um alinhamento comum, com as pontas cortadas em algum software tipo <a href="https://www.megasoftware.net">MEGA</a>, mas que seguem essa estrutura:</p>
@@ -339,13 +308,13 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>Caso queira, você pode criar este arquivo usando o <strong>Excel</strong> e exportar em .csv, mas confira se o separador é vírgula (,) ao invés de ponto e vírgula (;)</p>
 <p>Perceba que meus arquivos estão dentro da pasta <code>data</code>, então coloco isso também no caminho do arquivo</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alinhamento <span class="ot">&lt;-</span> <span class="fu">read.dna</span>(<span class="st">"data/arquivo_fasta.fas"</span>, <span class="at">format =</span> <span class="st">"fasta"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>grupos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/arquivo_grupos.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">alinhamento</span> <span class="op">&lt;-</span> <span class="fu">read.dna</span><span class="op">(</span><span class="st">"data/arquivo_fasta.fas"</span>, format <span class="op">=</span> <span class="st">"fasta"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">grupos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"data/arquivo_grupos.csv"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Agora que temos os arquivos carregados, é só rodar a função. Perceba que, além dos argumentos do alinhamento e grupos, temos um chamado <code>output.dir</code>, este argumento define qual diretório você deseja salvar o arquivo <strong>output.arp</strong>. O padrão é o diretório atual (“.”), mas aqui vou salvar na pasta <code>data</code>, junto com os outros arquivos.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nupgen<span class="sc">::</span><span class="fu">create_arlequin</span>(<span class="at">fasta =</span> alinhamento, <span class="at">groups =</span> grupos, <span class="at">output.dir =</span> <span class="st">"./data"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">nupgen</span><span class="fu">::</span><span class="fu">create_arlequin</span><span class="op">(</span>fasta <span class="op">=</span> <span class="va">alinhamento</span>, groups <span class="op">=</span> <span class="va">grupos</span>, output.dir <span class="op">=</span> <span class="st">"./data"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>ℹ Creating .arp file</code></pre>
 </div>
@@ -396,10 +365,131 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>Espero que este post tenha sido útil para você! Se tiver alguma dúvida, sugestão ou crítica, <a href="mailto:bhmstabile@gmail.com">mande um e-mail</a>!</p>
 
 
-</section>
+</section></main><!-- /main --><style>
+    /* Estilos do Olho - Escondido por padrão (Mobile first) */
+    .eye-socket-widget {
+        display: none;
+    }
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+    /* Exibir apenas em Desktop (telas maiores que 768px) */
+    @media (min-width: 769px) {
+        .eye-socket-widget {
+            display: flex;
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            width: 100px;
+            height: 100px;
+            background: #ffffff;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 3px solid #333;
+            z-index: 1000;
+            overflow: hidden;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+
+        /* Íris */
+        .iris-widget {
+            width: 55px;
+            height: 55px;
+            background: radial-gradient(circle, #2c5d72 0%, #1a3a4a 100%);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+            background-image: 
+                repeating-conic-gradient(from 0deg, transparent 0deg 2deg, rgba(255,255,255,0.05) 3deg 4deg),
+                radial-gradient(circle, #2c5d72 0%, #1a3a4a 100%);
+        }
+
+        /* Pupila */
+        .pupil-widget {
+            width: 24px;
+            height: 24px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        /* Reflexo */
+        .reflexo-widget {
+            position: absolute;
+            top: 15%;
+            right: 20%;
+            width: 25%;
+            height: 25%;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            filter: blur(1px);
+        }
+
+        /* Pálpebra para piscar */
+        .palpebra-widget {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #f8f9fa;
+            top: -100%;
+            left: 0;
+            z-index: 10;
+            transition: top 0.1s ease-in-out;
+        }
+
+        .eye-socket-widget.blink .palpebra-widget {
+            top: 0;
+        }
+    }
+</style>
+<div class="eye-socket-widget" id="qEyeSocket">
+    <div class="palpebra-widget"></div>
+    <div class="iris-widget" id="qIris">
+        <div class="pupil-widget" id="qPupil"></div>
+        <div class="reflexo-widget"></div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const socket = document.getElementById('qEyeSocket');
+        const iris = document.getElementById('qIris');
+        const pupil = document.getElementById('qPupil');
+
+        // Só executa a lógica se o elemento estiver visível (Desktop)
+        if (window.getComputedStyle(socket).display !== 'none') {
+            document.addEventListener('mousemove', (e) => {
+                const rect = socket.getBoundingClientRect();
+                const eyeX = rect.left + rect.width / 2;
+                const eyeY = rect.top + rect.height / 2;
+
+                const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+                
+                const irisMax = 15;
+                const pupilMax = 6;
+
+                const ix = Math.cos(angle) * irisMax;
+                const iy = Math.sin(angle) * irisMax;
+                const px = Math.cos(angle) * pupilMax;
+                const py = Math.sin(angle) * pupilMax;
+
+                iris.style.transform = `translate(${ix}px, ${iy}px)`;
+                pupil.style.transform = `translate(${px}px, ${py}px)`;
+            });
+
+            function doBlink() {
+                socket.classList.add('blink');
+                setTimeout(() => socket.classList.remove('blink'), 120);
+                setTimeout(doBlink, Math.random() * 5000 + 2000);
+            }
+            setTimeout(doBlink, 4000);
+        }
+    })();
+</script><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -800,17 +890,16 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>Website made with Quarto by Bruno Mioto, 2025.</p>
+<p>Website made with Quarto by Bruno Mioto, 2026.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/brunomioto">
       <i class="bi bi-github" role="img">
 </i> 
@@ -823,11 +912,9 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
     </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

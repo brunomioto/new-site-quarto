@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Bruno Mioto">
 <meta name="dcterms.date" content="2023-02-01">
 <meta name="description" content="Learn how to easily create these awesome waterlines">
-
 <title>Drawing waterlines with ggplot2 in R – Bruno Mioto</title>
 <style>
 code{white-space: pre-wrap;}
@@ -60,7 +57,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
@@ -79,8 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-a7b802375fd349778b21d0de98fc2793.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../../site_libs/bootstrap/bootstrap-a7b802375fd349778b21d0de98fc2793.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,18 +101,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XTWGVVSED5"></script>
-
-<script type="text/javascript">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XTWGVVSED5"></script><script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 </script>
-
-
 <meta property="og:title" content="Drawing waterlines with ggplot2 in R – Bruno Mioto">
 <meta property="og:description" content="Learn how to easily create these awesome waterlines">
 <meta property="og:image" content="https://brunomioto.com/posts/waterlines/en/post_waterline.png">
@@ -132,18 +122,13 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <meta name="twitter:image-height" content="1207">
 <meta name="twitter:image-width" content="3364">
 </head>
-
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo light-content">
-    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../../../figures/eye_website.png" alt="" class="navbar-logo light-content"><img src="../../../figures/eye_website.png" alt="" class="navbar-logo dark-content"></a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Bruno Mioto</span>
     </a>
@@ -154,7 +139,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -170,8 +155,8 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">R</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-r">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-r">
+<li>
     <a class="dropdown-item" href="../../../r-packages.html"><i class="bi bi-box-seam" role="img">
 </i> 
  <span class="dropdown-text">R packages</span></a>
@@ -187,37 +172,29 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
  <span class="dropdown-text">Twitter bots</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="../../../about-en.html"> 
 <span class="menu-text">About me</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+<li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
   <li><a href="#creating-our-map" id="toc-creating-our-map" class="nav-link" data-scroll-target="#creating-our-map">Creating our map</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Drawing waterlines with ggplot2 in R</h1>
   <div class="quarto-categories">
     <div class="quarto-category">ggplot2</div>
@@ -254,12 +231,8 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
   
 
 
-</header>
-
-
-<p><img src="post_waterline.webp" class="img-fluid"></p>
-<section id="motivation" class="level2">
-<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+</header><p><img src="post_waterline.webp" class="img-fluid"></p>
+<section id="motivation" class="level2"><h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
 <p><img src="https://raw.githubusercontent.com/thomasp85/boundaries/main/man/figures/logo.png" align="right" height="138"></p>
 <p>Last week I saw that <a href="https://www.data-imaginist.com/">Thomas Lin Pedersen</a> (currently responsible for ggplot2) has started developing a new package called <a href="https://boundaries.r-euclid.com/">boundaries</a>. It did not take me much effort to understand the main function of the package, because this amazing hex logo explains it very well, to create <strong>waterlines</strong> from boudaries!</p>
 <p>But this is a package from the new <a href="https://r-euclid.com/">euclid ecosystem</a>, which aims to <em>“provide a new unified foundation for computational geometry in R”</em>. Awesome, but at that moment I wanted to know if I could create the waterlines for any shapefile I find on my computer, and the boundaries package doesn’t support <code>sf</code> objects, which I use to create maps…</p>
@@ -268,36 +241,34 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>But the topic was hot, and I already had an idea how to use waterlines: Re-create an old map of the Brazilian coast!</p>
 <p>Then I discovered that there is a way to create waterlines using the <code>sf</code> and <code>ggplot2</code> packages! So I created this text as a guide for the next people who need it! Today I will try to present a basic version for everyone to understand the idea and create their own amazing maps!</p>
 <p>Look how my map turned out!</p>
-<p></p><div id="tweet-70922"></div><script>tweet={"url":"https:\/\/twitter.com\/BrunoHMioto\/status\/1619370088670416897","author_name":"Bruno Mioto","author_url":"https:\/\/twitter.com\/BrunoHMioto","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDid you know that the city of Rio de Janeiro got its name from Guanabara Bay? When it was discovered in early January 1502, it was called &quot;Ria de Janeiro&quot;, meaning &quot;January Bay&quot;, and over time the name became Rio (river) de Janeiro!\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RStats?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RStats\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/ggplot2?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#ggplot2\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/QwuXjDahl5\"\u003Epic.twitter.com\/QwuXjDahl5\u003C\/a\u003E\u003C\/p\u003E&mdash; Bruno Mioto (@BrunoHMioto) \u003Ca href=\"https:\/\/twitter.com\/BrunoHMioto\/status\/1619370088670416897?ref_src=twsrc%5Etfw\"\u003EJanuary 28, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-70922").innerHTML = tweet["html"];</script><p></p>
-</section>
-<section id="creating-our-map" class="level2">
-<h2 class="anchored" data-anchor-id="creating-our-map">Creating our map</h2>
+<p></p>
+<div id="tweet-92739"></div>
+<script>tweet={"url":"https:\/\/twitter.com\/BrunoHMioto\/status\/1619370088670416897","author_name":"Bruno Mioto","author_url":"https:\/\/twitter.com\/BrunoHMioto","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDid you know that the city of Rio de Janeiro got its name from Guanabara Bay? When it was discovered in early January 1502, it was called &quot;Ria de Janeiro&quot;, meaning &quot;January Bay&quot;, and over time the name became Rio (river) de Janeiro!\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RStats?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RStats\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/ggplot2?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#ggplot2\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/QwuXjDahl5\"\u003Epic.twitter.com\/QwuXjDahl5\u003C\/a\u003E\u003C\/p\u003E&mdash; Bruno Mioto (@BrunoHMioto) \u003Ca href=\"https:\/\/twitter.com\/BrunoHMioto\/status\/1619370088670416897?ref_src=twsrc%5Etfw\"\u003EJanuary 28, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-92739").innerHTML = tweet["html"];</script></section><section id="creating-our-map" class="level2"><h2 class="anchored" data-anchor-id="creating-our-map">Creating our map</h2>
 <p>We need a map with some water masses. Since my girlfriend is of Japanese descent, I will use today’s post to thank this culture for providing me with sushi, lamen, yakisoba, anime, and a lot of knowledge and respect!</p>
 <p>Let’s load the necessary packages, I’ll talk about them during the text.</p>
 <p>If you have questions about a function, just click on its name to go to the package page!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Packages</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co">#pipe and basics</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#plotting</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co">#working with maps</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth) <span class="co">#get countries shapefiles</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Packages</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span> <span class="co">#pipe and basics</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span> <span class="co">#plotting</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/">sf</a></span><span class="op">)</span> <span class="co">#working with maps</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/rnaturalearth/">rnaturalearth</a></span><span class="op">)</span> <span class="co">#get countries shapefiles</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now we need the map of Japan. Good thing we have the <code>rnaturalearth</code> package!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>japan_map <span class="ot">&lt;-</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(<span class="at">country =</span> <span class="st">"Japan"</span>, <span class="co">#country name</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">scale =</span> <span class="st">"medium"</span>, <span class="co">#map resolution</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">returnclass =</span> <span class="st">"sf"</span> <span class="co">#object class</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                                         )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">japan_map</span> <span class="op">&lt;-</span> <span class="fu">rnaturalearth</span><span class="fu">::</span><span class="fu">ne_countries</span><span class="op">(</span>country <span class="op">=</span> <span class="st">"Japan"</span>, <span class="co">#country name</span></span>
+<span>                                         scale <span class="op">=</span> <span class="st">"medium"</span>, <span class="co">#map resolution</span></span>
+<span>                                         returnclass <span class="op">=</span> <span class="st">"sf"</span> <span class="co">#object class</span></span>
+<span>                                         <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can check out the map we just downloaded</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>japan_map <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>()<span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">japan_map</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -314,7 +285,7 @@ Important
 <div class="callout-body-container callout-body">
 <p>Since the next process requires some geometry calculations, we will tell the <code>sf</code> package not to use the <code>s2</code> package, as this can lead to errors.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sf<span class="sc">::</span><span class="fu">sf_use_s2</span>(<span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/s2.html">sf_use_s2</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>#&gt; Spherical geometry (s2) switched off</code></pre>
 </div>
@@ -324,59 +295,57 @@ Important
 <p>All done, now we just need to create the <strong>waterlines</strong>! We will use the <code>st_buffer</code> function from the <code>sf</code> package, as the name says, it calculates a buffer around the geometry, which is exactly what we need! Each line of code is a waterline, add as many as you like!</p>
 <p>After executing each line you will get a <code>warning</code>. Don’t worry, it will work!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>japan_buffer1 <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_buffer</span>(japan_map, <span class="at">dist =</span> <span class="fl">0.1</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>japan_buffer2 <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_buffer</span>(japan_map, <span class="at">dist =</span> <span class="fl">0.2</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>japan_buffer3 <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_buffer</span>(japan_map, <span class="at">dist =</span> <span class="fl">0.3</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>japan_buffer4 <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_buffer</span>(japan_map, <span class="at">dist =</span> <span class="fl">0.4</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: st_buffer does not correctly buffer longitude/latitude datadist is assumed to be in decimal degrees (arc_degrees).</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">japan_buffer1</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_unary.html">st_buffer</a></span><span class="op">(</span><span class="va">japan_map</span>, dist <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span>
+<span><span class="va">japan_buffer2</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_unary.html">st_buffer</a></span><span class="op">(</span><span class="va">japan_map</span>, dist <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span></span>
+<span><span class="va">japan_buffer3</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_unary.html">st_buffer</a></span><span class="op">(</span><span class="va">japan_map</span>, dist <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span></span>
+<span><span class="va">japan_buffer4</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_unary.html">st_buffer</a></span><span class="op">(</span><span class="va">japan_map</span>, dist <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#&gt; Warning: st_buffer does not correctly buffer longitude/latitude datadist is assumed to be in decimal degrees (arc_degrees).</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now we can plot it!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>japan_map <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>()<span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()<span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> japan_buffer1, <span class="at">fill =</span> <span class="cn">NA</span>)<span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> japan_buffer2, <span class="at">fill =</span> <span class="cn">NA</span>)<span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> japan_buffer3, <span class="at">fill =</span> <span class="cn">NA</span>)<span class="sc">+</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> japan_buffer4, <span class="at">fill =</span> <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">japan_map</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">japan_buffer1</span>, fill <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">japan_buffer2</span>, fill <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">japan_buffer3</span>, fill <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">japan_buffer4</span>, fill <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Let’s add some details and make this map even cooler!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>japan_map <span class="sc">%&gt;%</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>()<span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">"#f9e9ca"</span>, </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"#48351c"</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">linewidth =</span> <span class="fl">0.4</span>)<span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> japan_buffer1, </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="cn">NA</span>, </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"#48351c90"</span>)<span class="sc">+</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> japan_buffer2, </span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="cn">NA</span>, </span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"#48351c70"</span>)<span class="sc">+</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> japan_buffer3, </span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="cn">NA</span>, </span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"#48351c50"</span>)<span class="sc">+</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> japan_buffer4, </span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="cn">NA</span>, </span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"#48351c30"</span>)<span class="sc">+</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#badff0"</span>),</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"#afd2e2"</span>)</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">clip =</span> <span class="st">"off"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">japan_map</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#f9e9ca"</span>, </span>
+<span>          color <span class="op">=</span> <span class="st">"#48351c"</span>,</span>
+<span>          linewidth <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">japan_buffer1</span>, </span>
+<span>          fill <span class="op">=</span> <span class="cn">NA</span>, </span>
+<span>          color <span class="op">=</span> <span class="st">"#48351c90"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">japan_buffer2</span>, </span>
+<span>          fill <span class="op">=</span> <span class="cn">NA</span>, </span>
+<span>          color <span class="op">=</span> <span class="st">"#48351c70"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">japan_buffer3</span>, </span>
+<span>          fill <span class="op">=</span> <span class="cn">NA</span>, </span>
+<span>          color <span class="op">=</span> <span class="st">"#48351c50"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">japan_buffer4</span>, </span>
+<span>          fill <span class="op">=</span> <span class="cn">NA</span>, </span>
+<span>          color <span class="op">=</span> <span class="st">"#48351c30"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>    panel.background <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_rect</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#badff0"</span><span class="op">)</span>,</span>
+<span>    panel.grid <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#afd2e2"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">coord_sf</a></span><span class="op">(</span>clip <span class="op">=</span> <span class="st">"off"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -431,10 +400,131 @@ Important
 </div>
 
 
-</section>
+</section></main><!-- /main --><style>
+    /* Estilos do Olho - Escondido por padrão (Mobile first) */
+    .eye-socket-widget {
+        display: none;
+    }
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+    /* Exibir apenas em Desktop (telas maiores que 768px) */
+    @media (min-width: 769px) {
+        .eye-socket-widget {
+            display: flex;
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            width: 100px;
+            height: 100px;
+            background: #ffffff;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 3px solid #333;
+            z-index: 1000;
+            overflow: hidden;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+
+        /* Íris */
+        .iris-widget {
+            width: 55px;
+            height: 55px;
+            background: radial-gradient(circle, #2c5d72 0%, #1a3a4a 100%);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+            background-image: 
+                repeating-conic-gradient(from 0deg, transparent 0deg 2deg, rgba(255,255,255,0.05) 3deg 4deg),
+                radial-gradient(circle, #2c5d72 0%, #1a3a4a 100%);
+        }
+
+        /* Pupila */
+        .pupil-widget {
+            width: 24px;
+            height: 24px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        /* Reflexo */
+        .reflexo-widget {
+            position: absolute;
+            top: 15%;
+            right: 20%;
+            width: 25%;
+            height: 25%;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            filter: blur(1px);
+        }
+
+        /* Pálpebra para piscar */
+        .palpebra-widget {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #f8f9fa;
+            top: -100%;
+            left: 0;
+            z-index: 10;
+            transition: top 0.1s ease-in-out;
+        }
+
+        .eye-socket-widget.blink .palpebra-widget {
+            top: 0;
+        }
+    }
+</style>
+<div class="eye-socket-widget" id="qEyeSocket">
+    <div class="palpebra-widget"></div>
+    <div class="iris-widget" id="qIris">
+        <div class="pupil-widget" id="qPupil"></div>
+        <div class="reflexo-widget"></div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const socket = document.getElementById('qEyeSocket');
+        const iris = document.getElementById('qIris');
+        const pupil = document.getElementById('qPupil');
+
+        // Só executa a lógica se o elemento estiver visível (Desktop)
+        if (window.getComputedStyle(socket).display !== 'none') {
+            document.addEventListener('mousemove', (e) => {
+                const rect = socket.getBoundingClientRect();
+                const eyeX = rect.left + rect.width / 2;
+                const eyeY = rect.top + rect.height / 2;
+
+                const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+                
+                const irisMax = 15;
+                const pupilMax = 6;
+
+                const ix = Math.cos(angle) * irisMax;
+                const iy = Math.sin(angle) * irisMax;
+                const px = Math.cos(angle) * pupilMax;
+                const py = Math.sin(angle) * pupilMax;
+
+                iris.style.transform = `translate(${ix}px, ${iy}px)`;
+                pupil.style.transform = `translate(${px}px, ${py}px)`;
+            });
+
+            function doBlink() {
+                socket.classList.add('blink');
+                setTimeout(() => socket.classList.remove('blink'), 120);
+                setTimeout(doBlink, Math.random() * 5000 + 2000);
+            }
+            setTimeout(doBlink, 4000);
+        }
+    })();
+</script><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -835,17 +925,16 @@ Important
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>Website made with Quarto by Bruno Mioto, 2025.</p>
+<p>Website made with Quarto by Bruno Mioto, 2026.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/brunomioto">
       <i class="bi bi-github" role="img">
 </i> 
@@ -858,11 +947,9 @@ Important
     </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 <script src="https://platform.twitter.com/widgets.js"></script>
