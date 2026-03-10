@@ -39,7 +39,7 @@
     "href": "portfolio.html#r-packages",
     "title": "Portfolio",
     "section": "R packages",
-    "text": "R packages\nOne of my hobbies is creating packages in R! I’ve made new friends and greatly improved my code organization and git experience.\n\n    \n        reservatoriosBR\n        \n            \n        \n        \n            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\n        \n    \n\n    \n        futebolplotR\n        \n            \n        \n        \n            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.\n        \n    \n\n    \n        ggimprensa\n        \n            \n        \n        \n            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.\n        \n    \n\n    \n        feowR\n        \n            \n        \n        \n            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).\n        \n    \n\n\n\n    \n        See more R packages!"
+    "text": "R packages\nOne of my hobbies is creating packages in R! I’ve made new friends and greatly improved my code organization and git experience.\n\n    \n        cnefetools\n        \n            \n        \n        \n            Download, cache and read municipality-level address data from the Cadastro Nacional de Enderecos para Fins Estatisticos (CNEFE) of the 2022 Brazilian Census, published by IBGE.\n        \n    \n    \n    \n        reservatoriosBR\n        \n            \n        \n        \n            Download data of Brazilian reservoirs from the SAR-ANA and ONS platforms and organizes it into a structure for use in R!\n        \n    \n\n    \n        futebolplotR\n        \n            \n        \n        \n            The goal of futebolplotR is to provide functions and geoms that help creating visualization of Brazilian soccer related analysis.\n        \n    \n\n    \n        ggimprensa\n        \n            \n        \n        \n            ggimprensa brings themes from the main Brazilian newspapers for ggplot2.\n        \n    \n\n    \n        feowR\n        \n            \n        \n        \n            feowR provides a faster and secure way to download shapefiles of Freshwater Ecoregions of the World (FEOW).\n        \n    \n\n\n\n    \n        See more R packages!"
   },
   {
     "objectID": "portfolio.html#scripts",
@@ -53,7 +53,7 @@
     "href": "portfolio.html#power-bi",
     "title": "Portfolio",
     "section": "Power BI",
-    "text": "Power BI\n\nI’m a Power BI Data Analyst Associate (PL-300) certified by Microsoft. I use Power BI daily at work to create dashboards for the logistics sector and understand KPIs for transportation, production, and much more!\nHere’s a dashboard I made for the Power BI 10 Year Anniversary Contest!\n\nYou can use the interactive version below\n\nI also made a dashboard for the 2020 Municipal Elections in my city using Power BI. (Unfortunately I no longer have the license and only have screenshots)"
+    "text": "Power BI\n\nI’m a Power BI Data Analyst Associate (PL-300) certified by Microsoft. I use Power BI daily at work to create dashboards for the logistics sector and understand KPIs for transportation, production, and much more!\nHere’s a dashboard I made for the Power BI 10 Year Anniversary Contest!\n\nYou can use the interactive version below"
   },
   {
     "objectID": "portfolio.html#datawrapper",
