@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ad7b1c7aab1d3d0ae46dda6b4682b281.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e0540c61e76f36a9334ee0e50e71c649.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -210,12 +210,12 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="figures/charts/charts-vaccines.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1;"><img src="figures/charts/charts-vaccines.png" class="img-fluid" width="350"></a></p>
+<p><a href="figures/charts/charts-vaccines.png" class="lightbox" data-glightbox="description: .lightbox-desc-1;" data-gallery="quarto-lightbox-gallery-1"><img src="figures/charts/charts-vaccines.png" class="img-fluid" width="350"></a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/charts/charts-nexo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2;"><img src="figures/charts/charts-nexo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></a></p>
+<p><a href="figures/charts/charts-nexo.png" class="lightbox" data-glightbox="description: .lightbox-desc-2;" data-gallery="quarto-lightbox-gallery-2"><img src="figures/charts/charts-nexo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></a></p>
 </figure>
 </div>
 </div>
@@ -250,7 +250,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 </style>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/charts/animation_kaggle_small_size.gif" class="lightbox" data-gallery="my-gallery" data-glightbox="description: .lightbox-desc-5;title:Play animation made for BigDataBowl ’24 Competition;" title="Play animation made for BigDataBowl ’24 Competition"><img src="figures/charts/animation_kaggle_small_size.gif" class="img-fluid figure-img" alt="Play animation made for BigDataBowl ’24 Competition"></a></p>
+<p><a href="figures/charts/animation_kaggle_small_size.gif" class="lightbox" data-glightbox="description: .lightbox-desc-5;title:Play animation made for BigDataBowl ’24 Competition;" data-gallery="my-gallery" title="Play animation made for BigDataBowl ’24 Competition"><img src="figures/charts/animation_kaggle_small_size.gif" class="img-fluid figure-img" alt="Play animation made for BigDataBowl ’24 Competition"></a></p>
 <figcaption>Play animation made for BigDataBowl ’24 Competition</figcaption>
 </figure>
 </div>
@@ -379,6 +379,132 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 </section>
 
 </main> <!-- /main -->
+<style>
+    /* Estilos do Olho - Escondido por padrão (Mobile first) */
+    .eye-socket-widget {
+        display: none;
+    }
+
+    /* Exibir apenas em Desktop (telas maiores que 768px) */
+    @media (min-width: 769px) {
+        .eye-socket-widget {
+            display: flex;
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            width: 100px;
+            height: 100px;
+            background: #ffffff;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 3px solid #333;
+            z-index: 1000;
+            overflow: hidden;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+
+        /* Íris */
+        .iris-widget {
+            width: 55px;
+            height: 55px;
+            background: radial-gradient(circle, #2c5d72 0%, #1a3a4a 100%);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+            background-image: 
+                repeating-conic-gradient(from 0deg, transparent 0deg 2deg, rgba(255,255,255,0.05) 3deg 4deg),
+                radial-gradient(circle, #2c5d72 0%, #1a3a4a 100%);
+        }
+
+        /* Pupila */
+        .pupil-widget {
+            width: 24px;
+            height: 24px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        /* Reflexo */
+        .reflexo-widget {
+            position: absolute;
+            top: 15%;
+            right: 20%;
+            width: 25%;
+            height: 25%;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            filter: blur(1px);
+        }
+
+        /* Pálpebra para piscar */
+        .palpebra-widget {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #f8f9fa;
+            top: -100%;
+            left: 0;
+            z-index: 10;
+            transition: top 0.1s ease-in-out;
+        }
+
+        .eye-socket-widget.blink .palpebra-widget {
+            top: 0;
+        }
+    }
+</style>
+
+<div class="eye-socket-widget" id="qEyeSocket">
+    <div class="palpebra-widget"></div>
+    <div class="iris-widget" id="qIris">
+        <div class="pupil-widget" id="qPupil"></div>
+        <div class="reflexo-widget"></div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const socket = document.getElementById('qEyeSocket');
+        const iris = document.getElementById('qIris');
+        const pupil = document.getElementById('qPupil');
+
+        // Só executa a lógica se o elemento estiver visível (Desktop)
+        if (window.getComputedStyle(socket).display !== 'none') {
+            document.addEventListener('mousemove', (e) => {
+                const rect = socket.getBoundingClientRect();
+                const eyeX = rect.left + rect.width / 2;
+                const eyeY = rect.top + rect.height / 2;
+
+                const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+                
+                const irisMax = 15;
+                const pupilMax = 6;
+
+                const ix = Math.cos(angle) * irisMax;
+                const iy = Math.sin(angle) * irisMax;
+                const px = Math.cos(angle) * pupilMax;
+                const py = Math.sin(angle) * pupilMax;
+
+                iris.style.transform = `translate(${ix}px, ${iy}px)`;
+                pupil.style.transform = `translate(${px}px, ${py}px)`;
+            });
+
+            function doBlink() {
+                socket.classList.add('blink');
+                setTimeout(() => socket.classList.remove('blink'), 120);
+                setTimeout(doBlink, Math.random() * 5000 + 2000);
+            }
+            setTimeout(doBlink, 4000);
+        }
+    })();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -783,7 +909,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Website made with Quarto by Bruno Mioto, 2025.</p>
+<p>Website made with Quarto by Bruno Mioto, 2026.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

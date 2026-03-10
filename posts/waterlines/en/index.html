@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -76,10 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-ad7b1c7aab1d3d0ae46dda6b4682b281.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-e0540c61e76f36a9334ee0e50e71c649.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -268,7 +268,7 @@ gtag('config', 'G-XTWGVVSED5', { 'anonymize_ip': true});
 <p>But the topic was hot, and I already had an idea how to use waterlines: Re-create an old map of the Brazilian coast!</p>
 <p>Then I discovered that there is a way to create waterlines using the <code>sf</code> and <code>ggplot2</code> packages! So I created this text as a guide for the next people who need it! Today I will try to present a basic version for everyone to understand the idea and create their own amazing maps!</p>
 <p>Look how my map turned out!</p>
-<p></p><div id="tweet-65346"></div><script>tweet={"url":"https:\/\/twitter.com\/BrunoHMioto\/status\/1619370088670416897","author_name":"Bruno Mioto","author_url":"https:\/\/twitter.com\/BrunoHMioto","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDid you know that the city of Rio de Janeiro got its name from Guanabara Bay? When it was discovered in early January 1502, it was called &quot;Ria de Janeiro&quot;, meaning &quot;January Bay&quot;, and over time the name became Rio (river) de Janeiro!\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RStats?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RStats\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/ggplot2?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#ggplot2\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/QwuXjDahl5\"\u003Epic.twitter.com\/QwuXjDahl5\u003C\/a\u003E\u003C\/p\u003E&mdash; Bruno Mioto (@BrunoHMioto) \u003Ca href=\"https:\/\/twitter.com\/BrunoHMioto\/status\/1619370088670416897?ref_src=twsrc%5Etfw\"\u003EJanuary 28, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-65346").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-53139"></div><script>tweet={"url":"https:\/\/twitter.com\/BrunoHMioto\/status\/1619370088670416897","author_name":"Bruno Mioto","author_url":"https:\/\/twitter.com\/BrunoHMioto","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EDid you know that the city of Rio de Janeiro got its name from Guanabara Bay? When it was discovered in early January 1502, it was called &quot;Ria de Janeiro&quot;, meaning &quot;January Bay&quot;, and over time the name became Rio (river) de Janeiro!\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RStats?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RStats\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/ggplot2?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#ggplot2\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/QwuXjDahl5\"\u003Epic.twitter.com\/QwuXjDahl5\u003C\/a\u003E\u003C\/p\u003E&mdash; Bruno Mioto (@BrunoHMioto) \u003Ca href=\"https:\/\/twitter.com\/BrunoHMioto\/status\/1619370088670416897?ref_src=twsrc%5Etfw\"\u003EJanuary 28, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-53139").innerHTML = tweet["html"];</script><p></p>
 </section>
 <section id="creating-our-map" class="level2">
 <h2 class="anchored" data-anchor-id="creating-our-map">Creating our map</h2>
@@ -434,6 +434,132 @@ Important
 </section>
 
 </main> <!-- /main -->
+<style>
+    /* Estilos do Olho - Escondido por padrão (Mobile first) */
+    .eye-socket-widget {
+        display: none;
+    }
+
+    /* Exibir apenas em Desktop (telas maiores que 768px) */
+    @media (min-width: 769px) {
+        .eye-socket-widget {
+            display: flex;
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            width: 100px;
+            height: 100px;
+            background: #ffffff;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 3px solid #333;
+            z-index: 1000;
+            overflow: hidden;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+
+        /* Íris */
+        .iris-widget {
+            width: 55px;
+            height: 55px;
+            background: radial-gradient(circle, #2c5d72 0%, #1a3a4a 100%);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+            background-image: 
+                repeating-conic-gradient(from 0deg, transparent 0deg 2deg, rgba(255,255,255,0.05) 3deg 4deg),
+                radial-gradient(circle, #2c5d72 0%, #1a3a4a 100%);
+        }
+
+        /* Pupila */
+        .pupil-widget {
+            width: 24px;
+            height: 24px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        /* Reflexo */
+        .reflexo-widget {
+            position: absolute;
+            top: 15%;
+            right: 20%;
+            width: 25%;
+            height: 25%;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            filter: blur(1px);
+        }
+
+        /* Pálpebra para piscar */
+        .palpebra-widget {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #f8f9fa;
+            top: -100%;
+            left: 0;
+            z-index: 10;
+            transition: top 0.1s ease-in-out;
+        }
+
+        .eye-socket-widget.blink .palpebra-widget {
+            top: 0;
+        }
+    }
+</style>
+
+<div class="eye-socket-widget" id="qEyeSocket">
+    <div class="palpebra-widget"></div>
+    <div class="iris-widget" id="qIris">
+        <div class="pupil-widget" id="qPupil"></div>
+        <div class="reflexo-widget"></div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const socket = document.getElementById('qEyeSocket');
+        const iris = document.getElementById('qIris');
+        const pupil = document.getElementById('qPupil');
+
+        // Só executa a lógica se o elemento estiver visível (Desktop)
+        if (window.getComputedStyle(socket).display !== 'none') {
+            document.addEventListener('mousemove', (e) => {
+                const rect = socket.getBoundingClientRect();
+                const eyeX = rect.left + rect.width / 2;
+                const eyeY = rect.top + rect.height / 2;
+
+                const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+                
+                const irisMax = 15;
+                const pupilMax = 6;
+
+                const ix = Math.cos(angle) * irisMax;
+                const iy = Math.sin(angle) * irisMax;
+                const px = Math.cos(angle) * pupilMax;
+                const py = Math.sin(angle) * pupilMax;
+
+                iris.style.transform = `translate(${ix}px, ${iy}px)`;
+                pupil.style.transform = `translate(${px}px, ${py}px)`;
+            });
+
+            function doBlink() {
+                socket.classList.add('blink');
+                setTimeout(() => socket.classList.remove('blink'), 120);
+                setTimeout(doBlink, Math.random() * 5000 + 2000);
+            }
+            setTimeout(doBlink, 4000);
+        }
+    })();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -838,7 +964,7 @@ Important
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Website made with Quarto by Bruno Mioto, 2025.</p>
+<p>Website made with Quarto by Bruno Mioto, 2026.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
