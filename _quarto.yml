@@ -51,7 +51,7 @@ website:
         file: about-en.qmd
   
   page-footer: 
-    left: "Website made with Quarto by Bruno Mioto, 2025." 
+    left: "Website made with Quarto by Bruno Mioto, 2026." 
     right: 
       - icon: github
         href: https://github.com/brunomioto
@@ -60,6 +60,7 @@ website:
 
 format:
   html:
+    include-after-body: eye_widget.html
     theme: 
       - united
       - styles.css
